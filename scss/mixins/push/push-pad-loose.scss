@@ -1,0 +1,62 @@
+@mixin push-pad-loose ($step: 1) {
+  @include push-pad-loose-vertical($step);
+  @include push-pad-loose-horizontal($step);
+}
+
+@mixin push-pad-loose-vertical ($step: 1) {
+  @include push-pad-loose-top($step);
+  @include push-pad-loose-bottom($step);
+}
+
+@mixin push-pad-loose-horizontal ($step: 1) {
+  @include push-pad-loose-left($step);
+  @include push-pad-loose-right($step);
+}
+
+
+
+@mixin push-pad-loose-top ($step: 1) {
+  margin-top: $step * $pad-loose-vertical;
+}
+
+@mixin push-pad-loose-bottom ($step: 1) {
+  margin-bottom: $step * $pad-loose-vertical;
+}
+
+@mixin push-pad-loose-left ($step: 1) {
+  margin-left: $step * $pad-loose-horizontal;
+}
+
+@mixin push-pad-loose-right ($step: 1) {
+  margin-right: $step * $pad-loose-horizontal;
+}
+
+
+
+// Flip horizontal/vertical
+
+@mixin push-pad-loose-vertical-even ($step: 1) {
+  @include push-pad-loose-top-even($step);
+  @include push-pad-loose-bottom-even($step);
+}
+
+@mixin push-pad-loose-horizontal-even ($step: 1) {
+  @include push-pad-loose-left-even($step);
+  @include push-pad-loose-right-even($step);
+}
+
+@mixin push-pad-loose-top-even ($step: 1) {
+  margin-top: calc($step * $pad-loose-horizontal);
+}
+
+@mixin push-pad-loose-bottom-even ($step: 1) {
+  margin-bottom: calc($step * $pad-loose-horizontal);
+}
+
+@mixin push-pad-loose-left-even ($step: 1) {
+  margin-left: calc($step * $pad-loose-vertical);
+}
+
+@mixin push-pad-loose-right-even ($step: 1) {
+  margin-right: calc($step * $pad-loose-vertical);
+}

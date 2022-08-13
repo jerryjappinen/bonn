@@ -1,0 +1,73 @@
+// Default pad
+@mixin pad ($step: 1) {
+  @include pad-horizontal($step);
+  @include pad-vertical($step);
+}
+
+@mixin pad-even ($step: 1) {
+  @include pad-horizontal-even($step);
+  @include pad-vertical($step);
+}
+
+@mixin pad-even-max ($step: 1) {
+  @include pad-horizontal($step);
+  @include pad-vertical-even($step);
+}
+
+
+
+@mixin pad-horizontal ($step: 1) {
+  @include pad-left($step);
+  @include pad-right($step);
+}
+
+@mixin pad-horizontal-even ($step: 1) {
+  @include pad-left-even($step);
+  @include pad-right-even($step);
+}
+
+
+
+@mixin pad-right ($step: 1) {
+  padding-right: calc($step * $pad-horizontal);
+}
+
+@mixin pad-right-even ($step: 1) {
+  padding-right: calc($step * $pad-vertical);
+}
+
+@mixin pad-left ($step: 1) {
+  padding-left: calc($step * $pad-horizontal);
+}
+
+@mixin pad-left-even ($step: 1) {
+  padding-left: calc($step * $pad-vertical);
+}
+
+
+
+@mixin pad-vertical ($step: 1) {
+  @include pad-top($step);
+  @include pad-bottom($step);
+}
+
+@mixin pad-vertical-even ($step: 1) {
+  @include pad-top-even($step);
+  @include pad-bottom-even($step);
+}
+
+@mixin pad-top ($step: 1) {
+  padding-top: calc($step * $pad-vertical);
+}
+
+@mixin pad-top-even ($step: 1) {
+  padding-top: calc($step * $pad-horizontal);
+}
+
+@mixin pad-bottom ($step: 1) {
+  padding-bottom: calc($step * $pad-vertical);
+}
+
+@mixin pad-bottom-even ($step: 1) {
+  padding-bottom: calc($step * $pad-horizontal);
+}

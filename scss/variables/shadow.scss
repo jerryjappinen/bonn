@@ -1,0 +1,33 @@
+$shadow-color: $dark !default;
+
+$shadow-x: 0 !default;
+$shadow-y: 2px !default;
+$shadow-size: 6px !default;
+$shadow-spread: 0 !default;
+$shadow-opacity: 0.2 !default;
+
+$shadow-very-tight-x: 0 !default;
+$shadow-very-tight-y: 1px !default;
+$shadow-very-tight-size: 1px !default;
+$shadow-very-tight-spread: 0 !default;
+$shadow-very-tight-opacity: 0.2 !default;
+
+$shadow-tight-x: 0 !default;
+$shadow-tight-y: 1px !default;
+$shadow-tight-size: 3px !default;
+$shadow-tight-spread: 0 !default;
+$shadow-tight-opacity: $shadow-opacity !default;
+
+$shadow-loose-x: 0 !default;
+$shadow-loose-y: 4px !default;
+$shadow-loose-size: 24px !default;
+$shadow-loose-spread: 0 !default;
+$shadow-loose-opacity: $shadow-opacity  !default;
+
+$shadow-very-loose-x: 0 !default;
+$shadow-very-loose-y: 8px !default;
+$shadow-very-loose-size: 56px !default;
+$shadow-very-loose-opacity: $shadow-opacity  !default;
+$shadow-very-loose-spread: 0 !default;
+
+$solid-shadow-width: 4px !default;

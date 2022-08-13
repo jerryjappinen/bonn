@@ -1,0 +1,73 @@
+// Android
+// https: //mediag.com/blog/popular-screen-resolutions-designing-for-all/
+$android-phone-width-tight: 320px !default;
+$android-phone-width: 360px !default;
+$android-phone-width-loose: 412px !default;
+
+$android-phone-height-tight: 640px !default;
+$android-phone-height: 720px !default;
+$android-phone-height-loose: 780px !default;
+
+$android-tablet-width-tight: 480px !default;
+$android-tablet-width: 768px !default;
+$android-tablet-width-loose: 960px !default;
+
+$android-tablet-height-tight: 960px !default;
+$android-tablet-height: 1024px !default;
+$android-tablet-height-loose: 1280px !default;
+
+
+
+// iPhones and iPads
+// https: //www.ios-resolution.com/
+$iphone-width-very-tight: 320px !default;
+$iphone-width-tight: 375px !default;
+$iphone-width: 414px !default;
+$iphone-width-loose: 428px !default;
+$iphone-width-very-loose: 476px !default;
+
+$iphone-widths: (
+  320px,
+  375px,
+  390px,
+  414px,
+  428px,
+  476px,
+) !default;
+
+$iphone-height-very-tight: 568px !default;
+$iphone-height-tight: 667px !default;
+$iphone-height: 736px !default;
+$iphone-height-loose: 847px !default;
+$iphone-height-very-loose: 926px !default;
+
+$iphone-heights: (
+  480px,
+  568px,
+  667px,
+  736px,
+  812px,
+  844px,
+  847px,
+  896px,
+  926px,
+) !default;
+
+
+
+// Defined screen widths (in portrait)
+$iphone-4-width: 320px !default;
+$iphone-5-width: $iphone-4-width !default;
+$iphone-6-width: 375px !default;
+$iphone-6-plus-width: 414px !default;
+
+$iphone-4-height: 480px !default;
+$iphone-5-height: 568px !default;
+$iphone-6-height: 667px !default;
+$iphone-6-plus-height: 736px !default;
+
+$ipad-height: 1024px !default;
+$ipad-pro-height: 1366px !default;
+
+$ipad-width: 768px !default;
+$ipad-pro-width: 1024px !default;

@@ -1,0 +1,44 @@
+@mixin radius ($rad: $radius) {
+  @include radius-top($rad);
+  @include radius-bottom($rad);
+}
+
+@mixin radius-top ($rad: $radius) {
+  @include radius-top-left($rad);
+  @include radius-top-right($rad);
+}
+
+@mixin radius-bottom ($rad: $radius) {
+  @include radius-bottom-left($rad);
+  @include radius-bottom-right($rad);
+}
+
+
+
+@mixin radius-left ($rad: $radius) {
+  @include radius-top-left($rad);
+  @include radius-bottom-left($rad);
+}
+
+@mixin radius-right ($rad: $radius) {
+  @include radius-top-right($rad);
+  @include radius-bottom-right($rad);
+}
+
+
+
+@mixin radius-top-left ($rad: $radius) {
+  border-top-left-radius: $rad;
+}
+
+@mixin radius-top-right ($rad: $radius) {
+  border-top-right-radius: $rad;
+}
+
+@mixin radius-bottom-left ($rad: $radius) {
+  border-bottom-left-radius: $rad;
+}
+
+@mixin radius-bottom-right ($rad: $radius) {
+  border-bottom-right-radius: $rad;
+}

@@ -1,0 +1,92 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+dt,
+mark,
+th {
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+}
+
+input,
+select,
+textarea,
+button {
+  -webkit-font-smoothing: inherit;
+  font-family: inherit;
+}
+input,
+select,
+textarea,
+pre,
+code,
+kbd,
+samp {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+button,
+input,
+select,
+textarea,
+pre,
+code,
+kbd,
+samp {
+  font-weight: inherit;
+}
+
+button,
+select {
+  text-transform: inherit;
+}
+
+h1,
+h2,
+h3 {
+  text-rendering: optimizeLegibility;
+}
+
+em,
+dfn,
+q,
+blockquote {
+  font-style: italic;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+// Quotes
+blockquote,
+q {
+  quotes: none;
+  &:before,
+  &:after {
+    content: '';
+  }
+}
+
+sub,
+sup {
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}

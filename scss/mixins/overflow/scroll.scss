@@ -1,0 +1,27 @@
+@mixin scroll {
+  overflow: auto;
+}
+
+@mixin force-scroll {
+  overflow: scroll;
+}
+
+@mixin scroll-horizontal {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+@mixin force-scroll-horizontal {
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+@mixin scroll-vertical {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+@mixin force-scroll-vertical {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}

@@ -1,0 +1,37 @@
+@mixin radius-tight {
+  @include radius($radius-tight);
+}
+
+@mixin radius-tight-top {
+  @include radius-top($radius-tight);
+}
+
+@mixin radius-tight-top-left {
+  @include radius-top-left($radius-tight);
+}
+
+@mixin radius-tight-top-right {
+  @include radius-top-right($radius-tight);
+}
+
+@mixin radius-tight-bottom {
+  @include radius-bottom($radius-tight);
+}
+
+@mixin radius-tight-bottom-left {
+  @include radius-bottom-left($radius-tight);
+}
+
+@mixin radius-tight-bottom-right {
+  @include radius-bottom-right($radius-tight);
+}
+
+@mixin radius-tight-left {
+  @include radius-tight-top-left;
+  @include radius-tight-bottom-left;
+}
+
+@mixin radius-tight-right {
+  @include radius-tight-top-right;
+  @include radius-tight-bottom-right;
+}

@@ -1,0 +1,66 @@
+// Reset link/button outlines
+input,
+a {
+  &:focus,
+  &:active,
+  &:hover {
+    outline-width: 0;
+  }
+}
+
+// Use the same box-model and sizing in all browsers
+button,
+input,
+textarea {
+  box-sizing: content-box;
+  display: inline-block;
+}
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+
+// Make search fields consistent with text fields on Webkit
+input[type="search"] {
+  appearance: textfield;
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  appearance: none;
+}
+
+// Get IE on the line with checkboxes
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+
+  // Style clickable inputs consistently on all webkits
+  appearance: button;
+
+  // Buttons have center-aligned text
+  text-align: center;
+}
+
+// Use sensible alignments
+button,
+input,
+select {
+  vertical-align: middle;
+}
+
+// Make button rendering consistent on Firefox 4+
+button,
+input {
+  &::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+  }
+}

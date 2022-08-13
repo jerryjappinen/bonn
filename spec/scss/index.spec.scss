@@ -1,0 +1,21 @@
+// Build should not fail
+@import '../../scss/';
+
+// // Variables, functions, mixins
+// // Importing this file will NOT output any CSS
+// // @import '../src/variables';
+// // @import '../src/functions';
+// @import '../src/mixins';
+
+// // // These print CSS
+// @import '../src/custom-properties';  // Generate CSS variables from Sass variables
+// @import '../src/duplicate-variables';  // Replace the Sass variable values with var(--variable-name)
+// @import '../src/replace-variables';  // Replace the Sass variable values with var(--variable-name)
+// // @import '../src/normalize';          // Normalisation
+// // @import '../src/defaults';           // Common defaults
+
+// // // Utils
+// // @import '../src/util/bodytext';
+// // @import '../src/util/control';
+// // @import '../src/util/rhythm';
+

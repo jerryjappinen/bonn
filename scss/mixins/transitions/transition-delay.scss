@@ -1,0 +1,35 @@
+@mixin transition-delay ($delay) {
+  transition-delay: $delay;
+}
+
+@mixin transition-delay-very-very-fast {
+  @include transition-delay($transition-very-very-fast);
+}
+
+@mixin transition-delay-very-fast {
+  @include transition-delay($transition-very-fast);
+}
+
+@mixin transition-delay-fast {
+  @include transition-delay($transition-fast);
+}
+
+@mixin transition-delay-medium {
+  @include transition-delay($transition-medium);
+}
+
+@mixin transition-delay-slow {
+  @include transition-delay($transition-slow);
+}
+
+@mixin transition-delay-very-slow {
+  @include transition-delay($transition-very-slow);
+}
+
+@mixin transition-delay-very-very-slow {
+  @include transition-delay($transition-very-very-slow);
+}
+
+@mixin no-transition-delay {
+  @include transition-delay(0ms);
+}

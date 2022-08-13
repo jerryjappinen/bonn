@@ -1,0 +1,84 @@
+button,
+input,
+optgroup,
+select,
+textarea {
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  vertical-align: baseline;
+
+  &:focus {
+    outline: none;
+  }
+
+}
+
+button {
+  border-color: $border-color;
+  border-style: solid;
+  border-width: 0;
+  background-color: transparent;
+  appearance: none;
+
+  @include pointer;
+
+  @include transition-hover-active;
+  @include transition-properties-common;
+}
+
+select {
+  overflow: hidden;
+
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+  appearance: none;
+
+  &:focus {
+    outline: none;
+  }
+
+}
+
+// FIXME: this is probably not smart
+label {
+  @include block;
+}
+
+
+// Reset Autocomplete styles in Chrome
+// NOTE: extreme hacking
+// https://css-tricks.com/snippets/css/change-autocomplete-styles-webkit-browsers/
+/* stylelint-disable-next-line at-rule-no-vendor-prefix */
+@-webkit-keyframes autofill-default {
+  to {
+    background: transparent;
+  }
+}
+
+// select:-webkit-autofill,
+// select:-webkit-autofill:hover,
+// select:-webkit-autofill:focus,
+input:-webkit-autofill,
+textarea:-webkit-autofill {
+
+  /* stylelint-disable-next-line property-no-vendor-prefix */
+  -webkit-animation-name: autofill-default;
+
+  /* stylelint-disable-next-line property-no-vendor-prefix */
+  -webkit-animation-fill-mode: both;
+
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}

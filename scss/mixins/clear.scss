@@ -1,0 +1,22 @@
+@mixin clear {
+  clear: both;
+}
+
+@mixin clear-left {
+  clear: left;
+}
+
+@mixin clear-right {
+  clear: right;
+}
+
+@mixin clear-after {
+  *zoom: 1;
+
+  &:after {
+    content: " ";
+    display: table;
+    clear: both;
+  }
+
+}

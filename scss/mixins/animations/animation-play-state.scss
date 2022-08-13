@@ -1,0 +1,7 @@
+@mixin pause-animation {
+  animation-play-state: paused;
+}
+
+@mixin play-animation {
+  animation-play-state: running;
+}

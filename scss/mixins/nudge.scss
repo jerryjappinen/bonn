@@ -1,0 +1,19 @@
+@mixin nudge-up ($distance: 0.1em) {
+  @include relative;
+  top: -$distance;
+}
+
+@mixin nudge-down ($distance: 0.1em) {
+  @include relative;
+  top: $distance;
+}
+
+@mixin nudge-left ($distance: 0.1em) {
+  @include relative;
+  left: -$distance;
+}
+
+@mixin nudge-right ($distance: 0.1em) {
+  @include relative;
+  left: $distance;
+}

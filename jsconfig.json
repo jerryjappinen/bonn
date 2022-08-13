@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "checkJs": true
+  },
+  "include": [
+    "composables/**/*",
+    "util/**/*",
+    "spec/**/*",
+    "moduleNames.js"
+  ]
+}

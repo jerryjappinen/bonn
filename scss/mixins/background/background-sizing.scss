@@ -1,0 +1,26 @@
+@mixin background-contain {
+  background-size: contain;
+  @include no-background-repeat;
+}
+
+@mixin background-cover {
+  background-size: cover;
+  @include no-background-repeat;
+}
+
+@mixin background-stretch {
+  background-size: 100% 100%;
+  @include background-top-left;
+}
+
+@mixin background-stretch-height {
+  background-size: auto 100%;
+  @include background-top;
+  @include background-repeat-x;
+}
+
+@mixin background-stretch-width {
+  background-size: 100% auto;
+  @include background-left;
+  @include background-repeat-y;
+}

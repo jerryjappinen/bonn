@@ -1,0 +1,8 @@
+// Create a CSS variable (custom property) of each Sass variable declared
+@mixin generate-css-vars ($sass-variables) {
+  @each $name, $value in $sass-variables {
+    @if variable-exists($name) {
+      --#{$name}: #{$value};
+    }
+  }
+}

@@ -1,0 +1,35 @@
+@mixin round {
+  @include radius($round);
+}
+
+@mixin round-left {
+  @include radius-left($round);
+}
+
+@mixin round-right {
+  @include radius-right($round);
+}
+
+@mixin round-top {
+  @include radius-top($round);
+}
+
+@mixin round-top-left {
+  @include radius-top-left($round);
+}
+
+@mixin round-top-right {
+  @include radius-top-right($round);
+}
+
+@mixin round-bottom {
+  @include radius-bottom($round);
+}
+
+@mixin round-bottom-left {
+  @include radius-bottom-left($round);
+}
+
+@mixin round-bottom-right {
+  @include radius-bottom-right($round);
+}

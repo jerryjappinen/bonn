@@ -1,0 +1,30 @@
+
+@mixin screen-height-under-or-at ($breakpoint) {
+	@media (max-height: ($breakpoint)) {
+		@content;
+	}
+}
+
+@mixin screen-height-over-or-at ($breakpoint) {
+	@media (min-height: ($breakpoint)) {
+		@content;
+	}
+}
+
+@mixin screen-height-under ($breakpoint) {
+	@if (type-of($breakpoint) == 'number' and unit($breakpoint) == 'px') {
+		$breakpoint: $breakpoint - 1px;
+	}
+	@include screen-height-under-or-at($breakpoint) {
+		@content;
+	}
+}
+
+@mixin screen-height-over ($breakpoint) {
+	@if (type-of($breakpoint) == 'number' and unit($breakpoint) == 'px') {
+		$breakpoint: $breakpoint + 1px;
+	}
+	@include screen-height-over-or-at($breakpoint) {
+		@content;
+	}
+}

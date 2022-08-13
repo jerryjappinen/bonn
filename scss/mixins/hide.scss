@@ -1,0 +1,7 @@
+@mixin hide {
+  display: none !important;
+}
+
+@mixin invisible {
+  visibility: hidden;
+}

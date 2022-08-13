@@ -1,0 +1,23 @@
+@mixin transition-properties ($properties...) {
+  transition-property: $properties;
+}
+
+@mixin transition-properties-common {
+  @include transition-properties($transition-properties-common);
+}
+
+@mixin transition-properties-style {
+  @include transition-properties($transition-properties-style);
+}
+
+@mixin transition-properties-transform {
+  @include transition-properties($transition-properties-transform);
+}
+
+@mixin transition-properties-position {
+  @include transition-properties($transition-properties-position);
+}
+
+@mixin no-transition-properties {
+  transition-property: none;
+}

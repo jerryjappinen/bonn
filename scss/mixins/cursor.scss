@@ -1,0 +1,36 @@
+// FIXME: for some reason autoprefixer does not apply these
+// stylelint-disable value-no-vendor-prefix
+// stylelint-disable declaration-block-no-duplicate-properties
+@mixin grab {
+  cursor: -webkit-grab;
+  cursor: -moz-grab;
+  cursor: grab;
+}
+
+@mixin grabbing {
+  cursor: -webkit-grabbing;
+  cursor: -moz-grab;
+  cursor: grabbing;
+}
+// stylelint-enable value-no-vendor-prefix
+// stylelint-enable declaration-block-no-duplicate-properties
+
+@mixin pointer {
+  cursor: pointer;
+}
+
+@mixin help-cursor {
+  cursor: help;
+}
+
+@mixin text-cursor {
+  cursor: text;
+}
+
+@mixin default-cursor {
+  cursor: default;
+}
+
+@mixin inherit-cursor {
+  cursor: inherit;
+}

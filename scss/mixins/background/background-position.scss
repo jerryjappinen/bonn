@@ -1,0 +1,79 @@
+@mixin background-position ($y, $x) {
+  @include background-x($x);
+  @include background-y($y);
+}
+
+@mixin background-x ($x) {
+  background-position-x: $x;
+}
+
+@mixin background-y ($y) {
+  background-position-y: $y;
+}
+
+
+
+// Edges
+
+@mixin background-left {
+  @include background-x(0%);
+}
+
+@mixin background-horizontal-center {
+  @include background-x(50%);
+}
+
+@mixin background-right {
+  @include background-x(100%);
+}
+
+@mixin background-top {
+  @include background-y(0%);
+}
+
+@mixin background-vertical-center {
+  @include background-y(50%);
+}
+
+@mixin background-bottom {
+  @include background-y(100%);
+}
+
+
+
+// Combinations
+
+@mixin background-top-left {
+  @include background-left;
+  @include background-top;
+}
+
+@mixin background-top-center {
+  @include background-horizontal-center;
+  @include background-top;
+}
+
+@mixin background-top-right {
+  @include background-right;
+  @include background-top;
+}
+
+@mixin background-center {
+  @include background-horizontal-center;
+  @include background-vertical-center;
+}
+
+@mixin background-bottom-left {
+  @include background-left;
+  @include background-bottom;
+}
+
+@mixin background-bottom-center {
+  @include background-horizontal-center;
+  @include background-bottom;
+}
+
+@mixin background-bottom-right {
+  @include background-right;
+  @include background-bottom;
+}

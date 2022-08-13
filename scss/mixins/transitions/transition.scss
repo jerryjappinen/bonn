@@ -1,0 +1,16 @@
+@mixin transition ($duration, $properties: null, $delay: null) {
+  transition-duration: $duration;
+
+  @if $properties {
+    transition-property: $properties;
+  }
+
+  @if $delay {
+    transition-delay: $delay;
+  }
+
+}
+
+@mixin no-transition {
+  transition-duration: 0ms;
+}

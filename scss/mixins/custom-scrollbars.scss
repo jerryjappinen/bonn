@@ -1,0 +1,55 @@
+
+@mixin custom-scrollbars {
+  scrollbar-color: $scrollbar-color $scrollbar-track-color;
+
+  ::-webkit-scrollbar {
+    width: (2 * $scrollbar-margin) + $scrollbar-size;
+    height: (2 * $scrollbar-margin) + $scrollbar-size;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: $scrollbar-track-color;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-width: 0;
+    border-style: solid;
+    box-sizing: border-box;
+    background-clip: content-box;
+    border-width: $scrollbar-margin;
+
+    border-radius: $scrollbar-radius + $scrollbar-margin;
+    border-color: $scrollbar-border-color;
+    background-color: $scrollbar-color;
+
+    &:hover {
+      background-color: $scrollbar-color-hover;
+    }
+
+    &:active {
+      background-color: $scrollbar-color-active;
+    }
+
+    &:vertical {
+      min-height: $scrollbar-minlength;
+    }
+
+    &:horizontal {
+      min-width: $scrollbar-minlength;
+    }
+
+  }
+
+}
+
+@mixin custom-scrollbar-transitions {
+
+  ::-webkit-scrollbar,
+  ::-webkit-scrollbar-track,
+  ::-webkit-scrollbar-button,
+  ::-webkit-scrollbar-thumb {
+    @include transition-properties-common;
+    @include transition-fast;
+  }
+
+}

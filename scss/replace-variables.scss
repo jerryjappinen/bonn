@@ -1,0 +1,233 @@
+// colors.scss
+$white: var(--white);
+$very-very-light-grey: var(--very-very-light-grey);
+$very-light-grey: var(--very-light-grey);
+$light-grey: var(--light-grey);
+$grey: var(--grey);
+$dark-grey: var(--dark-grey);
+$dark: var(--dark);
+$very-dark: var(--very-dark);
+$black: var(--black);
+$light-red: var(--light-red);
+$red: var(--red);
+$dark-red: var(--dark-red);
+$light-pink: var(--light-pink);
+$pink: var(--pink);
+$dark-pink: var(--dark-pink);
+$light-orange: var(--light-orange);
+$orange: var(--orange);
+$dark-orange: var(--dark-orange);
+$light-yellow: var(--light-yellow);
+$yellow: var(--yellow);
+$dark-yellow: var(--dark-yellow);
+$light-green: var(--light-green);
+$green: var(--green);
+$dark-green: var(--dark-green);
+$light-purple: var(--light-purple);
+$purple: var(--purple);
+$dark-purple: var(--dark-purple);
+$light-blue: var(--light-blue);
+$blue: var(--blue);
+$dark-blue: var(--dark-blue);
+
+// defaults.scss
+$default-font: var(--default-font);
+$default-font-size: var(--default-font-size);
+$default-line-height: var(--default-line-height);
+$background-color: var(--background-color);
+$text-color: var(--text-color);
+$border-color: var(--border-color);
+$discreet-color-light: var(--discreet-color-light);
+$discreet-color: var(--discreet-color);
+$discreet-color-dark: var(--discreet-color-dark);
+$discreet-text-color: var(--discreet-text-color);
+$link-color: var(--link-color);
+$link-active-color: var(--link-active-color);
+$link-weight: var(--link-weight);
+$default-translucent-opacity: var(--default-translucent-opacity);
+$default-perspective: var(--default-perspective);
+$default-transition-duration: var(--default-transition-duration);
+$default-transition-easing: var(--default-transition-easing);
+
+// devices.scss
+$android-phone-width-tight: var(--android-phone-width-tight);
+$android-phone-width: var(--android-phone-width);
+$android-phone-width-loose: var(--android-phone-width-loose);
+$android-phone-height-tight: var(--android-phone-height-tight);
+$android-phone-height: var(--android-phone-height);
+$android-phone-height-loose: var(--android-phone-height-loose);
+$android-tablet-width-tight: var(--android-tablet-width-tight);
+$android-tablet-width: var(--android-tablet-width);
+$android-tablet-width-loose: var(--android-tablet-width-loose);
+$android-tablet-height-tight: var(--android-tablet-height-tight);
+$android-tablet-height: var(--android-tablet-height);
+$android-tablet-height-loose: var(--android-tablet-height-loose);
+
+$iphone-4-width: var(--iphone-4-width);
+$iphone-5-width: var(--iphone-5-width);
+$iphone-6-width: var(--iphone-6-width);
+$iphone-6-plus-width: var(--iphone-6-plus-width);
+$ipad-width: var(--ipad-width);
+$ipad-pro-width: var(--ipad-pro-width);
+$iphone-4-height: var(--iphone-4-height);
+$iphone-5-height: var(--iphone-5-height);
+$iphone-6-height: var(--iphone-6-height);
+$iphone-6-plus-height: var(--iphone-6-plus-height);
+$ipad-height: var(--ipad-height);
+$ipad-pro-height: var(--ipad-pro-height);
+
+// dimensions.scss
+$ldpi: var(--ldpi);
+$hdpi: var(--hdpi);
+$uhdpi: var(--uhdpi);
+
+$content-width-very-tight: var(--content-width-very-tight);
+$content-width-tight: var(--content-width-tight);
+$content-width: var(--content-width);
+$content-width-loose: var(--content-width-loose);
+$content-width-very-loose: var(--content-width-very-loose);
+
+// NOTE: we won't replace
+// $breakpoint-tiny: var(--breakpoint-tiny);
+// $breakpoint-small: var(--breakpoint-small);
+// $breakpoint-medium: var(--breakpoint-medium);
+// $breakpoint-large: var(--breakpoint-large);
+// $breakpoint-very-large: var(--breakpoint-very-large);
+// $breakpoint-full: var(--breakpoint-full);
+
+// $breakpoint-phone-tight: var(--breakpoint-phone-tight);
+// $breakpoint-phone: var(--breakpoint-phone);
+// $breakpoint-tablet: var(--breakpoint-tablet);
+// $breakpoint-laptop: var(--breakpoint-laptop);
+// $breakpoint-monitor: var(--breakpoint-monitor);
+
+// radius.scss
+$radius-very-tight: var(--radius-very-tight);
+$radius-tight: var(--radius-tight);
+$radius: var(--radius);
+$radius-loose: var(--radius-loose);
+$radius-very-loose: var(--radius-very-loose);
+$round: var(--round);
+
+// rhythm.scss
+$rhythm-tight-half: var(--rhythm-tight-half);
+$rhythm-tight: var(--rhythm-tight);
+$rhythm-base: var(--rhythm-base);
+$rhythm-loose: var(--rhythm-loose);
+$hairline-border-width: var(--hairline-border-width);
+$dashed-border-width: var(--dashed-border-width);
+$thick-border-width: var(--thick-border-width);
+$pad-tight-vertical: var(--pad-tight-vertical);
+$pad-tight-horizontal: var(--pad-tight-horizontal);
+$pad-vertical: var(--pad-vertical);
+$pad-horizontal: var(--pad-horizontal);
+$pad-loose-vertical: var(--pad-loose-vertical);
+$pad-loose-horizontal: var(--pad-loose-horizontal);
+$buffer-very-tight: var(--buffer-very-tight);
+$buffer-tight: var(--buffer-tight);
+$buffer: var(--buffer);
+$buffer-loose: var(--buffer-loose);
+$buffer-relative-tight: var(--buffer-relative-tight);
+$buffer-relative: var(--buffer-relative);
+
+// scrollbars.scss
+$scrollbar-margin: var(--scrollbar-margin);
+$scrollbar-size: var(--scrollbar-size);
+$scrollbar-radius: var(--scrollbar-radius);
+$scrollbar-minlength: var(--scrollbar-minlength);
+$scrollbar-ff-width: var(--scrollbar-ff-width);
+$scrollbar-track-color: var(--scrollbar-track-color);
+$scrollbar-base-color: var(--scrollbar-base-color);
+$scrollbar-border-color: var(--scrollbar-border-color);
+$scrollbar-color: var(--scrollbar-color);
+$scrollbar-color-hover: var(--scrollbar-color-hover);
+$scrollbar-color-active: var(--scrollbar-color-active);
+
+// shadow.scss
+$shadow-color: var(--shadow-color);
+
+$shadow-x: var(--shadow-x);
+$shadow-y: var(--shadow-y);
+$shadow-size: var(--shadow-size);
+$shadow-spread: var(--shadow-spread);
+$shadow-opacity: var(--shadow-opacity);
+
+$shadow-very-tight-x: var(--shadow-very-tight-x);
+$shadow-very-tight-y: var(--shadow-very-tight-y);
+$shadow-very-tight-size: var(--shadow-very-tight-size);
+$shadow-very-tight-spread: var(--shadow-very-tight-spread);
+$shadow-very-tight-opacity: var(--shadow-very-tight-opacity);
+
+$shadow-tight-x: var(--shadow-tight-x);
+$shadow-tight-y: var(--shadow-tight-y);
+$shadow-tight-size: var(--shadow-tight-size);
+$shadow-tight-spread: var(--shadow-tight-spread);
+$shadow-tight-opacity: var(--shadow-tight-opacity);
+
+$shadow-loose-x: var(--shadow-loose-x);
+$shadow-loose-y: var(--shadow-loose-y);
+$shadow-loose-size: var(--shadow-loose-size);
+$shadow-loose-spread: var(--shadow-loose-spread);
+$shadow-loose-opacity: var(--shadow-loose-opacity);
+
+$shadow-very-loose-x: var(--shadow-very-loose-x);
+$shadow-very-loose-y: var(--shadow-very-loose-y);
+$shadow-very-loose-size: var(--shadow-very-loose-size);
+$shadow-very-loose-opacity: var(--shadow-very-loose-opacity);
+$shadow-very-loose-spread: var(--shadow-very-loose-spread);
+
+$solid-shadow-width: var(--solid-shadow-width);
+
+// text.scss
+$font-system: var(--font-system);
+$font-sans: var(--font-sans);
+$font-serif: var(--font-serif);
+$font-mono: var(--font-mono);
+$font-size-small: var(--font-size-small);
+$font-size-large: var(--font-size-large);
+$font-size-mono: var(--font-size-mono);
+$font-size-uppercase: var(--font-size-uppercase);
+$font-weight-thin: var(--font-weight-thin);
+$font-weight-regular: var(--font-weight-regular);
+$font-weight-semibold: var(--font-weight-semibold);
+$font-weight-bold: var(--font-weight-bold);
+$font-weight-black: var(--font-weight-black);
+$line-height-very-tight: var(--line-height-very-tight);
+$line-height-tight: var(--line-height-tight);
+$line-height: var(--line-height);
+$line-height-loose: var(--line-height-loose);
+$line-height-print: var(--line-height-print);
+$line-height-very-tight-em: var(--line-height-very-tight-em);
+$line-height-tight-em: var(--line-height-tight-em);
+$line-height-em: var(--line-height-em);
+$line-height-loose-em: var(--line-height-loose-em);
+$line-height-print-em: var(--line-height-print-em);
+$headline-font: var(--headline-font);
+$headline-weight: var(--headline-weight);
+$headline-line-height: var(--headline-line-height);
+$headline-line-height-em: var(--headline-line-height-em);
+$font-size-h1: var(--font-size-h1);
+$font-size-h2: var(--font-size-h2);
+$font-size-h3: var(--font-size-h3);
+$font-size-h4: var(--font-size-h4);
+$font-size-h5: var(--font-size-h5);
+$font-size-h6: var(--font-size-h6);
+
+// transitions.scss
+$transition-very-very-fast: var(--transition-very-very-fast);
+$transition-very-fast: var(--transition-very-fast);
+$transition-fast: var(--transition-fast);
+$transition-medium: var(--transition-medium);
+$transition-slow: var(--transition-slow);
+$transition-slowish: var(--transition-slowish);
+$transition-very-slow: var(--transition-very-slow);
+$transition-very-very-slow: var(--transition-very-very-slow);
+$transition-properties-style: var(--transition-properties-style);
+$transition-properties-common: var(--transition-properties-common);
+$transition-properties-transform: var(--transition-properties-transform);
+$transition-properties-position: var(--transition-properties-position);
+$easing-none: var(--easing-none);
+$easing-ease: var(--easing-ease);
+$easing-snap: var(--easing-snap);
+$easing-bounce: var(--easing-bounce);
+$easing-smooth: var(--easing-smooth);

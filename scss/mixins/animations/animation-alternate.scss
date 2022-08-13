@@ -1,0 +1,8 @@
+@mixin animation-alternate (
+  $name,
+  $duration: $transition-very-very-slow,
+  $easing: null,
+  $count: infinite
+) {
+  @include animation($name, $duration, $easing, $count, alternate);
+}

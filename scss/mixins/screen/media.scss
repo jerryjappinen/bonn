@@ -1,0 +1,17 @@
+@mixin print {
+  @media print {
+    @content;
+  }
+}
+
+@mixin screen {
+  @media screen {
+    @content;
+  }
+}
+
+@mixin not-print {
+  @media not print {
+    @content;
+  }
+}

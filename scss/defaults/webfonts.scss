@@ -1,0 +1,14 @@
+@if variable-exists(webfonts) {
+  @each $values in $webfonts {
+
+    // Read config
+    $font-family: map-get($values, font-family);
+    $font-weight: map-get($values, font-weight);
+    $font-style: map-get($values, font-style);
+    $path: map-get($values, path);
+
+    // Print @font-face definitions
+    @include font-face ($font-family, $font-weight, $font-style, $path);
+
+  }
+}

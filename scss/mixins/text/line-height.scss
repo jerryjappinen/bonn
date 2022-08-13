@@ -1,0 +1,15 @@
+@mixin line-height-tight {
+  line-height: $line-height-tight;
+}
+
+@mixin line-height-default {
+  line-height: $line-height;
+}
+
+@mixin line-height-loose {
+  line-height: $line-height-loose;
+}
+
+@mixin no-line-height {
+  line-height: 1;
+}

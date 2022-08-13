@@ -1,0 +1,11 @@
+table {
+  border-left-width: 1px;
+  border-right-width: 1px;
+}
+
+th,
+td {
+  @include pad-loose;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+}

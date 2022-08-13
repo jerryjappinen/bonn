@@ -1,0 +1,19 @@
+@mixin background-repeat-gaps {
+  background-repeat: space;
+}
+
+@mixin background-repeat-stretch {
+  background-repeat: round;
+}
+
+@mixin background-repeat-x {
+  background-repeat: repeat-x;
+}
+
+@mixin background-repeat-y {
+  background-repeat: repeat-y;
+}
+
+@mixin no-background-repeat {
+  background-repeat: no-repeat;
+}

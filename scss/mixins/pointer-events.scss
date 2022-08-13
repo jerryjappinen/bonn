@@ -1,0 +1,7 @@
+@mixin pointer-events {
+	pointer-events: auto;
+}
+
+@mixin no-pointer-events {
+	pointer-events: none;
+}

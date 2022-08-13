@@ -1,0 +1,73 @@
+//
+// Transform origin
+//
+
+@mixin transform-from ($x, $y, $z) {
+  transform-origin: $x $y $z;
+}
+
+// Transform origin: aligned to the top
+
+@mixin transform-from-top-left ($z: 0) {
+  @include transform-from(0, 0, $z);
+}
+
+@mixin transform-from-top-center ($z: 0) {
+  @include transform-from(50%, 0, $z);
+}
+
+@mixin transform-from-top-right ($z: 0) {
+  @include transform-from(100%, 0, $z);
+}
+
+// Transform origin: aligned vertically center
+
+@mixin transform-from-center-left ($z: 0) {
+  @include transform-from(0, 50%, $z);
+}
+
+@mixin transform-from-center-center ($z: 0) {
+  @include transform-from(50%, 50%, $z);
+}
+
+@mixin transform-from-center-right ($z: 0) {
+  @include transform-from(100%, 50%, $z);
+}
+
+// Transform origin: aligned to the bottom
+
+@mixin transform-from-bottom-left ($z: 0) {
+  @include transform-from(0, 100%, $z);
+}
+
+@mixin transform-from-bottom-center ($z: 0) {
+  @include transform-from(50%, 100%, $z);
+}
+
+@mixin transform-from-bottom-right ($z: 0) {
+  @include transform-from(100%, 100%, $z);
+}
+
+
+
+// Tranform origin shorthands
+//
+//      TOP
+// LEFT     RIGHT
+//     BOTTOM
+
+@mixin transform-from-top ($z: 0) {
+  @include transform-from-top-center($z);
+}
+
+@mixin transform-from-right ($z: 0) {
+  @include transform-from-center-right($z);
+}
+
+@mixin transform-from-bottom ($z: 0) {
+  @include transform-from-bottom-center($z);
+}
+
+@mixin transform-from-left ($z: 0) {
+  @include transform-from-center-left($z);
+}

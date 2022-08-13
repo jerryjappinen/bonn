@@ -1,0 +1,54 @@
+// Small margins
+
+@mixin push-tight ($step: 1) {
+  @include push-tight-horizontal($step);
+  @include push-tight-vertical($step);
+}
+
+@mixin push-tight-even ($step: 1) {
+  @include push-tight-horizontal($step);
+  @include push-tight-vertical-even($step);
+}
+
+
+
+// Pane
+
+@mixin push-tight-horizontal ($step: 1) {
+  @include push-tight-left($step);
+  @include push-tight-right($step);
+}
+
+@mixin push-tight-vertical ($step: 1) {
+  @include push-tight-top($step);
+  @include push-tight-bottom($step);
+}
+
+@mixin push-tight-vertical-even ($step: 1) {
+  @include push-tight-top-even($step);
+  @include push-tight-bottom($step);
+}
+
+
+
+// Single
+
+@mixin push-tight-top ($step: 1) {
+  margin-top: calc($step * $buffer-very-tight);
+}
+
+@mixin push-tight-top-even ($step: 1) {
+  margin-top: calc($step * $buffer-tight);
+}
+
+@mixin push-tight-right ($step: 1) {
+  margin-right: calc($step * $buffer-tight);
+}
+
+@mixin push-tight-bottom ($step: 1) {
+  margin-bottom: calc($step * $buffer-tight);
+}
+
+@mixin push-tight-left ($step: 1) {
+  margin-left: calc($step * $buffer-tight);
+}

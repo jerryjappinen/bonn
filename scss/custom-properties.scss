@@ -1,0 +1,7 @@
+@import 'mixins/var.scss';
+@import 'variables/all.scss';
+
+// Generate CSS variables from Sass variables
+:root {
+  @include generate-css-vars($all-variables);
+}

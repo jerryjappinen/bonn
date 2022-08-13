@@ -1,0 +1,166 @@
+body {
+
+  @if variable-exists(default-font) {
+    font-family: $default-font;
+  } @else if variable-exists(font-sans) {
+    font-family: $font-sans;
+  }
+
+  @if variable-exists(default-font-size) {
+    font-size: $default-font-size;
+  }
+
+  @if variable-exists(text-color) {
+    color: $text-color;
+  }
+
+  @if variable-exists(background-color) {
+    background-color: $background-color;
+  }
+
+  @if variable-exists(default-line-height) {
+    line-height: $default-line-height;
+  }
+
+}
+
+// NOTE: we can simply provide transition-property to add default transitions to element
+* {
+  transition-property: none;
+  transition-duration: $default-transition-duration;
+  transition-timing-function: $default-transition-easing;
+}
+
+// Element defaults
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+svg,
+ins,
+kbd,
+q,
+samp,
+a,
+small,
+strong,
+sub,
+sup,
+var,
+i,
+b,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video,
+button,
+input,
+textarea {
+
+  @if variable-exists(border-color) {
+    border-color: $border-color;
+
+    &:before,
+    &:after {
+      border-color: $border-color;
+    }
+
+  }
+
+  &:before,
+  &:after {
+    vertical-align: middle;
+  }
+
+}
+
+strong,
+dt,
+mark,
+th {
+
+  @if variable-exists(font-weight-bold) {
+    font-weight: $font-weight-bold;
+  }
+
+}
+
+blockquote,
+q {
+
+  @if variable-exists(font-serif) {
+    font-family: $font-serif;
+  }
+
+}
+
+pre,
+code,
+kbd,
+samp {
+
+  @if variable-exists(font-mono) {
+    font-family: $font-mono;
+  }
+
+  @if variable-exists(font-size-mono) {
+    font-size: $font-size-mono;
+  }
+
+}
+
+abbr[title],
+dfn[title] {
+  cursor: help;
+  text-decoration-line: underline;
+}

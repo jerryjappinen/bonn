@@ -1,0 +1,15 @@
+@mixin background-border-box {
+  background-clip: border-box;
+}
+
+@mixin background-content-box {
+  background-clip: content-box;
+}
+
+@mixin background-padding-box {
+  background-clip: padding-box;
+}
+
+@mixin background-clip-text {
+  background-clip: text;
+}

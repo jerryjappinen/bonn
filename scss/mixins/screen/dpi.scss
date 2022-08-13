@@ -1,0 +1,11 @@
+@mixin hdpi () {
+  @media (min-resolution: $hdpi) {
+    @content;
+  }
+}
+
+@mixin not-hdpi () {
+  @media (max-resolution: $hdpi - 1dpi) {
+    @content;
+  }
+}

@@ -1,0 +1,9 @@
+// Shorthand (will add rules conditionally unlike CSS shorthand)
+@mixin background ($color, $image: null) {
+  background-color: $color;
+
+  @if $image {
+    @include background-image($image);
+  }
+
+}

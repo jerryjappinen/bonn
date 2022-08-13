@@ -1,0 +1,8 @@
+@mixin background-color ($color, $opacity: 1) {
+  background-color: translucent($color, $opacity);
+}
+
+// NOTE: `no-background` is intentionally missing: use `-color`, `-image`, or both to explicitly clear the rules you want
+@mixin no-background-color {
+  background-color: transparent;
+}

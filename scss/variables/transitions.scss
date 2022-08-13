@@ -1,0 +1,22 @@
+// Transition durations
+$transition-very-very-fast: 25ms !default;
+$transition-very-fast: 75ms !default;
+$transition-fast: 150ms !default;
+$transition-medium: 250ms !default;
+$transition-slow: 450ms !default;
+$transition-slowish: 600ms !default;
+$transition-very-slow: 900ms !default;
+$transition-very-very-slow: 1200ms !default;
+
+// Transition property sets
+$transition-properties-style: opacity, color, background-color, border-color, box-shadow, text-shadow, text-decoration-color !default;
+$transition-properties-common: transform, $transition-properties-style !default;
+$transition-properties-transform: transform, width, height !default;
+$transition-properties-position: transform, top, bottom, left, right !default;
+
+// Easing functions
+$easing-none: linear !default;
+$easing-ease: ease !default;
+$easing-snap: cubic-bezier(0, 0.5, 0.5, 1) !default;
+$easing-bounce: cubic-bezier(0, 0.5, 0.5, 1.05) !default;
+$easing-smooth: cubic-bezier(0.19, 1, 0.22, 1) !default;

@@ -1,0 +1,15 @@
+@mixin border-box {
+  box-sizing: border-box;
+}
+
+@mixin content-box {
+  box-sizing: content-box;
+}
+
+@mixin padding-box {
+  box-sizing: padding-box;
+}
+
+@mixin inherit-box-sizing {
+  box-sizing: inherit;
+}

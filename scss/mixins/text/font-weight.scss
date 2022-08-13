@@ -1,0 +1,12 @@
+@mixin bold {
+  font-weight: $font-weight-bold;
+}
+
+// FIXME: backwards-compatibility, to be removed
+@mixin strong {
+  @include bold;
+}
+
+@mixin semibold {
+  font-weight: $font-weight-semibold;
+}

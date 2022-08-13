@@ -1,0 +1,9 @@
+@mixin background-image ($path: null) {
+  @if $path {
+    background-image: url($path);
+  }
+}
+
+@mixin no-background-image {
+  background-image: none;
+}

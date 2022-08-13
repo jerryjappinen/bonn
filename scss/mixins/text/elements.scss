@@ -1,0 +1,106 @@
+@mixin discreet {
+  color: $discreet-text-color;
+}
+
+@mixin link {
+  color: $link-color;
+
+  @if $link-weight {
+    font-weight: $link-weight;
+  }
+
+  &:hover,
+  &:active {
+    color: $link-active-color;
+  }
+
+}
+
+@mixin label {
+  @include small-font;
+  // @include uppercase;
+  @include strong;
+}
+
+
+
+// Headings
+
+@mixin h1 {
+  @include headline-font;
+
+  @if $font-size-h1 {
+    font-size: $font-size-h1;
+  }
+
+  @include over-tiny {
+    font-size: $font-size-h1 + (1 * 0.2em);
+  }
+
+  @include over-small {
+    font-size: $font-size-h1 + (3 * 0.2em);
+  }
+
+  @include over-medium {
+    font-size: $font-size-h1 + (4 * 0.2em);
+  }
+
+  @include over-large {
+    font-size: $font-size-h1 + (5 * 0.2em);
+  }
+
+}
+
+@mixin h2 {
+  @include strong;
+  @include headline-font;
+  line-height: $line-height-very-tight;
+
+  @if $font-size-h2 {
+    font-size: $font-size-h2;
+
+    @include over-small {
+      font-size: $font-size-h1;
+    }
+  }
+}
+
+@mixin h3 {
+  @include strong;
+
+  @if $font-size-h3 {
+    font-size: $font-size-h3;
+  } @else {
+    font-size: inherit;
+  }
+}
+
+@mixin h4 {
+  @include strong;
+
+  @if $font-size-h4 {
+    font-size: $font-size-h4;
+  } @else {
+    font-size: inherit;
+  }
+}
+
+@mixin h5 {
+  @include h4;
+  @include discreet;
+
+  @if $font-size-h5 {
+    font-size: $font-size-h5;
+  }
+}
+
+@mixin h6 {
+  @include discreet;
+  font-size: inherit;
+
+  @if $font-size-h5 {
+    font-size: $font-size-h5;
+  } @else {
+    @include small-font;
+  }
+}

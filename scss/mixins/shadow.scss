@@ -1,0 +1,67 @@
+@mixin shadow ($opacity: $shadow-opacity, $color: $shadow-color) {
+  box-shadow: $shadow-x $shadow-y $shadow-size $shadow-spread rgba($color, $opacity);
+}
+
+@mixin shadow-very-tight ($opacity: $shadow-very-tight-opacity, $color: $shadow-color) {
+  box-shadow: $shadow-very-tight-x $shadow-very-tight-y $shadow-very-tight-size $shadow-very-tight-spread rgba($color, $opacity);
+}
+
+@mixin shadow-tight ($opacity: $shadow-tight-opacity, $color: $shadow-color) {
+  box-shadow: $shadow-tight-x $shadow-tight-y $shadow-tight-size $shadow-tight-spread rgba($color, $opacity);
+}
+
+@mixin shadow-loose ($opacity: $shadow-loose-opacity, $color: $shadow-color) {
+  box-shadow: $shadow-loose-x $shadow-loose-y $shadow-loose-size $shadow-loose-spread rgba($color, $opacity);
+}
+
+@mixin shadow-very-loose ($opacity: $shadow-very-loose-opacity, $color: $shadow-color) {
+  box-shadow: $shadow-very-loose-x $shadow-very-loose-y $shadow-very-loose-size $shadow-very-loose-spread rgba($color, $opacity);
+}
+
+
+
+@mixin transparent-shadow ($color: $shadow-color) {
+  @include shadow(0, $color);
+}
+
+@mixin transparent-shadow-very-tight ($color: $shadow-color) {
+  @include shadow-very-tight(0, $color);
+}
+
+@mixin transparent-shadow-tight ($color: $shadow-color) {
+  @include shadow-tight(0, $color);
+}
+
+@mixin transparent-shadow-loose ($color: $shadow-color) {
+  @include shadow-loose(0, $color);
+}
+
+@mixin transparent-shadow-very-loose ($color: $shadow-color) {
+  @include shadow-very-loose(0, $color);
+}
+
+
+
+@mixin hairline-shadow ($opacity: $shadow-opacity, $color: $shadow-color) {
+  box-shadow: 0 0 0 $hairline-border-width rgba($color, $opacity);
+}
+
+@mixin transparent-hairline-shadow ($color: $shadow-color) {
+  @include hairline-shadow(0, $color);
+}
+
+
+
+@mixin solid-shadow ($opacity: $shadow-opacity, $color: $shadow-color) {
+  box-shadow: 0 0 0 $solid-shadow-width rgba($color, $opacity);
+}
+
+@mixin transparent-solid-shadow ($color: $dark) {
+  @include solid-shadow(0, $color);
+}
+
+
+
+@mixin no-shadow ($color: $shadow-color) {
+  @include shadow-transparent(transparent);
+}

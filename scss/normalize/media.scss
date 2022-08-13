@@ -1,0 +1,26 @@
+audio:not([controls]) {
+  display: none;
+}
+
+[hidden] {
+  display: none;
+}
+
+img {
+  width: auto;
+  height: auto;
+  // stylelint-disable property-no-vendor-prefix
+  -ms-interpolation-mode: bicubic;
+  // stylelint-enable property-no-vendor-prefix
+}
+
+svg,
+img {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+// Correct overflows in IE9
+// svg:not(:root) {
+//   overflow: hidden;
+// }

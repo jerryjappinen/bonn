@@ -1,0 +1,23 @@
+@mixin transition-easing ($easing) {
+  transition-timing-function: $easing;
+}
+
+@mixin transition-ease {
+  @include transition-easing($easing-ease);
+}
+
+@mixin transition-bounce {
+  @include transition-easing($easing-bounce);
+}
+
+@mixin transition-smooth {
+  @include transition-easing($easing-smooth);
+}
+
+@mixin transition-snap {
+  @include transition-easing($easing-snap);
+}
+
+@mixin no-transition-easing {
+  @include transition-easing($easing-none);
+}

@@ -1,0 +1,8 @@
+@mixin cover {
+  object-fit: cover;
+}
+
+@mixin contain {
+  object-fit: contain;
+}
+

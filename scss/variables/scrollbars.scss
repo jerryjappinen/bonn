@@ -1,0 +1,13 @@
+// Custom scrollbars
+$scrollbar-margin: 4px !default;
+$scrollbar-size: 4px !default;
+$scrollbar-radius: 2px !default;
+$scrollbar-minlength: 1.5rem !default; // Minimum length of scrollbar thumb (width of horizontal, height of vertical)
+$scrollbar-ff-width: thin !default; // FF-only accepts auto, thin, none
+$scrollbar-track-color: transparent !default;
+
+$scrollbar-base-color: #888 !default;
+$scrollbar-border-color: transparent !default;
+$scrollbar-color: rgba($scrollbar-base-color, .3) !default;
+$scrollbar-color-hover: rgba($scrollbar-base-color, .4) !default;
+$scrollbar-color-active: rgba($scrollbar-base-color, .5) !default;

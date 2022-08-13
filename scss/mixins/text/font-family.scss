@@ -1,0 +1,31 @@
+@mixin mono {
+  font-family: $font-mono;
+}
+
+@mixin serif {
+  font-family: $font-serif;
+}
+
+@mixin sans {
+  font-family: $font-sans;
+}
+
+@mixin system-font {
+  font-family: $font-system;
+}
+
+@mixin headline-font {
+
+  @if variable-exists(headline-font) {
+    font-family: $headline-font;
+  }
+
+  @if variable-exists(headline-weight) {
+    font-family: $headline-weight;
+  }
+
+  @if variable-exists(headline-line-height) {
+    line-height: $headline-line-height;
+  }
+
+}

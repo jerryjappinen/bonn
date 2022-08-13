@@ -1,0 +1,149 @@
+// Text context
+
+// This is used for rich body text. Elements commonly used in building components, like links, are robbed of their sensible defaults. Attach this utility class on a body text container to style the rich text elements in a way that makes sense for natural article content.
+
+.bodytext {
+
+  a,
+  button {
+    @include link;
+
+    &:hover,
+    &:active {
+      color: $link-active-color;
+    }
+
+  }
+
+  strong {
+    font-weight: $font-weight-bold;
+  }
+
+
+
+  // Code
+
+  code {
+    @include radius-tight;
+    font-size: 0.85em;
+    padding: 0 0.2em;
+    background-color: $very-very-light-grey;
+    box-shadow: 0 0 0 1px $light-grey;
+  }
+
+  pre {
+    @include radius;
+    @include pad-loose;
+    background-color: $very-very-light-grey;
+    border-width: 1px;
+  }
+
+  pre {
+    code {
+      @include no-radius;
+      background-color: transparent;
+      box-shadow: none;
+    }
+  }
+
+  dt,
+  h3,
+  h4 {
+    code {
+      text-transform: none;
+    }
+  }
+
+
+
+  // Lists
+
+  ul {
+    list-style-type: disc;
+  }
+
+  ol {
+    list-style-type: decimal;
+  }
+
+  ul,
+  ol {
+    padding-left: 2em;
+
+    ul,
+    ol {
+      margin-bottom: 0.8em;
+    }
+
+  }
+
+
+
+  // Table
+
+  table,
+  th,
+  td {
+    border-width: 1px;
+  }
+
+  th,
+  td {
+    @include pad;
+  }
+
+}
+
+.bodytext-with-line-breaks {
+  white-space: pre-line;
+}
+
+.bodytext-discreet {
+  @include discreet;
+}
+
+
+
+// Individual elements
+
+.bodytext-link {
+  @include link;
+
+  &:hover,
+  &:active {
+    color: $link-active-color;
+  }
+
+}
+
+// Regular list content is sometimes wrapped in paragraphs
+.bodytext-list-item {
+  > p {
+    @include no-push-vertical;
+  }
+}
+
+// Heading levels
+.bodytext-h1 {
+  @include h1;
+}
+
+.bodytext-h2 {
+  @include h2;
+}
+
+.bodytext-h3 {
+  @include h3;
+}
+
+.bodytext-h4 {
+  @include h4;
+}
+
+.bodytext-h5 {
+  @include h5;
+}
+
+.bodytext-h6 {
+  @include h6;
+}

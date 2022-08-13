@@ -1,0 +1,7 @@
+@mixin no-animation {
+  animation-name: none;
+}
+
+@mixin no-animation-delay {
+  @include animation-delay(0ms);
+}

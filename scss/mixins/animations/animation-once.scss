@@ -1,0 +1,7 @@
+@mixin animation-once (
+  $name,
+  $duration: $transition-very-very-slow,
+  $easing: null
+) {
+  @include animation($name, $duration, $easing, 1);
+}

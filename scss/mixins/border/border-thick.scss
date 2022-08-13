@@ -1,0 +1,19 @@
+@mixin thick-border {
+  border-width: $thick-border-width;
+}
+
+@mixin thick-border-top {
+  border-top-width: $thick-border-width;
+}
+
+@mixin thick-border-bottom {
+  border-bottom-width: $thick-border-width;
+}
+
+@mixin thick-border-left {
+  border-left-width: $thick-border-width;
+}
+
+@mixin thick-border-right {
+  border-right-width: $thick-border-width;
+}

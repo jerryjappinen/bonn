@@ -1,0 +1,19 @@
+@mixin no-border {
+  border-width: 0;
+}
+
+@mixin no-border-top {
+  border-top-width: 0;
+}
+
+@mixin no-border-bottom {
+  border-bottom-width: 0;
+}
+
+@mixin no-border-left {
+  border-left-width: 0;
+}
+
+@mixin no-border-right {
+  border-right-width: 0;
+}

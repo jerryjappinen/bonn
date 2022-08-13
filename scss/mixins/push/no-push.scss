@@ -1,0 +1,40 @@
+// No margins
+
+@mixin no-push {
+  @include no-push-horizontal;
+  @include no-push-vertical;
+}
+
+
+
+// Pane
+
+@mixin no-push-horizontal {
+  @include no-push-left;
+  @include no-push-right;
+}
+
+@mixin no-push-vertical {
+  @include no-push-top;
+  @include no-push-bottom;
+}
+
+
+
+// Single
+
+@mixin no-push-top {
+  margin-top: 0;
+}
+
+@mixin no-push-right {
+  margin-right: 0;
+}
+
+@mixin no-push-bottom {
+  margin-bottom: 0;
+}
+
+@mixin no-push-left {
+  margin-left: 0;
+}

@@ -1,0 +1,65 @@
+// Push mixins are based on $buffer,
+// But sometimes we want to use $pad
+
+@mixin push-pad ($step: 1) {
+  @include push-pad-vertical($step);
+  @include push-pad-horizontal($step);
+}
+
+@mixin push-pad-vertical ($step: 1) {
+  @include push-pad-top($step);
+  @include push-pad-bottom($step);
+}
+
+@mixin push-pad-horizontal ($step: 1) {
+  @include push-pad-left($step);
+  @include push-pad-right($step);
+}
+
+
+
+@mixin push-pad-top ($step: 1) {
+  margin-top: calc($step * $pad-vertical);
+}
+
+@mixin push-pad-bottom ($step: 1) {
+  margin-bottom: calc($step * $pad-vertical);
+}
+
+@mixin push-pad-left ($step: 1) {
+  margin-left: calc($step * $pad-horizontal);
+}
+
+@mixin push-pad-right ($step: 1) {
+  margin-right: calc($step * $pad-horizontal);
+}
+
+
+
+// Flip horizontal/vertical
+
+@mixin push-pad-vertical-even ($step: 1) {
+  @include push-pad-top-even($step);
+  @include push-pad-bottom-even($step);
+}
+
+@mixin push-pad-horizontal-even ($step: 1) {
+  @include push-pad-left-even($step);
+  @include push-pad-right-even($step);
+}
+
+@mixin push-pad-top-even ($step: 1) {
+  margin-top: calc($step * $pad-horizontal);
+}
+
+@mixin push-pad-bottom-even ($step: 1) {
+  margin-bottom: calc($step * $pad-horizontal);
+}
+
+@mixin push-pad-left-even ($step: 1) {
+  margin-left: calc($step * $pad-vertical);
+}
+
+@mixin push-pad-right-even ($step: 1) {
+  margin-right: calc($step * $pad-vertical);
+}

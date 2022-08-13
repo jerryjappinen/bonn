@@ -1,0 +1,71 @@
+@mixin limit ($breakpoint, $limit: px-to-em($breakpoint)) {
+  @include screen-over($breakpoint) {
+    max-width: $limit;
+  }
+}
+
+@mixin limit-height ($breakpoint, $limit: px-to-em($breakpoint)) {
+  @include screen-height-over($breakpoint) {
+    max-height: $limit;
+  }
+}
+
+@mixin no-limit {
+  max-width: none;
+}
+
+@mixin limit-max {
+  max-width: 100%;
+}
+
+
+
+// From `variables.scss`
+
+@mixin limit-tiny ($limit: null) {
+  @include limit($breakpoint-tiny, $limit);
+}
+
+@mixin limit-small ($limit: null) {
+  @include limit($breakpoint-small, $limit);
+}
+
+@mixin limit-medium ($limit: null) {
+  @include limit($breakpoint-medium, $limit);
+}
+
+@mixin limit-large ($limit: null) {
+  @include limit($breakpoint-large, $limit);
+}
+
+@mixin limit-very-large ($limit: null) {
+  @include limit($breakpoint-very-large, $limit);
+}
+
+@mixin limit-full ($limit: null) {
+  @include limit($breakpoint-full, $limit);
+}
+
+
+
+// Limit width of an element based on column widths
+
+@mixin limit-content-very-tight {
+  @include limit($content-width-very-tight);
+}
+
+@mixin limit-content-tight {
+  @include limit($content-width-tight);
+}
+
+@mixin limit-content {
+  @include limit($content-width);
+}
+
+@mixin limit-content-loose {
+  @include limit($content-width-loose);
+}
+
+@mixin limit-content-very-loose {
+  @include limit($content-width-very-loose);
+}

@@ -1,0 +1,23 @@
+$rhythm-tight-half: 0.4em !default;
+$rhythm-tight: 0.8em !default;
+$rhythm-base: 1.6em !default;
+$rhythm-loose: 3.2em !default;
+
+$hairline-border-width: 1px !default;
+$dashed-border-width: 2px !default;
+$thick-border-width: 0.25em !default;
+
+$pad-tight-vertical: 2px !default;
+$pad-tight-horizontal: 6px !default;
+$pad-vertical: 6px !default;
+$pad-horizontal: 12px !default;
+$pad-loose-vertical: 10px !default;
+$pad-loose-horizontal: 18px !default;
+
+$buffer-very-tight: 0.4rem; // em
+$buffer-tight: $buffer-very-tight * 2; // 0.8em
+$buffer: $buffer-tight * 2; // 1.6em
+$buffer-loose: $buffer * 2; // 3.2em
+
+$buffer-relative-tight: 2% !default;
+$buffer-relative: 6% !default;

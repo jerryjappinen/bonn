@@ -1,0 +1,29 @@
+@mixin screen-under-or-at ($breakpoint) {
+	@media (max-width: ($breakpoint)) {
+		@content;
+	}
+}
+
+@mixin screen-over-or-at ($breakpoint) {
+	@media (min-width: ($breakpoint)) {
+		@content;
+	}
+}
+
+@mixin screen-under ($breakpoint) {
+	@if (type-of($breakpoint) == 'number' and unit($breakpoint) == 'px') {
+		$breakpoint: $breakpoint - 1px;
+	}
+	@include screen-under-or-at($breakpoint) {
+		@content;
+	}
+}
+
+@mixin screen-over ($breakpoint) {
+	@if (type-of($breakpoint) == 'number' and unit($breakpoint) == 'px') {
+		$breakpoint: $breakpoint + 1px;
+	}
+	@include screen-over-or-at($breakpoint) {
+		@content;
+	}
+}

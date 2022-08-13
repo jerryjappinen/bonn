@@ -1,0 +1,28 @@
+@mixin uppercase {
+  text-transform: uppercase;
+
+  @if $font-size-uppercase {
+    font-size: $font-size-uppercase;
+  }
+
+}
+
+@mixin lowercase {
+  text-transform: lowercase;
+}
+
+@mixin capitalize {
+  text-transform: capitalize;
+}
+
+@mixin full-width-text-transform {
+  text-transform: full-width;
+}
+
+@mixin full-size-kana {
+  text-transform: full-size-kana;
+}
+
+@mixin no-text-transform {
+  text-transform: none;
+}

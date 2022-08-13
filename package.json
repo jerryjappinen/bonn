@@ -1,0 +1,87 @@
+{
+  "name": "bonn",
+  "version": "0.0.1",
+  "description": "Utility, style and component library for web development.",
+  "private": false,
+  "type": "module",
+  "files": [
+    "dist/*",
+    "components/*",
+    "composables/*",
+    "nuxt/*",
+    "scss/*",
+    "stores/*",
+    "util/*",
+    "components.js",
+    "composables.js",
+    "index.js",
+    "stores.js"
+  ],
+  "engines": {
+    "node": "16.x"
+  },
+  "license": "MIT",
+  "scripts": {
+    "patch": "npm version patch -m \"New patch version\" && npm publish && git push -u origin HEAD --tags",
+    "minor": "npm version minor -m \"New minor version\" && npm publish && git push -u origin HEAD --tags",
+    "major": "npm version major -m \"New major version\" && npm publish && git push -u origin HEAD --tags",
+    "build": "npm run build:scss",
+    "build:scss": "sass spec/scss/index.spec.scss dist/css/index.css && sass spec/scss/index.spec.scss dist/css/index.min.css --style=compressed",
+    "lint": "eslint --ext .js components config directives log mixins services social spec vendor",
+    "lint:fix": "npm run lint:js -- --fix",
+    "prepublishOnly": "npm run build",
+    "dev": "vitest",
+    "dev:scss": "sass spec/scss/index.spec.scss dist/css/index.css --watch",
+    "test": "npm run test:scss && npm run test:js",
+    "test:js": "vitest run",
+    "test:scss": "sass spec/scss/index.spec.scss"
+  },
+  "author": {
+    "name": "Jerry Jäppinen",
+    "url": "https://github.com/jerryjappinen"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jerryjappinen/bonn.git"
+  },
+  "dependencies": {
+    "@averjs/nuxt-compression": "^1.2.1",
+    "@nuxtjs/sitemap": "^2.4.0",
+    "@pinia/nuxt": "^0.3.1",
+    "@vanillaes/csv": "^3.0.1",
+    "gravatar-url": "^4.0.1",
+    "md5-es": "^1.8.2",
+    "platform-detect": "^3.0.1",
+    "sass": "^1.54.2",
+    "sass-loader": "^13.0.2",
+    "seedrandom": "^3.0.5",
+    "vite-plugin-markdown": "^2.1.0",
+    "vite-svg-loader": "^3.4.0",
+    "vue3-slider": "^1.8.0"
+  },
+  "peerDependencies": {
+    "date-fns": "^2.29.1",
+    "lodash-es": "^4.17.21",
+    "markdown-it": "^13.0.1",
+    "nuxt": "^3.0.0-rc.6",
+    "vue": "^3.2.37"
+  },
+  "peerDependenciesMeta": {
+    "date-fns": {
+      "optional": true
+    },
+    "markdown-it": {
+      "optional": true
+    },
+    "nuxt": {
+      "optional": true
+    },
+    "vue": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "pinia": "^2.0.17",
+    "vitest": "^0.20.3"
+  }
+}

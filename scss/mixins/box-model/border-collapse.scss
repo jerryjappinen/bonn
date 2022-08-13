@@ -1,0 +1,7 @@
+@mixin border-collapse {
+  border-collapse: collapse;
+}
+
+@mixin no-border-collapse {
+  border-collapse: separate;
+}

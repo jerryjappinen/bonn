@@ -1,0 +1,27 @@
+// Pixel ratios
+// What to regard as limit for high pixel density (retina)
+$ldpi: 72dpi !default;
+$hdpi: 140dpi !default;
+$uhdpi: 300dpi !default;
+
+// Content-oriented defined paragraph widths
+$content-width-very-tight: 8em !default;
+$content-width-tight: 18em !default;
+$content-width: 30em !default;
+$content-width-loose: 42em !default;
+$content-width-very-loose: 64em !default;
+
+// Breakpoints
+// NOTE: defining breakpoints in px gives more predictable control on devices, and avoids any issues when em is scaled
+$breakpoint-tiny: $iphone-6-plus-width !default;
+$breakpoint-small: 800px !default;
+$breakpoint-medium: 960px !default;
+$breakpoint-large: 1280px !default;
+$breakpoint-very-large: 1440px !default;
+$breakpoint-full: 1920px !default;
+
+$breakpoint-phone-tight: $breakpoint-tiny !default;
+$breakpoint-phone: $breakpoint-small !default;
+$breakpoint-tablet: $breakpoint-large !default;
+$breakpoint-laptop: $breakpoint-very-large !default;
+$breakpoint-monitor: $breakpoint-full !default;
