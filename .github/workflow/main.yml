@@ -1,5 +1,5 @@
 on: push
-name: npm
+name: main
 
 jobs:
   publish:
