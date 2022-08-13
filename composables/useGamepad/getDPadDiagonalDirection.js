@@ -1,5 +1,4 @@
 export default (up, down, left, right) => {
-
   if (up) {
     return right
       ? 1

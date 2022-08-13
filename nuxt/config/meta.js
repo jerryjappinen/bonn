@@ -29,16 +29,15 @@ export default (optionsInput) => {
       metaTags.push({
         hid: 'twitter:description',
         name: 'twitter:description',
-        content: siteDescription,
+        content: siteDescription
       })
 
       metaTags.push({
         hid: 'og:description',
         property: 'og:description',
-        content: siteDescription,
+        content: siteDescription
       })
     }
-
   }
 
   if (facebookAppId) {

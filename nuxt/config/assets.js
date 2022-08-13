@@ -15,8 +15,6 @@ export default (optionsInput) => {
   const linkTags = []
   const metaTags = []
 
-
-
   // Icons
   if (favicon) {
     const faviconPath = favicon === true ? 'favicon.svg' : favicon
@@ -43,7 +41,7 @@ export default (optionsInput) => {
       rel: 'mask-icon',
       type: 'image/svg+xml',
       href: '/' + (maskIcon === true ? 'mask-icon.svg' : maskIcon),
-      color: maskIconColor || '#000000',
+      color: maskIconColor || '#000000'
     })
   }
 
@@ -54,8 +52,6 @@ export default (optionsInput) => {
     })
   }
 
-
-
   // Cover image for sharing
   if (coverImage) {
     const coverImagePath = coverImage === true ? 'cover-image.png' : coverImage
@@ -64,7 +60,7 @@ export default (optionsInput) => {
     metaTags.push({
       hid: 'twitter:card',
       name: 'twitter:card',
-      content: 'summary_large_image',
+      content: 'summary_large_image'
     })
 
     metaTags.push({
@@ -76,7 +72,7 @@ export default (optionsInput) => {
     metaTags.push({
       hid: 'twitter:image:alt',
       property: 'twitter:image:alt',
-      content: longSiteTitle,
+      content: longSiteTitle
     })
 
     // Facebook (OpenGraph)
@@ -91,10 +87,7 @@ export default (optionsInput) => {
       property: 'og:image:alt',
       content: longSiteTitle
     })
-
   }
-
-
 
   // Web app manifest
   // FIXME: we should really generate the JSON file instead of manually configuring it
@@ -105,8 +98,6 @@ export default (optionsInput) => {
     })
   }
 
-
-
   // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config#meta
   return {
     meta: {
@@ -114,5 +105,4 @@ export default (optionsInput) => {
       meta: metaTags
     }
   }
-
 }

@@ -2,7 +2,7 @@
 export default (componentsDir) => {
   return {
     components: [
-      { path: componentsDir || '~/components', pathPrefix: false },
+      { path: componentsDir || '~/components', pathPrefix: false }
     ]
   }
 }

@@ -6,7 +6,6 @@ import flatten from 'lodash-es/flatten'
 // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script
 export default (...srcs) => {
   const scriptTags = compact(flatten(srcs)).map((value) => {
-
     // String value
     if (typeof value === 'string') {
       return {

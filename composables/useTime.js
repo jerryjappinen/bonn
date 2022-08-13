@@ -25,8 +25,6 @@ export default () => {
     return new Date(current.value.toDateString())
   })
 
-
-
   // Actions
 
   let loop = null
@@ -52,8 +50,6 @@ export default () => {
     }
   }
 
-
-
   // Life cycle
   const init = startLoop
   const uninit = endLoop
@@ -62,8 +58,6 @@ export default () => {
 
   onMounted(init)
   onUnmounted(uninit)
-
-
 
   // API
 

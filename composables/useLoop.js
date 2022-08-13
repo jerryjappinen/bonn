@@ -22,16 +22,6 @@ export default (options) => {
   const lastRenderTime = ref()
   const lastStartTime = ref()
 
-  const updateRefs = () => {
-    isPlaying.value = getIsPlaying()
-    fps.value = getFps()
-    frameTime.value = getFrameTime()
-    lastEvaluationTime.value = getLastEvaluationTime()
-    lastUpdateTime.value = getLastUpdateTime()
-    lastRenderTime.value = getLastRenderTime()
-    lastStartTime.value = getLastStartTime()
-  }
-
   const getWrappedCallback = (callbackName) => {
     return (...args) => {
       updateRefs()
@@ -41,8 +31,6 @@ export default (options) => {
     }
   }
 
-  updateRefs()
-
   const loop = frameLoop({
     ...options,
     onUpdate: getWrappedCallback('onUpdate'),
@@ -51,8 +39,20 @@ export default (options) => {
     onSetOptions: getWrappedCallback('onSetOptions')
   })
 
+  const updateRefs = () => {
+    isPlaying.value = loop.getIsPlaying()
+    fps.value = loop.getFps()
+    frameTime.value = loop.getFrameTime()
+    lastEvaluationTime.value = loop.getLastEvaluationTime()
+    lastUpdateTime.value = loop.getLastUpdateTime()
+    lastRenderTime.value = loop.getLastRenderTime()
+    lastStartTime.value = loop.getLastStartTime()
+  }
+
+  updateRefs()
+
   return {
-    ...loop,
+    loop,
 
     isPlaying,
     fps,

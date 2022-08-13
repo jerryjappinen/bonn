@@ -36,7 +36,7 @@ const defaultConfig = {
 // The desired configuration format is a bit funky
 // We convert into the final formatting here
 const convertPluginsConfig = (conf) => {
-  const svgoPlugins = [];
+  const svgoPlugins = []
   for (const pluginName in conf) {
     svgoPlugins.push({
       name: pluginName,

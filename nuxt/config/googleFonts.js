@@ -11,11 +11,9 @@ import isString from 'lodash-es/isString'
 //   'Mouse Memoirs': [200, 300, 800]
 // })
 export default (...args) => {
-
   // First pass on normalizing input into objects
   const familyInputs = {
     ...flatten(args).map((arg) => {
-
       // Allow passing family name as a string
       if (isString(arg)) {
         return {
@@ -34,7 +32,6 @@ export default (...args) => {
 
     // Filter out falsy values now
     if (weightsInput) {
-
       // Normalize array of weights
       families[familyName] = flattenDeep(flattenDeep([weightsInput]).map((weightValue) => {
         return isString(weightValue)

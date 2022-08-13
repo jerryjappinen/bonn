@@ -15,20 +15,18 @@
     "components.js",
     "composables.js",
     "index.js",
-    "stores.js"
+    "stores.js",
+    "README.md"
   ],
   "engines": {
     "node": "16.x"
   },
   "license": "MIT",
   "scripts": {
-    "patch": "npm version patch -m \"New patch version\" && npm publish && git push -u origin HEAD --tags",
-    "minor": "npm version minor -m \"New minor version\" && npm publish && git push -u origin HEAD --tags",
-    "major": "npm version major -m \"New major version\" && npm publish && git push -u origin HEAD --tags",
     "build": "npm run build:scss",
     "build:scss": "sass spec/scss/index.spec.scss dist/css/index.css && sass spec/scss/index.spec.scss dist/css/index.min.css --style=compressed",
-    "lint": "eslint --ext .js components config directives log mixins services social spec vendor",
-    "lint:fix": "npm run lint:js -- --fix",
+    "lint": "eslint \"**/*.{js,ts}\"",
+    "lint:fix": "npm run lint -- --fix",
     "prepublishOnly": "npm run build",
     "dev": "vitest",
     "dev:scss": "sass spec/scss/index.spec.scss dist/css/index.css --watch",
@@ -81,6 +79,12 @@
     }
   },
   "devDependencies": {
+    "eslint": "^8.21.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-standard": "^5.0.0",
     "pinia": "^2.0.17",
     "vitest": "^0.20.3"
   }

@@ -9,8 +9,6 @@ export default () => {
     return [x, y]
   })
 
-
-
   const update = ({ clientX, clientY }) => {
     x.value = clientX
     y.value = clientY

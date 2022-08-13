@@ -6,9 +6,9 @@ import getDevAliases from './getDevAliases'
 export default (options) => {
   const opts = options || {}
 
-  const components = !!opts.components || (opts.components === false ? false : true)
-  const composables = !!opts.composables || (opts.composables === false ? false : true)
-  const icons = !!opts.icons || (opts.icons === false ? false : true)
+  const components = !!opts.components || (opts.components !== false)
+  const composables = !!opts.composables || (opts.composables !== false)
+  const icons = !!opts.icons || (opts.icons !== false)
 
   // Include library components in the compilation
   const modules = []

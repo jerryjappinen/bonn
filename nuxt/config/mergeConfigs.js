@@ -8,17 +8,14 @@ import mergeWith from 'lodash-es/mergeWith'
 // Merge objects and arrays recursively
 // https://lodash.com/docs/4.17.15#mergeWith
 export default (...args) => {
-
   // Allow passing falsy values from helpers
   const objects = compact(flatten(args))
 
   // Merge objects recursively
   return mergeWith({}, ...objects, (objValue, srcValue) => {
-
     // Merge nested arrays
     if (isArray(objValue)) {
       return objValue.concat(srcValue)
     }
-
   })
 }

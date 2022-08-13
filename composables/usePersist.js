@@ -15,8 +15,6 @@ import isDate from 'lodash-es/isDate'
 
 import windowExists from '../util/windowExists'
 
-
-
 // Helpers
 const prefix = 'vue-persist-'
 const expirationCutoff = 14 // days
@@ -38,23 +36,16 @@ const getPersistKey = (instance, input) => {
     }
 
     return inputVal
-
   }
 
   return componentName + '-' + componentInstanceId
 }
-
-
 
 // Set a property to automatically store in and load from localStorage
 // This makes UI persistence very easy
 export default (persistData, persistKeyInput, loadManually) => {
   const instance = getCurrentInstance()
   const persistKey = getPersistKey(instance, persistKeyInput)
-
-  // console.log('getCurrentInstance', instance)
-
-
 
   // Storage
 
@@ -64,9 +55,8 @@ export default (persistData, persistKeyInput, loadManually) => {
     // NOTE: undefined will not be stored
     // If you want to override older values explicitly, you must use null
     if (persistData.value !== undefined) {
-
       // Add item to store
-      localStorage.setItem(
+      window.localStorage.setItem(
         prefix + persistKey.value,
 
         // Value to store
@@ -76,14 +66,12 @@ export default (persistData, persistKeyInput, loadManually) => {
         })
 
       )
-
     }
-
   }, storageDelay)
 
   const clearByKey = (key) => {
     if (windowExists()) {
-      localStorage.removeItem(prefix + key)
+      window.localStorage.removeItem(prefix + key)
     }
   }
 
@@ -102,7 +90,7 @@ export default (persistData, persistKeyInput, loadManually) => {
 
         // Load serialized data from localStorage
         // NOTE: this is a synchronous operation, theoretically it might slow things down
-        const stored = localStorage.getItem(key)
+        const stored = window.localStorage.getItem(key)
 
         if (stored) {
           try {
@@ -110,29 +98,24 @@ export default (persistData, persistKeyInput, loadManually) => {
 
             // We found data in local storage, let's load it up
             if (parsed && parsed.timestamp && parsed.data) {
-
               // Needs a valid timestamp
               const storedDate = new Date(parsed.timestamp)
               if (isDate(storedDate) && timestampIsFresh(storedDate)) {
-
                 // Pass on the data that was found and fire an event
                 persistData.value = parsed.data
                 persistLoaded.value = true
                 instance.emit('persistLoaded', parsed.data)
               }
-
             }
 
             // Remove items if parsing leads to errors
           } catch (error) {
-
             // FIXME: keeping this here until gated content is testes
             // eslint-disable-next-line no-console
             console.warn(error)
 
-            localStorage.removeItem(key)
+            window.localStorage.removeItem(key)
           }
-
         }
 
         // Emit loaded event with null value
@@ -140,19 +123,15 @@ export default (persistData, persistKeyInput, loadManually) => {
           persistLoaded.value = true
           instance.emit('persistLoaded', null)
         }
-
       }
     }
   }
-
-
 
   // Props
   const persistLoaded = ref(false)
 
   // Watchers
   if (windowExists() && persistKey) {
-
     if (isRef(persistKey) || isReactive(persistKey)) {
       watch(persistKey, storePersistData)
     }
@@ -164,8 +143,6 @@ export default (persistData, persistKeyInput, loadManually) => {
   if (!loadManually) {
     onMounted(loadPersistData)
   }
-
-
 
   // Expose managed state as return value
   return {

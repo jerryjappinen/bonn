@@ -1,7 +1,6 @@
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 
 export default () => {
-
   // API
   const isOnline = ref(false)
   const isOffline = computed(() => {

@@ -24,7 +24,6 @@ export default defineNuxtModule({
     icons,
     prefix
   }) {
-
     if (components) {
       const componentsDir = fileURLToPath(new URL('../components', import.meta.url))
       await addComponentsDir({
@@ -59,7 +58,6 @@ export default defineNuxtModule({
         prefix: (prefix || '') + 'Icon'
       })
     }
-
   }
 
 })

@@ -3,7 +3,7 @@
 export default () => {
   return {
     buildModules: [
-      '@pinia/nuxt',
+      '@pinia/nuxt'
     ]
   }
 }

@@ -12,7 +12,6 @@ const debounceOptions = {
 }
 
 export default () => {
-
   // ref
   const breakpoints = ref([
     320,
@@ -35,8 +34,6 @@ export default () => {
   let debouncedOnResize = null
   let debouncedOnScroll = null
   let darkModeMatchMediaObject = null
-
-
 
   // Computed
 
@@ -63,8 +60,6 @@ export default () => {
   const isPortrait = computed(() => {
     return !isLandscape.value
   })
-
-
 
   // Breakpoint indices
   // NOTE: user must match when they're exactly at a breakpoint
@@ -108,8 +103,6 @@ export default () => {
     return 0
   })
 
-
-
   // Helpers
 
   const getWidth = () => {
@@ -128,15 +121,11 @@ export default () => {
     return (window.pageYOffset || window.document.scrollTop || 0) - (window.document.clientTop || 0)
   }
 
-
-
   // Setters
 
   const setBreakpoints = (values) => {
     breakpoints.value = values
   }
-
-
 
   // Updaters
 
@@ -168,8 +157,6 @@ export default () => {
     scroll.value = getScrollY()
   }
 
-
-
   // Life cycle
 
   // Update isScrolling
@@ -177,7 +164,6 @@ export default () => {
     if (!isScrollingDown.value && newY > oldY) {
       isScrollingDown.value = true
       isScrollingUp.value = false
-
     } else if (!isScrollingUp.value && newY < oldY) {
       isScrollingDown.value = false
       isScrollingUp.value = true
@@ -218,8 +204,6 @@ export default () => {
       darkModeMatchMediaObject.removeEventListener('change', updateDarkMode)
     }
   }
-
-
 
   // API
   onMounted(init)

@@ -11,6 +11,10 @@ Bonn is a utility, style and components library for web projects. Bonn includes 
   - Pinia stores
   - Nuxt config helpers and module
 
+Utilities can be used in any JS project, including server-side. Similarly, SCSS and SVGs can be used in any project, not only Vue or Nuxt projects.
+
+
+
 ## Installation
 
 Install Bonn and (optional) dependencies:
@@ -23,9 +27,38 @@ You might need additional peer dependencies depending on the type of project and
 
 
 
+#### Nuxt
+
+Use the `nuxt.config` helpers to load Bonn's Nuxt module and other relevant configurations:
+
+```js
+import bonn from 'bonn/nuxt/config/bonn'
+import svg from 'bonn/nuxt/config/svg'
+
+import mergeConfigs from 'bonn/nuxt/config/mergeConfigs'
+
+export default defineNuxtConfig(mergeConfigs(
+  bonn({
+    // components: false,
+    // composables: false,
+    // icons: false,
+    // prefix: 'Bonn'
+  }),
+  svg(),
+  {
+    // Your Nuxt configs here...
+  }
+))
+```
+
+This will output the desired config for you. See the relevant docs for more details.
+
+
+
+
 ## Usage
 
-Use `.js` utilities:
+#### `.js` utilities
 
 ```js
 import formatFileSize from 'bonn/util/formatFileSize'
@@ -33,7 +66,9 @@ import formatFileSize from 'bonn/util/formatFileSize'
 formatFileSize(19238028)
 ```
 
-Use `.scss` styles:
+
+
+#### `.scss` mixins and styles
 
 ```js
 import formatFileSize from 'bonn/util/formatFileSize'
@@ -41,19 +76,40 @@ import formatFileSize from 'bonn/util/formatFileSize'
 formatFileSize(19238028)
 ```
 
-Use `.vue` components and composables:
 
-```js
+
+#### `.vue` components
+
+`components/` are NOT built during install. You must transpile them yourself in your project.
+
+```vue
+<script>
 import ClickButton from 'bonn/components/ClickButton'
+
+export default {
+  components: {
+    ClickButton
+  }
+}
+</script>
+
+<template>
+  <ClickButton />
+</template>
+```
+
+Note that when using `<script setup>`, you don't have to export the components. In a Nuxt project, components are also auto imported so you can directly use them in your templates.
+
+
+
+#### Vue composables
+
+```js
 import useIsMounted from 'bonn/composables/useIsMounted'
 
 const isMounted = useIsMounted()
 
 export default {
-  components: {
-    ClickButton
-  },
-
   data () {
     return {
       isMounted
@@ -62,51 +118,39 @@ export default {
 }
 ```
 
-`components/` are NOT built during install. You must transpile them yourself in your project.
+
+
+#### Pinia stores
+
+See [`linna-vue`](https://npmjs.org/package/linna-vue)
 
 
 
-### Composables
-
-See [composables/](./composables/)
-
-
-
-### nuxt.config
+#### `nuxt.config` helpers
 
 See [nuxt.config/](./nuxt.config/)
 
 
 
-#### Nuxt module
+#### `.svg` icons
 
-Use the `nuxt.config` helper `bonn()`. It will output the desired config for you.
+Auto imported in a Nuxt project:
 
-```js
-import bonn from 'bonn/nuxt/config/bonn'
-
-export default defineNuxtConfig(bonn({
-  // components: false,
-  // composables: false,
-  // icons: false,
-  // prefix: 'Bonn'
-}))
+```html
+<Icon>
+  <IconChevronUp />
+</Icon>
 ```
 
-### Todo
+The `Icon` component renders the SVG assets in a standard size, but is not required.
 
-- [x] Replace `linna` usage
-- [x] Replace import paths to internal paths
-- [ ] Make tests pass
-- [ ] Move docs readme to this repo
-- [ ] Use readme from this repo in docs
-- [ ] Update docs
-- [x] `Icon` component
-- [x] Add `persist` composable
-- [x] Add `NuxtApp` component
-- [ ] Add `NuxtPage` component
-- [ ] Add tests
-- [ ] Make test watcher the dev command
-- [ ] Set test command as default in codesandbox
-- [ ] `modelValue` composable
-- [ ] Make `Textfield` support custom content and not just icons
+Some Vue components rely on SVG icon assets. Since these are user-configurable, you must choose where to get them (or manually use the defaults from `bonn/icons`).
+
+Bonn assumes you import SVG icons as Vue components (using `vite-svg-loader`, for example). This can be easily done using a Nuxt config helper in your Nuxt project.
+
+To completely replace the default icon set, provide the following icons:
+
+```
+Check.svg
+ChevronDown.svg
+```

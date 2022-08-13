@@ -1,4 +1,4 @@
-import { ref, onMounted, onUnmounted } from 'vue'
+import { computed, ref, onMounted, onUnmounted } from 'vue'
 
 import gamepadIsSupported from '../..//gamepadIsSupported'
 import getGamepads from '../..//getGamepads'
@@ -31,8 +31,6 @@ export default () => {
     getInputDataPlaceholder()
   ])
 
-
-
   // Computed
 
   const connectedGamepads = computed(() => {
@@ -43,7 +41,6 @@ export default () => {
         connectedGamepads.push(gamepads.value[i])
       }
     }
-
 
     return connectedGamepads
   })
@@ -66,8 +63,6 @@ export default () => {
     return !!firstConnectedGamepad.value
   })
 
-
-
   // Actions
 
   const updateGamepadList = () => {
@@ -84,11 +79,8 @@ export default () => {
           inputs.value[i][inputKey] = newInputValues[inputKey]
         }
       }
-
     })
   }
-
-
 
   // Update loop
 
@@ -106,7 +98,7 @@ export default () => {
     mainLoopElapsed.value = 0
   }
 
-  const mainLoopCallback = () => {
+  const mainLoopCallback = (timestamp) => {
     updateGamepadList()
 
     // First frame
@@ -124,8 +116,6 @@ export default () => {
     // Order next frame
     startMainLoop()
   }
-
-
 
   // API
 

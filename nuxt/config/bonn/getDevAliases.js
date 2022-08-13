@@ -3,7 +3,7 @@ import isPlainObject from 'lodash-es/isPlainObject'
 
 // Link a package to a local source dir when running a bonn project
 const envVarNames = {
-  'bonn': 'ALIAS_BONN'
+  bonn: 'ALIAS_BONN'
 }
 
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config

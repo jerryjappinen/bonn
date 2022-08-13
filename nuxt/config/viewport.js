@@ -19,12 +19,12 @@ export default (optionsInput) => {
     {
       hid: 'apple-mobile-web-app-status-bar-style',
       name: 'apple-mobile-web-app-status-bar-style',
-      content: 'black-translucent',
+      content: 'black-translucent'
     },
     {
       hid: 'apple-mobile-web-app-capable',
       name: 'apple-mobile-web-app-capable',
-      content: 'yes',
+      content: 'yes'
     },
 
     // Meta data
