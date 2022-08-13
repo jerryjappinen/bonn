@@ -1,6 +1,4 @@
-# Bonn SCSS
-
-`bonn/scss` is a collection of useful, generic mixins and functions for developing web sites and apps. Designed to be compatible with `linna-vue`, but can be used independently.
+`scss/` contains useful, generic mixins and functions for developing web sites and apps. It is designed to be compatible with `compnents/`, but can be used independently.
 
 ## Quick start
 

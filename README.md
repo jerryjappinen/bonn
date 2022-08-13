@@ -120,16 +120,35 @@ export default {
 
 
 
-#### Pinia stores
+#### Pinia `stores/`
 
-See [`linna-vue`](https://npmjs.org/package/linna-vue)
+```js
+import useDevice from 'bonn/stores/device'
+
+const device = useDevice()
+```
 
 
 
 #### `nuxt.config` helpers
 
-See [nuxt.config/](./nuxt.config/)
+```js
+import { mergeConfigs, dev, assets, scss, svg } from 'bonn/nuxt/config'
 
+export default defineNuxtConfig(mergeConfigs(
+  assets({ /*...*/ }),
+  scss({
+    global: 'styles/global.scss',
+    shared: 'styles/shared.scss'
+  }),
+  svg(),
+  dev({
+    typescript: {
+      shim: false
+    }
+  })
+))
+```
 
 
 #### `.svg` icons
