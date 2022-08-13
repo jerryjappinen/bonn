@@ -8,6 +8,7 @@
     "dist/*",
     "components/*",
     "composables/*",
+    "icons/*",
     "nuxt/*",
     "scss/*",
     "stores/*",
