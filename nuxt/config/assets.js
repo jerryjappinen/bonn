@@ -66,27 +66,29 @@ export default (optionsInput) => {
     metaTags.push({
       hid: 'twitter:image',
       name: 'twitter:image',
-      content: baseUrl + '/' + coverImagePath
-    })
-
-    metaTags.push({
-      hid: 'twitter:image:alt',
-      property: 'twitter:image:alt',
-      content: longSiteTitle
+      content: (baseUrl || '') + '/' + coverImagePath
     })
 
     // Facebook (OpenGraph)
     metaTags.push({
       hid: 'og:image',
       property: 'og:image',
-      content: baseUrl + '/' + coverImagePath
+      content: (baseUrl || '') + '/' + coverImagePath
     })
 
-    metaTags.push({
-      hid: 'og:image:alt',
-      property: 'og:image:alt',
-      content: longSiteTitle
-    })
+    if (longSiteTitle) {
+      metaTags.push({
+        hid: 'twitter:image:alt',
+        property: 'twitter:image:alt',
+        content: longSiteTitle
+      })
+
+      metaTags.push({
+        hid: 'og:image:alt',
+        property: 'og:image:alt',
+        content: longSiteTitle
+      })
+    }
   }
 
   // Web app manifest
