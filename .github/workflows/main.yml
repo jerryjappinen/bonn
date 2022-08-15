@@ -2,24 +2,30 @@ name: main
 on: push
 
 jobs:
-  publish:
+  install:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-
       - name: Install
         run: npm install
 
+  test:
+    needs: install
+    runs-on: ubuntu-latest
+    steps:
       - name: Lint
         run: npm run lint
-
       - name: Test
         run: npm run test
 
-      # Add repository secret on GitHub
+  # Add repository secret on GitHub
+  publish:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
       - name: Publish
         if: github.ref == 'refs/heads/main'
         uses: JS-DevTools/npm-publish@v1
