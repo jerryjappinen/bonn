@@ -1,5 +1,5 @@
-on: push
 name: main
+on: push
 
 jobs:
   publish:
@@ -9,11 +9,19 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - run: npm install
-      - run: npm run lint
-      - run: npm run test
-      - uses: JS-DevTools/npm-publish@v1
-        with:
 
-          # Added as a repository secret on GitHub
+      - name: Install
+        run: npm install
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Test
+        run: npm run test
+
+      # Add repository secret on GitHub
+      - name: Publish
+        if: github.ref == 'refs/heads/main'
+        uses: JS-DevTools/npm-publish@v1
+        with:
           token: ${{ secrets.NPM_TOKEN }}
