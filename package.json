@@ -7,6 +7,7 @@
   "files": [
     "dist/*",
     "components/*",
+    "components-experimental/*",
     "composables/*",
     "icons/*",
     "nuxt/*",
@@ -84,7 +85,7 @@
   },
   "devDependencies": {
     "date-fns": "^2.29.1",
-    "eslint": "^8.21.0",
+    "eslint": "^8.22.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-node": "^11.1.0",
