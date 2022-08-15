@@ -1,3 +1,3 @@
 export default () => {
-  return !!((process.env.NODE_ENV || '').toLowerCase() === 'test')
+  return !!(((process && process.env && process.env.NODE_ENV) || '').toLowerCase() === 'test')
 }
