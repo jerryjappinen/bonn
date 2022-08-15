@@ -19,7 +19,7 @@ jobs:
 
   lint:
     runs-on: ubuntu-latest
-    needs: setup
+    # needs: setup
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -31,7 +31,7 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
-    needs: setup
+    # needs: setup
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -44,7 +44,8 @@ jobs:
   # Add repository secret on GitHub
   publish:
     runs-on: ubuntu-latest
-    needs: [setup, lint, test]
+    # needs: [setup, lint, test]
+    needs: [lint, test]
     if: github.ref == 'refs/heads/main'
     steps:
       - uses: actions/checkout@v3
