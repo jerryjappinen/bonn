@@ -17,7 +17,7 @@ export default (optionsInput) => {
     baseUrl,
     exclude,
     routes
-  } = optionsInput || {}
+  } = (optionsInput || {})
 
   const app = {}
 

@@ -8,7 +8,7 @@ export default (optionsInput) => {
     siteDescription,
     facebookAppId,
     twitterUsername
-  } = optionsInput || {}
+  } = (optionsInput || {})
 
   const title = longSiteTitle || siteTitle || siteDescription || siteAuthor
   const metaTags = []

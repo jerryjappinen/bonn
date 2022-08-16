@@ -8,7 +8,7 @@ export default (optionsInput) => {
     global,
     shared,
     external
-  } = optionsInput || {}
+  } = (optionsInput || {})
 
   // This goes into Nuxt, which needs list of file paths
   let globalFiles = []

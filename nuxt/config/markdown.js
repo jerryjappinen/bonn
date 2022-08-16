@@ -7,8 +7,8 @@ import md from 'markdown-it'
 
 // Import markdown files
 // https://www.npmjs.com/package/vite-plugin-markdown
-export default (options) => {
-  const opts = options || {}
+export default (optionsInput) => {
+  const options = (optionsInput || {})
 
   // https://github.com/markdown-it/markdown-it#init-with-presets-and-options
   const markdownItOptions = md({
@@ -17,14 +17,14 @@ export default (options) => {
     typographer: false,
 
     // Override defaults
-    ...opts
+    ...options
   })
 
   const markdownIt = md(markdownItOptions)
 
   // https://github.com/markdown-it/markdown-it#plugins-load
-  if (opts.plugins) {
-    compact(flatten([opts.plugins])).forEach((plugin) => {
+  if (options.plugins) {
+    compact(flatten([options.plugins])).forEach((plugin) => {
       markdownIt.use(plugin)
     })
   }

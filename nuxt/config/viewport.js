@@ -4,7 +4,7 @@ export default (optionsInput) => {
     width,
     initialScale,
     themeColor
-  } = optionsInput || {}
+  } = (optionsInput || {})
 
   const metaTags = [
     { charset: 'utf-8' },

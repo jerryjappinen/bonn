@@ -1,5 +1,6 @@
 import components from './components'
 
+// FIXME: does this even work?
 const plugin = {
   install (Vue) {
     for (const prop in components) {

@@ -1,3 +1,6 @@
+import isString from 'lodash-es/isString'
+import omit from 'lodash-es/omit'
+
 import svgLoader from 'vite-svg-loader'
 
 const defaultConfig = {
@@ -49,14 +52,29 @@ const convertPluginsConfig = (conf) => {
 
 // https://github.com/svg/svgo
 // https://www.npmjs.com/package/vite-svg-loader
-export default (currentColor, options) => {
-  const config = {
-    ...defaultConfig,
-    ...(options || {})
+export default (optionsInput) => {
+  let config = {
+    ...defaultConfig
   }
 
-  if (currentColor) {
-    config.convertColors.currentColor = currentColor
+  if (optionsInput) {
+    // Allow passing currentColor as string
+    const normalizedOptionsInput = isString(optionsInput)
+      ? {
+          currentColor: optionsInput
+        }
+      : optionsInput
+
+    if (normalizedOptionsInput.currentColor) {
+      config.convertColors.currentColor = normalizedOptionsInput.currentColor
+    }
+
+    const additionalConfig = omit(normalizedOptionsInput, ['currentColor'])
+
+    config = {
+      ...config,
+      ...additionalConfig
+    }
   }
 
   return {

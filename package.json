@@ -1,6 +1,6 @@
 {
   "name": "bonn",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Utility, style and component library for web development.",
   "private": false,
   "files": [
@@ -17,7 +17,11 @@
     "composables.js",
     "index.js",
     "stores.js",
-    "README.md"
+    "README.md",
+    ".editorconfig",
+    ".eslintrc.js",
+    ".nvmrc",
+    "prettier.config.js"
   ],
   "engines": {
     "node": "16.x"
@@ -88,7 +92,7 @@
     "eslint-plugin-promise": "^6.0.0",
     "lodash-es": "^4.17.21",
     "markdown-it": "^13.0.1",
-    "nuxt": "^2.15.8",
+    "nuxt": "^3.0.0-rc.8",
     "pinia": "^2.0.18",
     "vitest": "^0.22.0",
     "vue": "^3.2.37"
