@@ -1,3 +1,9 @@
+import processEnvExists from './processEnvExists'
+
 export default () => {
-  return !!(((process && process.env && process.env.NODE_ENV) || '').toLowerCase() === 'test')
+  if (processEnvExists()) {
+    return (process.env.NODE_ENV || '').toLowerCase() === 'test'
+  }
+
+  return false
 }

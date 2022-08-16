@@ -14,7 +14,7 @@ import markdown from '../../nuxt/config/markdown'
 import meta from '../../nuxt/config/meta'
 import noComponentDirectoryPrefixes from '../../nuxt/config/noComponentDirectoryPrefixes'
 import pinia from '../../nuxt/config/pinia'
-import production from '../../nuxt/config/production'
+import prod from '../../nuxt/config/prod'
 import scripts from '../../nuxt/config/scripts'
 import scss from '../../nuxt/config/scss'
 import sitemap from '../../nuxt/config/sitemap'
@@ -24,7 +24,7 @@ import viewport from '../../nuxt/config/viewport'
 
 const conditions = {
   dev,
-  production
+  prod
 }
 
 const helpers = {

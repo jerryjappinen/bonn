@@ -1,5 +1,14 @@
 import isTest from './isTest'
+import processEnvExists from './processEnvExists'
 
 export default () => {
-  return isTest() || !!(((process && process.env && process.env.NODE_ENV) || '').toLowerCase() === 'development')
+  if (isTest()) {
+    return true
+  }
+
+  if (processEnvExists()) {
+    return (process.env.NODE_ENV || '').toLowerCase() === 'development'
+  }
+
+  return false
 }

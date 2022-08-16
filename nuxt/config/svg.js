@@ -49,9 +49,10 @@ const convertPluginsConfig = (conf) => {
 
 // https://github.com/svg/svgo
 // https://www.npmjs.com/package/vite-svg-loader
-export default (currentColor) => {
+export default (currentColor, options) => {
   const config = {
-    ...defaultConfig
+    ...defaultConfig,
+    ...(options || {})
   }
 
   if (currentColor) {
