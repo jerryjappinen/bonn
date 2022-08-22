@@ -1,6 +1,6 @@
 {
   "name": "bonn",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Utility, style and component library for web development.",
   "private": false,
   "files": [
@@ -51,12 +51,12 @@
   "dependencies": {
     "@averjs/nuxt-compression": "^1.2.1",
     "@nuxtjs/sitemap": "^2.4.0",
-    "@pinia/nuxt": "^0.4.0",
+    "@pinia/nuxt": "^0.4.1",
     "@vanillaes/csv": "^3.0.1",
     "gravatar-url": "^4.0.1",
     "md5-es": "^1.8.2",
     "platform-detect": "^3.0.1",
-    "sass": "^1.54.4",
+    "sass": "^1.54.5",
     "sass-loader": "^13.0.2",
     "seedrandom": "^3.0.5",
     "vite-plugin-markdown": "^2.1.0",
@@ -64,7 +64,7 @@
     "vue3-slider": "^1.8.0"
   },
   "peerDependencies": {
-    "date-fns": "^2.29.1",
+    "date-fns": "^2.29.2",
     "lodash-es": "^4.17.21",
     "markdown-it": "^13.0.1",
     "nuxt": "^3.0.0-rc.8",
@@ -85,7 +85,7 @@
     }
   },
   "devDependencies": {
-    "date-fns": "^2.29.1",
+    "date-fns": "^2.29.2",
     "eslint": "^8.22.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.26.0",
@@ -94,8 +94,8 @@
     "lodash-es": "^4.17.21",
     "markdown-it": "^13.0.1",
     "nuxt": "^3.0.0-rc.8",
-    "pinia": "^2.0.18",
-    "vitest": "^0.22.0",
+    "pinia": "^2.0.20",
+    "vitest": "^0.22.1",
     "vue": "^3.2.37"
   }
 }
