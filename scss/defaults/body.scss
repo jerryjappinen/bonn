@@ -4,6 +4,8 @@ body {
     font-family: $default-font;
   } @else if variable-exists(font-sans) {
     font-family: $font-sans;
+  } @else if variable-exists(font-system) {
+    font-family: $font-system;
   }
 
   @if variable-exists(default-font-size) {

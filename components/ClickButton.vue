@@ -2,10 +2,14 @@
 import { resolveComponent } from 'vue'
 
 import Fade from './Fade'
-import Icon from './Icon'
+// import Icon from './Icon'
 import Spinner from './Spinner'
 
-import { ref, computed, unref } from 'vue'
+import {
+  // ref,
+  computed,
+  unref
+} from 'vue'
 
 const props = defineProps({
 

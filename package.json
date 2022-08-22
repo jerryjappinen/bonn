@@ -6,7 +6,8 @@
   "files": [
     "dist/*",
     "components/*",
-    "components-experimental/*",
+    "experimentalComponents/*",
+    "styledComponents/*",
     "composables/*",
     "icons/*",
     "nuxt/*",
