@@ -1,3 +1,5 @@
+# Bonn SCSS
+
 `scss/` contains useful, generic mixins and functions for developing web sites and apps. It is designed to be compatible with `compnents/`, but can be used independently.
 
 ## Quick start
