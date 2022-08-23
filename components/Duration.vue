@@ -1,5 +1,6 @@
-<script>
+<script setup>
 import { differenceInCalendarDays } from 'date-fns'
+import { computed } from 'vue'
 
 import formatDate from '../util/formatDate'
 import normalizeDate from '../util/normalizeDate'
@@ -9,80 +10,73 @@ import normalizeDate from '../util/normalizeDate'
 // - we often don't want to print very short durations (0 or 1 days)
 // - But we calculate the diff in this component, so parent won't know whether to render this
 // - We could get to not printing anything by using a render function
-export default {
+const props = defineProps({
 
-  props: {
-
-    date: {
-      type: [Date, String],
-      required: true
-    },
-
-    endDate: {
-      type: [Date, String],
-      required: false
-    },
-
-    prefix: {
-      type: [Number, String],
-      default: null
-    },
-
-    suffix: {
-      type: [Number, String],
-      default: null
-    }
-
+  date: {
+    type: [Date, String],
+    required: true
   },
 
-  computed: {
+  endDate: {
+    type: [Date, String],
+    required: false
+  },
 
-    normalizedDate1 () {
-      return normalizeDate(this.date)
-    },
+  prefix: {
+    type: [Number, String],
+    default: null
+  },
 
-    diff () {
-      return Math.abs(
-        differenceInCalendarDays(
-          this.normalizedDate1,
-          this.normalizedDate2
-        )
-      )
-    },
-
-    normalizedDate2 () {
-      return this.endDate ? normalizeDate(this.endDate) : new Date()
-    },
-
-    detailsString () {
-
-      if (this.diff) {
-        const date1 = formatDate(this.normalizedDate1)
-        const date2 = formatDate(this.normalizedDate2)
-        return date1 + (date1 !== date2 ? ' – ' + date2 : '')
-      }
-
-      return null
-    },
-
-    dateTimeString () {
-
-      const string = (this.diff ? this.diff : 1) + ' day' + (
-        this.diff > 1
-          ? 's'
-          : ''
-      )
-
-      return [
-        this.prefix ? this.prefix : '',
-        string,
-        this.suffix ? this.suffix : ''
-      ].join('')
-    }
-
+  suffix: {
+    type: [Number, String],
+    default: null
   }
 
-}
+})
+
+const normalizedDate1 = computed(() => {
+  return normalizeDate(unref(props.date))
+})
+
+const normalizedDate2 = computed(() => {
+  const endDate = unref(props.endDate)
+  return endDate ? normalizeDate(endDate) : new Date()
+})
+
+const diff = computed(() => {
+  return Math.abs(
+    differenceInCalendarDays(normalizedDate1.value, normalizedDate2.value)
+  )
+})
+
+const detailsString = computed(() => {
+  if (diff.value) {
+    const date1 = formatDate(normalizedDate1.value)
+    const date2 = formatDate(normalizedDate2.value)
+    return date1 + (date1 !== date2 ? ' – ' + date2 : '')
+  }
+
+  return null
+})
+
+const dateTimeString = computed(() => {
+
+  const string = (diff.value ? diff.value : 1) + ' day' + (
+    diff.value > 1
+      ? 's'
+      : ''
+  )
+
+  const prefix = unref(props.prefix)
+  const suffix = unref(props.suffix)
+
+  return [
+    prefix ? prefix : '',
+    string,
+    suffix ? suffix : ''
+  ].join('')
+})
+
 </script>
 
 <template>
