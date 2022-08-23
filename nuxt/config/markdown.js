@@ -4,7 +4,7 @@ import viteMarkdownPlugin from 'vite-plugin-markdown'
 
 // Import markdown files
 // https://www.npmjs.com/package/vite-plugin-markdown
-export default (args) => {
+export default (...args) => {
   const markdownIt = getMarkdownIt(...args)
 
   return {
