@@ -1,6 +1,6 @@
 {
   "name": "bonn",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "Utility, style and component library for web development.",
   "private": false,
   "files": [
@@ -92,7 +92,6 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^6.0.0",
     "lodash-es": "^4.17.21",
-    "markdown-it": "^13.0.1",
     "nuxt": "^3.0.0-rc.8",
     "pinia": "^2.0.20",
     "vitest": "^0.22.1",
