@@ -4,6 +4,7 @@ import flatten from 'lodash-es/flatten'
 import md from 'markdown-it'
 import mdAttrs from 'markdown-it-attrs'
 import mdDeflist from 'markdown-it-deflist'
+import mdFootnote from 'markdown-it-footnote'
 import mdTaskLists from 'markdown-it-task-lists'
 
 // Import markdown files
@@ -24,6 +25,7 @@ export default (optionsInput) => {
   // Default plugins
   markdownIt.use(mdAttrs, (options.attrs || {}))
   markdownIt.use(mdDeflist)
+  markdownIt.use(mdFootnote)
   markdownIt.use(mdTaskLists, {
     label: true,
     ...(options.taskLists || {})

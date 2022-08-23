@@ -57,6 +57,7 @@
     "markdown-it": "^13.0.1",
     "markdown-it-attrs": "^4.1.4",
     "markdown-it-deflist": "^2.1.0",
+    "markdown-it-footnote": "^3.0.3",
     "markdown-it-task-lists": "^2.1.1",
     "md5-es": "^1.8.2",
     "platform-detect": "^3.0.1",
