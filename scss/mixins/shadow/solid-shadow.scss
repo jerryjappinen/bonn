@@ -1,0 +1,7 @@
+@mixin solid-shadow ($color: $shadow-color, $opacity: $shadow-opacity) {
+  box-shadow: 0 0 0 $solid-shadow-width rgba($color, $opacity);
+}
+
+@mixin transparent-solid-shadow ($color: $dark) {
+  @include solid-shadow(0, $color);
+}

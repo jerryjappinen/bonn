@@ -1,0 +1,3 @@
+@mixin no-shadow ($color: $shadow-color) {
+  @include shadow-transparent(transparent);
+}
