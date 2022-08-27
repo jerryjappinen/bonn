@@ -10,6 +10,8 @@
     "styledComponents/*",
     "composables/*",
     "icons/*",
+    "eslint/*",
+    "prettier/*",
     "nuxt/*",
     "scss/*",
     "stores/*",
@@ -20,9 +22,7 @@
     "stores.js",
     "README.md",
     ".editorconfig",
-    ".eslintrc.cjs",
-    ".nvmrc",
-    "prettier.config.js"
+    ".nvmrc"
   ],
   "engines": {
     "node": "16.x"
@@ -53,6 +53,11 @@
     "@nuxtjs/sitemap": "^2.4.0",
     "@pinia/nuxt": "^0.4.1",
     "@vanillaes/csv": "^3.0.1",
+    "eslint": "^8.23.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.0.1",
     "gravatar-url": "^4.0.1",
     "markdown-it": "^13.0.1",
     "markdown-it-attrs": "^4.1.4",
@@ -61,6 +66,7 @@
     "markdown-it-task-lists": "^2.1.1",
     "md5-es": "^1.8.2",
     "platform-detect": "^3.0.1",
+    "prettier": "^2.7.1",
     "sass": "^1.54.5",
     "sass-loader": "^13.0.2",
     "seedrandom": "^3.0.5",
@@ -87,14 +93,9 @@
   },
   "devDependencies": {
     "date-fns": "^2.29.2",
-    "eslint": "^8.22.0",
-    "eslint-config-standard": "^17.0.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^6.0.0",
     "lodash-es": "^4.17.21",
     "nuxt": "^3.0.0-rc.8",
-    "pinia": "^2.0.20",
+    "pinia": "^2.0.21",
     "vitest": "^0.22.1",
     "vue": "^3.2.37"
   }
