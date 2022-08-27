@@ -52,6 +52,7 @@
     "@averjs/nuxt-compression": "^1.2.1",
     "@nuxtjs/sitemap": "^2.4.0",
     "@pinia/nuxt": "^0.4.1",
+    "@rollup/plugin-graphql": "^1.1.0",
     "@vanillaes/csv": "^3.0.1",
     "eslint": "^8.23.0",
     "eslint-config-standard": "^17.0.0",
