@@ -1,5 +1,5 @@
 module.exports = {
-  editorconfig: true,
+  editorConfig: true,
   trailingComma: 'none',
   tabWidth: 2,
   semi: false,
