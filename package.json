@@ -66,6 +66,7 @@
     "markdown-it-footnote": "^3.0.3",
     "markdown-it-task-lists": "^2.1.1",
     "md5-es": "^1.8.2",
+    "pinia-plugin-persistedstate": "^2.1.1",
     "platform-detect": "^3.0.1",
     "prettier": "^2.7.1",
     "sass": "^1.54.5",

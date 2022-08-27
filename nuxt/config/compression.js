@@ -12,6 +12,6 @@ export default (optionsInput) => {
   }
 
   return {
-    buildModules: ['@averjs/nuxt-compression', options]
+    modules: ['@averjs/nuxt-compression', options]
   }
 }

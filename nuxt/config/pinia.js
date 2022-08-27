@@ -2,7 +2,7 @@
 // https://pinia.vuejs.org/
 export default () => {
   return {
-    buildModules: [
+    modules: [
       '@pinia/nuxt'
     ]
   }
