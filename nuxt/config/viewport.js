@@ -35,7 +35,7 @@ export default (optionsInput) => {
     }
   ]
 
-  // FIXME: should also generate manifest.json
+  // NOTE: should also be set in pwa/manifest
   if (themeColor) {
     metaTags.push({ hid: 'theme-color', name: 'theme-color', content: themeColor })
   }
