@@ -6,14 +6,14 @@
 // https://pwa.nuxtjs.org/
 export default (optionsInput) => {
   const {
-    appleTouchIcon,
+    icon,
     maskable,
 
     title,
     shortTitle,
     description,
 
-    startPath,
+    startUrl,
     rtl,
     lang,
 
@@ -28,40 +28,45 @@ export default (optionsInput) => {
     offline
   } = (optionsInput || {})
 
-  return {
+  // NOTE: the scope of this module is quite large
+  // Would be better to use each module individually in various helpers
+  const conf = {
     modules: [
       '@kevinmarrec/nuxt-pwa'
     ],
 
-    // NOTE: the scope of this module is quite large
-    // Would be better to use each module individually in various helpers
     pwa: {
-
-      // FIXME: move this to assets?
-      // How to use the icon module without the other modules?
-      icon: {
-        fileName: appleTouchIcon,
-        purpose: (maskable || maskable === undefined) ? 'maskable' : 'any'
-      },
-
-      // https://pwa.nuxtjs.org/meta
-      meta: false,
-
       // https://pwa.nuxtjs.org/manifest
       manifest: {
         name: title,
         shortName: shortTitle,
         description,
-        start_url: startPath,
-        display,
+        start_url: startUrl,
+        display: (display || 'minimal-ui'),
         background_color: backgroundColor,
         theme_color: themeColor,
         dir: rtl ? 'rtl' : 'ltr',
         lang
       },
 
+      // https://pwa.nuxtjs.org/meta
+      meta: false,
+
       // https://pwa.nuxtjs.org/workbox
       workbox: offline ? {} : false
     }
   }
+
+  // FIXME: move this to assets?
+  // How to use the icon module without the other modules?
+  if (icon) {
+    conf.pwa.icon = {
+      fileName: '/' + (icon === true ? 'apple-touch-icon.png' : icon),
+      purpose: (maskable || maskable === undefined) ? 'maskable' : 'any'
+    }
+  } else {
+    conf.pwa.icon = false
+  }
+
+  return conf
 }
