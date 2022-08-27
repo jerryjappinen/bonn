@@ -49,7 +49,7 @@
     "url": "https://github.com/jerryjappinen/bonn.git"
   },
   "dependencies": {
-    "@averjs/nuxt-compression": "^1.2.1",
+    "@averjs/nuxt-compression": "^1.2.2",
     "@nuxtjs/sitemap": "^2.4.0",
     "@pinia/nuxt": "^0.4.1",
     "@rollup/plugin-graphql": "^1.1.0",
