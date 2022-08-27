@@ -3,5 +3,5 @@
 }
 
 @mixin transparent-solid-shadow ($color: $dark) {
-  @include solid-shadow(0, $color);
+  @include solid-shadow($color, 0);
 }
