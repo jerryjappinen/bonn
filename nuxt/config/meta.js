@@ -7,7 +7,8 @@ export default (optionsInput) => {
     longSiteTitle,
     siteDescription,
     facebookAppId,
-    twitterUsername
+    twitterUsername,
+    lang
   } = (optionsInput || {})
 
   const title = longSiteTitle || siteTitle || siteDescription || siteAuthor
@@ -48,10 +49,18 @@ export default (optionsInput) => {
     metaTags.push({ hid: 'twitter:site', name: 'twitter:site', content: '@' + twitterUsername })
   }
 
-  return {
+  const conf = {
     meta: {
       title,
       meta: metaTags
     }
   }
+
+  if (lang) {
+    conf.meta.htmlAttrs = {
+      lang
+    }
+  }
+
+  return conf
 }
