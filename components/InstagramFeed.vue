@@ -31,7 +31,7 @@ defineProps({
 .c-instagram-feed {
   @include grid;
   @include grid-columns(2);
-  @include grid-gap($buffer);
+  @include grid-gap(var(--buffer));
 
   @include tablet {
     @include grid-columns(4);

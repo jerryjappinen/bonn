@@ -48,8 +48,7 @@ $c-switch-knob-width: $c-switch-track-height - (2 * $c-switch-knob-margin)  !def
   margin-right: calc($c-switch-track-height / 2);
 
   // Default for enabled, off state
-  border-color: $dark;
-  // background-color: $light-grey;
+  border-color: var(--dark);
 }
 
 .c-switch-knob {
@@ -65,7 +64,7 @@ $c-switch-knob-width: $c-switch-track-height - (2 * $c-switch-knob-margin)  !def
   // Default for off state
   @include round;
   @include transparent-solid-shadow();
-  background-color: $dark;
+  background-color: var(--dark);
   transform: translate3d(0, 0, 0);
 
 }
@@ -75,10 +74,10 @@ $c-switch-knob-width: $c-switch-track-height - (2 * $c-switch-knob-margin)  !def
 // On states
 
 .c-switch-on {
-  background-color: $dark;
+  background-color: var(--dark);
 
   .c-switch-knob {
-    background-color: $white;
+    background-color: var(--white);
     transform: translate3d(#{$c-switch-track-width - ($c-switch-knob-margin * 2) - $c-switch-knob-width}, 0, 0);
   }
 
@@ -89,15 +88,15 @@ $c-switch-knob-width: $c-switch-track-height - (2 * $c-switch-knob-margin)  !def
 // Enabled/disabled states
 
 .c-switch-disabled {
-  border-color: $grey;
+  border-color: var(--grey);
 
   &.c-switch-on {
     border-color: transparent;
-    background-color: $light-grey;
+    background-color: var(--light-grey);
   }
 
   .c-switch-knob {
-    background-color: $grey;
+    background-color: var(--grey);
   }
 
 }
@@ -111,7 +110,7 @@ $c-switch-knob-width: $c-switch-track-height - (2 * $c-switch-knob-margin)  !def
 
   // &.c-switch-off {
   //   .c-switch-knob {
-  //     background-color: $dark;
+  //     background-color: var(--dark);
   //   }
   // }
 
@@ -124,7 +123,7 @@ $c-switch-knob-width: $c-switch-track-height - (2 * $c-switch-knob-margin)  !def
   &:hover {
     .c-switch-knob {
       @include transition-fast;
-      @include solid-shadow();
+      @include solid-shadow;
     }
   }
 }

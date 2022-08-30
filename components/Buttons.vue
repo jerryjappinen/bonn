@@ -35,7 +35,7 @@ defineProps({
 
   > * {
     &:not(:last-child) {
-      margin-right: $pad-loose-horizontal;
+      @include push-pad-loose-right;
     }
   }
 

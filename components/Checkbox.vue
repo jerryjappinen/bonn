@@ -51,12 +51,11 @@ $c-checkbox-border-width: 2px;
   width: 1em;
   height: 1em;
   border-width: $c-checkbox-border-width;
-  padding: calc($pad-tight-horizontal - (2 * $c-checkbox-border-width));
+  padding: calc(var(--pad-tight-horizontal) - #{2 * $c-checkbox-border-width});
 
   // Default for enabled, off state
-  color: $white;
-  // background-color: $white;
-  border-color: $dark;
+  color: var(--white);
+  border-color: var(--dark);
 }
 
 .c-checkbox-icon {
@@ -73,7 +72,7 @@ $c-checkbox-border-width: 2px;
 // On states
 
 .c-checkbox-on {
-  background-color: $dark;
+  background-color: var(--dark);
   @include transition-fast;
 
   .c-checkbox-icon {
@@ -88,9 +87,9 @@ $c-checkbox-border-width: 2px;
 // Enabled/disabled states
 
 .c-checkbox-disabled {
-  color: $white;
-  background-color: $very-light-grey;
-  border-color: $grey;
+  color: var(--white);
+  background-color: var(--very-light-grey);
+  border-color: var(--grey);
 }
 
 // .c-checkbox-enabled {
@@ -102,7 +101,7 @@ $c-checkbox-border-width: 2px;
   @include pointer;
 
   .c-checkbox-enabled {
-    @include solid-shadow-tight-rest($dark);
+    @include solid-shadow-tight-rest(var(--dark));
   }
 
   &:focus,

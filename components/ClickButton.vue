@@ -309,7 +309,7 @@ const onClick = (event) => {
   left: 0;
 
   ~ .c-click-button-content {
-    padding-left: calc(1em + #{$pad-tight-horizontal});
+    padding-left: calc(1em + var(--pad-tight-horizontal));
   }
 
 }
@@ -318,7 +318,7 @@ const onClick = (event) => {
   right: 0;
 
   ~ .c-click-button-content {
-    padding-right: calc(1em + #{$pad-tight-horizontal});
+    padding-right: calc(1em + var(--pad-tight-horizontal));
   }
 
 }
