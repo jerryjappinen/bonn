@@ -34,7 +34,10 @@ defineProps({
 
 <style lang="scss">
 
-$c-checkbox-border-width: 2px;
+.c-checkbox {
+  --c-checkbox-width: 1em;
+  --c-checkbox-border-width: 2px;
+}
 
 .c-checkbox,
 .c-checkbox-icon {
@@ -48,10 +51,10 @@ $c-checkbox-border-width: 2px;
   @include inline-block;
   vertical-align: middle;
 
-  width: 1em;
-  height: 1em;
-  border-width: $c-checkbox-border-width;
-  padding: calc(var(--pad-tight-horizontal) - #{2 * $c-checkbox-border-width});
+  width: var(--c-checkbox-width);
+  height: var(--c-checkbox-width);
+  border-width: var(--c-checkbox-border-width);
+  padding: calc(var(--pad-tight-horizontal) - (2 * var(--c-checkbox-border-width)));
 
   // Default for enabled, off state
   color: var(--white);
@@ -73,6 +76,7 @@ $c-checkbox-border-width: 2px;
 
 .c-checkbox-on {
   background-color: var(--dark);
+
   @include transition-fast;
 
   .c-checkbox-icon {
@@ -101,7 +105,7 @@ $c-checkbox-border-width: 2px;
   @include pointer;
 
   .c-checkbox-enabled {
-    @include solid-shadow-tight-rest(var(--dark));
+    @include transparent-solid-shadow(var(--dark));
   }
 
   &:focus,
