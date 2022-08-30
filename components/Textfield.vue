@@ -355,7 +355,6 @@ export default {
 }
 
 .c-textfield-icon {
-  color: $grey;
   left: 0;
   @include transition-slow;
 }
@@ -366,8 +365,8 @@ export default {
   right: 0.4em;
   padding: 0.25em;
 
-  color: $dark;
-  background-color: $white;
+  color: var(--text-color);
+  background-color: var(--background-color);
 
   @include transition-hover-active;
 
@@ -389,7 +388,7 @@ export default {
 .c-textfield-multiline {
   .c-textfield-button,
   .c-textfield-icon {
-    top: $pad-loose-vertical;
+    top: var(--pad-loose-vertical);
   }
 }
 
@@ -475,7 +474,7 @@ export default {
 
 .c-textfield-has-icon {
   .c-textfield-input {
-    padding-left: calc(#{$pad-tight-horizontal} + 1em);
+    padding-left: calc(var(--pad-tight-horizontal) + 1em);
   }
 }
 

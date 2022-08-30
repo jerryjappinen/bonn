@@ -1,5 +1,5 @@
 @mixin solid-shadow ($color: var(--shadow-color), $opacity: var(--shadow-opacity)) {
-  box-shadow: 0 0 0 $solid-shadow-width rgba($color, $opacity);
+  box-shadow: 0 0 0 var(--solid-shadow-width) rgba($color, $opacity);
 }
 
 @mixin transparent-solid-shadow ($color: var(--text-color)) {
