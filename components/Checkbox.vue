@@ -37,6 +37,14 @@ defineProps({
 .c-checkbox {
   --c-checkbox-width: 1em;
   --c-checkbox-border-width: 2px;
+
+  --c-checkbox-enabled-on-color: currentColor;
+  --c-checkbox-enabled-off-color: currentColor;
+  --c-checkbox-enabled-check-color: var(--grey);
+
+  --c-checkbox-disabled-on-color: var(--very-light-grey);
+  --c-checkbox-disabled-off-color: var(--very-light-grey);
+  --c-checkbox-disabled-check-color: var(--grey);
 }
 
 .c-checkbox,
@@ -57,8 +65,8 @@ defineProps({
   padding: calc(var(--pad-tight-horizontal) - (2 * var(--c-checkbox-border-width)));
 
   // Default for enabled, off state
-  color: var(--white);
-  border-color: var(--dark);
+  color: var(--c-checkbox-enabled-check-color);
+  border-color: var(--c-checkbox-enabled-off-color);
 }
 
 .c-checkbox-icon {
@@ -75,7 +83,7 @@ defineProps({
 // On states
 
 .c-checkbox-on {
-  background-color: var(--dark);
+  background-color: var(--c-checkbox-enabled-on-color);
 
   @include transition-fast;
 
@@ -91,9 +99,9 @@ defineProps({
 // Enabled/disabled states
 
 .c-checkbox-disabled {
-  color: var(--white);
-  background-color: var(--very-light-grey);
-  border-color: var(--grey);
+  color: var(--c-checkbox-disabled-check-color);
+  border-color: var(--c-checkbox-disabled-off-color);
+  background-color: var(--c-checkbox-disabled-on-color);
 }
 
 // .c-checkbox-enabled {
@@ -105,14 +113,14 @@ defineProps({
   @include pointer;
 
   .c-checkbox-enabled {
-    @include transparent-solid-shadow(var(--dark));
+    @include transparent-solid-shadow(var(--c-checkbox-enabled-on-color));
   }
 
   &:focus,
   &:hover {
     .c-checkbox-enabled {
       @include transition-fast;
-      @include solid-shadow-tight;
+      @include solid-shadow(var(--c-checkbox-enabled-on-color));
     }
   }
 }
