@@ -25,26 +25,6 @@
   @include pad-loose-right-even($step);
 }
 
-
-
-@mixin pad-loose-right ($step: 1) {
-  padding-right: calc($step * $pad-loose-horizontal);
-}
-
-@mixin pad-loose-right-even ($step: 1) {
-  padding-right: calc($step * $pad-loose-vertical);
-}
-
-@mixin pad-loose-left ($step: 1) {
-  padding-left: calc($step * $pad-loose-horizontal);
-}
-
-@mixin pad-loose-left-even ($step: 1) {
-  padding-left: calc($step * $pad-loose-vertical);
-}
-
-
-
 @mixin pad-loose-vertical ($step: 1) {
   @include pad-loose-top($step);
   @include pad-loose-bottom($step);
@@ -55,18 +35,68 @@
   @include pad-loose-bottom-even($step);
 }
 
+
+
+@mixin pad-loose-right ($step: 1) {
+  @if ($step == 1) {
+    padding-right: var(--pad-loose-horizontal);
+  } @else {
+    padding-right: calc($step * var(--pad-loose-horizontal));
+  }
+}
+
+@mixin pad-loose-right-even ($step: 1) {
+  @if ($step == 1) {
+    padding-right: var(--pad-loose-vertical);
+  } @else {
+    padding-right: calc($step * var(--pad-loose-vertical));
+  }
+}
+
+@mixin pad-loose-left ($step: 1) {
+  @if ($step == 1) {
+    padding-left: var(--pad-loose-horizontal);
+  } @else {
+    padding-left: calc($step * var(--pad-loose-horizontal));
+  }
+}
+
+@mixin pad-loose-left-even ($step: 1) {
+  @if ($step == 1) {
+    padding-left: var(--pad-loose-vertical);
+  } @else {
+    padding-left: calc($step * var(--pad-loose-vertical));
+  }
+}
+
 @mixin pad-loose-top ($step: 1) {
-  padding-top: calc($step * $pad-loose-vertical);
+  @if ($step == 1) {
+    padding-top: var(--pad-loose-vertical);
+  } @else {
+    padding-top: calc($step * var(--pad-loose-vertical));
+  }
 }
 
 @mixin pad-loose-top-even ($step: 1) {
-  padding-top: calc($step * $pad-loose-horizontal);
+  @if ($step == 1) {
+    padding-top: var(--pad-loose-horizontal);
+  } @else {
+    padding-top: calc($step * var(--pad-loose-horizontal));
+  }
 }
 
 @mixin pad-loose-bottom ($step: 1) {
-  padding-bottom: calc($step * $pad-loose-vertical);
+  @if ($step == 1) {
+    padding-bottom: var(--pad-loose-vertical);
+  } @else {
+    padding-bottom: calc($step * var(--pad-loose-vertical));
+  }
 }
 
 @mixin pad-loose-bottom-even ($step: 1) {
-  padding-bottom: calc($step * $pad-loose-horizontal);
+  @if ($step == 1) {
+    padding-bottom: var(--pad-loose-horizontal);
+  } @else {
+    padding-bottom: calc($step * var(--pad-loose-horizontal));
+  }
 }

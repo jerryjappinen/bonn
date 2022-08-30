@@ -1,0 +1,18 @@
+@import '../variables-scss/breakpoints.scss';
+
+// Breakpoints
+// NOTE: scss variables must be used in media queries
+:root {
+  --breakpoint-tiny: $breakpoint-tiny;
+  --breakpoint-small: $breakpoint-small;
+  --breakpoint-medium: $breakpoint-medium;
+  --breakpoint-large: $breakpoint-large;
+  --breakpoint-very-large: $breakpoint-very-large;
+  --breakpoint-full: $breakpoint-full;
+
+  --breakpoint-phone-tight: $breakpoint-phone-tight;
+  --breakpoint-phone: $breakpoint-phone;
+  --breakpoint-tablet: $breakpoint-tablet;
+  --breakpoint-laptop: $breakpoint-laptop;
+  --breakpoint-monitor: $breakpoint-monitor;
+}

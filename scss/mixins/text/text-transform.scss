@@ -1,10 +1,6 @@
 @mixin uppercase {
   text-transform: uppercase;
-
-  @if $font-size-uppercase {
-    font-size: $font-size-uppercase;
-  }
-
+  font-size: var(--font-size-uppercase);
 }
 
 @mixin lowercase {

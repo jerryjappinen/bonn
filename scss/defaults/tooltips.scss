@@ -1,3 +1,5 @@
+// NOTE: this is pretty hacky
+// The intention is for tooltips to only work with cursors
 @include desktop {
 
   /* stylelint-disable no-duplicate-selectors */
@@ -24,8 +26,8 @@
       opacity: 0;
 
       transition-property: transform, opacity;
-      transition-duration: $transition-medium;
-      transition-timing-function: $easing-snap;
+      transition-duration: var(--transition-medium);
+      transition-timing-function: var(--easing-snap);
     }
 
     // Show tooltip content on hover
@@ -33,25 +35,25 @@
       &:before {
         // visibility: visible;
         opacity: 1;
-        transition-duration: $transition-fast;
+        transition-duration: var(--transition-fast);
       }
     }
 
     // Position tooltip above the element
     &:before {
       @include pad-tight;
-      line-height: $line-height-tight;
+      line-height: var(--line-height-tight);
 
       letter-spacing: normal;
-      font-size: $default-font-size;
+      font-size: var(--default-font-size);
       font-weight: normal;
       text-transform: none;
       text-align: center;
       white-space: nowrap;
 
       @include radius;
-      color: $white;
-      background-color: $dark;
+      color: var(--white);
+      background-color: var(--dark);
     }
 
   }
@@ -90,7 +92,7 @@
   [data-tooltip-up-right] {
     &:before {
       bottom: 100%;
-      margin-bottom: $pad-vertical;
+      margin-bottom: var(--pad-vertical);
     }
   }
   [data-tooltip-down],
@@ -98,7 +100,7 @@
   [data-tooltip-down-right] {
     &:before {
       top: 100%;
-      margin-top: $pad-vertical;
+      margin-top: var(--pad-vertical);
     }
   }
 
@@ -188,7 +190,7 @@
     }
     &:hover {
       &:before {
-        transform: translate3d(-$pad-vertical, -50%, 0);
+        transform: translate3d(calc(-1 * var(--pad-vertical)), -50%, 0);
       }
     }
   }
@@ -199,7 +201,7 @@
     }
     &:hover {
       &:before {
-        transform: translate3d($pad-vertical, -50%, 0);
+        transform: translate3d(var(--pad-vertical), -50%, 0);
       }
     }
   }

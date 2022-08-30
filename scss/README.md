@@ -20,7 +20,7 @@ Or customise with your own variables:
 
 ```scss
 @import 'bonn/scss/shared';
-@import './my-variables'; // Override default variables here
+@import './my-variables'; // Override default SCSS variables here
 @import 'bonn/scss/global';
 @import 'bonn/scss/util';
 ```
@@ -29,7 +29,7 @@ Or pick only what you need:
 
 ```scss
 // Shared
-@import 'bonn/scss/variables';
+@import 'bonn/scss/variables-scss';
 @import 'bonn/scss/functions';
 @import 'bonn/scss/mixins';
 
@@ -54,7 +54,7 @@ You might not need all defaults or utilities. You can leave them out to optimise
 ### Importing in a JavaScript file
 
 ```js
-import 'bonn/scss/variables';
+import 'bonn/scss/variables-scss';
 import 'bonn/scss/functions';
 import 'bonn/scss/mixins';
 

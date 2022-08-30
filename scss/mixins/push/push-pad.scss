@@ -1,6 +1,3 @@
-// Push mixins are based on $buffer,
-// But sometimes we want to use $pad
-
 @mixin push-pad ($step: 1) {
   @include push-pad-vertical($step);
   @include push-pad-horizontal($step);
@@ -16,28 +13,6 @@
   @include push-pad-right($step);
 }
 
-
-
-@mixin push-pad-top ($step: 1) {
-  margin-top: calc($step * $pad-vertical);
-}
-
-@mixin push-pad-bottom ($step: 1) {
-  margin-bottom: calc($step * $pad-vertical);
-}
-
-@mixin push-pad-left ($step: 1) {
-  margin-left: calc($step * $pad-horizontal);
-}
-
-@mixin push-pad-right ($step: 1) {
-  margin-right: calc($step * $pad-horizontal);
-}
-
-
-
-// Flip horizontal/vertical
-
 @mixin push-pad-vertical-even ($step: 1) {
   @include push-pad-top-even($step);
   @include push-pad-bottom-even($step);
@@ -48,18 +23,68 @@
   @include push-pad-right-even($step);
 }
 
+
+
+@mixin push-pad-top ($step: 1) {
+  @if ($step == 1) {
+    margin-top: var(--pad-vertical);
+  } @else {
+    margin-top: calc($step * var(--pad-vertical));
+  }
+}
+
+@mixin push-pad-bottom ($step: 1) {
+  @if ($step == 1) {
+    margin-bottom: var(--pad-vertical);
+  } @else {
+    margin-bottom: calc($step * var(--pad-vertical));
+  }
+}
+
+@mixin push-pad-left ($step: 1) {
+  @if ($step == 1) {
+    margin-left: var(--pad-horizontal);
+  } @else {
+    margin-left: calc($step * var(--pad-horizontal));
+  }
+}
+
+@mixin push-pad-right ($step: 1) {
+  @if ($step == 1) {
+    margin-right: var(--pad-horizontal);
+  } @else {
+    margin-right: calc($step * var(--pad-horizontal));
+  }
+}
+
 @mixin push-pad-top-even ($step: 1) {
-  margin-top: calc($step * $pad-horizontal);
+  @if ($step == 1) {
+    margin-top: var(--pad-horizontal);
+  } @else {
+    margin-top: calc($step * var(--pad-horizontal));
+  }
 }
 
 @mixin push-pad-bottom-even ($step: 1) {
-  margin-bottom: calc($step * $pad-horizontal);
+  @if ($step == 1) {
+    margin-bottom: var(--pad-horizontal);
+  } @else {
+    margin-bottom: calc($step * var(--pad-horizontal));
+  }
 }
 
 @mixin push-pad-left-even ($step: 1) {
-  margin-left: calc($step * $pad-vertical);
+  @if ($step == 1) {
+    margin-left: var(--pad-vertical);
+  } @else {
+    margin-left: calc($step * var(--pad-vertical));
+  }
 }
 
 @mixin push-pad-right-even ($step: 1) {
-  margin-right: calc($step * $pad-vertical);
+  @if ($step == 1) {
+    margin-right: var(--pad-vertical);
+  } @else {
+    margin-right: calc($step * var(--pad-vertical));
+  }
 }

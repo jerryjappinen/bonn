@@ -1,0 +1,28 @@
+// FIXME: should maybe be moved to sub sections
+:root {
+
+  // Text
+  --default-font: var(--sans);
+  --default-font-size: 16px;
+  --default-line-height: var(--line-height);
+
+  // Color usage
+  --background-color: var(--white);
+  --text-color: var(--dark);
+  --border-color: var(--light-grey);
+
+  --discreet-color-light: var(--very-light-grey);
+  --discreet-color: var(--light-grey);
+  --discreet-color-dark: var(--grey);
+  --discreet-text-color: var(--discreet-color-dark);
+
+  --link-color: var(--blue);
+  --link-active-color: var(--dark-blue);
+  --link-weight: var(--regular);
+
+  // Misc.
+  --default-translucent-opacity: 0.4;
+  --default-perspective: 600px;
+  --default-transition-duration: var(--transition-fast);
+  --default-transition-easing: ease; // Be careful with this
+}

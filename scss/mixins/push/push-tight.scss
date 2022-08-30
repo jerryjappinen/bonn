@@ -34,21 +34,41 @@
 // Single
 
 @mixin push-tight-top ($step: 1) {
-  margin-top: calc($step * $buffer-very-tight);
+  @if ($step == 1) {
+    margin-top: var(--buffer-very-tight);
+  } @else {
+    margin-top: calc($step * var(--buffer-very-tight));
+  }
 }
 
 @mixin push-tight-top-even ($step: 1) {
-  margin-top: calc($step * $buffer-tight);
+  @if ($step == 1) {
+    margin-top: var(--buffer-tight);
+  } @else {
+    margin-top: calc($step * var(--buffer-tight));
+  }
 }
 
 @mixin push-tight-right ($step: 1) {
-  margin-right: calc($step * $buffer-tight);
+  @if ($step == 1) {
+    margin-right: var(--buffer-tight);
+  } @else {
+    margin-right: calc($step * var(--buffer-tight));
+  }
 }
 
 @mixin push-tight-bottom ($step: 1) {
-  margin-bottom: calc($step * $buffer-tight);
+  @if ($step == 1) {
+    margin-bottom: var(--buffer-tight);
+  } @else {
+    margin-bottom: calc($step * var(--buffer-tight));
+  }
 }
 
 @mixin push-tight-left ($step: 1) {
-  margin-left: calc($step * $buffer-tight);
+  @if ($step == 1) {
+    margin-left: var(--buffer-tight);
+  } @else {
+    margin-left: calc($step * var(--buffer-tight));
+  }
 }

@@ -1,23 +1,26 @@
 @mixin transition-hover {
-  transition-duration: $transition-slow;
+  transition-duration: var(--transition-slow);
+
   &:focus,
   &:hover {
-    transition-duration: $transition-fast;
+    transition-duration: var(--transition-fast);
   }
 }
 
 @mixin transition-active {
-  transition-duration: $transition-slow;
+  transition-duration: var(--transition-slow);
+
   &:active {
-    transition-duration: $transition-fast;
+    transition-duration: var(--transition-fast);
   }
 }
 
 @mixin transition-hover-active {
-  transition-duration: $transition-slow;
+  transition-duration: var(--transition-slow);
+
   &:focus,
   &:hover,
   &:active {
-    transition-duration: $transition-fast;
+    transition-duration: var(--transition-fast);
   }
 }

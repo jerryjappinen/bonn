@@ -1,35 +1,35 @@
 @mixin round {
-  @include radius($round);
+  @include radius(var(--round));
 }
 
 @mixin round-left {
-  @include radius-left($round);
+  @include radius-left(var(--round));
 }
 
 @mixin round-right {
-  @include radius-right($round);
+  @include radius-right(var(--round));
 }
 
 @mixin round-top {
-  @include radius-top($round);
+  @include radius-top(var(--round));
 }
 
 @mixin round-top-left {
-  @include radius-top-left($round);
+  @include radius-top-left(var(--round));
 }
 
 @mixin round-top-right {
-  @include radius-top-right($round);
+  @include radius-top-right(var(--round));
 }
 
 @mixin round-bottom {
-  @include radius-bottom($round);
+  @include radius-bottom(var(--round));
 }
 
 @mixin round-bottom-left {
-  @include radius-bottom-left($round);
+  @include radius-bottom-left(var(--round));
 }
 
 @mixin round-bottom-right {
-  @include radius-bottom-right($round);
+  @include radius-bottom-right(var(--round));
 }

@@ -1,0 +1,11 @@
+// Radiuses
+:root {
+  --radius-very-tight: 2px;
+  --radius-tight: 2px;
+  --radius: 4px;
+  --radius-loose: 8px;
+  --radius-very-loose: 24px;
+
+  // Used to make comletely round corners in the radius mixins
+  --round: 1000px;
+}

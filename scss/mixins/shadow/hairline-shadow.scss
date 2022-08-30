@@ -1,7 +1,7 @@
-@mixin hairline-shadow ($opacity: $shadow-opacity, $color: $shadow-color) {
-  box-shadow: 0 0 0 $hairline-border-width rgba($color, $opacity);
+@mixin hairline-shadow ($opacity: var(--shadow-opacity), $color: var(--shadow-color)) {
+  box-shadow: 0 0 0 var(--hairline-border-width) rgba($color, $opacity);
 }
 
-@mixin transparent-hairline-shadow ($color: $shadow-color) {
+@mixin transparent-hairline-shadow ($color: var(--shadow-color)) {
   @include hairline-shadow(0, $color);
 }

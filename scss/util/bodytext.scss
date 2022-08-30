@@ -7,16 +7,11 @@
   a,
   button {
     @include link;
-
-    &:hover,
-    &:active {
-      color: $link-active-color;
-    }
-
   }
 
+  b,
   strong {
-    font-weight: $font-weight-bold;
+    @include bold;
   }
 
 
@@ -27,14 +22,14 @@
     @include radius-tight;
     font-size: 0.85em;
     padding: 0 0.2em;
-    background-color: $very-very-light-grey;
-    box-shadow: 0 0 0 1px $light-grey;
+    background-color: var(--very-very-light-grey);
+    box-shadow: 0 0 0 1px var(--border-color);
   }
 
   pre {
     @include radius;
     @include pad-loose;
-    background-color: $very-very-light-grey;
+    background-color: var(--very-very-light-grey);
     border-width: 1px;
   }
 
@@ -108,12 +103,6 @@
 
 .bodytext-link {
   @include link;
-
-  &:hover,
-  &:active {
-    color: $link-active-color;
-  }
-
 }
 
 // Regular list content is sometimes wrapped in paragraphs

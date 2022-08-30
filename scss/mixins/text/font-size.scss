@@ -1,12 +1,7 @@
 @mixin small-font {
-  font-size: $font-size-small;
+  font-size: var(--font-size-small);
 }
 
 @mixin large-font {
-  font-size: $font-size-large;
-
-  @include tablet {
-    font-size: $font-size-large * 1.12;
-  }
-
+  font-size: var(--font-size-large);
 }

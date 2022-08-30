@@ -3,31 +3,31 @@
 }
 
 @mixin transition-delay-very-very-fast {
-  @include transition-delay($transition-very-very-fast);
+  @include transition-delay(var(--transition-very-very-fast));
 }
 
 @mixin transition-delay-very-fast {
-  @include transition-delay($transition-very-fast);
+  @include transition-delay(var(--transition-very-fast));
 }
 
 @mixin transition-delay-fast {
-  @include transition-delay($transition-fast);
+  @include transition-delay(var(--transition-fast));
 }
 
 @mixin transition-delay-medium {
-  @include transition-delay($transition-medium);
+  @include transition-delay(var(--transition-medium));
 }
 
 @mixin transition-delay-slow {
-  @include transition-delay($transition-slow);
+  @include transition-delay(var(--transition-slow));
 }
 
 @mixin transition-delay-very-slow {
-  @include transition-delay($transition-very-slow);
+  @include transition-delay(var(--transition-very-slow));
 }
 
 @mixin transition-delay-very-very-slow {
-  @include transition-delay($transition-very-very-slow);
+  @include transition-delay(var(--transition-very-very-slow));
 }
 
 @mixin no-transition-delay {

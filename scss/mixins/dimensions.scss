@@ -1,12 +1,12 @@
 // 1920/1080 = 16/9 = 1.77777778
-@mixin dimensions ($width, $ratio: (16/9)) {
+@mixin dimensions ($width, $ratio: #{16/9}) {
   width: $width;
-  height: $width / $ratio;
+  height: calc($width / $ratio);
 }
 
 // 1080/1920 = 9/16 = 0.5625
 // @include dimensions-height(1080);
-@mixin dimensions-height ($height, $ratio: (9/16)) {
-  width: $height / $ratio;
+@mixin dimensions-height ($height, $ratio: #{9/16}) {
+  width: calc($height / $ratio);
   height: $height;
 }

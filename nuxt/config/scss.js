@@ -1,22 +1,13 @@
 import compact from 'lodash-es/compact'
 import flatten from 'lodash-es/flatten'
 
+import css from './css'
+import mergeConfigs from './mergeConfigs'
+
 // SCSS preprocessing setup
 // e.g. scss({ global: 'styles/index.scss', shared: 'styles/mixins.scss', external: 'https://...css' })
 export default (optionsInput) => {
-  const {
-    global,
-    shared,
-    external
-  } = (optionsInput || {})
-
-  // This goes into Nuxt, which needs list of file paths
-  let globalFiles = []
-  if (global) {
-    globalFiles = compact(flatten([global])).map((path) => {
-      return '@/' + path
-    })
-  }
+  const { shared } = (optionsInput || {})
 
   // This goes into vite, which needs SCSS code as string
   let sharedFiles = []
@@ -26,38 +17,22 @@ export default (optionsInput) => {
     })
   }
 
-  // Links to static CSS files
-  let externalLinkTags = []
-  if (external) {
-    externalLinkTags = compact(flatten([external])).map((href) => {
-      return { href, rel: 'stylesheet' }
-    })
-  }
+  return mergeConfigs(
 
-  return {
-    css: globalFiles,
-    link: externalLinkTags,
-
-    // Global style tags (currently not supported)
-    // meta: {
-    //   style: [
-    //     {
-    //       type: 'text/css',
-    //       children: ':root { color: red }'
-    //     }
-    //   ]
-    // },
+    // Various CSS options support SCSS too
+    css(optionsInput),
 
     // Inject shared SCSS into components
-    vite: {
-      css: {
-        preprocessorOptions: {
-          scss: {
-            additionalData: sharedFiles.join('\n') + '\n'
+    {
+      vite: {
+        css: {
+          preprocessorOptions: {
+            scss: {
+              additionalData: sharedFiles.join('\n') + '\n'
+            }
           }
         }
       }
     }
-
-  }
+  )
 }

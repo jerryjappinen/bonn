@@ -1,0 +1,23 @@
+@mixin limit-tiny ($limit: null) {
+  @include limit($breakpoint-tiny, $limit);
+}
+
+@mixin limit-small ($limit: null) {
+  @include limit($breakpoint-small, $limit);
+}
+
+@mixin limit-medium ($limit: null) {
+  @include limit($breakpoint-medium, $limit);
+}
+
+@mixin limit-large ($limit: null) {
+  @include limit($breakpoint-large, $limit);
+}
+
+@mixin limit-very-large ($limit: null) {
+  @include limit($breakpoint-very-large, $limit);
+}
+
+@mixin limit-full ($limit: null) {
+  @include limit($breakpoint-full, $limit);
+}

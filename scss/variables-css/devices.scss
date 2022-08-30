@@ -1,0 +1,59 @@
+@import '../variables-scss/devices.scss';
+
+:root {
+
+  // Android
+  --android-phone-tight: $android-phone-tight;
+  --android-phone: $android-phone;
+  --android-phone-loose: $android-phone-loose;
+
+  --android-phone-height-tight: $android-phone-height-tight;
+  --android-phone-height: $android-phone-height;
+  --android-phone-height-loose: $android-phone-height-loose;
+
+  --android-tablet-width-tight: $android-tablet-width-tight;
+  --android-tablet-width: $android-tablet-width;
+  --android-tablet-width-loose: $android-tablet-width-loose;
+
+  --android-tablet-height-tight: $android-tablet-height-tight;
+  --android-tablet-height: $android-tablet-height;
+  --android-tablet-height-loose: $android-tablet-height-loose;
+
+
+
+  // iPads
+  --ipad: $ipad;
+  --ipad-height: $ipad-height;
+
+  --ipad-pro: $ipad-pro;
+  --ipad-pro-height: $ipad-pro-height;
+
+
+
+  // iPhones
+  --iphone-very-tight: $iphone-very-tight;
+  --iphone-tight: $iphone-tight;
+  --iphone: $iphone;
+  --iphone-loose: $iphone-loose;
+  --iphone-very-loose: $iphone-very-loose;
+
+  --iphone-height-very-tight: $iphone-height-very-tight;
+  --iphone-height-tight: $iphone-height-tight;
+  --iphone-height: $iphone-height;
+  --iphone-height-loose: $iphone-height-loose;
+  --iphone-height-very-loose: $iphone-height-very-loose;
+
+
+
+  // Defined screen widths (in portrait)
+  --iphone-4: $iphone-4;
+  --iphone-5: $iphone-5;
+  --iphone-6: $iphone-6;
+  --iphone-6-plus: $iphone-6-plus;
+
+  --iphone-4-height: $iphone-4-height;
+  --iphone-5-height: $iphone-5-height;
+  --iphone-6-height: $iphone-6-height;
+  --iphone-6-plus-height: $iphone-6-plus-height;
+
+}

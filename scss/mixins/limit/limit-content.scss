@@ -1,0 +1,21 @@
+// Limit width of an element based on column widths
+
+@mixin limit-content-very-tight {
+  @include limit(var(--content-width-very-tight));
+}
+
+@mixin limit-content-tight {
+  @include limit(var(--content-width-tight));
+}
+
+@mixin limit-content {
+  @include limit(var(--content-width));
+}
+
+@mixin limit-content-loose {
+  @include limit(var(--content-width-loose));
+}
+
+@mixin limit-content-very-loose {
+  @include limit(var(--content-width-very-loose));
+}

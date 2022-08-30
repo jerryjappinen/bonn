@@ -3,19 +3,19 @@
 }
 
 @mixin transition-properties-common {
-  @include transition-properties($transition-properties-common);
+  @include transition-properties(var(--transition-properties-common));
 }
 
 @mixin transition-properties-style {
-  @include transition-properties($transition-properties-style);
+  @include transition-properties(var(--transition-properties-style));
 }
 
 @mixin transition-properties-transform {
-  @include transition-properties($transition-properties-transform);
+  @include transition-properties(var(--transition-properties-transform));
 }
 
 @mixin transition-properties-position {
-  @include transition-properties($transition-properties-position);
+  @include transition-properties(var(--transition-properties-position));
 }
 
 @mixin no-transition-properties {

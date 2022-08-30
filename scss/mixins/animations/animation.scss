@@ -1,6 +1,6 @@
 @mixin animation (
   $name,
-  $duration: $transition-very-very-slow,
+  $duration: var(--transition-very-very-slow),
   $easing: null,
   $count: infinite,
   $direction: normal

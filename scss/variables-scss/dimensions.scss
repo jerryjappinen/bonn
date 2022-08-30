@@ -1,0 +1,12 @@
+// Pixel ratios
+// What to regard as limit for high pixel density (retina)
+$ldpi: 72dpi !default;
+$hdpi: 140dpi !default;
+$uhdpi: 300dpi !default;
+
+// Content-oriented defined paragraph widths
+$content-width-very-tight: 8em !default;
+$content-width-tight: 18em !default;
+$content-width: 30em !default;
+$content-width-loose: 42em !default;
+$content-width-very-loose: 64em !default;

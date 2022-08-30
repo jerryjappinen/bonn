@@ -1,24 +1,24 @@
 @mixin dashed-border {
-  border-width: $dashed-border-width;
+  border-width: var(--dashed-border-width);
   border-style: dashed;
 }
 
 @mixin dashed-border-top {
-  border-top-width: $dashed-border-width;
+  border-top-width: var(--dashed-border-width);
   border-top-style: dashed;
 }
 
 @mixin dashed-border-bottom {
-  border-bottom-width: $dashed-border-width;
+  border-bottom-width: var(--dashed-border-width);
   border-top-style: dashed;
 }
 
 @mixin dashed-border-left {
-  border-left-width: $dashed-border-width;
+  border-left-width: var(--dashed-border-width);
   border-top-style: dashed;
 }
 
 @mixin dashed-border-right {
-  border-right-width: $dashed-border-width;
+  border-right-width: var(--dashed-border-width);
   border-top-style: dashed;
 }

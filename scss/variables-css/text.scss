@@ -1,0 +1,76 @@
+:root {
+
+  // Font families
+  --system-font: -apple-system, system-ui, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen-Sans', 'Ubuntu', 'Cantarell', 'Helvetica Neue', sans-serif;
+  --sans: var(--system-font);
+  --serif: 'Droid Serif', 'Georgia', serif;
+  --mono: 'SF Mono', 'Roboto Mono', 'Monaco', 'Menlo', 'Segoe UI Mono', 'Consolas', courier, monospace;
+
+  // Font weights
+  --thin: 200;
+  --regular: 400;
+  --semibold: 600;
+  --bold: 700;
+  --black: 900;
+
+  // Line heights
+  --line-height-very-tight: 1.2;
+  --line-height-tight: 1.4;
+  --line-height: 1.6;
+  --line-height-loose: 2;
+  --line-height-print: 1.5;
+
+  --line-height-very-tight-em: calc(var(--line-height-very-tight) * 1em);
+  --line-height-tight-em: calc(var(--line-height-tight) * 1em);
+  --line-height-em: calc(var(--line-height) * 1em);
+  --line-height-loose-em: calc(var(--line-height-loose) * 1em);
+  --line-height-print-em: calc(var(--line-height-print) * 1em);
+
+  // Headline styling
+  --headline-font: var(--default-font); // FUCK
+  --headline-weight: var(--bold);
+  --headline-line-height: var(--line-height-very-tight);
+  --headline-line-height-em: calc(var(--headline-line-height) * 1em);
+
+
+
+  // Font sizing
+  --font-size-mono: 0.875em;
+  --font-size-uppercase: 1em;
+
+  --font-size-small: 0.75em;
+
+  --font-size-large: 1.25em;
+
+  @include over-medium {
+    --font-size-large: 1.4em;
+  }
+
+
+
+  --font-size-h1: 1.6em;
+  --font-size-h2: 1.4em;
+  --font-size-h3: var(--font-size-large);
+  --font-size-h4: var(--font-size-large);
+  --font-size-h5: 1em;
+  --font-size-h6: var(--font-size-small);
+
+  // Responsive font sizes
+  @include over-tiny {
+    --font-size-h1: 1.8em;
+  }
+
+  @include over-small {
+    --font-size-h1: 2.2em;
+    --font-size-h2: 1.6em;
+}
+
+  @include over-medium {
+    --font-size-h1: 2.4em;
+  }
+
+  @include over-large {
+    --font-size-h1: 2.6em;
+  }
+
+}

@@ -1,41 +1,66 @@
-@mixin shadow ($opacity: $shadow-opacity, $color: $shadow-color) {
-  box-shadow: $shadow-x $shadow-y $shadow-size $shadow-spread rgba($color, $opacity);
+@mixin shadow ($opacity: var(--shadow-opacity), $color: var(--shadow-color)) {
+  box-shadow:
+    var(--shadow-x)
+    var(--shadow-y)
+    var(--shadow-size)
+    var(--shadow-spread)
+    rgba($color, $opacity);
 }
 
-@mixin shadow-very-tight ($opacity: $shadow-very-tight-opacity, $color: $shadow-color) {
-  box-shadow: $shadow-very-tight-x $shadow-very-tight-y $shadow-very-tight-size $shadow-very-tight-spread rgba($color, $opacity);
+@mixin shadow-very-tight ($opacity: var(--shadow-very-tight-opacity), $color: var(--shadow-color)) {
+  box-shadow:
+    var(--shadow-very-tight-x)
+    var(--shadow-very-tight-y)
+    var(--shadow-very-tight-size)
+    var(--shadow-very-tight-spread)
+    rgba($color, $opacity);
 }
 
-@mixin shadow-tight ($opacity: $shadow-tight-opacity, $color: $shadow-color) {
-  box-shadow: $shadow-tight-x $shadow-tight-y $shadow-tight-size $shadow-tight-spread rgba($color, $opacity);
+@mixin shadow-tight ($opacity: var(--shadow-tight-opacity), $color: var(--shadow-color)) {
+  box-shadow:
+    var(--shadow-tight-x)
+    var(--shadow-tight-y)
+    var(--shadow-tight-size)
+    var(--shadow-tight-spread)
+    rgba($color, $opacity);
 }
 
-@mixin shadow-loose ($opacity: $shadow-loose-opacity, $color: $shadow-color) {
-  box-shadow: $shadow-loose-x $shadow-loose-y $shadow-loose-size $shadow-loose-spread rgba($color, $opacity);
+@mixin shadow-loose ($opacity: var(--shadow-loose-opacity), $color: var(--shadow-color)) {
+  box-shadow:
+    var(--shadow-loose-x)
+    var(--shadow-loose-y)
+    var(--shadow-loose-size)
+    var(--shadow-loose-spread)
+    rgba($color, $opacity);
 }
 
-@mixin shadow-very-loose ($opacity: $shadow-very-loose-opacity, $color: $shadow-color) {
-  box-shadow: $shadow-very-loose-x $shadow-very-loose-y $shadow-very-loose-size $shadow-very-loose-spread rgba($color, $opacity);
+@mixin shadow-very-loose ($opacity: var(--shadow-very-loose-opacity), $color: var(--shadow-color)) {
+  box-shadow:
+    var(--shadow-very-loose-x)
+    var(--shadow-very-loose-y)
+    var(--shadow-very-loose-size)
+    var(--shadow-very-loose-spread)
+    rgba($color, $opacity);
 }
 
 
 
-@mixin transparent-shadow ($color: $shadow-color) {
+@mixin transparent-shadow ($color: var(--shadow-color)) {
   @include shadow(0, $color);
 }
 
-@mixin transparent-shadow-very-tight ($color: $shadow-color) {
+@mixin transparent-shadow-very-tight ($color: var(--shadow-color)) {
   @include shadow-very-tight(0, $color);
 }
 
-@mixin transparent-shadow-tight ($color: $shadow-color) {
+@mixin transparent-shadow-tight ($color: var(--shadow-color)) {
   @include shadow-tight(0, $color);
 }
 
-@mixin transparent-shadow-loose ($color: $shadow-color) {
+@mixin transparent-shadow-loose ($color: var(--shadow-color)) {
   @include shadow-loose(0, $color);
 }
 
-@mixin transparent-shadow-very-loose ($color: $shadow-color) {
+@mixin transparent-shadow-very-loose ($color: var(--shadow-color)) {
   @include shadow-very-loose(0, $color);
 }

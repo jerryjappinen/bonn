@@ -1,37 +1,42 @@
-@mixin radius-loose {
-  @include radius($radius-loose);
+@mixin radius-loose ($step: 1) {
+  @include radius-loose-top($step);
+  @include radius-loose-bottom($step);
 }
 
-@mixin radius-loose-top {
-  @include radius-top($radius-loose);
+@mixin radius-loose-top ($step: 1) {
+  @include radius-loose-top-left($step);
+  @include radius-loose-top-right($step);
 }
 
-@mixin radius-loose-top-left {
-  @include radius-top-left($radius-loose);
+@mixin radius-loose-bottom ($step: 1) {
+  @include radius-loose-bottom-left($step);
+  @include radius-loose-bottom-right($step);
 }
 
-@mixin radius-loose-top-right {
-  @include radius-top-right($radius-loose);
+@mixin radius-loose-left ($step: 1) {
+  @include radius-loose-top-left($step);
+  @include radius-loose-bottom-left($step);
 }
 
-@mixin radius-loose-bottom {
-  @include radius-bottom($radius-loose);
+@mixin radius-loose-right ($step: 1) {
+  @include radius-loose-top-right($step);
+  @include radius-loose-bottom-right($step);
 }
 
-@mixin radius-loose-bottom-left {
-  @include radius-bottom-left($radius-loose);
+
+
+@mixin radius-loose-top-left ($step: 1) {
+  @include radius-top-left(var(--radius-loose), $step);
 }
 
-@mixin radius-loose-bottom-right {
-  @include radius-bottom-right($radius-loose);
+@mixin radius-loose-top-right ($step: 1) {
+  @include radius-top-right(var(--radius-loose), $step);
 }
 
-@mixin radius-loose-left {
-  @include radius-loose-top-left;
-  @include radius-loose-bottom-left;
+@mixin radius-loose-bottom-left ($step: 1) {
+  @include radius-bottom-left(var(--radius-loose), $step);
 }
 
-@mixin radius-loose-right {
-  @include radius-loose-top-right;
-  @include radius-loose-bottom-right;
+@mixin radius-loose-bottom-right ($step: 1) {
+  @include radius-bottom-right(var(--radius-loose), $step);
 }

@@ -1,36 +1,17 @@
 body {
+  font-family: var(--default-font, var(--sans, var(--system-font)));
+  font-size: var(--default-font-size, 1em);
+  line-height: var(--default-line-height);
 
-  @if variable-exists(default-font) {
-    font-family: $default-font;
-  } @else if variable-exists(font-sans) {
-    font-family: $font-sans;
-  } @else if variable-exists(font-system) {
-    font-family: $font-system;
-  }
-
-  @if variable-exists(default-font-size) {
-    font-size: $default-font-size;
-  }
-
-  @if variable-exists(text-color) {
-    color: $text-color;
-  }
-
-  @if variable-exists(background-color) {
-    background-color: $background-color;
-  }
-
-  @if variable-exists(default-line-height) {
-    line-height: $default-line-height;
-  }
-
+  color: var(--text-color);
+  background-color: var(--background-color);
 }
 
 // NOTE: we can simply provide transition-property to add default transitions to element
 * {
   transition-property: none;
-  transition-duration: $default-transition-duration;
-  transition-timing-function: $default-transition-easing;
+  transition-duration: var(--default-transition-duration);
+  transition-timing-function: var(--default-transition-easing);
 }
 
 // Element defaults
@@ -108,15 +89,10 @@ video,
 button,
 input,
 textarea {
-
-  @if variable-exists(border-color) {
-    border-color: $border-color;
-
-    &:before,
-    &:after {
-      border-color: $border-color;
-    }
-
+  border-color: var(--border-color);
+  &:before,
+  &:after {
+    border-color: var(--border-color);
   }
 
   &:before,
@@ -130,35 +106,20 @@ strong,
 dt,
 mark,
 th {
-
-  @if variable-exists(font-weight-bold) {
-    font-weight: $font-weight-bold;
-  }
-
+  font-weight: var(--bold);
 }
 
 blockquote,
 q {
-
-  @if variable-exists(font-serif) {
-    font-family: $font-serif;
-  }
-
+  font-family: var(--serif);
 }
 
 pre,
 code,
 kbd,
 samp {
-
-  @if variable-exists(font-mono) {
-    font-family: $font-mono;
-  }
-
-  @if variable-exists(font-size-mono) {
-    font-size: $font-size-mono;
-  }
-
+  font-family: var(--mono);
+  font-size: var(--font-size-mono);
 }
 
 abbr[title],

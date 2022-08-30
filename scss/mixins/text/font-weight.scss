@@ -1,5 +1,5 @@
 @mixin bold {
-  font-weight: $font-weight-bold;
+  font-weight: var(--bold);
 }
 
 // FIXME: backwards-compatibility, to be removed
@@ -8,5 +8,5 @@
 }
 
 @mixin semibold {
-  font-weight: $font-weight-semibold;
+  font-weight: var(--semibold);
 }

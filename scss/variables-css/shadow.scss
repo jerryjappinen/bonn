@@ -1,0 +1,35 @@
+:root {
+  --shadow-color: var(--dark);
+
+  --shadow-x: 0;
+  --shadow-y: 2px;
+  --shadow-size: 6px;
+  --shadow-spread: 0;
+  --shadow-opacity: 0.2;
+
+  --shadow-very-tight-x: 0;
+  --shadow-very-tight-y: 1px;
+  --shadow-very-tight-size: 1px;
+  --shadow-very-tight-spread: 0;
+  --shadow-very-tight-opacity: 0.2;
+
+  --shadow-tight-x: 0;
+  --shadow-tight-y: 1px;
+  --shadow-tight-size: 3px;
+  --shadow-tight-spread: 0;
+  --shadow-tight-opacity: var(--shadow-opacity);
+
+  --shadow-loose-x: 0;
+  --shadow-loose-y: 4px;
+  --shadow-loose-size: 24px;
+  --shadow-loose-spread: 0;
+  --shadow-loose-opacity: var(--shadow-opacity);
+
+  --shadow-very-loose-x: 0;
+  --shadow-very-loose-y: 8px;
+  --shadow-very-loose-size: 56px;
+  --shadow-very-loose-opacity: var(--shadow-opacity);
+  --shadow-very-loose-spread: 0;
+
+  --solid-shadow-width: 4px;
+}

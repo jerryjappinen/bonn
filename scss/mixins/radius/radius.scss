@@ -1,44 +1,60 @@
-@mixin radius ($rad: $radius) {
-  @include radius-top($rad);
-  @include radius-bottom($rad);
+@mixin radius ($rad: var(--radius), $step: 1) {
+  @include radius-top($rad, $step);
+  @include radius-bottom($rad, $step);
 }
 
-@mixin radius-top ($rad: $radius) {
-  @include radius-top-left($rad);
-  @include radius-top-right($rad);
+@mixin radius-top ($rad: var(--radius), $step: 1) {
+  @include radius-top-left($rad, $step);
+  @include radius-top-right($rad, $step);
 }
 
-@mixin radius-bottom ($rad: $radius) {
-  @include radius-bottom-left($rad);
-  @include radius-bottom-right($rad);
-}
-
-
-
-@mixin radius-left ($rad: $radius) {
-  @include radius-top-left($rad);
-  @include radius-bottom-left($rad);
-}
-
-@mixin radius-right ($rad: $radius) {
-  @include radius-top-right($rad);
-  @include radius-bottom-right($rad);
+@mixin radius-bottom ($rad: var(--radius), $step: 1) {
+  @include radius-bottom-left($rad, $step);
+  @include radius-bottom-right($rad, $step);
 }
 
 
 
-@mixin radius-top-left ($rad: $radius) {
-  border-top-left-radius: $rad;
+@mixin radius-left ($rad: var(--radius), $step: 1) {
+  @include radius-top-left($rad, $step);
+  @include radius-bottom-left($rad, $step);
 }
 
-@mixin radius-top-right ($rad: $radius) {
-  border-top-right-radius: $rad;
+@mixin radius-right ($rad: var(--radius), $step: 1) {
+  @include radius-top-right($rad, $step);
+  @include radius-bottom-right($rad, $step);
 }
 
-@mixin radius-bottom-left ($rad: $radius) {
-  border-bottom-left-radius: $rad;
+
+
+@mixin radius-top-left ($rad: var(--radius), $step: 1) {
+  @if ($step == 1) {
+    border-top-left-radius: $rad;
+  } @else {
+    border-top-left-radius: calc($rad * $step);
+  }
 }
 
-@mixin radius-bottom-right ($rad: $radius) {
-  border-bottom-right-radius: $rad;
+@mixin radius-top-right ($rad: var(--radius), $step: 1) {
+  @if ($step == 1) {
+    border-top-right-radius: $rad;
+  } @else {
+    border-top-right-radius: calc($rad * $step);
+  }
+}
+
+@mixin radius-bottom-left ($rad: var(--radius), $step: 1) {
+  @if ($step == 1) {
+    border-bottom-left-radius: $rad;
+  } @else {
+    border-bottom-left-radius: calc($rad * $step);
+  }
+}
+
+@mixin radius-bottom-right ($rad: var(--radius), $step: 1) {
+  @if ($step == 1) {
+    border-bottom-right-radius: $rad;
+  } @else {
+    border-bottom-right-radius: calc($rad * $step);
+  }
 }

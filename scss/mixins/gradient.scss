@@ -27,9 +27,9 @@
 }
 
 @mixin gradient-dark ($direction: 0deg, $opacity1: 0, $opacity2: 1) {
-  @include gradient($direction, translucent($dark, $opacity1), translucent($dark, $opacity2));
+  @include gradient($direction, translucent(var(--dark), $opacity1), translucent(var(--dark), $opacity2));
 }
 
 @mixin gradient-white ($direction: 0deg, $opacity1: 0, $opacity2: 1) {
-  @include gradient($direction, translucent($white, $opacity1), translucent($white, $opacity2));
+  @include gradient($direction, translucent(var(--white), $opacity1), translucent(var(--white), $opacity2));
 }

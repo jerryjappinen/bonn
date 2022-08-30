@@ -13,28 +13,6 @@
   @include push-pad-loose-right($step);
 }
 
-
-
-@mixin push-pad-loose-top ($step: 1) {
-  margin-top: $step * $pad-loose-vertical;
-}
-
-@mixin push-pad-loose-bottom ($step: 1) {
-  margin-bottom: $step * $pad-loose-vertical;
-}
-
-@mixin push-pad-loose-left ($step: 1) {
-  margin-left: $step * $pad-loose-horizontal;
-}
-
-@mixin push-pad-loose-right ($step: 1) {
-  margin-right: $step * $pad-loose-horizontal;
-}
-
-
-
-// Flip horizontal/vertical
-
 @mixin push-pad-loose-vertical-even ($step: 1) {
   @include push-pad-loose-top-even($step);
   @include push-pad-loose-bottom-even($step);
@@ -45,18 +23,68 @@
   @include push-pad-loose-right-even($step);
 }
 
+
+
+@mixin push-pad-loose-top ($step: 1) {
+  @if ($step == 1) {
+    margin-top: var(--pad-loose-vertical);
+  } @else {
+    margin-top: calc($step * var(--pad-loose-vertical));
+  }
+}
+
+@mixin push-pad-loose-bottom ($step: 1) {
+  @if ($step == 1) {
+    margin-bottom: var(--pad-loose-vertical);
+  } @else {
+    margin-bottom: calc($step * var(--pad-loose-vertical));
+  }
+}
+
+@mixin push-pad-loose-left ($step: 1) {
+  @if ($step == 1) {
+    margin-left: var(--pad-loose-horizontal);
+  } @else {
+    margin-left: calc($step * var(--pad-loose-horizontal));
+  }
+}
+
+@mixin push-pad-loose-right ($step: 1) {
+  @if ($step == 1) {
+    margin-right: var(--pad-loose-horizontal);
+  } @else {
+    margin-right: calc($step * var(--pad-loose-horizontal));
+  }
+}
+
 @mixin push-pad-loose-top-even ($step: 1) {
-  margin-top: calc($step * $pad-loose-horizontal);
+  @if ($step == 1) {
+    margin-top: var(--pad-loose-horizontal);
+  } @else {
+    margin-top: calc($step * var(--pad-loose-horizontal));
+  }
 }
 
 @mixin push-pad-loose-bottom-even ($step: 1) {
-  margin-bottom: calc($step * $pad-loose-horizontal);
+  @if ($step == 1) {
+    margin-bottom: var(--pad-loose-horizontal);
+  } @else {
+    margin-bottom: calc($step * var(--pad-loose-horizontal));
+  }
 }
 
 @mixin push-pad-loose-left-even ($step: 1) {
-  margin-left: calc($step * $pad-loose-vertical);
+  @if ($step == 1) {
+    margin-left: var(--pad-loose-vertical);
+  } @else {
+    margin-left: calc($step * var(--pad-loose-vertical));
+  }
 }
 
 @mixin push-pad-loose-right-even ($step: 1) {
-  margin-right: calc($step * $pad-loose-vertical);
+  @if ($step == 1) {
+    margin-right: var(--pad-loose-vertical);
+  } @else {
+    margin-right: calc($step * var(--pad-loose-vertical));
+  }
 }

@@ -1,0 +1,24 @@
+:root {
+  // Transition durations
+  --transition-very-very-fast: 25ms;
+  --transition-very-fast: 75ms;
+  --transition-fast: 150ms;
+  --transition-medium: 250ms;
+  --transition-slow: 450ms;
+  --transition-slowish: 600ms;
+  --transition-very-slow: 900ms;
+  --transition-very-very-slow: 1200ms;
+
+  // Transition property sets
+  --transition-properties-style: opacity, color, background-color, border-color, box-shadow, text-shadow, text-decoration-color;
+  --transition-properties-common: transform, var(--transition-properties-style);
+  --transition-properties-transform: transform, width, height;
+  --transition-properties-position: transform, top, bottom, left, right;
+
+  // Easing functions
+  --easing-none: linear;
+  --easing-ease: ease;
+  --easing-snap: cubic-bezier(0, 0.5, 0.5, 1);
+  --easing-bounce: cubic-bezier(0, 0.5, 0.5, 1.05);
+  --easing-smooth: cubic-bezier(0.19, 1, 0.22, 1);
+}

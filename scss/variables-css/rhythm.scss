@@ -1,0 +1,25 @@
+:root {
+  --rhythm-tight-half: 0.4em;
+  --rhythm-tight: 0.8em;
+  --rhythm-base: 1.6em;
+  --rhythm-loose: 3.2em;
+
+  --hairline-border-width: 1px;
+  --dashed-border-width: 2px;
+  --thick-border-width: 0.25em;
+
+  --pad-tight-vertical: 2px;
+  --pad-tight-horizontal: 6px;
+  --pad-vertical: 6px;
+  --pad-horizontal: 12px;
+  --pad-loose-vertical: 10px;
+  --pad-loose-horizontal: 18px;
+
+  --buffer-very-tight: 0.4rem; // em
+  --buffer-tight: calc(var(--buffer-very-tight) * 2); // 0.8em
+  --buffer: calc(var(--buffer-tight) * 2); // 1.6em
+  --buffer-loose: calc(var(--buffer) * 2); // 3.2em
+
+  --buffer-relative-tight: 2%;
+  --buffer-relative: 6%;
+}

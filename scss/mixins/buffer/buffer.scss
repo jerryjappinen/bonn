@@ -34,21 +34,21 @@
 // Single
 
 @mixin buffer-top ($step: 1) {
-  padding-top: $step * $buffer-tight;
+  padding-top: calc($step * var(--buffer-tight));
 }
 
 @mixin buffer-top-even ($step: 1) {
-  padding-top: $step * $buffer;
+  padding-top: calc($step * var(--buffer));
 }
 
 @mixin buffer-bottom ($step: 1) {
-  padding-bottom: $step * $buffer;
+  padding-bottom: calc($step * var(--buffer));
 }
 
 @mixin buffer-left ($step: 1) {
-  padding-left: $step * $buffer;
+  padding-left: calc($step * var(--buffer));
 }
 
 @mixin buffer-right ($step: 1) {
-  padding-right: $step * $buffer;
+  padding-right: calc($step * var(--buffer));
 }

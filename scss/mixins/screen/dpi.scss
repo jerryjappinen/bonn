@@ -4,8 +4,8 @@
   }
 }
 
-@mixin not-hdpi () {
-  @media (max-resolution: $hdpi - 1dpi) {
+@mixin hdpi-under () {
+  @media (max-resolution: #{$hdpi - 1dpi}) {
     @content;
   }
 }

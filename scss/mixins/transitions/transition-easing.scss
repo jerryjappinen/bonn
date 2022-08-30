@@ -3,21 +3,21 @@
 }
 
 @mixin transition-ease {
-  @include transition-easing($easing-ease);
+  @include transition-easing(var(--easing-ease));
 }
 
 @mixin transition-bounce {
-  @include transition-easing($easing-bounce);
+  @include transition-easing(var(--easing-bounce));
 }
 
 @mixin transition-smooth {
-  @include transition-easing($easing-smooth);
+  @include transition-easing(var(--easing-smooth));
 }
 
 @mixin transition-snap {
-  @include transition-easing($easing-snap);
+  @include transition-easing(var(--easing-snap));
 }
 
 @mixin no-transition-easing {
-  @include transition-easing($easing-none);
+  @include transition-easing(var(--easing-none));
 }
