@@ -21,3 +21,7 @@
   }
 
 }
+
+@mixin no-animation {
+  animation-name: none;
+}

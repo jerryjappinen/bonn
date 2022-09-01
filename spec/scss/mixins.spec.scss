@@ -1,0 +1,26 @@
+@import '../../scss/shared.scss';
+
+:root {
+
+  // Animations
+  @include animation-alternate(foo-bar);
+  @include animation-delay(100ms);
+  @include animation-once(foo-bar);
+  @include animation-once(foo-bar);
+  @include pause-animation;
+  @include play-animation;
+
+  @include animation(foo-bar);
+  @include animation(foo-bar, 100ms, ease, 4, alternate);
+  @include no-animation-delay;
+  @include no-animation;
+
+  // custom-scrollbars
+  @include custom-scrollbars;
+
+  // Variables
+  @include generate-css-vars((
+    'iphone': $iphone,
+    'iphone-height': $iphone-height
+  ))
+}
