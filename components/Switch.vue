@@ -24,6 +24,8 @@ defineProps({
 <style lang="scss">
 
 :root {
+  --c-switch-border-width: 2px;
+
   --c-switch-on-color: var(--dark);
   --c-switch-on-knob-color: var(--white);
   --c-switch-off-color: var(--dark);
@@ -34,10 +36,10 @@ defineProps({
   --c-switch-disabled-off-color: var(--grey);
   --c-switch-disabled-off-knob-color: var(--grey);
 
-  --c-switch-track-height: 1.2em;
-  --c-switch-track-width: calc(var(--c-switch-track-height) * 2);
-  --c-switch-knob-margin: 0.1em ;
-  --c-switch-knob-width: calc(var(--c-switch-track-height) - (2 * var(--c-switch-knob-margin)));
+  --c-switch-knob-width: 0.75em;
+  --c-switch-knob-margin: var(--c-switch-border-width);
+  --c-switch-track-width: calc(var(--c-switch-knob-width) * 3);
+  // --c-switch-track-height: 1em;
 }
 
 .c-switch,
@@ -51,14 +53,14 @@ defineProps({
   display: inline-block;
   border-radius: 100px;
   vertical-align: middle;
-  border-width: 2px;
+  border-width: var(--c-switch-border-width);
 
-  width: var(--switch-track-width);
-  height: var(--switch-track-height);
+  width: var(--c-switch-track-width);
+  height: calc((2 * var(--c-switch-knob-margin)) + var(--c-switch-knob-width));
 
   // Since knob will overflow
-  margin-left: calc(var(--switch-track-height) / 2);
-  margin-right: calc(var(--switch-track-height) / 2);
+  // margin-left: calc(var(--switch-track-height) / 2);
+  // margin-right: calc(var(--switch-track-height) / 2);
 
   // Default for enabled, off state
   border-color: var(--c-switch-off-color);
