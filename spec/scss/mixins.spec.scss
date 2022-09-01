@@ -2,7 +2,11 @@
 
 :root {
 
-  // Animations
+  /*
+  *
+  * Animation
+  *
+  */
   @include animation-alternate(foo-bar);
   @include animation-delay(100ms);
   @include animation-once(foo-bar);
@@ -15,10 +19,46 @@
   @include no-animation-delay;
   @include no-animation;
 
-  // custom-scrollbars
+  /*
+  *
+  * Custom scrollbars
+  *
+  */
   @include custom-scrollbars;
 
-  // Variables
+  /*
+  *
+  * Dimensions
+  *
+  */
+  @include dimensions(100px);
+  @include dimensions(100px, 2);
+  @include dimensions-height(100px);
+  @include dimensions-height(100px, 2);
+
+  /*
+  *
+  * Pointer events
+  *
+  */
+  @include pointer-events;
+  @include no-pointer-events;
+
+  /*
+  *
+  * Position
+  *
+  */
+  @include static;
+  @include relative;
+  @include absolute;
+  @include fixed;
+
+  /*
+  *
+  * Variables
+  *
+  */
   @include generate-css-vars((
     'iphone': $iphone,
     'iphone-height': $iphone-height
