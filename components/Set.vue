@@ -118,7 +118,9 @@ export default {
 </template>
 
 <style lang="scss">
+
 .c-set-inline {
   @include inline-block;
 }
+
 </style>

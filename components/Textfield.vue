@@ -329,6 +329,11 @@ export default {
 
 <style lang="scss">
 
+:root {
+  --c-textfield-button-color: currentColor;
+  --c-textfield-button-background-color: var(--background-color);
+}
+
 .c-textfield {
   @include relative;
 }
@@ -365,8 +370,11 @@ export default {
   right: 0.4em;
   padding: 0.25em;
 
-  color: var(--text-color);
-  background-color: var(--background-color);
+  color: var(--c-textfield-button-color);
+
+  // FIXME: this is needed so that the button can cover the underlying text
+  // Ideally this would be more dynamic somehow
+  background-color: var(--c-textfield-button-background-color);
 
   @include transition-hover-active;
 
@@ -385,6 +393,7 @@ export default {
 
 }
 
+// FIXME: this should be more dynamic ideally
 .c-textfield-multiline {
   .c-textfield-button,
   .c-textfield-icon {
@@ -472,6 +481,7 @@ export default {
 
 }
 
+// FIXME: should be more dynamic (should support any content)
 .c-textfield-has-icon {
   .c-textfield-input {
     padding-left: calc(var(--pad-tight-horizontal) + 1em);

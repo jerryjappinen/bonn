@@ -50,6 +50,7 @@ defineProps({
 </template>
 
 <style lang="scss">
+
 .c-title-area {
   @include flex;
   @include flex-center;
@@ -88,4 +89,5 @@ defineProps({
   @include flex-fixed;
   @include relative;
 }
+
 </style>

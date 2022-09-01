@@ -5,6 +5,7 @@
 </template>
 
 <style lang="scss">
+
 .c-tag {
   @include inline-block;
   @include radius-tight;
@@ -13,4 +14,5 @@
   @include label;
   @include ellipsis;
 }
+
 </style>

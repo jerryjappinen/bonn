@@ -46,7 +46,9 @@ const circlePosition = computed(() => {
 <style lang="scss">
 
 // Note: this won't adapt to spinner size
-$c-spinner-circle-size: 48 !default;
+:root {
+  --c-spinner-circle-size: 48;
+}
 
 .c-spinner-circle {
   fill: transparent;
@@ -65,17 +67,17 @@ $c-spinner-circle-size: 48 !default;
 @keyframes c-spinner-circle {
 
   0% {
-    stroke-dashoffset: (0.66 * $c-spinner-circle-size) * 1px;
+    stroke-dashoffset: calc(1px * 0.66 * var(--c-spinner-circle-size));
     transform: rotate(0deg);
   }
 
   50% {
-    stroke-dashoffset: (3.14 * $c-spinner-circle-size) * 1px;
+    stroke-dashoffset: calc(1px * 3.14 * var(--c-spinner-circle-size));
     transform: rotate(720deg);
   }
 
   100% {
-    stroke-dashoffset: (0.66 * $c-spinner-circle-size) * 1px;
+    stroke-dashoffset: calc(1px * 0.66 * var(--c-spinner-circle-size));
     transform: rotate(1080deg);
   }
 

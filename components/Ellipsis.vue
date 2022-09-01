@@ -19,37 +19,41 @@ defineProps({
 
 <style lang="scss">
 
-@keyframes c-ellipsis-pulse {
-
-  0%,
-  40%,
-  100% {
-    opacity: 1;
-  }
-
-  20% {
-    opacity: 0;
-  }
-
+:root {
+  --c-ellipsis-duration: 5s;
+  --c-ellipsis-delay: 0.333s;
 }
 
 .c-ellipsis-loading {
 
   .c-ellipsis-bullet {
-    $c-ellipsis-duration: 5s;
-    $c-ellipsis-delay: 0.333s;
 
-    @include animation(c-ellipsis-pulse, $c-ellipsis-duration);
+    @include animation(c-ellipsis-pulse, var(--c-ellipsis-duration));
 
     &:nth-child(1) {
-      animation-delay: #{2 * $c-ellipsis-delay};
+      animation-delay: calc(2 * var(--c-ellipsis-delay));
     }
 
     &:nth-child(2) {
-      animation-delay: #{1 * $c-ellipsis-delay};
+      animation-delay: calc(1 * var(--c-ellipsis-delay));
     }
 
   }
 
 }
+
+@keyframes c-ellipsis-pulse {
+
+0%,
+40%,
+100% {
+  opacity: 1;
+}
+
+20% {
+  opacity: 0;
+}
+
+}
+
 </style>

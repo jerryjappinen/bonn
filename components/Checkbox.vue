@@ -34,7 +34,9 @@ defineProps({
 
 <style lang="scss">
 
-.c-checkbox {
+// NOTE: this could also be confined in component class name
+// But then overriding it will be more laborious
+:root {
   --c-checkbox-width: 1em;
   --c-checkbox-border-width: 2px;
 
