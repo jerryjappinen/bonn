@@ -1,4 +1,4 @@
-@mixin solid-shadow ($color: var(--shadow-color)) {
+@mixin solid-shadow ($color: var(--solid-shadow-color)) {
   box-shadow: 0 0 0 var(--solid-shadow-width) $color;
 }
 

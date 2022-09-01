@@ -115,14 +115,14 @@ defineProps({
   @include pointer;
 
   .c-checkbox-enabled {
-    @include transparent-solid-shadow(var(--c-checkbox-enabled-on-color));
+    @include transparent-solid-shadow;
   }
 
   &:focus,
   &:hover {
     .c-checkbox-enabled {
       @include transition-fast;
-      @include solid-shadow(var(--c-checkbox-enabled-on-color));
+      @include solid-shadow;
     }
   }
 }
