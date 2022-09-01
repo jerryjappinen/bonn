@@ -1,4 +1,6 @@
 // Color values
+// NOTE: could use `-base` color variables that would just have the rgb codes as a list
+// They can be used with `rgba()` to produce tranclucent versions
 :root {
   --white: #fff;
   --very-very-light-grey: #f6f6f6;

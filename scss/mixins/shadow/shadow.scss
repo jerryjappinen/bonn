@@ -1,66 +1,66 @@
-@mixin shadow ($opacity: var(--shadow-opacity), $color: var(--shadow-color)) {
+@mixin shadow ($color: var(--shadow-color)) {
   box-shadow:
     var(--shadow-x)
     var(--shadow-y)
     var(--shadow-size)
     var(--shadow-spread)
-    rgba($color, $opacity);
+    $color;
 }
 
-@mixin shadow-very-tight ($opacity: var(--shadow-very-tight-opacity), $color: var(--shadow-color)) {
+@mixin shadow-very-tight ($color: var(--shadow-color)) {
   box-shadow:
     var(--shadow-very-tight-x)
     var(--shadow-very-tight-y)
     var(--shadow-very-tight-size)
     var(--shadow-very-tight-spread)
-    rgba($color, $opacity);
+    $color;
 }
 
-@mixin shadow-tight ($opacity: var(--shadow-tight-opacity), $color: var(--shadow-color)) {
+@mixin shadow-tight ($color: var(--shadow-color)) {
   box-shadow:
     var(--shadow-tight-x)
     var(--shadow-tight-y)
     var(--shadow-tight-size)
     var(--shadow-tight-spread)
-    rgba($color, $opacity);
+    $color;
 }
 
-@mixin shadow-loose ($opacity: var(--shadow-loose-opacity), $color: var(--shadow-color)) {
+@mixin shadow-loose ($color: var(--shadow-color)) {
   box-shadow:
     var(--shadow-loose-x)
     var(--shadow-loose-y)
     var(--shadow-loose-size)
     var(--shadow-loose-spread)
-    rgba($color, $opacity);
+    $color;
 }
 
-@mixin shadow-very-loose ($opacity: var(--shadow-very-loose-opacity), $color: var(--shadow-color)) {
+@mixin shadow-very-loose ($color: var(--shadow-color)) {
   box-shadow:
     var(--shadow-very-loose-x)
     var(--shadow-very-loose-y)
     var(--shadow-very-loose-size)
     var(--shadow-very-loose-spread)
-    rgba($color, $opacity);
+    $color;
 }
 
 
 
-@mixin transparent-shadow ($color: var(--shadow-color)) {
-  @include shadow(0, $color);
+@mixin transparent-shadow {
+  @include shadow(transparent);
 }
 
-@mixin transparent-shadow-very-tight ($color: var(--shadow-color)) {
-  @include shadow-very-tight(0, $color);
+@mixin transparent-shadow-very-tight {
+  @include shadow-very-tight(transparent);
 }
 
-@mixin transparent-shadow-tight ($color: var(--shadow-color)) {
-  @include shadow-tight(0, $color);
+@mixin transparent-shadow-tight {
+  @include shadow-tight(transparent);
 }
 
-@mixin transparent-shadow-loose ($color: var(--shadow-color)) {
-  @include shadow-loose(0, $color);
+@mixin transparent-shadow-loose {
+  @include shadow-loose(transparent);
 }
 
-@mixin transparent-shadow-very-loose ($color: var(--shadow-color)) {
-  @include shadow-very-loose(0, $color);
+@mixin transparent-shadow-very-loose {
+  @include shadow-very-loose(transparent);
 }

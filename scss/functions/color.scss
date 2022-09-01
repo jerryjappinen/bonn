@@ -1,5 +1,5 @@
 // Make color translucent
-// FIXME: should return 0.1 for black, 0.25 for light values
+// NOTE: won't work for CSS variables
 @function translucent ($color, $strength: 0.15) {
   @return rgba($color, $strength);
 }
