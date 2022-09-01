@@ -57,8 +57,8 @@ defineProps({
   height: var(--switch-track-height);
 
   // Since knob will overflow
-  margin-left: calc($var(--switch-track-height) / 2);
-  margin-right: calc($var(--switch-track-height) / 2);
+  margin-left: calc(var(--switch-track-height) / 2);
+  margin-right: calc(var(--switch-track-height) / 2);
 
   // Default for enabled, off state
   border-color: var(--c-switch-off-color);
