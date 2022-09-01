@@ -1,6 +1,6 @@
-import path from 'path'
+// import path from 'path'
 import isPlainObject from 'lodash-es/isPlainObject'
-import { fileURLToPath } from 'node:url'
+// import { fileURLToPath } from 'node:url'
 
 // Link a package to a local source dir when running a bonn project
 const envVarNames = {
@@ -23,10 +23,7 @@ export default (pathsInput) => {
     const packagePath = paths[packageName] || process.env[envVarNames[packageName]]
     if (packagePath) {
       // aliases[packageName] = path.resolve(__dirname, packagePath)
-      aliases[packageName] = path.resolve(
-        fileURLToPath(new URL('../../../', import.meta.url)),
-        packagePath
-      )
+      aliases[packageName] = packagePath
     }
   }
 
