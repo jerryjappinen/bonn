@@ -1,11 +1,39 @@
+@mixin ldpi () {
+  @media (min-resolution: $ldpi) {
+    @content;
+  }
+}
+
+@mixin under-ldpi () {
+  @media (max-resolution: #{$ldpi - 1dpi}) {
+    @content;
+  }
+}
+
+
+
 @mixin hdpi () {
   @media (min-resolution: $hdpi) {
     @content;
   }
 }
 
-@mixin hdpi-under () {
+@mixin under-hdpi () {
   @media (max-resolution: #{$hdpi - 1dpi}) {
+    @content;
+  }
+}
+
+
+
+@mixin uhdpi () {
+  @media (min-resolution: $uhdpi) {
+    @content;
+  }
+}
+
+@mixin under-uhdpi () {
+  @media (max-resolution: #{$uhdpi - 1dpi}) {
     @content;
   }
 }

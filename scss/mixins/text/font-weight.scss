@@ -1,3 +1,15 @@
+@mixin thin {
+  font-weight: var(--thin);
+}
+
+@mixin regular {
+  font-weight: var(--regular);
+}
+
+@mixin semibold {
+  font-weight: var(--semibold);
+}
+
 @mixin bold {
   font-weight: var(--bold);
 }
@@ -7,6 +19,6 @@
   @include bold;
 }
 
-@mixin semibold {
-  font-weight: var(--semibold);
+@mixin black {
+  font-weight: var(--black);
 }

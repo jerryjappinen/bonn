@@ -17,13 +17,15 @@
   --line-height-very-tight: 1.2;
   --line-height-tight: 1.4;
   --line-height: 1.6;
-  --line-height-loose: 2;
+  --line-height-loose: 1.8;
+  --line-height-very-loose: 2;
   --line-height-print: 1.5;
 
   --line-height-very-tight-em: calc(var(--line-height-very-tight) * 1em);
   --line-height-tight-em: calc(var(--line-height-tight) * 1em);
   --line-height-em: calc(var(--line-height) * 1em);
   --line-height-loose-em: calc(var(--line-height-loose) * 1em);
+  --line-height-very-loose-em: calc(var(--line-height-very-loose) * 1em);
   --line-height-print-em: calc(var(--line-height-print) * 1em);
 
   // Headline styling

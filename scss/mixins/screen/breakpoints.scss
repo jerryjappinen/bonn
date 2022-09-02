@@ -1,3 +1,5 @@
+// Basic breakpoints
+
 @mixin under-tiny {
   @include screen-under($breakpoint-tiny) {
     @content;
@@ -17,7 +19,7 @@
 }
 
 @mixin over-or-at-tiny {
-  @include screen-under-or-at-over($breakpoint-tiny) {
+  @include screen-over-or-at($breakpoint-tiny) {
     @content;
   }
 }
@@ -148,6 +150,67 @@
 
 @mixin over-or-at-full {
   @include screen-over-or-at($breakpoint-full) {
+    @content;
+  }
+}
+
+
+
+// Devices
+// NOTE: some of these are intuitive, but it's not quite perfect
+
+@mixin phone-tight {
+  @include screen-under-or-at($breakpoint-phone) {
+    @content;
+  }
+}
+
+@mixin phone {
+  @include screen-under-or-at($breakpoint-phone) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @include screen-over($breakpoint-phone) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @include screen-over-or-at($breakpoint-tablet) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @include screen-under-or-at($breakpoint-laptop) {
+    @content;
+  }
+}
+
+@mixin monitor {
+  @include screen-over($breakpoint-laptop) {
+    @content;
+  }
+}
+
+
+
+@mixin under-desktop {
+  @include screen-under($breakpoint-tablet) {
+    @content;
+  }
+}
+
+@mixin under-monitor {
+  @include screen-under-or-at($breakpoint-monitor) {
+    @content;
+  }
+}
+
+@mixin over-monitor {
+  @include screen-over($breakpoint-monitor) {
     @content;
   }
 }

@@ -56,6 +56,181 @@
 
   /*
   *
+  * Screen
+  *
+  */
+  @include under-tiny { color: red; };
+  @include under-or-at-tiny { color: red; };
+  @include over-tiny { color: red; };
+  @include over-or-at-tiny { color: red; };
+  @include under-small { color: red; };
+  @include under-or-at-small { color: red; };
+  @include over-small { color: red; };
+  @include over-or-at-small { color: red; };
+  @include under-medium { color: red; };
+  @include under-or-at-medium { color: red; };
+  @include over-medium { color: red; };
+  @include over-or-at-medium { color: red; };
+  @include under-large { color: red; };
+  @include under-or-at-large { color: red; };
+  @include over-large { color: red; };
+  @include over-or-at-large { color: red; };
+  @include under-very-large { color: red; };
+  @include under-or-at-very-large { color: red; };
+  @include over-very-large { color: red; };
+  @include over-or-at-very-large { color: red; };
+  @include under-full { color: red; };
+  @include under-or-at-full { color: red; };
+  @include over-full { color: red; };
+  @include over-or-at-full { color: red; };
+  @include phone-tight { color: red; };
+  @include phone { color: red; };
+  @include tablet { color: red; };
+  @include desktop { color: red; };
+  @include laptop { color: red; };
+  @include monitor { color: red; };
+  @include under-desktop { color: red; };
+  @include under-monitor { color: red; };
+  @include over-monitor { color: red; };
+
+  @include dark { color: red; }
+  @include light { color: red; }
+
+  @include hdpi { color: red; }
+  @include under-hdpi { color: red; }
+  @include ldpi { color: red; }
+  @include under-ldpi { color: red; }
+  @include uhdpi { color: red; }
+  @include under-uhdpi { color: red; }
+
+  @include screen-under-or-at(100px) { color: red; }
+  @include screen-over-or-at(100px) { color: red; }
+  @include screen-under(100px) { color: red; }
+  @include screen-over(100px) { color: red; }
+
+  @include screen-height-under-or-at(100px) { color: red; }
+  @include screen-height-over-or-at(100px) { color: red; }
+  @include screen-height-under(100px) { color: red; }
+  @include screen-height-over(100px) { color: red; }
+
+  @include not-print { color: red; }
+  @include print { color: red; }
+  @include screen { color: red; }
+
+  @include not-print { color: red; }
+  @include print { color: red; }
+  @include screen { color: red; }
+
+  @include portrait { color: red; }
+  @include landscape { color: red; }
+
+  /*
+  *
+  * Shadow
+  *
+  */
+  @include shadow-very-loose;
+  @include shadow-loose;
+  @include shadow;
+  @include shadow-tight;
+  @include shadow-very-tight;
+
+  @include shadow-very-loose(var(--blue));
+  @include shadow-loose(var(--blue));
+  @include shadow(var(--blue));
+  @include shadow-tight(var(--blue));
+  @include shadow-very-tight(var(--blue));
+
+  @include transparent-shadow-very-loose;
+  @include transparent-shadow-loose;
+  @include transparent-shadow;
+  @include transparent-shadow-tight;
+  @include transparent-shadow-very-tight;
+
+  @include hairline-shadow;
+  @include transparent-hairline-shadow;
+
+  @include solid-shadow;
+  @include transparent-solid-shadow;
+
+  @include no-shadow;
+
+  /*
+  *
+  * Text
+  *
+  */
+  @include discreet;
+  @include link;
+  @include label;
+  @include h1;
+  @include h2;
+  @include h3;
+  @include h4;
+  @include h5;
+  @include h6;
+
+  @include italic;
+  @include oblique;
+
+  @include mono;
+  @include serif;
+  @include sans;
+  @include system-font;
+  @include headline-font;
+
+  @include small-font;
+  @include large-font;
+
+  @include hyphens;
+  @include no-hyphens;
+  @include no-break;
+  @include ellipsis;
+  @include max-lines;
+  @include max-lines(4);
+
+  @include line-height(4);
+  @include line-height-em(4);
+
+  @include line-height;
+  @include line-height-em;
+
+  @include line-height-default;
+  @include line-height-very-tight;
+  @include line-height-tight;
+  @include line-height-loose;
+  @include line-height-very-loose;
+  @include line-height-print;
+
+  @include line-height-default-em;
+  @include line-height-very-tight-em;
+  @include line-height-tight-em;
+  @include line-height-loose-em;
+  @include line-height-very-loose-em;
+  @include line-height-print-em;
+
+  @include underline;
+  @include underline(red);
+  @include underline-color(red);
+  @include strike-through;
+  @include overline;
+
+  @include no-text-decoration;
+  @include no-text-decoration-style;
+  @include no-text-decoration-color;
+
+  @include one-line-height;
+  @include no-line-height;
+
+  @include thin;
+  @include regular;
+  @include semibold;
+  @include bold;
+  @include strong;
+  @include black;
+
+  /*
+  *
   * Variables
   *
   */
@@ -63,4 +238,5 @@
     'iphone': $iphone,
     'iphone-height': $iphone-height
   ))
+
 }

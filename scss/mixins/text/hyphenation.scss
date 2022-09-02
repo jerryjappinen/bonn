@@ -20,7 +20,7 @@
   // vertical-align: middle;
 }
 
-@mixin max-lines ($count) {
+@mixin max-lines ($count: 2) {
   @if $count {
     overflow: hidden;
     display: -webkit-box;

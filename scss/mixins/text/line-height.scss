@@ -1,15 +1,67 @@
-@mixin line-height-tight {
-  line-height: var(--line-height-tight);
+@mixin line-height ($line-height: var(--line-height)) {
+  line-height: $line-height;
 }
 
 @mixin line-height-default {
-  line-height: var(--line-height);
+  @include line-height;
+}
+
+@mixin line-height-very-tight {
+  @include line-height(var(--line-height-very-tight));
+}
+
+@mixin line-height-tight {
+  @include line-height(var(--line-height-tight));
 }
 
 @mixin line-height-loose {
-  line-height: var(--line-height-loose);
+  @include line-height(var(--line-height-loose));
+}
+
+@mixin line-height-very-loose {
+  @include line-height(var(--line-height-very-loose));
+}
+
+@mixin line-height-print {
+  @include line-height(var(--line-height-print));
+}
+
+
+
+@mixin line-height-em ($line-height: var(--line-height)) {
+  line-height: calc(var(--line-height-tight) * 1em);
+}
+
+@mixin line-height-default-em {
+  @include line-height-em;
+}
+
+@mixin line-height-very-tight-em {
+  @include line-height(var(--line-height-very-tight-em));
+}
+
+@mixin line-height-tight-em {
+  @include line-height(var(--line-height-tight-em));
+}
+
+@mixin line-height-loose-em {
+  @include line-height(var(--line-height-loose-em));
+}
+
+@mixin line-height-very-loose-em {
+  @include line-height(var(--line-height-very-loose-em));
+}
+
+@mixin line-height-print-em {
+  @include line-height(var(--line-height-print-em));
+}
+
+
+
+@mixin one-line-height {
+  @include line-height(1);
 }
 
 @mixin no-line-height {
-  line-height: 1;
+  @include line-height(0);
 }

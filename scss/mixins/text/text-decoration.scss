@@ -12,16 +12,22 @@
   }
 }
 
-@mixin text-decoration-style ($style) {
-  text-decoration-style: $style;
-}
-
 @mixin text-decoration-color ($color) {
   text-decoration-color: $color;
 }
 
+@mixin text-decoration-style ($style) {
+  text-decoration-style: $style;
+}
+
+
+
 @mixin no-text-decoration {
   @include text-decoration(none);
+}
+
+@mixin no-text-decoration-style {
+  @include text-decoration-style(solid);
 }
 
 @mixin no-text-decoration-color {
@@ -40,39 +46,12 @@
   @include text-decoration-color($color);
 }
 
-@mixin no-underline-color {
-  @include no-decoration-color;
+
+
+@mixin strike-through ($color: null, $style: null) {
+  @include text-decoration(strike-through, $color, $style);
 }
 
-
-
-
-
-
-
-@mixin underline ($color: null) {
-  text-decoration-line: underline;
-
-  @if ($color) {
-    text-decoration-color: $color;
-  }
-
-}
-
-@mixin strike-through {
-  text-decoration-line: strike-through;
-}
-
-@mixin overline {
-  text-decoration-line: overline;
-}
-
-
-
-@mixin text-decoration-color ($color) {
-  text-decoration-color: $color;
-}
-
-@mixin no-text-decoration-color {
-  @include text-decoration-color(transparent);
+@mixin overline ($color: null, $style: null) {
+  @include text-decoration(overline, $color, $style);
 }
