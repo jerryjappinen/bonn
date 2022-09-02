@@ -9,7 +9,7 @@ export default () => {
       // async (inlineOptions, nuxt) => {
       //   console.log('inline module definition', nuxt.options.plugins)
       //   addPlugin({
-      //     src: fileURLToPath(new URL('./persistedstate', import.meta.url)),
+      //     src: fileURLToPath(new URL('../plugins/pinia-persist', import.meta.url)),
       //     // filename: 'pinia-plugin-persistedstate.client.js' // [optional]
       //   })
       // },

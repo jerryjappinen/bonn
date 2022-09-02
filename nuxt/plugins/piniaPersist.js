@@ -3,6 +3,8 @@ import { createNuxtPersistedState } from 'pinia-plugin-persistedstate/nuxt'
 
 import { useCookie } from '#imports'
 
-export default defineNuxtPlugin((nuxtApp) => {
-  nuxtApp.$pinia.use(createNuxtPersistedState(useCookie))
-})
+export default () => {
+  return defineNuxtPlugin((nuxtApp) => {
+    nuxtApp.$pinia.use(createNuxtPersistedState(useCookie))
+  })
+}
