@@ -1,4 +1,3 @@
-// import { defineStore } from 'pinia'
 // import { ref, computed } from 'vue'
 
 import useCursor from '../../composables/useCursor'
