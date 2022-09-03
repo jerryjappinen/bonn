@@ -19,6 +19,6 @@
   @include bold;
 }
 
-@mixin black {
-  font-weight: var(--black);
+@mixin heavy {
+  font-weight: var(--heavy);
 }
