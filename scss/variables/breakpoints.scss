@@ -1,7 +1,7 @@
 @import '../variables-scss/breakpoints.scss';
 
 // Breakpoints
-// NOTE: scss variables must be used in media queries
+// NOTE scss variables must be used in media queries
 :root {
   --breakpoint-tiny: $breakpoint-tiny;
   --breakpoint-small: $breakpoint-small;
