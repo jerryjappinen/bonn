@@ -24,7 +24,8 @@
 
   code {
     @include radius-tight;
-    @include pad-tight-horizontal;
+    padding-left: 0.2em;
+    padding-right: 0.2em;
 
     font-size: var(--font-size-mono);
     background-color: var(--bodytext-code-background-color);
