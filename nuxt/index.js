@@ -1,5 +1,5 @@
 // Nuxt module definition
-import { defineNuxtModule, addComponentsDir, addAutoImportDir } from '@nuxt/kit'
+import { defineNuxtModule, addComponentsDir, addImportsDir } from '@nuxt/kit'
 import { fileURLToPath } from 'node:url'
 
 // This file allows auto importing bonn components and composables in a Nuxt app
@@ -36,7 +36,7 @@ export default defineNuxtModule({
     // FIXME: no prefixing for composables
     if (composables) {
       const composablesDir = fileURLToPath(new URL('../composables', import.meta.url))
-      addAutoImportDir(composablesDir)
+      addImportsDir(composablesDir)
 
       // Prefixing can be done here, but no way to make default imports work?
       // addAutoImport(composableNames.map((composableName) => {
