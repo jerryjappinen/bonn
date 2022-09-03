@@ -1,5 +1,11 @@
 export default (string, suffix) => {
-  if (suffix && string.substr(-suffix.length) === suffix) {
+  if (
+    string &&
+    string.length &&
+    suffix &&
+    suffix.length &&
+    string.substring(string.length - suffix.length) === suffix
+  ) {
     return true
   }
 

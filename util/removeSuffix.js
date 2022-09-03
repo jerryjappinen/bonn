@@ -5,14 +5,17 @@ const removeCharacters = (string, length) => {
 }
 
 export default (string, suffix) => {
-  let result = '' + string
-  const suffixLength = suffix.length
+  if (string && string.length && suffix && suffix.length) {
+    let result = '' + string
 
-  if (suffixLength) {
-    while (isSuffixed(result, suffix)) {
-      result = removeCharacters(result, suffixLength)
+    if (suffix.length) {
+      while (isSuffixed(result, suffix)) {
+        result = removeCharacters(result, suffix.length)
+      }
     }
+
+    return result
   }
 
-  return result
+  return string
 }
