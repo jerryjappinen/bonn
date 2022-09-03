@@ -8,7 +8,7 @@ export default defineNuxtModule({
     name: 'bonn',
     configKey: 'bonn',
     compatibility: {
-      nuxt: '^3.0.0'
+      nuxt: '^3.0.0-rc.9'
     }
   },
 
