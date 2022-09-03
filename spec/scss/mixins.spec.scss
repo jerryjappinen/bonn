@@ -231,6 +231,38 @@
 
   /*
   *
+  * Transitions
+  *
+  */
+
+  @include transition-delay(100ms);
+  @include transition-delay-very-very-fast;
+  @include transition-delay-very-fast;
+  @include transition-delay-fast;
+  @include transition-delay-medium;
+  @include transition-delay-slow;
+  @include transition-delay-very-slow;
+  @include transition-delay-very-very-slow;
+  @include no-transition-delay;
+
+  @include transition-duration(100ms);
+  @include transition-very-very-fast;
+  @include transition-very-fast;
+  @include transition-fast;
+  @include transition-medium;
+  @include transition-slow;
+  @include transition-very-slow;
+  @include transition-very-very-slow;
+
+  @include transition-easing(ease);
+  @include transition-ease;
+  @include transition-bounce;
+  @include transition-smooth;
+  @include transition-snap;
+  @include no-transition-easing;
+
+  /*
+  *
   * Variables
   *
   */
