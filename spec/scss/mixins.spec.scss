@@ -24,6 +24,10 @@
   * Custom scrollbars
   *
   */
+  @include scrollbar-color(red);
+  @include scrollbar-color(red, yellow);
+  @include dark-scrollbars;
+  @include light-scrollbars;
   @include custom-scrollbars;
 
   /*

@@ -1,18 +1,18 @@
 // Custom scrollbars
 :root {
-  --scrollbar-margin: 4px;
-  --scrollbar-size: 4px;
-  --scrollbar-radius: 2px;
-  --scrollbar-track-color: transparent;
+  --custom-scrollbars-margin: 4px;
+  --custom-scrollbars-size: 4px;
+  --custom-scrollbars-radius: 2px;
+  --custom-scrollbars-track-color: transparent;
 
   // Minimum length of scrollbar thumb (width of horizontal, height of vertical)
-  --scrollbar-minlength: 1.5rem;
+  --custom-scrollbars-minlength: 1.5rem;
 
   // FF-only accepts auto, thin, none
-  --scrollbar-ff-width: thin;
+  --custom-scrollbars-ff-width: thin;
 
-  --scrollbar-border-color: transparent;
-  --scrollbar-color: rgba(#888, 0.3);
-  --scrollbar-color-hover: rgba(#888, 0.4);
-  --scrollbar-color-active: rgba(#888, 0.5);
+  --custom-scrollbars-border-color: transparent;
+  --custom-scrollbars-color: rgba(#888, 0.3);
+  --custom-scrollbars-color-hover: rgba(#888, 0.4);
+  --custom-scrollbars-color-active: rgba(#888, 0.5);
 }

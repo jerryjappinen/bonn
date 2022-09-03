@@ -1,0 +1,76 @@
+@mixin scrollbar-color ($color, $background-color: null) {
+  @if ($background-color) {
+    scrollbar-color: $color $background-color;
+  } @else {
+    scrollbar-color: $color;
+  }
+}
+
+@mixin default-scrollbars {
+  scrollbar-color: auto;
+}
+
+@mixin light-scrollbars {
+  scrollbar-color: light;
+}
+
+@mixin dark-scrollbars {
+  scrollbar-color: dark;
+}
+
+
+
+@mixin custom-scrollbars {
+  scrollbar-color: var(--custom-scrollbars-color) var(--custom-scrollbars-track-color);
+
+  ::-webkit-scrollbar {
+    width: calc((2 * var(--custom-scrollbars-margin)) + var(--custom-scrollbars-size));
+    height: calc((2 * var(--custom-scrollbars-margin)) + var(--custom-scrollbars-size));
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: var(--custom-scrollbars-track-color);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-width: 0;
+    border-style: solid;
+    box-sizing: border-box;
+    background-clip: content-box;
+    border-width: var(--custom-scrollbars-margin);
+
+    border-radius: calc(var(--custom-scrollbars-radius) + var(--custom-scrollbars-margin));
+    border-color: var(--custom-scrollbars-border-color);
+    background-color: var(--custom-scrollbars-color);
+
+    &:hover {
+      background-color: var(--custom-scrollbars-color-hover);
+    }
+
+    &:active {
+      background-color: var(--custom-scrollbars-color-active);
+    }
+
+    &:vertical {
+      min-height: var(--custom-scrollbars-minlength);
+    }
+
+    &:horizontal {
+      min-width: var(--custom-scrollbars-minlength);
+    }
+
+  }
+
+}
+
+@mixin custom-scrollbar-transitions {
+
+  ::-webkit-scrollbar,
+  ::-webkit-scrollbar-track,
+  ::-webkit-scrollbar-button,
+  ::-webkit-scrollbar-thumb {
+    @include transition-properties-common;
+    @include transition-fast;
+  }
+
+}
