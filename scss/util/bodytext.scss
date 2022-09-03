@@ -1,6 +1,10 @@
 // Text context
 
 // This is used for rich body text. Elements commonly used in building components, like links, are robbed of their sensible defaults. Attach this utility class on a body text container to style the rich text elements in a way that makes sense for natural article content.
+:root {
+  --bodytext-code-background-color: var(--offset-background-color);
+  --bodytext-code-border-color: var(--border-color);
+}
 
 .bodytext {
 
@@ -20,24 +24,23 @@
 
   code {
     @include radius-tight;
-    font-size: 0.85em;
-    padding: 0 0.2em;
-    background-color: var(--very-very-light-grey);
-    box-shadow: 0 0 0 1px var(--border-color);
+    @include pad-tight-horizontal;
+
+    font-size: var(--font-size-mono);
+    background-color: var(--bodytext-code-background-color);
+    @include hairline-shadow(var(--bodytext-code-border-color));
   }
 
   pre {
     @include radius;
     @include pad-loose;
-    background-color: var(--very-very-light-grey);
     border-width: 1px;
-  }
+    background-color: var(--bodytext-code-background-color);
 
-  pre {
     code {
       @include no-radius;
-      background-color: transparent;
       box-shadow: none;
+      background-color: transparent;
     }
   }
 

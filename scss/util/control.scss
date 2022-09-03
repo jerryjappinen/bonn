@@ -10,7 +10,7 @@
 
   // Prevent user select when double clicking or swiping etc.
   &.control-mouse-down {
-    user-select: none;
+    @include no-select;
   }
 
 }

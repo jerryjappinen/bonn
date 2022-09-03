@@ -1,0 +1,11 @@
+@mixin select-all {
+  user-select: all;
+}
+
+@mixin select-text {
+  user-select: text;
+}
+
+@mixin no-select {
+  user-select: none;
+}

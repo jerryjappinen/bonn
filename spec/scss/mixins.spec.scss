@@ -129,6 +129,15 @@
   * Shadow
   *
   */
+  @include select-all;
+  @include select-text;
+  @include no-select;
+
+  /*
+  *
+  * Shadow
+  *
+  */
   @include shadow-very-loose;
   @include shadow-loose;
   @include shadow;
