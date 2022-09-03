@@ -261,6 +261,20 @@
   @include transition-snap;
   @include no-transition-easing;
 
+  @include transition-hover;
+  @include transition-active;
+  @include transition-hover-active;
+
+  @include transition-properties(color, width);
+  @include transition-properties-common;
+  @include transition-properties-style;
+  @include transition-properties-transform;
+  @include transition-properties-position;
+  @include no-transition-properties;
+
+  @include transition(100ms);
+  @include no-transition;
+
   /*
   *
   * Variables

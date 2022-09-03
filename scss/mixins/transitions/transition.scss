@@ -1,9 +1,7 @@
-@mixin transition ($duration, $properties: null, $delay: null) {
+@mixin transition ($duration, $properties: var(--transition-properties-common), $delay: null) {
   transition-duration: $duration;
 
-  @if $properties {
-    transition-property: $properties;
-  }
+  @include transition-properties($properties);
 
   @if $delay {
     transition-delay: $delay;
