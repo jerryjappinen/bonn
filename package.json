@@ -19,7 +19,6 @@
     "components.js",
     "composables.js",
     "index.js",
-    "stores.js",
     "README.md",
     ".editorconfig",
     ".nvmrc"

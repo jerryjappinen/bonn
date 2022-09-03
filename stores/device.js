@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
-import deviceSetup from './deviceSetup'
 
-export default defineStore('device', deviceSetup)
+import device from './setup/device'
+
+export default defineStore('device', device)

@@ -1,11 +1,11 @@
 // import { defineStore } from 'pinia'
 // import { ref, computed } from 'vue'
 
-import useCursor from '../composables/useCursor'
-import useNetwork from '../composables/useNetwork'
-import usePlatform from '../composables/usePlatform'
-import useTime from '../composables/useTime'
-import useViewport from '../composables/useViewport'
+import useCursor from '../../composables/useCursor'
+import useNetwork from '../../composables/useNetwork'
+import usePlatform from '../../composables/usePlatform'
+import useTime from '../../composables/useTime'
+import useViewport from '../../composables/useViewport'
 
 // export default defineStore('device', () => { })
 
