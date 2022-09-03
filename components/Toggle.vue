@@ -2,8 +2,6 @@
 // Wrapper component to be used as a hit area. Using this makes it easier to style and control a hit area separately from the control visualisation inside it, for example in table rows
 import Set from './Set'
 
-import useModelValue from '../composables/useModelValue'
-
 const props = defineProps({
   disabled: {},
   block: {},
@@ -18,13 +16,18 @@ const props = defineProps({
   }
 })
 
+const value = computed({
+  get () {
+    return props.modelValue
+  },
+  set (value) {
+    emit('update:modelValue', value)
+  }
+})
+
 // This event name is set in Vue
 // Why do I have to define it? Twice?
 const emit = defineEmits('update:modelValue')
-
-// I only saved the computed definition now
-// A little less duplication but doesn't seem ideal
-const value = useModelValue(props.modelValue)
 </script>
 
 <template>
