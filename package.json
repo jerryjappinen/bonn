@@ -69,18 +69,18 @@
     "pinia-plugin-persistedstate": "^2.1.1",
     "platform-detect": "^3.0.1",
     "prettier": "^2.7.1",
-    "sass": "^1.54.5",
+    "sass": "^1.54.8",
     "sass-loader": "^13.0.2",
     "seedrandom": "^3.0.5",
     "vite-plugin-markdown": "^2.1.0",
-    "vite-svg-loader": "^3.4.0",
+    "vite-svg-loader": "^3.5.1",
     "vue3-slider": "^1.8.0"
   },
   "peerDependencies": {
     "date-fns": "^2.29.2",
     "lodash-es": "^4.17.21",
-    "nuxt": "^3.0.0-rc.8",
-    "vue": "^3.2.37"
+    "nuxt": "^3.0.0-rc.9",
+    "vue": "^3.2.38"
   },
   "peerDependenciesMeta": {
     "date-fns": {
@@ -96,9 +96,9 @@
   "devDependencies": {
     "date-fns": "^2.29.2",
     "lodash-es": "^4.17.21",
-    "nuxt": "^3.0.0-rc.8",
+    "nuxt": "^3.0.0-rc.9",
     "pinia": "^2.0.21",
     "vitest": "^0.22.1",
-    "vue": "^3.2.37"
+    "vue": "^3.2.38"
   }
 }
