@@ -44,13 +44,11 @@
 }
 
 @mixin h5 {
-  @include h4;
-  @include discreet;
+  @include strong;
   font-size: var(--font-size-h5);
 }
 
 @mixin h6 {
   @include discreet;
-  font-size: inherit;
   font-size: var(--font-size-h6);
 }
