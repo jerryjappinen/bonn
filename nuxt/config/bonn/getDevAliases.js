@@ -1,5 +1,8 @@
 // import path from 'path'
 import isPlainObject from 'lodash-es/isPlainObject'
+
+import suffixWith from '../../../util/suffixWith'
+
 // import { fileURLToPath } from 'node:url'
 
 // Link a package to a local source dir when running a bonn project
@@ -23,7 +26,7 @@ export default (pathsInput) => {
     const packagePath = paths[packageName] || process.env[envVarNames[packageName]]
     if (packagePath) {
       // aliases[packageName] = path.resolve(__dirname, packagePath)
-      aliases[packageName] = packagePath
+      aliases[packageName] = suffixWith(packagePath, '/')
     }
   }
 
