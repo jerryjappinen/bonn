@@ -1,7 +1,9 @@
 <script setup>
-import { computed } from 'vue'
+import { computed, unref } from 'vue'
 import isNumber from 'lodash-es/isNumber'
 import isString from 'lodash-es/isString'
+
+import toJson from '../util/toJson'
 
 const props = defineProps({
   data: {
@@ -10,12 +12,13 @@ const props = defineProps({
 })
 
 const content = computed(() => {
+  const data = unref(props.data)
 
-  if (isNumber(props.data) || isString(props.data)) {
-    return props.data
+  if (isNumber(data) || isString(data)) {
+    return data
   }
 
-  return JSON.stringify(props.data, null, 2)
+  return toJson(data)
 })
 </script>
 
