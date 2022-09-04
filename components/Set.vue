@@ -59,7 +59,7 @@ const component = computed(() => {
 })
 
 const isOn = computed(() => {
-  const modelValue = unref(modelValue)
+  const modelValue = unref(props.modelValue)
 
   return unref(modelValue) === unref(props.to)
 })
