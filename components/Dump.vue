@@ -8,7 +8,8 @@ import toJson from '../util/toJson'
 const props = defineProps({
   data: {
     default: null
-  }
+  },
+  raw: Boolean
 })
 
 const content = computed(() => {
@@ -23,5 +24,5 @@ const content = computed(() => {
 </script>
 
 <template>
-  <pre class="c-dump"><code>{{ content }}</code></pre>
+  <pre class="c-dump"><code>{{ raw ? data : content }}</code></pre>
 </template>
