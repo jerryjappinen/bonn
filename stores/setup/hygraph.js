@@ -44,7 +44,7 @@ const sortEntriesByType = (entriesByType, sorters) => {
 export default (optionsInput) => {
   const options = isString(optionsInput) ? { projectId: optionsInput } : (optionsInput || {})
 
-  const persist = optionsInput.persist ? persistConfig : false
+  const persist = options.persist ? persistConfig : false
 
   // Customisation
   const projectId = ref(unref(options.projectId)) // required
