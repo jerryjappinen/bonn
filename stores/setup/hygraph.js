@@ -3,16 +3,16 @@ import { ref, computed, unref } from 'vue'
 import { request as graphqlRequest } from 'graphql-request'
 import unwrap from 'graphql-unwrap'
 
-// import filter from 'lodash/filter'
-import flatten from 'lodash/flatten'
-import groupBy from 'lodash/groupBy'
-import isArray from 'lodash/isArray'
-import isString from 'lodash/isString'
-import keyBy from 'lodash/keyBy'
-import mapValues from 'lodash/mapValues'
-import merge from 'lodash/merge'
-import orderBy from 'lodash/orderBy'
-import pickBy from 'lodash/pickBy'
+import flatten from 'lodash-es/flatten'
+import groupBy from 'lodash-es/groupBy'
+import isArray from 'lodash-es/isArray'
+import isFunction from 'lodash-es/isFunction'
+import isString from 'lodash-es/isString'
+import keyBy from 'lodash-es/keyBy'
+import mapValues from 'lodash-es/mapValues'
+import merge from 'lodash-es/merge'
+import orderBy from 'lodash-es/orderBy'
+import pickBy from 'lodash-es/pickBy'
 
 // Defaults
 const contentApiBaseUrl = 'https://api-eu-central-1.hygraph.com/v2/'
@@ -138,6 +138,14 @@ export default (optionsInput) => {
 
       // Now we can finally get the actual list per type
       return mapValues(callbacksByKey, (keyByCallback) => {
+        // Pass entries to callback
+        if (isFunction(keyByCallback)) {
+          return keyBy(entries, (...args) => {
+            return keyByCallback(...args, entriesById.value)
+          })
+        }
+
+        // Default behavior
         return keyBy(entries, keyByCallback)
       })
     })
