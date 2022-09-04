@@ -48,7 +48,7 @@ export default (optionsInput) => {
 
   // Customisation
   const projectId = ref(unref(options.projectId)) // required
-  const environment = ref(unref(options.environment)) || defaultEnvironment
+  const environment = ref(unref(options.environment) || defaultEnvironment)
 
   // Callback per type for orderBy
   // https://lodash.com/docs/4.17.15#orderBy
