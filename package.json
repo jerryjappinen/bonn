@@ -1,6 +1,6 @@
 {
   "name": "bonn",
-  "version": "0.0.46",
+  "version": "0.0.47",
   "description": "Utility, style and component library for web development.",
   "private": false,
   "files": [
@@ -59,7 +59,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^6.0.1",
     "graphql-request": "^5.0.0",
-    "graphql-unwrap": "^0.5.1",
+    "graphql-unwrap": "^0.5.3",
     "gravatar-url": "^4.0.1",
     "markdown-it": "^13.0.1",
     "markdown-it-attrs": "^4.1.4",
@@ -99,7 +99,7 @@
     "lodash-es": "^4.17.21",
     "nuxt": "^3.0.0-rc.9",
     "pinia": "^2.0.21",
-    "vitest": "^0.22.1",
+    "vitest": "^0.23.0",
     "vue": "^3.2.38"
   }
 }
