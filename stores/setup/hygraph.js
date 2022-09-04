@@ -42,6 +42,8 @@ const sortEntriesByType = (entriesByType, sorters) => {
 }
 
 export default (optionsInput) => {
+  console.log('hygraph setup: optionsInput', optionsInput)
+
   const options = isString(optionsInput) ? { projectId: optionsInput } : (optionsInput || {})
 
   const persist = options.persist ? persistConfig : false
@@ -199,8 +201,7 @@ export default (optionsInput) => {
     }))
   }
 
-  // Store API
-  return {
+  const expose = {
     persist,
 
     apiUrl,
@@ -228,4 +229,9 @@ export default (optionsInput) => {
     fetch,
     fetchMultiple
   }
+
+  console.log('hygraph setup: expose', expose)
+
+  // Store API
+  return expose
 }
