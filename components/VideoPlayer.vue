@@ -73,7 +73,7 @@ const sourceBinding = computed(() => {
   }
 })
 
-const bind = computed(() => {
+const bindings = computed(() => {
   const bind = {}
 
   if (props.autoplay) {

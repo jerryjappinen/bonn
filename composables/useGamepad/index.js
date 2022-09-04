@@ -1,4 +1,4 @@
-import { computed, ref, onMounted, onUnmounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 
 import gamepadIsSupported from '../..//gamepadIsSupported'
 import getGamepads from '../..//getGamepads'

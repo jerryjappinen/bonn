@@ -1,4 +1,6 @@
 <script setup>
+import { computed } from 'vue'
+
 import ExternalLink from './ExternalLink'
 import ProductHuntBadge from './ProductHuntBadge'
 

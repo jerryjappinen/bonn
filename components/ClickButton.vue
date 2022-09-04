@@ -1,15 +1,9 @@
 <script setup>
-import { resolveComponent } from 'vue'
+import { computed, unref, resolveComponent } from 'vue'
 
 import Fade from './Fade'
 // import Icon from './Icon'
 import Spinner from './Spinner'
-
-import {
-  // ref,
-  computed,
-  unref
-} from 'vue'
 
 const props = defineProps({
 
@@ -96,9 +90,9 @@ const htmlElementName = computed(() => {
   return null
 })
 
-const isRouterLink = computed(() => {
-  return !htmlElementName.value
-})
+// const isRouterLink = computed(() => {
+//   return !htmlElementName.value
+// })
 
 const is = computed(() => {
   if (htmlElementName.value) {
