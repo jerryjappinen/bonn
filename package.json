@@ -1,6 +1,6 @@
 {
   "name": "bonn",
-  "version": "0.0.52",
+  "version": "0.0.53",
   "description": "Utility, style and component library for web development.",
   "private": false,
   "files": [
@@ -50,7 +50,7 @@
   "dependencies": {
     "@averjs/nuxt-compression": "^1.2.2",
     "@nuxtjs/sitemap": "^2.4.0",
-    "@pinia/nuxt": "^0.4.1",
+    "@pinia/nuxt": "^0.4.2",
     "@rollup/plugin-graphql": "^1.1.0",
     "@vanillaes/csv": "^3.0.1",
     "eslint": "^8.23.0",
@@ -102,8 +102,8 @@
     "graphql-request": "^5.0.0",
     "lodash-es": "^4.17.21",
     "nuxt": "^3.0.0-rc.9",
-    "pinia": "^2.0.21",
-    "vitest": "^0.23.0",
+    "pinia": "^2.0.22",
+    "vitest": "^0.23.1",
     "vue": "^3.2.38"
   }
 }

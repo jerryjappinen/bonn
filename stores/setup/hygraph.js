@@ -15,7 +15,6 @@ import orderBy from 'lodash-es/orderBy'
 import pickBy from 'lodash-es/pickBy'
 
 // Defaults
-const contentApiBaseUrl = 'https://api-eu-central-1.hygraph.com/v2/'
 const defaultEnvironment = 'master'
 const persistConfig = {
   paths: [
@@ -42,14 +41,15 @@ const sortEntriesByType = (entriesByType, sorters) => {
 }
 
 export default (optionsInput) => {
-  console.log('hygraph setup: optionsInput', optionsInput)
+  // console.log('hygraph setup: optionsInput', optionsInput)
 
-  const options = isString(optionsInput) ? { projectId: optionsInput } : (optionsInput || {})
+  const options = isString(optionsInput) ? { apiUrl: optionsInput } : (optionsInput || {})
 
   const persist = options.persist ? persistConfig : false
 
   // Customisation
-  const projectId = ref(unref(options.projectId)) // required
+  const domain = ref(unref(options.domain)) // required if apiUrl is not set, e.g. 'api-eu-west-2'
+  const projectId = ref(unref(options.projectId)) // required if apiUrl is not set, e.g. 'cl7n4zm4t28ec01uh0oum04sc'
   const environment = ref(unref(options.environment) || defaultEnvironment)
 
   // Callback per type for orderBy
@@ -70,7 +70,8 @@ export default (optionsInput) => {
   // Extended config
 
   const apiUrl = computed(() => {
-    return (unref(options.apiUrl) || contentApiBaseUrl) + projectId.value + '/' + environment.value
+    const custom = unref(options.apiUrl)
+    return custom || `https://${domain.value}.hygraph.com/v2/${projectId.value}/${environment.value}`
   })
 
   const assetUploadUrl = computed(() => {
@@ -208,6 +209,7 @@ export default (optionsInput) => {
     assetUploadUrl,
     managementApiUrl,
 
+    domain,
     projectId,
     environment,
 
@@ -230,7 +232,7 @@ export default (optionsInput) => {
     fetchMultiple
   }
 
-  console.log('hygraph setup: expose', expose)
+  // console.log('hygraph setup: expose', expose)
 
   // Store API
   return expose
