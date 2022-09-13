@@ -6,8 +6,10 @@ import unwrap from 'graphql-unwrap'
 import flatten from 'lodash-es/flatten'
 import groupBy from 'lodash-es/groupBy'
 import isArray from 'lodash-es/isArray'
+import isEmpty from 'lodash-es/isEmpty'
 import isFunction from 'lodash-es/isFunction'
 import isString from 'lodash-es/isString'
+import isUndefined from 'lodash-es/isUndefined'
 import keyBy from 'lodash-es/keyBy'
 import mapValues from 'lodash-es/mapValues'
 import merge from 'lodash-es/merge'
@@ -48,19 +50,11 @@ export default (optionsInput) => {
   const persist = options.persist ? persistConfig : false
 
   // Customisation
-  const domain = ref(unref(options.domain)) // required if apiUrl is not set, e.g. 'api-eu-west-2'
-  const projectId = ref(unref(options.projectId)) // required if apiUrl is not set, e.g. 'cl7n4zm4t28ec01uh0oum04sc'
-  const environment = ref(unref(options.environment) || defaultEnvironment)
-
-  // Callback per type for orderBy
-  // https://lodash.com/docs/4.17.15#orderBy
-  // { App: 'slug', Author: (entry, entriesById) => { return entriesById[app.author].name }]] }
-  const entriesOrderedBy = ref(options.orderBy || {})
-
-  // Callback per type for keyBy
-  // https://lodash.com/docs/4.17.15#keyBy
-  // { App: ['slug', ['longSlug', (app, entriesById) => { return entriesById[app.author].name }]] }
-  const entriesKeyedBy = ref(options.keyBy || {})
+  const domain = ref()
+  const projectId = ref()
+  const environment = ref(defaultEnvironment)
+  const entriesOrderedBy = ref()
+  const entriesKeyedBy = ref()
 
   // Callback per type for groupBy
   // https://lodash.com/docs/4.17.15#groupBy
@@ -91,7 +85,11 @@ export default (optionsInput) => {
   })
 
   const entriesByType = computed(() => {
-    return sortEntriesByType(unsortedEntriesByType.value, entriesOrderedBy.value)
+    if (entriesOrderedBy.value && !isEmpty(entriesOrderedBy.value)) {
+      return sortEntriesByType(unsortedEntriesByType.value, entriesOrderedBy.value)
+    }
+
+    return unsortedEntriesByType.value
   })
 
   const entryTypes = computed(() => {
@@ -101,57 +99,61 @@ export default (optionsInput) => {
   // Keyed and grouped entries
 
   const keyedEntries = computed(() => {
-    // Normalise callback config
-    // NOTE: might include unused callbacks, but no need to filter them out either
-    // Might be just one callback: turn it into an array
-    const keyByCallbacksByType = mapValues(entriesKeyedBy.value, (callbackInput) => {
-      return flatten([callbackInput])
-    })
-
-    // Only return entries that we have callbacks for
-    const filteredEntriesByType = pickBy(entriesByType.value, (value, typeName) => {
-      return !!keyByCallbacksByType[typeName]
-    })
-
-    // Get the keyed entries per type
-    return mapValues(filteredEntriesByType, (entries, typeName) => {
-      // NOTE: one type can have multiple keys
-      // We must create a key for each one, and then get the actual list
-      const callbacksByKey = mapValues(
-        keyBy(keyByCallbacksByType[typeName], (keyByCallback) => {
-          // 'author'
-          if (isString(keyByCallback)) {
-            return keyByCallback
-          }
-
-          // ['authorSlug', () => { ... }]
-          if (isArray(keyByCallback)) {
-            return keyByCallback[0]
-          }
-
-          // { key: 'authorSlug', callback: () => { ... } }
-          return keyByCallback.key
-        }),
-
-        // Callback to create the list by
-        (callback) => {
-          return callback.callback || isArray(callback) ? callback[1] : callback
-        }
-      )
-
-      // Now we can finally get the actual list per type
-      return mapValues(callbacksByKey, (keyByCallback) => {
-        // Pass entries to callback
-        if (isFunction(keyByCallback)) {
-          return keyBy(entries, (...args) => {
-            return keyByCallback(...args, entriesById.value)
-          })
-        }
-
-        // Default behavior
-        return keyBy(entries, keyByCallback)
+    if (entriesKeyedBy.value && !isEmpty(entriesKeyedBy.value)) {
+      // Normalise callback config
+      // NOTE: might include unused callbacks, but no need to filter them out either
+      // Might be just one callback: turn it into an array
+      const keyByCallbacksByType = mapValues(entriesKeyedBy.value, (callbackInput) => {
+        return flatten([callbackInput])
       })
-    })
+
+      // Only return entries that we have callbacks for
+      const filteredEntriesByType = pickBy(entriesByType.value, (value, typeName) => {
+        return !!keyByCallbacksByType[typeName]
+      })
+
+      // Get the keyed entries per type
+      return mapValues(filteredEntriesByType, (entries, typeName) => {
+        // NOTE: one type can have multiple keys
+        // We must create a key for each one, and then get the actual list
+        const callbacksByKey = mapValues(
+          keyBy(keyByCallbacksByType[typeName], (keyByCallback) => {
+            // 'author'
+            if (isString(keyByCallback)) {
+              return keyByCallback
+            }
+
+            // ['authorSlug', () => { ... }]
+            if (isArray(keyByCallback)) {
+              return keyByCallback[0]
+            }
+
+            // { key: 'authorSlug', callback: () => { ... } }
+            return keyByCallback.key
+          }),
+
+          // Callback to create the list by
+          (callback) => {
+            return callback.callback || isArray(callback) ? callback[1] : callback
+          }
+        )
+
+        // Now we can finally get the actual list per type
+        return mapValues(callbacksByKey, (keyByCallback) => {
+          // Pass entries to callback
+          if (isFunction(keyByCallback)) {
+            return keyBy(entries, (...args) => {
+              return keyByCallback(...args, entriesById.value)
+            })
+          }
+
+          // Default behavior
+          return keyBy(entries, keyByCallback)
+        })
+      })
+    }
+
+    return {}
   })
 
   // const groupedEntries = computed(() => {})
@@ -202,6 +204,43 @@ export default (optionsInput) => {
     }))
   }
 
+  // Set up options and customised behavior
+  const init = (input) => {
+    if (!isUndefined(input.apiUrl)) {
+      apiUrl.value = input.apiUrl
+    }
+
+    // required if apiUrl is not set, e.g. 'api-eu-west-2'
+    if (!isUndefined(input.domain)) {
+      domain.value = input.domain
+    }
+
+    // required if apiUrl is not set, e.g. 'cl7n4zm4t28ec01uh0oum04sc'
+    if (!isUndefined(input.projectId)) {
+      projectId.value = input.projectId
+    }
+
+    if (!isUndefined(input.environment)) {
+      environment.value = input.environment
+    }
+
+    // Callback per type for orderBy
+    // https://lodash.com/docs/4.17.15#orderBy
+    // { App: 'slug', Author: (entry, entriesById) => { return entriesById[app.author].name }]] }
+    if (!isUndefined(input.orderBy)) {
+      entriesOrderedBy.value = input.orderBy
+    }
+
+    // Callback per type for keyBy
+    // https://lodash.com/docs/4.17.15#keyBy
+    // { App: ['slug', ['longSlug', (app, entriesById) => { return entriesById[app.author].name }]] }
+    if (!isUndefined(input.keyBy)) {
+      entriesKeyedBy.value = input.keyBy
+    }
+  }
+
+  init(optionsInput)
+
   const expose = {
     persist,
 
@@ -227,6 +266,7 @@ export default (optionsInput) => {
     // groupedEntries,
 
     // Actions
+    init,
     request,
     fetch,
     fetchMultiple

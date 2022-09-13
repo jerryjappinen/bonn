@@ -53,7 +53,7 @@
     "@pinia/nuxt": "^0.4.2",
     "@rollup/plugin-graphql": "^1.1.0",
     "@vanillaes/csv": "^3.0.1",
-    "eslint": "^8.23.0",
+    "eslint": "^8.23.1",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-node": "^11.1.0",
@@ -66,14 +66,14 @@
     "markdown-it-footnote": "^3.0.3",
     "markdown-it-task-lists": "^2.1.1",
     "md5-es": "^1.8.2",
-    "pinia-plugin-persistedstate": "^2.1.1",
+    "pinia-plugin-persistedstate": "^2.2.0",
     "platform-detect": "^3.0.1",
     "prettier": "^2.7.1",
-    "sass": "^1.54.8",
+    "sass": "^1.54.9",
     "sass-loader": "^13.0.2",
     "seedrandom": "^3.0.5",
     "vite-plugin-markdown": "^2.1.0",
-    "vite-svg-loader": "^3.5.1",
+    "vite-svg-loader": "^3.6.0",
     "vue3-slider": "^1.8.0"
   },
   "peerDependencies": {
@@ -81,7 +81,7 @@
     "graphql-request": "^5.0.0",
     "lodash-es": "^4.17.21",
     "nuxt": "^3.0.0-rc.9",
-    "vue": "^3.2.38"
+    "vue": "^3.2.39"
   },
   "peerDependenciesMeta": {
     "date-fns": {
@@ -103,7 +103,7 @@
     "lodash-es": "^4.17.21",
     "nuxt": "^3.0.0-rc.9",
     "pinia": "^2.0.22",
-    "vitest": "^0.23.1",
-    "vue": "^3.2.38"
+    "vitest": "^0.23.2",
+    "vue": "^3.2.39"
   }
 }
