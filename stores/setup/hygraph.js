@@ -234,7 +234,7 @@ export default (optionsInput) => {
     const fetch = async (query, variables) => {
       const response = await request(query, variables)
 
-      console.log('stores/setup/hygraph:response', response)
+      // console.log('stores/setup/hygraph:response', response)
 
       const [newEntries, ids] = unwrap(response)
 
