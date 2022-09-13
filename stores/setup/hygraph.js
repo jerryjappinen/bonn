@@ -1,4 +1,4 @@
-import { ref, computed, unref } from 'vue'
+import { ref, computed } from 'vue'
 
 import { request as graphqlRequest } from 'graphql-request'
 import unwrap from 'graphql-unwrap'
@@ -58,11 +58,7 @@ export default (optionsInput) => {
     const environment = ref(defaultEnvironment)
     const entriesOrderedBy = ref()
     const entriesKeyedBy = ref()
-
-    // Callback per type for groupBy
-    // https://lodash.com/docs/4.17.15#groupBy
-    // { App: ['category', ['authorName', (app, entriesById) => { return entriesById[app.author].name }]] }
-    // const entriesGroupedBy = ref(options.groupBy || {})
+    const entriesGroupedBy = ref()
 
     // Extended config
 
@@ -106,8 +102,9 @@ export default (optionsInput) => {
       return Object.keys(entriesByType.value)
     })
 
-    // Keyed and grouped entries
-
+    // Keyed entries
+    // Entries are keyed by unique attributes based on config
+    // E.g. `keyedEntries.Post.slug['release-announcement']` would include a Post if `options.keyBy` is { Post: ['slug'] }
     const keyedEntries = computed(() => {
       if (entriesKeyedBy.value && !isEmpty(entriesKeyedBy.value)) {
         // Normalise callback config
@@ -166,21 +163,67 @@ export default (optionsInput) => {
       return {}
     })
 
-    // const groupedEntries = computed(() => {})
+    // Very similar to above, but composing groups instead of keyed entries
+    const groupedEntries = computed(() => {
+      if (entriesGroupedBy.value && !isEmpty(entriesGroupedBy.value)) {
+        // Normalise callback config
+        // NOTE: might include unused callbacks, but no need to filter them out either
+        // Might be just one callback: turn it into an array
+        const groupByCallbacksByType = mapValues(entriesGroupedBy.value, (callbackInput) => {
+          return flatten([callbackInput])
+        })
 
-    // const getters = {
-    //   appsBySlug () {
-    //     return keyBy(this.entriesByType.App || [], 'slug')
-    //   },
-    //   supportedApps () {
-    //     return filter(this.entriesByType.App || [], (app) => {
-    //       return app.isSupported
-    //     })
-    //   },
-    //   articlesBySlug () {
-    //     return keyBy(this.entriesByType.Article || [], 'slug')
-    //   }
-    // }
+        // Only return entries that we have callbacks for
+        const filteredEntriesByType = pickBy(entriesByType.value, (value, typeName) => {
+          return !!groupByCallbacksByType[typeName]
+        })
+
+        // Get the grouped entries per type
+        return mapValues(filteredEntriesByType, (entries, typeName) => {
+          // NOTE: one type can have multiple groupings
+          // We must create a key for each one, and then get the actual list
+          // FIXME: duplication from above
+          const callbacksByKey = mapValues(
+            keyBy(groupByCallbacksByType[typeName], (groupByCallback) => {
+              // 'author'
+              if (isString(groupByCallback)) {
+                return groupByCallback
+              }
+
+              // ['authorSlug', () => { ... }]
+              if (isArray(groupByCallback)) {
+                return groupByCallback[0]
+              }
+
+              // { key: 'authorSlug', callback: () => { ... } }
+              return groupByCallback.key
+            }),
+
+            // Callback to create the list by
+            (callback) => {
+              return callback.callback || isArray(callback) ? callback[1] : callback
+            }
+          )
+
+          // { Post: { slug: 'slug' } }
+
+          // Now we can finally get the actual list per type
+          return mapValues(callbacksByKey, (groupByCallback) => {
+            // Pass entries to callback
+            if (isFunction(groupByCallback)) {
+              return groupBy(entries, (...args) => {
+                return groupByCallback(...args, entriesById.value)
+              })
+            }
+
+            // Default behavior
+            return groupBy(entries, groupByCallback)
+          })
+        })
+      }
+
+      return {}
+    })
 
     // Methods
 
@@ -247,6 +290,14 @@ export default (optionsInput) => {
       if (!isUndefined(input.keyBy)) {
         entriesKeyedBy.value = input.keyBy
       }
+
+      // Callback per type for groupBy
+      // https://lodash.com/docs/4.17.15#groupBy
+      // { App: ['category', ['authorName', (app, entriesById) => { return entriesById[app.author].name }]] }
+      // const entriesGroupedBy = ref(options.groupBy || {})
+      if (!isUndefined(input.groupBy)) {
+        entriesGroupedBy.value = input.groupBy
+      }
     }
 
     init(optionsInput)
@@ -264,7 +315,7 @@ export default (optionsInput) => {
 
       entriesOrderedBy,
       entriesKeyedBy,
-      // entriesGroupedBy,
+      entriesGroupedBy,
 
       // Entry data
       entriesById,
@@ -273,7 +324,7 @@ export default (optionsInput) => {
       // unsortedEntriesByType,
 
       keyedEntries,
-      // groupedEntries,
+      groupedEntries,
 
       // Actions
       init,
