@@ -52,6 +52,7 @@ export default (optionsInput) => {
     const persist = options.persist ? persistConfig : false
 
     // Customisation
+    const customApiUrl = ref()
     const domain = ref()
     const projectId = ref()
     const environment = ref(defaultEnvironment)
@@ -65,9 +66,16 @@ export default (optionsInput) => {
 
     // Extended config
 
-    const apiUrl = computed(() => {
-      const custom = unref(options.apiUrl)
-      return custom || `https://${domain.value}.hygraph.com/v2/${projectId.value}/${environment.value}`
+    const apiUrl = computed({
+
+      get () {
+        return customApiUrl.value || `https://${domain.value}.hygraph.com/v2/${projectId.value}/${environment.value}`
+      },
+
+      set (value) {
+        customApiUrl.value = value
+      }
+
     })
 
     const assetUploadUrl = computed(() => {
@@ -209,7 +217,7 @@ export default (optionsInput) => {
     // Set up options and customised behavior
     const init = (input) => {
       if (!isUndefined(input.apiUrl)) {
-        apiUrl.value = input.apiUrl
+        customApiUrl.value = input.apiUrl
       }
 
       // required if apiUrl is not set, e.g. 'api-eu-west-2'
@@ -274,7 +282,7 @@ export default (optionsInput) => {
       fetchMultiple
     }
 
-    console.log('hygraph setup: expose', expose)
+    // console.log('hygraph setup: expose', expose)
 
     // Store API
     return expose
