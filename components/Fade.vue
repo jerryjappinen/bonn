@@ -1,34 +1,28 @@
 <script setup>
-import CustomTransition from './CustomTransition'
-
-defineProps([
-  'mode',
-  'appear'
-])
+defineProps({
+  mode: {
+    default: 'out-in'
+  }
+})
 </script>
 
 <template>
-  <CustomTransition
-    :mode="mode"
-    :appear="appear"
-    name="fade"
-  ><slot /></CustomTransition>
+  <transition
+    :mode="mode === 'simultaneous' ? undefined : mode"
+    name="transition-fade"
+  ><slot /></transition>
 </template>
 
 <style lang="scss">
 .transition-fade-enter-active,
 .transition-fade-leave-active {
   // opacity: 1;
-  @include transition-fast;
-  @include transition-properties-common;
+  transition-property: opacity;
+  transition-duration: 0.5s;
 }
 
-// Start state for enter
-.transition-fade-enter,
-
-// End state for exit
+.transition-fade-enter-from,
 .transition-fade-leave-to {
   opacity: 0;
 }
-
 </style>
