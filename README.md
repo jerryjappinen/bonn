@@ -1,11 +1,11 @@
 # Bonn
 
-Bonn is a utility, style and components library for web projects. Bonn includes the following elements:
+Bonn is a convenient utility, style and components library for web projects. Bonn includes the following elements:
 
 - JavaScript utilities
 - Scss mixins, variables and default styles
 - SVG icon set
-- Vue apps
+- Vue and Nuxt apps
   - Vue components
   - Vue composables
   - Pinia stores
