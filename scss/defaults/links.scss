@@ -4,5 +4,5 @@ a {
   @include pointer;
 
   @include transition-properties-common;
-  @include transition-hover-active;
+  @include transition-interaction;
 }

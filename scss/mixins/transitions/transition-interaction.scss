@@ -1,26 +1,135 @@
-@mixin transition-hover {
-  transition-duration: var(--transition-slow);
-
-  &:focus,
-  &:hover {
-    transition-duration: var(--transition-fast);
-  }
-}
-
-@mixin transition-active {
-  transition-duration: var(--transition-slow);
-
-  &:active {
-    transition-duration: var(--transition-fast);
-  }
-}
-
-@mixin transition-hover-active {
-  transition-duration: var(--transition-slow);
-
+@mixin transition-interaction (
+  $transition-enter: var(--transition-interaction-enter),
+  $transition-leave: var(--transition-interaction-leave)
+) {
+  transition-duration: $transition-leave;
   &:focus,
   &:hover,
   &:active {
-    transition-duration: var(--transition-fast);
+    transition-duration: $transition-enter;
   }
+}
+
+@mixin transition-interaction-even (
+  $transition-enter: var(--transition-interaction-enter),
+  $transition-leave: var(--transition-interaction-enter)
+) {
+  @include transition-interaction($transition-enter, $transition-leave);
+}
+
+
+
+@mixin transition-hover (
+  $transition-enter: var(--transition-interaction-enter),
+  $transition-leave: var(--transition-interaction-leave)
+) {
+  transition-duration: $transition-leave;
+  &:hover {
+    transition-duration: $transition-enter;
+  }
+}
+
+@mixin transition-hover-even (
+  $transition-enter: var(--transition-interaction-enter),
+  $transition-leave: var(--transition-interaction-leave)
+) {
+  @include transition-hover($transition-enter, $transition-leave);
+}
+
+
+
+@mixin transition-focus (
+  $transition-enter: var(--transition-interaction-enter),
+  $transition-leave: var(--transition-interaction-leave)
+) {
+  transition-duration: $transition-leave;
+  &:focus {
+    transition-duration: $transition-enter;
+  }
+}
+
+@mixin transition-focus-even (
+  $transition-enter: var(--transition-interaction-enter),
+  $transition-leave: var(--transition-interaction-leave)
+) {
+  @include transition-focus($transition-enter, $transition-leave);
+}
+
+
+
+@mixin transition-active (
+  $transition-enter: var(--transition-interaction-enter),
+  $transition-leave: var(--transition-interaction-leave)
+) {
+  transition-duration: $transition-leave;
+  &:active {
+    transition-duration: $transition-enter;
+  }
+}
+
+@mixin transition-active-even (
+  $transition-enter: var(--transition-interaction-enter),
+  $transition-leave: var(--transition-interaction-leave)
+) {
+  @include transition-active($transition-enter, $transition-leave);
+}
+
+
+
+@mixin transition-hover-focus (
+  $transition-enter: var(--transition-interaction-enter),
+  $transition-leave: var(--transition-interaction-leave)
+) {
+  transition-duration: $transition-leave;
+  &:hover,
+  &:focus {
+    transition-duration: $transition-enter;
+  }
+}
+
+@mixin transition-hover-focus-even (
+  $transition-enter: var(--transition-interaction-enter),
+  $transition-leave: var(--transition-interaction-leave)
+) {
+  @include transition-hover-focus($transition-enter, $transition-leave);
+}
+
+
+
+@mixin transition-hover-active (
+  $transition-enter: var(--transition-interaction-enter),
+  $transition-leave: var(--transition-interaction-leave)
+) {
+  transition-duration: $transition-leave;
+  &:hover,
+  &:active {
+    transition-duration: $transition-enter;
+  }
+}
+
+@mixin transition-hover-active-even (
+  $transition-enter: var(--transition-interaction-enter),
+  $transition-leave: var(--transition-interaction-leave)
+) {
+  @include transition-hover-active($transition-enter, $transition-leave);
+}
+
+
+
+@mixin transition-focus-active (
+  $transition-enter: var(--transition-interaction-enter),
+  $transition-leave: var(--transition-interaction-leave)
+) {
+  transition-duration: $transition-leave;
+  &:focus,
+  &:active {
+    transition-duration: $transition-enter;
+  }
+}
+
+@mixin transition-focus-active-even (
+  $transition-enter: var(--transition-interaction-enter),
+  $transition-leave: var(--transition-interaction-leave)
+) {
+  @include transition-focus-active($transition-enter, $transition-leave);
 }

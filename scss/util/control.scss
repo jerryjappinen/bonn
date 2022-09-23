@@ -1,6 +1,6 @@
 .control {
-  @include transition-hover-active;
   @include transition-properties-common;
+  @include transition-interaction;
 }
 
 // Default feedback for hit areas

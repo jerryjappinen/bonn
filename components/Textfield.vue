@@ -388,7 +388,7 @@
     // Ideally this would be more dynamic somehow
     background-color: var(--c-textfield-button-background-color);
 
-    @include transition-hover-active;
+    @include transition-interaction;
 
     .c-vector {
       @include block;

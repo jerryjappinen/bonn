@@ -274,9 +274,13 @@
   @include transition-snap;
   @include no-transition-easing;
 
+  @include transition-interaction;
   @include transition-hover;
+  @include transition-focus;
   @include transition-active;
   @include transition-hover-active;
+  @include transition-hover-focus;
+  @include transition-focus-active;
 
   @include transition-properties(color, width);
   @include transition-properties-common;
