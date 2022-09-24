@@ -3,7 +3,7 @@
 }
 
 @mixin translate-up ($y: 100%, $properties...) {
-  @include translate(0, -$y, 0, $properties...);
+  @include translate(0, calc(-1 * #{$y}), 0, $properties...);
 }
 
 @mixin translate-down ($y: 100%, $properties...) {
@@ -11,7 +11,7 @@
 }
 
 @mixin translate-left ($x: 100%, $properties...) {
-  @include translate(-$x, 0, 0, $properties...);
+  @include translate(calc(-1 * #{$x}), 0, 0, $properties...);
 }
 
 @mixin translate-right ($x: 100%, $properties...) {
