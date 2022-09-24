@@ -18,6 +18,12 @@ const props = defineProps({
   }
 })
 
+// This event name is set in Vue
+// Why do I have to define it? Twice?
+const emit = defineEmits([
+  'update:modelValue'
+])
+
 const value = computed({
   get () {
     return props.modelValue
@@ -26,10 +32,6 @@ const value = computed({
     emit('update:modelValue', value)
   }
 })
-
-// This event name is set in Vue
-// Why do I have to define it? Twice?
-const emit = defineEmits('update:modelValue')
 </script>
 
 <template>
