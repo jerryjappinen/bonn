@@ -29,7 +29,7 @@
   --line-height-print-em: calc(var(--line-height-print) * 1em);
 
   // Headline styling
-  --headline-font: var(--default-font); // FUCK
+  --headline-font: var(--default-font);
   --headline-weight: var(--bold);
   --headline-line-height: var(--line-height-very-tight);
   --headline-line-height-em: calc(var(--headline-line-height) * 1em);
