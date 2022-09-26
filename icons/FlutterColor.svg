@@ -1,16 +1,16 @@
-<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M18.0931 9.23633H11.9845L6.63989 14.5821L9.69343 17.6358L18.0931 9.23633Z" fill="#54C5F8"/>
-<path d="M5.1125 13.0548L2.05762 9.99992L11.9845 0.072998H18.0931L5.1125 13.0548Z" fill="#54C5F8"/>
-<path d="M9.69336 17.6358L11.9844 19.9269H18.0931L12.7482 14.582L9.69336 17.6358Z" fill="#01579B"/>
-<path d="M9.69336 17.6358L14.2237 16.0677L12.7482 14.582L9.69336 17.6358Z" fill="url(#paint0_linear)"/>
-<path d="M9.69386 11.5274L6.63965 14.5815L9.69386 17.6357L12.7481 14.5815L9.69386 11.5274Z" fill="#29B6F6"/>
-<path d="M18.0931 9.23629L12.7483 14.5809L18.0931 19.9268H11.9845L9.69347 17.6358L6.63878 14.5809L11.9847 9.2361H18.0931V9.23629ZM11.9845 0.072998L2.05762 9.99992L5.1125 13.0548L18.0931 0.072998H11.9845Z" fill="url(#paint1_radial)"/>
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M14.4746 7.38904H9.58769L5.31201 11.6656L7.75484 14.1086L14.4746 7.38904Z" fill="#54C5F8"/>
+<path d="M4.0899 10.4438L1.646 7.99994L9.58753 0.0584106H14.4744L4.0899 10.4438Z" fill="#54C5F8"/>
+<path d="M7.75488 14.1087L9.58774 15.9415H14.4746L10.1988 11.6656L7.75488 14.1087Z" fill="#01579B"/>
+<path d="M7.75488 14.1086L11.3791 12.8541L10.1988 11.6656L7.75488 14.1086Z" fill="url(#paint0_linear_1447_3071)"/>
+<path d="M7.75489 9.22188L5.31152 11.6652L7.75489 14.1086L10.1983 11.6652L7.75489 9.22188Z" fill="#29B6F6"/>
+<path d="M14.4744 7.38905L10.1986 11.6647L14.4744 15.9415H9.58753L7.75468 14.1086L5.31093 11.6647L9.58768 7.38889H14.4744V7.38905ZM9.58753 0.0584106L1.646 7.99994L4.0899 10.4438L14.4744 0.0584106H9.58753Z" fill="url(#paint1_radial_1447_3071)"/>
 <defs>
-<linearGradient id="paint0_linear" x1="10.5844" y1="18.2259" x2="12.8594" y2="15.9509" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint0_linear_1447_3071" x1="8.46771" y1="14.5807" x2="10.2877" y2="12.7608" gradientUnits="userSpaceOnUse">
 <stop stop-color="#1A237E" stop-opacity="0.4"/>
 <stop offset="1" stop-color="#1A237E" stop-opacity="0"/>
 </linearGradient>
-<radialGradient id="paint1_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(2.50893 1.42667) scale(24.29)">
+<radialGradient id="paint1_radial_1447_3071" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(2.00704 1.14135) scale(19.432)">
 <stop stop-color="white" stop-opacity="0.1"/>
 <stop offset="1" stop-color="white" stop-opacity="0"/>
 </radialGradient>
