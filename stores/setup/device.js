@@ -34,14 +34,12 @@ export default () => {
       run('uninit', ...args)
     }
 
-    // Each module should work on server and client
-    init()
-
     // Device API
     return {
-      ...modules,
       init,
-      uninit
+      uninit,
+
+      ...modules
     }
   }
 }

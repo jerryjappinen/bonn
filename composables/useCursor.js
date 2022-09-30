@@ -35,6 +35,8 @@ export default () => {
   onMounted(init)
   onUnmounted(uninit)
 
+  init()
+
   // Expose managed state as return value
   return {
     init,

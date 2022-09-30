@@ -1,6 +1,9 @@
 import { ref, computed, watch, onMounted, onUnmounted } from 'vue'
 
+import compact from 'lodash-es/compact'
 import debounce from 'lodash-es/debounce'
+import flattenDeep from 'lodash-es/flattenDeep'
+import orderBy from 'lodash-es/orderBy'
 
 import detectObtrusiveScrollbars from '../util/detectObtrusiveScrollbars'
 import userPrefersDarkMode from '../util/userPrefersDarkMode'
@@ -16,7 +19,7 @@ export default () => {
   // ref
   const isInited = ref(false)
 
-  const breakpoints = ref([
+  const breakpointValues = ref([
     320,
     720,
     1280,
@@ -39,6 +42,15 @@ export default () => {
   let darkModeMatchMediaObject = null
 
   // Computed
+
+  const breakpoints = computed({
+    get () {
+      return breakpointValues
+    },
+    set (...values) {
+      breakpointValues.value = orderBy(compact(flattenDeep(values)))
+    }
+  })
 
   const centerX = computed(() => {
     return width.value / 2
@@ -122,12 +134,6 @@ export default () => {
 
   const getScrollY = () => {
     return (window.pageYOffset || window.document.scrollTop || 0) - (window.document.clientTop || 0)
-  }
-
-  // Setters
-
-  const setBreakpoints = (values) => {
-    breakpoints.value = values
   }
 
   // Updaters
@@ -218,6 +224,8 @@ export default () => {
   onMounted(init)
   onUnmounted(uninit)
 
+  init()
+
   return {
     init,
     uninit,
@@ -242,8 +250,6 @@ export default () => {
     currentBreakpointRange,
     previousBreakpoint,
     exactBreakpoint,
-    nextBreakpoint,
-
-    setBreakpoints
+    nextBreakpoint
   }
 }
