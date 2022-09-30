@@ -1,7 +1,10 @@
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 
+import windowExists from '../util/windowExists'
+
 export default () => {
   // API
+  const isInited = ref(false)
   const isOnline = ref(false)
   const isOffline = computed(() => {
     return !isOnline.value
@@ -13,14 +16,20 @@ export default () => {
   }
 
   const init = () => {
-    window.addEventListener('online', update)
-    window.addEventListener('offline', update)
-    update()
+    if (windowExists() && !isInited.value) {
+      isInited.value = true
+      window.addEventListener('online', update)
+      window.addEventListener('offline', update)
+      update()
+    }
   }
 
   const uninit = () => {
-    window.removeEventListener('online', update)
-    window.removeEventListener('offline', update)
+    if (isInited.value) {
+      isInited.value = false
+      window.removeEventListener('online', update)
+      window.removeEventListener('offline', update)
+    }
   }
 
   onMounted(init)
@@ -29,6 +38,8 @@ export default () => {
   return {
     init,
     uninit,
+    isInited,
+
     isOnline,
     isOffline
   }

@@ -9,33 +9,39 @@ import useViewport from '../../composables/useViewport'
 // Exports the setup function for this store
 // defineStore must be called in the client app
 export default () => {
-  const modules = {
-    cursor: useCursor(),
-    network: useNetwork(),
-    platform: usePlatform(),
-    time: useTime(),
-    viewport: useViewport()
-  }
+  return () => {
+    const modules = {
+      cursor: useCursor(),
+      network: useNetwork(),
+      platform: usePlatform(),
+      time: useTime(),
+      viewport: useViewport()
+    }
 
-  const run = (methodName, ...args) => {
-    for (const key in modules) {
-      if (modules[key][methodName]) {
-        modules[key][methodName](...args)
+    const run = (methodName, ...args) => {
+      for (const key in modules) {
+        if (modules[key][methodName]) {
+          modules[key][methodName](...args)
+        }
       }
     }
-  }
 
-  const init = (...args) => {
-    run('init', ...args)
-  }
+    const init = (...args) => {
+      run('init', ...args)
+    }
 
-  const uninit = (...args) => {
-    run('uninit', ...args)
-  }
+    const uninit = (...args) => {
+      run('uninit', ...args)
+    }
 
-  return {
-    ...modules,
-    init,
-    uninit
+    // Each module should work on server and client
+    init()
+
+    // Device API
+    return {
+      ...modules,
+      init,
+      uninit
+    }
   }
 }

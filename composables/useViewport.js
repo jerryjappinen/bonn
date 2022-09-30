@@ -4,6 +4,7 @@ import debounce from 'lodash-es/debounce'
 
 import detectObtrusiveScrollbars from '../util/detectObtrusiveScrollbars'
 import userPrefersDarkMode from '../util/userPrefersDarkMode'
+import windowExists from '../util/windowExists'
 
 // Scroll position or dimensions are updated at most once per this amount of ms
 const debounceDelay = 10
@@ -13,6 +14,8 @@ const debounceOptions = {
 
 export default () => {
   // ref
+  const isInited = ref(false)
+
   const breakpoints = ref([
     320,
     720,
@@ -171,37 +174,43 @@ export default () => {
   })
 
   const init = () => {
-    updateDarkMode()
-    updateDimensions()
-    updateScrollValues()
+    if (windowExists() && !isInited.value) {
+      updateDarkMode()
+      updateDimensions()
+      updateScrollValues()
 
-    if (detectObtrusiveScrollbars()) {
-      hasObtrusiveScrollbars.value = true
-    }
+      if (detectObtrusiveScrollbars()) {
+        hasObtrusiveScrollbars.value = true
+      }
 
-    debouncedOnResize = debounce(updateDimensions, debounceDelay, debounceOptions)
-    debouncedOnScroll = debounce(updateScrollValues, debounceDelay, debounceOptions)
+      debouncedOnResize = debounce(updateDimensions, debounceDelay, debounceOptions)
+      debouncedOnScroll = debounce(updateScrollValues, debounceDelay, debounceOptions)
 
-    window.addEventListener('resize', debouncedOnResize)
-    window.addEventListener('scroll', debouncedOnScroll)
+      window.addEventListener('resize', debouncedOnResize)
+      window.addEventListener('scroll', debouncedOnScroll)
 
-    if (window.matchMedia) {
-      darkModeMatchMediaObject = window.matchMedia('(prefers-color-scheme: dark)')
-      darkModeMatchMediaObject.addEventListener('change', updateDarkMode)
+      if (window.matchMedia) {
+        darkModeMatchMediaObject = window.matchMedia('(prefers-color-scheme: dark)')
+        darkModeMatchMediaObject.addEventListener('change', updateDarkMode)
+      }
+
+      isInited.value = true
     }
   }
 
   const uninit = () => {
-    if (debouncedOnResize) {
-      window.removeEventListener('resize', debouncedOnResize)
-    }
+    if (isInited.value) {
+      if (debouncedOnResize) {
+        window.removeEventListener('resize', debouncedOnResize)
+      }
 
-    if (debouncedOnScroll) {
-      window.removeEventListener('scroll', debouncedOnScroll)
-    }
+      if (debouncedOnScroll) {
+        window.removeEventListener('scroll', debouncedOnScroll)
+      }
 
-    if (darkModeMatchMediaObject) {
-      darkModeMatchMediaObject.removeEventListener('change', updateDarkMode)
+      if (darkModeMatchMediaObject) {
+        darkModeMatchMediaObject.removeEventListener('change', updateDarkMode)
+      }
     }
   }
 
@@ -212,6 +221,7 @@ export default () => {
   return {
     init,
     uninit,
+    isInited,
 
     breakpoints,
     hasObtrusiveScrollbars,

@@ -1,7 +1,10 @@
 // https://vuejs.org/guide/reusability/composables.html#mouse-tracker-example
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 
+import windowExists from '../util/windowExists'
+
 export default () => {
+  const isInited = ref(false)
   const x = ref(0)
   const y = ref(0)
 
@@ -15,11 +18,17 @@ export default () => {
   }
 
   const init = () => {
-    window.addEventListener('mousemove', update)
+    if (windowExists() && !isInited.value) {
+      isInited.value = true
+      window.addEventListener('mousemove', update)
+    }
   }
 
   const uninit = () => {
-    window.removeEventListener('mousemove', update)
+    if (isInited.value) {
+      isInited.value = false
+      window.removeEventListener('mousemove', update)
+    }
   }
 
   // Automatically unit and uninit in components
@@ -30,6 +39,8 @@ export default () => {
   return {
     init,
     uninit,
+    isInited,
+
     x,
     y,
     xy

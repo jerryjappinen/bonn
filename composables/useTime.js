@@ -28,6 +28,7 @@ export default () => {
   // Actions
 
   let loop = null
+  const isInited = ref(false)
 
   const setIntervalDuration = (ms) => {
     intervalDuration.value = ms
@@ -41,12 +42,14 @@ export default () => {
     update()
     endLoop()
     loop = setInterval(update, intervalDuration.value)
+    isInited.value = true
   }
 
   const endLoop = () => {
     if (loop) {
       clearInterval(loop)
       loop = null
+      isInited.value = false
     }
   }
 
@@ -64,6 +67,7 @@ export default () => {
   return {
     init,
     uninit,
+    isInited,
 
     current,
 
@@ -74,9 +78,6 @@ export default () => {
     currentDate,
 
     intervalDuration,
-    setIntervalDuration,
-
-    startLoop,
-    endLoop
+    setIntervalDuration
   }
 }
