@@ -45,7 +45,9 @@ onMounted(() => {
 <template>
   <div>
     <slot>
-      <NuxtPage />
+      <NuxtLayout>
+        <NuxtPage />
+      </NuxtLayout>
     </slot>
   </div>
 </template>

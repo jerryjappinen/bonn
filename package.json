@@ -30,7 +30,7 @@
   "scripts": {
     "build": "npm run build:scss",
     "build:scss": "sass spec/scss/index.spec.scss dist/css/index.css && sass spec/scss/index.spec.scss dist/css/index.min.css --style=compressed",
-    "lint": "eslint \"**/*.{js,ts}\"",
+    "lint": "eslint --ignore-path .gitignore \"**/*.{js,ts}\"",
     "lint:fix": "npm run lint -- --fix",
     "prepublishOnly": "npm run build",
     "dev": "vitest",
