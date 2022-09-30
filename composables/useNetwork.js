@@ -35,8 +35,6 @@ export default () => {
   onMounted(init)
   onUnmounted(uninit)
 
-  init()
-
   return {
     init,
     uninit,

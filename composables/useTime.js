@@ -63,8 +63,6 @@ export default () => {
   onUnmounted(uninit)
 
   // API
-  init()
-
   return {
     init,
     uninit,
