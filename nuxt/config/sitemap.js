@@ -21,9 +21,10 @@ export default (optionsInput) => {
 
   const app = {}
 
-  if (baseUrl) {
-    app.baseURL = baseUrl
-  }
+  // FIXME: this seems to be broken in Nuxt 3 currently
+  // if (baseUrl) {
+  //   app.baseURL = baseUrl
+  // }
 
   return {
     app,
