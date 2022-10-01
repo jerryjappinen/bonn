@@ -1,6 +1,6 @@
 {
   "name": "bonn",
-  "version": "0.0.91",
+  "version": "0.0.92",
   "description": "Utility, style and component library for web development.",
   "private": false,
   "files": [
@@ -16,9 +16,6 @@
     "scss/*",
     "stores/*",
     "util/*",
-    "components.js",
-    "composables.js",
-    "index.js",
     "README.md",
     ".editorconfig",
     ".nvmrc"
@@ -58,6 +55,7 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^6.0.1",
+    "graphql-request": "^5.0.0",
     "graphql-unwrap": "^1.0.1",
     "gravatar-url": "^4.0.1",
     "markdown-it": "^13.0.1",
