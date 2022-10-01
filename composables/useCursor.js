@@ -4,6 +4,8 @@ import { ref, computed, onMounted, onUnmounted } from 'vue'
 import windowExists from '../util/windowExists'
 
 export default () => {
+  console.log('useCursor setup', windowExists())
+
   const x = ref(0)
   const y = ref(0)
 
@@ -17,12 +19,16 @@ export default () => {
   }
 
   const init = () => {
+    console.log('useCursor init', windowExists())
+
     if (windowExists()) {
       window.addEventListener('mousemove', update)
     }
   }
 
   const uninit = () => {
+    console.log('useCursor uninit', windowExists())
+
     if (windowExists()) {
       window.removeEventListener('mousemove', update)
     }

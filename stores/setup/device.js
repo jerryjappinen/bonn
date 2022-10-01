@@ -10,6 +10,8 @@ import useViewport from '../../composables/useViewport'
 // defineStore must be called in the client app
 export default () => {
   return () => {
+    console.log('device store setup')
+
     const modules = {
       cursor: useCursor(),
       network: useNetwork(),
@@ -27,10 +29,14 @@ export default () => {
     }
 
     const init = (...args) => {
+      console.log('device store init')
+
       run('init', ...args)
     }
 
     const uninit = (...args) => {
+      console.log('device store uninit')
+
       run('uninit', ...args)
     }
 
