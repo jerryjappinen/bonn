@@ -7,27 +7,37 @@
   --background-color: var(--white);
   --offset-background-color: var(--very-very-light-grey);
 
-  --inverted-text-color: var(--white);
-  --inverted-border-color: var(--dark-grey);
-  --inverted-background-color: var(--very-dark);
-  --inverted-offset-background-color: var(--dark);
-
   --discreet-color-very-light: var(--very-light-grey);
   --discreet-color-light: var(--light-grey);
   --discreet-color: var(--grey);
   --discreet-text-color: var(--discreet-color);
 
+  --link-color: var(--blue);
+  --link-active-color: var(--dark-blue);
+
+  // Inverted color usage
+  // NOTE: this is NOT for dark mode
+  // NOTE: for dark mode support, you should update these variables
+  --inverted-text-color: var(--white);
+  --inverted-border-color: var(--dark-grey);
+  --inverted-background-color: var(--very-dark);
+  --inverted-offset-background-color: var(--dark);
+
+  --inverted-discreet-color-very-light: var(--dark-grey);
+  --inverted-discreet-color-light: var(--grey);
+  --inverted-discreet-color: var(--light-grey);
+  --inverted-discreet-text-color: var(--inverted-discreet-color);
+
+  --inverted-link-color: var(--link-color);
+  --inverted-link-active-color: var(--light-blue);
+
+
+
   // Text
   --default-font: var(--sans);
   --default-font-size: 16px;
   --default-line-height: var(--line-height);
-
-  --link-color: var(--blue);
-  --link-active-color: var(--dark-blue);
   --link-weight: var(--regular);
-
-  --inverted-link-color: var(--link-color);
-  --inverted-link-active-color: var(--light-blue);
 
   // Misc.
   --default-perspective: 600px;
