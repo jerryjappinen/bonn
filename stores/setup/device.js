@@ -34,8 +34,6 @@ export default () => {
       run('uninit', ...args)
     }
 
-    init()
-
     // Device API
     return {
       init,
