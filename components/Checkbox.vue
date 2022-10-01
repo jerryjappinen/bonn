@@ -41,13 +41,13 @@ defineProps({
   --c-checkbox-border-width: 2px;
   --c-checkbox-radius: var(--round);
 
-  --c-checkbox-enabled-on-color: currentColor;
-  --c-checkbox-enabled-off-color: currentColor;
-  --c-checkbox-enabled-check-color: var(--grey);
+  --c-checkbox-enabled-on-color: var(--inverted-offset-background-color);
+  --c-checkbox-enabled-off-color: var(--inverted-text-color);
+  --c-checkbox-enabled-check-color: var(--inverted-text-color);
 
-  --c-checkbox-disabled-on-color: var(--very-light-grey);
-  --c-checkbox-disabled-off-color: var(--very-light-grey);
-  --c-checkbox-disabled-check-color: var(--grey);
+  --c-checkbox-disabled-on-color: var(--discreet-color-very-light);
+  --c-checkbox-disabled-off-color: var(--discreet-text-color);
+  --c-checkbox-disabled-check-color: var(--discreet-text-color);
 }
 
 .c-checkbox,
