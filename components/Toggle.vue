@@ -47,6 +47,7 @@ const value = computed({
     :to="!value"
     :block="block"
     :button="button"
+    :disabled="disabled"
     v-model="value"
   ><slot /></Set>
 </template>

@@ -3,14 +3,14 @@
 
   // Color usage
   --text-color: var(--dark);
+  --border-color: var(--light-grey);
   --background-color: var(--white);
   --offset-background-color: var(--very-very-light-grey);
-  --border-color: var(--light-grey);
 
   --inverted-text-color: var(--white);
+  --inverted-border-color: var(--dark-grey);
   --inverted-background-color: var(--very-dark);
   --inverted-offset-background-color: var(--dark);
-  --inverted-border-color: var(--dark-grey);
 
   --discreet-color-very-light: var(--very-light-grey);
   --discreet-color-light: var(--light-grey);
