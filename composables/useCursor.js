@@ -6,8 +6,6 @@ import windowExists from '../util/windowExists'
 export default (optionsInput) => {
   const options = optionsInput || {}
 
-  console.log('useCursor setup', windowExists())
-
   const x = ref(0)
   const y = ref(0)
 
@@ -21,16 +19,12 @@ export default (optionsInput) => {
   }
 
   const init = () => {
-    console.log('useCursor init', windowExists())
-
     if (windowExists()) {
       window.addEventListener('mousemove', update)
     }
   }
 
   const uninit = () => {
-    console.log('useCursor uninit', windowExists())
-
     if (windowExists()) {
       window.removeEventListener('mousemove', update)
     }
@@ -38,14 +32,8 @@ export default (optionsInput) => {
 
   // Automatically unit and uninit in components
   if (options.bind || options.bind === undefined) {
-    onMounted(() => {
-      console.log('useCursor mounted')
-      init()
-    })
-    onUnmounted(() => {
-      console.log('useCursor unmounted')
-      uninit()
-    })
+    onMounted(init)
+    onUnmounted(uninit)
   }
 
   // Expose managed state as return value

@@ -49,11 +49,9 @@ export default (persistData, persistKeyInput, loadManually) => {
 
   // Storage
 
+  // NOTE: undefined will not be stored
+  // If you want to override older values explicitly, you must use null
   const storePersistData = debounce(function () {
-    // console.log('storePersistData', persistKey)
-
-    // NOTE: undefined will not be stored
-    // If you want to override older values explicitly, you must use null
     if (persistData.value !== undefined) {
       // Add item to store
       window.localStorage.setItem(
@@ -76,14 +74,10 @@ export default (persistData, persistKeyInput, loadManually) => {
   }
 
   const clearPersistData = () => {
-    // console.log('clearPersistData', persistKey.value)
-
     return clearByKey(persistKey.value)
   }
 
   const loadPersistData = () => {
-    // console.log('loadPersistData', persistKey)
-
     if (windowExists()) {
       if (persistKey && persistData) {
         const key = prefix + persistKey.value
