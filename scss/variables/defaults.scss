@@ -26,6 +26,9 @@
   --link-active-color: var(--dark-blue);
   --link-weight: var(--regular);
 
+  --inverted-link-color: var(--link-color);
+  --inverted-link-active-color: var(--light-blue);
+
   // Misc.
   --default-perspective: 600px;
   --default-transition-duration: var(--transition-fast);
