@@ -39,6 +39,7 @@ defineProps({
 :root {
   --c-checkbox-width: 1em;
   --c-checkbox-border-width: 2px;
+  --c-checkbox-radius: var(--round);
 
   --c-checkbox-enabled-on-color: currentColor;
   --c-checkbox-enabled-off-color: currentColor;
@@ -57,7 +58,6 @@ defineProps({
 }
 
 .c-checkbox {
-  @include round;
   @include inline-block;
   vertical-align: middle;
 
@@ -65,6 +65,7 @@ defineProps({
   height: var(--c-checkbox-width);
   border-width: var(--c-checkbox-border-width);
   padding: calc(var(--pad-tight-horizontal) - (2 * var(--c-checkbox-border-width)));
+  border-radius: var(--c-checkbox-radius);
 
   // Default for enabled, off state
   color: var(--c-checkbox-enabled-check-color);
