@@ -17,7 +17,7 @@ defineProps({
 </script>
 
 <template>
-  <div
+  <span
     class="c-checkbox"
     :class="{
       'c-checkbox-on': !!value,
@@ -26,10 +26,10 @@ defineProps({
       'c-checkbox-enabled': !disabled
     }"
   >
-    <slot name="icon" class="c-checkbox-icon">
-      <IconCheck />
+    <slot>
+      <IconCheck class="c-checkbox-icon" />
     </slot>
-  </div>
+  </span>
 </template>
 
 <style lang="scss">
