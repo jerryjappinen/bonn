@@ -1,6 +1,5 @@
 import { ref, computed } from 'vue'
 
-import { request as graphqlRequest } from 'graphql-request/dist/index.js'
 import unwrap from 'graphql-unwrap'
 
 import flatten from 'lodash-es/flatten'
@@ -228,7 +227,7 @@ export default (optionsInput) => {
     // Methods
 
     const request = async (query, variables) => {
-      return (options.request || graphqlRequest)(apiUrl.value, query, variables)
+      return options.request(apiUrl.value, query, variables)
     }
 
     const fetch = async (query, variables) => {
