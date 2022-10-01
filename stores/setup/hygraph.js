@@ -1,5 +1,6 @@
 import { ref, computed } from 'vue'
 
+import { request as graphqlRequest } from 'graphql-request/dist/index.js'
 import unwrap from 'graphql-unwrap'
 
 import flatten from 'lodash-es/flatten'
@@ -14,8 +15,6 @@ import mapValues from 'lodash-es/mapValues'
 import merge from 'lodash-es/merge'
 import orderBy from 'lodash-es/orderBy'
 import pickBy from 'lodash-es/pickBy'
-
-import { request as graphqlRequest } from '../../util/graphqlRequest'
 
 // Defaults
 const defaultEnvironment = 'master'
