@@ -1,4 +1,6 @@
-<script>
+<script setup>
+import { computed, unref } from 'vue'
+
 import includes from 'lodash-es/includes'
 import isArray from 'lodash-es/isArray'
 import isPlainObject from 'lodash-es/isPlainObject'
@@ -22,10 +24,15 @@ const mapToValues = (options) => {
   return values
 }
 
-export default {
-  emits: ['update:modelValue'],
 
-  props: {
+
+// Footprint
+
+const emit = defineEmits([
+  'update:modelValue'
+])
+
+const props = defineProps({
 
     // [
     //   {
@@ -66,55 +73,46 @@ export default {
       default: false
     }
 
+})
+
+const value = computed({
+  get () {
+    return props.modelValue
   },
-
-  computed: {
-
-    value: {
-      get () {
-        return this.modelValue
-      },
-      set (value) {
-        this.$emit('update:modelValue', value)
-      }
-    },
-
-    normalizedOptions () {
-      return this.options.map((option) => {
-
-        if (isPlainObject(option)) {
-          return option
-        }
-
-        // If only values was passed as strings, use them also as labels
-        return {
-          label: option,
-          value: option
-        }
-      })
-    },
-
-    // FIXME: not recursive
-    values () {
-      return mapToValues(this.options)
-    },
-
-    hasSelected () {
-      return !!(this.value && includes(this.values, this.value))
-    }
-
-  },
-
-  methods: {
-    optionIsGroup,
-
-    clear () {
-      this.value = null
-    }
-
+  set (value) {
+    emit('update:modelValue', value)
   }
+})
 
-}
+const normalizedOptions = computed(() => {
+  const options = unref(props.options)
+
+  return options.map((option) => {
+    if (isPlainObject(option)) {
+      return option
+    }
+
+    // If only values was passed as strings, use them also as labels
+    return {
+      label: option,
+      value: option
+    }
+  })
+})
+
+// FIXME: not recursive
+const values = computed(() => {
+  return mapToValues(normalizedOptions.value)
+})
+
+const hasSelected = computed(() => {
+  return !!(value.value && includes(values.value, value.value))
+})
+
+// FIXME: expose this method
+// const clear = () => {
+//   value.value = null
+// }
 </script>
 
 <template>
@@ -173,11 +171,11 @@ export default {
       {{ placeholder }}
     </span>
 
-    <slot name="icon" class="c-dropdown-icon">
-      <Icon>
+    <Icon class="c-dropdown-icon">
+      <slot name="icon">
         <IconChevronDown />
-      </Icon>
-    </slot>
+      </slot>
+    </Icon>
 
   </span>
 </template>
