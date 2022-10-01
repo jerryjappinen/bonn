@@ -16,9 +16,6 @@ const debounceOptions = {
 }
 
 export default () => {
-  // ref
-  const isInited = ref(false)
-
   const breakpointValues = ref([
     320,
     720,
@@ -180,7 +177,7 @@ export default () => {
   })
 
   const init = () => {
-    if (windowExists() && !isInited.value) {
+    if (windowExists()) {
       updateDarkMode()
       updateDimensions()
       updateScrollValues()
@@ -199,13 +196,11 @@ export default () => {
         darkModeMatchMediaObject = window.matchMedia('(prefers-color-scheme: dark)')
         darkModeMatchMediaObject.addEventListener('change', updateDarkMode)
       }
-
-      isInited.value = true
     }
   }
 
   const uninit = () => {
-    if (isInited.value) {
+    if (windowExists()) {
       if (debouncedOnResize) {
         window.removeEventListener('resize', debouncedOnResize)
       }
@@ -227,7 +222,6 @@ export default () => {
   return {
     init,
     uninit,
-    isInited,
 
     breakpoints,
     hasObtrusiveScrollbars,

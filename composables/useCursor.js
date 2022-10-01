@@ -4,7 +4,6 @@ import { ref, computed, onMounted, onUnmounted } from 'vue'
 import windowExists from '../util/windowExists'
 
 export default () => {
-  const isInited = ref(false)
   const x = ref(0)
   const y = ref(0)
 
@@ -18,15 +17,13 @@ export default () => {
   }
 
   const init = () => {
-    if (windowExists() && !isInited.value) {
-      isInited.value = true
+    if (windowExists()) {
       window.addEventListener('mousemove', update)
     }
   }
 
   const uninit = () => {
-    if (isInited.value) {
-      isInited.value = false
+    if (windowExists()) {
       window.removeEventListener('mousemove', update)
     }
   }
@@ -39,7 +36,6 @@ export default () => {
   return {
     init,
     uninit,
-    isInited,
 
     x,
     y,
