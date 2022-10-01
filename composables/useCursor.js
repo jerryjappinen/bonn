@@ -3,7 +3,9 @@ import { ref, computed, onMounted, onUnmounted } from 'vue'
 
 import windowExists from '../util/windowExists'
 
-export default () => {
+export default (optionsInput) => {
+  const options = optionsInput || {}
+
   console.log('useCursor setup', windowExists())
 
   const x = ref(0)
@@ -35,14 +37,16 @@ export default () => {
   }
 
   // Automatically unit and uninit in components
-  onMounted(() => {
-    console.log('useCursor mounted')
-    init()
-  })
-  onUnmounted(() => {
-    console.log('useCursor unmounted')
-    uninit()
-  })
+  if (options.bind || options.bind === undefined) {
+    onMounted(() => {
+      console.log('useCursor mounted')
+      init()
+    })
+    onUnmounted(() => {
+      console.log('useCursor unmounted')
+      uninit()
+    })
+  }
 
   // Expose managed state as return value
   return {

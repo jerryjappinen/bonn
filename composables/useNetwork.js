@@ -2,7 +2,9 @@ import { ref, computed, onMounted, onUnmounted } from 'vue'
 
 import windowExists from '../util/windowExists'
 
-export default () => {
+export default (optionsInput) => {
+  const options = optionsInput || {}
+
   const isOnline = ref(false)
   const isOffline = computed(() => {
     return !isOnline.value
@@ -28,8 +30,10 @@ export default () => {
     }
   }
 
-  onMounted(init)
-  onUnmounted(uninit)
+  if (options.bind || options.bind === undefined) {
+    onMounted(init)
+    onUnmounted(uninit)
+  }
 
   return {
     init,

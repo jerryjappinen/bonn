@@ -1,6 +1,8 @@
 import { ref, computed, watch, onMounted, onUnmounted } from 'vue'
 
-export default () => {
+export default (optionsInput) => {
+  const options = optionsInput || {}
+
   const current = ref(new Date())
   const intervalDuration = ref(100) // ms
 
@@ -56,8 +58,10 @@ export default () => {
 
   watch(intervalDuration, startLoop)
 
-  onMounted(init)
-  onUnmounted(uninit)
+  if (options.bind || options.bind === undefined) {
+    onMounted(init)
+    onUnmounted(uninit)
+  }
 
   // API
   return {

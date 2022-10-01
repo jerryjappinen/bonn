@@ -15,7 +15,9 @@ const debounceOptions = {
   leading: true
 }
 
-export default () => {
+export default (optionsInput) => {
+  const options = optionsInput || {}
+
   const breakpointValues = ref([
     320,
     720,
@@ -215,10 +217,12 @@ export default () => {
     }
   }
 
-  // API
-  onMounted(init)
-  onUnmounted(uninit)
+  if (options.bind || options.bind === undefined) {
+    onMounted(init)
+    onUnmounted(uninit)
+  }
 
+  // API
   return {
     init,
     uninit,
