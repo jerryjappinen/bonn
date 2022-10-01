@@ -1,10 +1,10 @@
 <script setup>
 // This is a read-only component that visualizes state
 // Wrap this component in a Toggle to deliver complete form element behavior
-defineProps({
+const props = defineProps({
 
-  value: {
-    type: undefined,
+  modelValue: {
+    type: Boolean,
     default: false
   },
 
@@ -20,14 +20,22 @@ defineProps({
   <span
     class="c-checkbox"
     :class="{
-      'c-checkbox-on': !!value,
-      'c-checkbox-off': !value,
-      'c-checkbox-disabled': !!disabled,
+      'c-checkbox-on': !!modelValue,
+      'c-checkbox-off': !modelValue,
+      'c-checkbox-disabled': disabled,
       'c-checkbox-enabled': !disabled
     }"
   >
     <slot>
-      <IconCheck class="c-checkbox-icon" />
+      <IconCheck
+        class="c-checkbox-icon"
+        :class="{
+          'c-checkbox-icon-on': !!modelValue,
+          'c-checkbox-icon-off': !modelValue,
+          'c-checkbox-icon-disabled': disabled,
+          'c-checkbox-icon-enabled': !disabled
+        }"
+      />
     </slot>
   </span>
 </template>
@@ -53,7 +61,7 @@ defineProps({
 .c-checkbox,
 .c-checkbox-icon {
   @include relative;
-  @include transition-slow;
+  @include transition-leave;
   @include transition-properties-common;
 }
 
@@ -85,16 +93,17 @@ defineProps({
 
 // On states
 
+.c-checkbox-on,
+.c-checkbox-icon-on {
+  @include transition-enter;
+}
+
 .c-checkbox-on {
   background-color: var(--c-checkbox-enabled-on-color);
+}
 
-  @include transition-fast;
-
-  .c-checkbox-icon {
-    opacity: 1;
-    @include transition-fast;
-  }
-
+.c-checkbox-icon-on {
+  opacity: 1;
 }
 
 

@@ -2,6 +2,18 @@
   @include transition($duration);
 }
 
+
+
+@mixin transition-enter ($properties: null, $delay: null) {
+  @include transition(var(--transition-interaction-enter), $properties, $delay);
+}
+
+@mixin transition-leave ($properties: null, $delay: null) {
+  @include transition(var(--transition-interaction-leave), $properties, $delay);
+}
+
+
+
 @mixin transition-very-very-fast ($properties: null, $delay: null) {
   @include transition(var(--transition-very-very-fast), $properties, $delay);
 }
