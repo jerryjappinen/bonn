@@ -21,14 +21,50 @@
 
   /*
   *
-  * Custom scrollbars
+  * Backgrounds
   *
   */
-  @include scrollbar-color(red);
-  @include scrollbar-color(red, yellow);
-  @include dark-scrollbars;
-  @include light-scrollbars;
-  @include custom-scrollbars;
+  @include background(red);
+  @include background(red, '/background-image.jpg');
+  @include background-color(red);
+  @include background-image('/background-image.jpg');
+
+  @include no-background;
+  @include no-background-color;
+  @include no-background-image;
+
+  @include background-position(50px);
+  @include background-position(50px, 50px);
+  @include background-x(50px);
+  @include background-y(50px);
+
+  @include background-left;
+  @include background-right;
+  @include background-top;
+  @include background-bottom;
+
+  @include background-center;
+  @include background-horizontal-center;
+  @include background-vertical-center;
+
+  @include background-top-left;
+  @include background-top-center;
+  @include background-top-right;
+  @include background-bottom-left;
+  @include background-bottom-center;
+  @include background-bottom-right;
+
+  @include background-repeat-gaps;
+  @include background-repeat-stretch;
+  @include background-repeat-x;
+  @include background-repeat-y;
+  @include no-background-repeat;
+
+  @include background-contain;
+  @include background-cover;
+  @include background-stretch;
+  @include background-stretch-height;
+  @include background-stretch-width;
 
   /*
   *
@@ -130,7 +166,18 @@
 
   /*
   *
-  * Shadow
+  * Scrollbars
+  *
+  */
+  @include scrollbar-color(red);
+  @include scrollbar-color(red, yellow);
+  @include dark-scrollbars;
+  @include light-scrollbars;
+  @include custom-scrollbars;
+
+  /*
+  *
+  * Select
   *
   */
   @include select-all;
@@ -266,6 +313,9 @@
   @include transition-slow;
   @include transition-very-slow;
   @include transition-very-very-slow;
+
+  @include transition-enter;
+  @include transition-leave;
 
   @include transition-easing(ease);
   @include transition-ease;

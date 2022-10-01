@@ -1,9 +1,5 @@
-@mixin background-color ($color, $opacity: null) {
-  @if unit($opacity) == null {
-    background-color: $color;
-  } @else {
-    background-color: translucent($color, $opacity);
-  }
+@mixin background-color ($color) {
+  background-color: $color;
 }
 
 // NOTE: `no-background` is intentionally missing: use `-color`, `-image`, or both to explicitly clear the rules you want

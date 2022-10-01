@@ -1,6 +1,9 @@
-@mixin background-position ($y, $x) {
+@mixin background-position ($y, $x: null) {
   @include background-x($x);
-  @include background-y($y);
+
+  @if $y {
+    @include background-y($y);
+  }
 }
 
 @mixin background-x ($x) {

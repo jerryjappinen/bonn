@@ -6,3 +6,8 @@
     @include background-image($image);
   }
 }
+
+@mixin no-background {
+  @include no-background-color;
+  @include no-background-image;
+}
