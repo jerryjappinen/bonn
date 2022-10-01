@@ -8,16 +8,18 @@ import useViewport from '../../composables/useViewport'
 
 // Exports the setup function for this store
 // defineStore must be called in the client app
-export default () => {
+export default (optionsInput) => {
   return () => {
+    const options = optionsInput || {}
+
     console.log('device store setup')
 
     const modules = {
-      cursor: useCursor(),
-      network: useNetwork(),
+      cursor: useCursor({ bind: false }),
+      network: useNetwork({ bind: false }),
       platform: usePlatform(),
-      time: useTime(),
-      viewport: useViewport()
+      time: useTime({ bind: false }),
+      viewport: useViewport({ bind: false })
     }
 
     const run = (methodName, ...args) => {
@@ -38,6 +40,10 @@ export default () => {
       console.log('device store uninit')
 
       run('uninit', ...args)
+    }
+
+    if (options.bind || options.bind === undefined) {
+      init()
     }
 
     // Device API
