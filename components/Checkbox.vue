@@ -44,19 +44,19 @@
 
   // NOTE: this could also be confined in component class name
   // But then overriding it will be more laborious
-  :root {
-    // --c-checkbox-width: 1em;
-    // --c-checkbox-border-width: 2px;
-    // --c-checkbox-radius: var(--round);
+  // :root {
+  //   --c-checkbox-width: 1em;
+  //   --c-checkbox-border-width: 2px;
+  //   --c-checkbox-radius: var(--round);
 
-    // --c-checkbox-enabled-on-color: var(--inverted-offset-background-color);
-    // --c-checkbox-enabled-off-color: var(--text-color);
-    // --c-checkbox-enabled-check-color: var(--inverted-text-color);
+  //   --c-checkbox-enabled-on-color: var(--inverted-offset-background-color);
+  //   --c-checkbox-enabled-off-color: var(--text-color);
+  //   --c-checkbox-enabled-check-color: var(--inverted-text-color);
 
-    // --c-checkbox-disabled-on-color: var(--discreet-color-very-light);
-    // --c-checkbox-disabled-off-color: var(--discreet-text-color);
-    // --c-checkbox-disabled-check-color: var(--discreet-text-color);
-  }
+  //   --c-checkbox-disabled-on-color: var(--discreet-color-very-light);
+  //   --c-checkbox-disabled-off-color: var(--discreet-text-color);
+  //   --c-checkbox-disabled-check-color: var(--discreet-text-color);
+  // }
 
   .c-checkbox,
   .c-checkbox-icon {
