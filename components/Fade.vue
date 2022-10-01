@@ -261,7 +261,7 @@ const transitionName = computed(() => {
 .c-fade-from-bottom-to-top-leave-to,
 .c-fade-from-right-to-top-leave-to,
 .c-fade-from-left-to-top-leave-to {
-  @include translate-top(
+  @include translate-up(
     var(--c-fade-to-top-distance, var(--c-fade-leave-distance, var(--c-fade-distance)))
   );
 }
@@ -270,7 +270,7 @@ const transitionName = computed(() => {
 .c-fade-from-bottom-to-bottom-leave-to,
 .c-fade-from-right-to-bottom-leave-to,
 .c-fade-from-left-to-bottom-leave-to {
-  @include translate-bottom(
+  @include translate-down(
     var(--c-fade-to-bottom-distance, var(--c-fade-leave-distance, var(--c-fade-distance)))
   );
 }
