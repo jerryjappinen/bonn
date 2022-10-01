@@ -35,8 +35,14 @@ export default () => {
   }
 
   // Automatically unit and uninit in components
-  onMounted(init)
-  onUnmounted(uninit)
+  onMounted(() => {
+    console.log('useCursor mounted')
+    init()
+  })
+  onUnmounted(() => {
+    console.log('useCursor unmounted')
+    uninit()
+  })
 
   // Expose managed state as return value
   return {
