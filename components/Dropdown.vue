@@ -174,7 +174,9 @@ export default {
     </span>
 
     <slot name="icon" class="c-dropdown-icon">
-      <IconChevronDown />
+      <Icon>
+        <IconChevronDown />
+      </Icon>
     </slot>
 
   </span>
