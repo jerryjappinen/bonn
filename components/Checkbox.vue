@@ -45,45 +45,46 @@
   // NOTE: this could also be confined in component class name
   // But then overriding it will be more laborious
   :root {
-    --c-checkbox-width: 1em;
-    --c-checkbox-border-width: 2px;
-    --c-checkbox-radius: var(--round);
+    // --c-checkbox-width: 1em;
+    // --c-checkbox-border-width: 2px;
+    // --c-checkbox-radius: var(--round);
 
-    --c-checkbox-enabled-on-color: var(--inverted-offset-background-color);
-    --c-checkbox-enabled-off-color: var(--text-color);
-    --c-checkbox-enabled-check-color: var(--inverted-text-color);
+    // --c-checkbox-enabled-on-color: var(--inverted-offset-background-color);
+    // --c-checkbox-enabled-off-color: var(--text-color);
+    // --c-checkbox-enabled-check-color: var(--inverted-text-color);
 
-    --c-checkbox-disabled-on-color: var(--discreet-color-very-light);
-    --c-checkbox-disabled-off-color: var(--discreet-text-color);
-    --c-checkbox-disabled-check-color: var(--discreet-text-color);
+    // --c-checkbox-disabled-on-color: var(--discreet-color-very-light);
+    // --c-checkbox-disabled-off-color: var(--discreet-text-color);
+    // --c-checkbox-disabled-check-color: var(--discreet-text-color);
   }
 
   .c-checkbox,
   .c-checkbox-icon {
-    @include relative;
     @include transition-leave;
     @include transition-properties-common;
   }
 
   .c-checkbox {
+    @include relative;
     @include inline-block;
     vertical-align: middle;
 
-    width: var(--c-checkbox-width);
-    height: var(--c-checkbox-width);
-    border-width: var(--c-checkbox-border-width);
-    padding: calc(var(--pad-tight-horizontal) - (2 * var(--c-checkbox-border-width)));
-    border-radius: var(--c-checkbox-radius);
+    width: var(--c-checkbox-width, 1em);
+    height: var(--c-checkbox-width, 1em);
+
+    border-width: var(--c-checkbox-border-width, 1.5px);
+    border-radius: var(--c-checkbox-radius, var(--round));
 
     // Default for enabled, off state
-    color: var(--c-checkbox-enabled-check-color);
-    border-color: var(--c-checkbox-enabled-off-color);
+    color: var(--c-checkbox-enabled-check-color, var(--inverted-text-color));
+    border-color: var(--c-checkbox-enabled-off-color, var(--text-color));
   }
 
   .c-checkbox-icon {
     @include block;
-    width: 1em;
-    height: 1em;
+    @include fill;
+    width: 100%;
+    height: 100%;
 
     // Default for off state
     opacity: 0;
@@ -99,7 +100,7 @@
   }
 
   .c-checkbox-on {
-    background-color: var(--c-checkbox-enabled-on-color);
+    background-color: var(--c-checkbox-enabled-on-color, var(--inverted-offset-background-color));
   }
 
   .c-checkbox-icon-on {
@@ -111,9 +112,9 @@
   // Enabled/disabled states
 
   .c-checkbox-disabled {
-    color: var(--c-checkbox-disabled-check-color);
-    border-color: var(--c-checkbox-disabled-off-color);
-    background-color: var(--c-checkbox-disabled-on-color);
+    color: var(--c-checkbox-disabled-check-color, var(--discreet-text-color));
+    border-color: var(--c-checkbox-disabled-off-color, var(--discreet-text-color));
+    background-color: var(--c-checkbox-disabled-on-color, var(--discreet-color-very-light));
   }
 
   // .c-checkbox-enabled {
