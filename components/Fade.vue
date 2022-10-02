@@ -70,38 +70,37 @@ const transitionName = computed(() => {
 
 <style lang="scss">
 
-:root {
-  --c-fade-duration: var(--transition-fast);
-  --c-fade-distance: var(--pad-tight-horizontal);
+// CSS API
+// :root {
+//   --c-fade-duration: var(--transition-fast);
+//   --c-fade-distance: var(--pad-tight-horizontal);
 
-  // API: durations
-  // --c-fade-enter-duration: var(--c-fade-duration);
-  // --c-fade-leave-duration: var(--c-fade-duration);
+//   --c-fade-enter-duration: var(--c-fade-duration);
+//   --c-fade-leave-duration: var(--c-fade-duration);
 
-  // --c-fade-from-left-duration: var(--c-fade-enter-duration);
-  // --c-fade-from-right-duration: var(--c-fade-enter-duration);
-  // --c-fade-from-top-duration: var(--c-fade-enter-duration);
-  // --c-fade-from-bottom-duration: var(--c-fade-enter-duration);
+//   --c-fade-from-left-duration: var(--c-fade-enter-duration);
+//   --c-fade-from-right-duration: var(--c-fade-enter-duration);
+//   --c-fade-from-top-duration: var(--c-fade-enter-duration);
+//   --c-fade-from-bottom-duration: var(--c-fade-enter-duration);
 
-  // --c-fade-to-left-duration: var(--c-fade-leave-duration);
-  // --c-fade-to-right-duration: var(--c-fade-leave-duration);
-  // --c-fade-to-top-duration: var(--c-fade-leave-duration);
-  // --c-fade-to-bottom-duration: var(--c-fade-leave-duration);
+//   --c-fade-to-left-duration: var(--c-fade-leave-duration);
+//   --c-fade-to-right-duration: var(--c-fade-leave-duration);
+//   --c-fade-to-top-duration: var(--c-fade-leave-duration);
+//   --c-fade-to-bottom-duration: var(--c-fade-leave-duration);
 
-  // API: movement
-  // --c-fade-enter-distance: var(--c-fade-distance);
-  // --c-fade-leave-distance: var(--c-fade-distance);
+//   --c-fade-enter-distance: var(--c-fade-distance);
+//   --c-fade-leave-distance: var(--c-fade-distance);
 
-  // --c-fade-from-left-distance: var(--c-fade-enter-distance);
-  // --c-fade-from-right-distance: var(--c-fade-enter-distance);
-  // --c-fade-from-top-distance: var(--c-fade-enter-distance);
-  // --c-fade-from-bottom-distance: var(--c-fade-enter-distance);
+//   --c-fade-from-left-distance: var(--c-fade-enter-distance);
+//   --c-fade-from-right-distance: var(--c-fade-enter-distance);
+//   --c-fade-from-top-distance: var(--c-fade-enter-distance);
+//   --c-fade-from-bottom-distance: var(--c-fade-enter-distance);
 
-  // --c-fade-to-left-distance: var(--c-fade-leave-distance);
-  // --c-fade-to-right-distance: var(--c-fade-leave-distance);
-  // --c-fade-to-top-distance: var(--c-fade-leave-distance);
-  // --c-fade-to-bottom-distance: var(--c-fade-leave-distance);
-}
+//   --c-fade-to-left-distance: var(--c-fade-leave-distance);
+//   --c-fade-to-right-distance: var(--c-fade-leave-distance);
+//   --c-fade-to-top-distance: var(--c-fade-leave-distance);
+//   --c-fade-to-bottom-distance: var(--c-fade-leave-distance);
+// }
 
 .c-fade-enter-active,
 .c-fade-leave-active {
@@ -224,7 +223,7 @@ const transitionName = computed(() => {
 .c-fade-from-top-to-left-enter-from,
 .c-fade-from-top-to-right-enter-from {
   @include translate-up(
-    var(--c-fade-from-top-distance, var(--c-fade-enter-distance, var(--c-fade-distance)))
+    var(--c-fade-from-top-distance, var(--c-fade-enter-distance, var(--c-fade-distance, var(--pad-tight-vertical))))
   );
 }
 
@@ -233,7 +232,7 @@ const transitionName = computed(() => {
 .c-fade-from-bottom-to-left-enter-from,
 .c-fade-from-bottom-to-right-enter-from {
   @include translate-down(
-    var(--c-fade-from-bottom-distance, var(--c-fade-enter-distance, var(--c-fade-distance)))
+    var(--c-fade-from-bottom-distance, var(--c-fade-enter-distance, var(--c-fade-distance, var(--pad-tight-vertical))))
   );
 }
 
@@ -242,7 +241,7 @@ const transitionName = computed(() => {
 .c-fade-from-left-to-left-enter-from,
 .c-fade-from-left-to-right-enter-from {
   @include translate-left(
-    var(--c-fade-from-left-distance, var(--c-fade-enter-distance, var(--c-fade-distance)))
+    var(--c-fade-from-left-distance, var(--c-fade-enter-distance, var(--c-fade-distance, var(--pad-tight-horizontal))))
   );
 }
 
@@ -251,7 +250,7 @@ const transitionName = computed(() => {
 .c-fade-from-right-to-left-enter-from,
 .c-fade-from-right-to-right-enter-from {
   @include translate-right(
-    var(--c-fade-from-right-distance, var(--c-fade-enter-distance, var(--c-fade-distance)))
+    var(--c-fade-from-right-distance, var(--c-fade-enter-distance, var(--c-fade-distance, var(--pad-tight-horizontal))))
   );
 }
 
@@ -262,7 +261,7 @@ const transitionName = computed(() => {
 .c-fade-from-right-to-top-leave-to,
 .c-fade-from-left-to-top-leave-to {
   @include translate-up(
-    var(--c-fade-to-top-distance, var(--c-fade-leave-distance, var(--c-fade-distance)))
+    var(--c-fade-to-top-distance, var(--c-fade-leave-distance, var(--c-fade-distance, var(--pad-tight-vertical))))
   );
 }
 
@@ -271,7 +270,7 @@ const transitionName = computed(() => {
 .c-fade-from-right-to-bottom-leave-to,
 .c-fade-from-left-to-bottom-leave-to {
   @include translate-down(
-    var(--c-fade-to-bottom-distance, var(--c-fade-leave-distance, var(--c-fade-distance)))
+    var(--c-fade-to-bottom-distance, var(--c-fade-leave-distance, var(--c-fade-distance, var(--pad-tight-vertical))))
   );
 }
 
@@ -280,7 +279,7 @@ const transitionName = computed(() => {
 .c-fade-from-right-to-left-leave-to,
 .c-fade-from-left-to-left-leave-to {
   @include translate-left(
-    var(--c-fade-to-left-distance, var(--c-fade-leave-distance, var(--c-fade-distance)))
+    var(--c-fade-to-left-distance, var(--c-fade-leave-distance, var(--c-fade-distance, var(--pad-tight-horizontal))))
   );
 }
 
@@ -289,76 +288,76 @@ const transitionName = computed(() => {
 .c-fade-from-right-to-right-leave-to,
 .c-fade-from-left-to-right-leave-to {
   @include translate-right(
-    var(--c-fade-to-right-distance, var(--c-fade-leave-distance, var(--c-fade-distance)))
+    var(--c-fade-to-right-distance, var(--c-fade-leave-distance, var(--c-fade-distance, var(--pad-tight-horizontal))))
   );
 }
 
 // Enter durations
 
 .c-fade-enter-active {
-  transition-duration: var(--c-fade-enter-duration, var(--c-fade-duration));
+  transition-duration: var(--c-fade-enter-duration, var(--c-fade-duration, var(--transition-fast)));
 }
 
 .c-fade-from-top-to-top-enter-active,
 .c-fade-from-top-to-bottom-enter-active,
 .c-fade-from-top-to-left-enter-active,
 .c-fade-from-top-to-right-enter-active {
-  transition-duration: var(--c-fade-from-top-duration, var(--c-fade-enter-duration, var(--c-fade-duration)));
+  transition-duration: var(--c-fade-from-top-duration, var(--c-fade-enter-duration, var(--c-fade-duration, var(--transition-fast))));
 }
 
 .c-fade-from-bottom-to-top-enter-active,
 .c-fade-from-bottom-to-bottom-enter-active,
 .c-fade-from-bottom-to-left-enter-active,
 .c-fade-from-bottom-to-right-enter-active {
-  transition-duration: var(--c-fade-from-bottom-duration, var(--c-fade-enter-duration, var(--c-fade-duration)));
+  transition-duration: var(--c-fade-from-bottom-duration, var(--c-fade-enter-duration, var(--c-fade-duration, var(--transition-fast))));
 }
 
 .c-fade-from-left-to-top-enter-active,
 .c-fade-from-left-to-bottom-enter-active,
 .c-fade-from-left-to-left-enter-active,
 .c-fade-from-left-to-right-enter-active {
-  transition-duration: var(--c-fade-from-left-duration, var(--c-fade-enter-duration, var(--c-fade-duration)));
+  transition-duration: var(--c-fade-from-left-duration, var(--c-fade-enter-duration, var(--c-fade-duration, var(--transition-fast))));
 }
 
 .c-fade-from-right-to-top-enter-active,
 .c-fade-from-right-to-bottom-enter-active,
 .c-fade-from-right-to-left-enter-active,
 .c-fade-from-right-to-right-enter-active {
-  transition-duration: var(--c-fade-from-right-duration, var(--c-fade-enter-duration, var(--c-fade-duration)));
+  transition-duration: var(--c-fade-from-right-duration, var(--c-fade-enter-duration, var(--c-fade-duration, var(--transition-fast))));
 }
 
 // Leave durations
 
 .c-fade-leave-active {
-  transition-duration: var(--c-fade-leave-duration, var(--c-fade-duration));
+  transition-duration: var(--c-fade-leave-duration, var(--c-fade-duration, var(--transition-fast)));
 }
 
 .c-fade-from-right-to-top-leave-active,
 .c-fade-from-left-to-top-leave-active,
 .c-fade-from-bottom-to-top-leave-active,
 .c-fade-from-top-to-top-leave-active {
-  transition-duration: var(--c-fade-to-top-duration, var(--c-fade-leave-duration, var(--c-fade-duration)));
+  transition-duration: var(--c-fade-to-top-duration, var(--c-fade-leave-duration, var(--c-fade-duration, var(--transition-fast))));
 }
 
 .c-fade-from-top-to-bottom-leave-active,
 .c-fade-from-bottom-to-bottom-leave-active,
 .c-fade-from-left-to-bottom-leave-active,
 .c-fade-from-right-to-bottom-leave-active {
-  transition-duration: var(--c-fade-to-bottom-duration, var(--c-fade-leave-duration, var(--c-fade-duration)));
+  transition-duration: var(--c-fade-to-bottom-duration, var(--c-fade-leave-duration, var(--c-fade-duration, var(--transition-fast))));
 }
 
 .c-fade-from-top-to-left-leave-active,
 .c-fade-from-bottom-to-left-leave-active,
 .c-fade-from-left-to-left-leave-active,
 .c-fade-from-right-to-left-leave-active {
-  transition-duration: var(--c-fade-to-left-duration, var(--c-fade-leave-duration, var(--c-fade-duration)));
+  transition-duration: var(--c-fade-to-left-duration, var(--c-fade-leave-duration, var(--c-fade-duration, var(--transition-fast))));
 }
 
 .c-fade-from-top-to-right-leave-active,
 .c-fade-from-bottom-to-right-leave-active,
 .c-fade-from-left-to-right-leave-active,
 .c-fade-from-right-to-right-leave-active {
-  transition-duration: var(--c-fade-to-right-duration, var(--c-fade-leave-duration, var(--c-fade-duration)));
+  transition-duration: var(--c-fade-to-right-duration, var(--c-fade-leave-duration, var(--c-fade-duration, var(--transition-fast))));
 }
 
 </style>
