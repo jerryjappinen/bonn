@@ -8,7 +8,7 @@ const props = defineProps({
 
   title: {
     type: String,
-    required: false
+    default: undefined
   },
 
   light: {

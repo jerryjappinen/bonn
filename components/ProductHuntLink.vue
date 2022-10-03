@@ -2,10 +2,10 @@
 import ExternalLink from './ExternalLink.vue'
 import ProductHuntBadge from './ProductHuntBadge.vue'
 
-const props = defineProps({
-  postId,
-  title,
-  light,
+defineProps({
+  postId: {},
+  title: {},
+  light: {},
 
   postSlug: {
     type: String,

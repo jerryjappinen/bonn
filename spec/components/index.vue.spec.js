@@ -34,7 +34,7 @@ import PlaceholderImage from '../../components/PlaceholderImage.vue'
 import PlaceholderText from '../../components/PlaceholderText.vue'
 import Plaintext from '../../components/Plaintext.vue'
 import ProductHuntBadge from '../../components/ProductHuntBadge.vue'
-// import ProductHuntLink from '../../components/ProductHuntLink.vue'
+import ProductHuntLink from '../../components/ProductHuntLink.vue'
 import ProgressBar from '../../components/ProgressBar.vue'
 import Set from '../../components/Set.vue'
 import SlowFade from '../../components/SlowFade.vue'
@@ -51,9 +51,6 @@ import WebAppBadge from '../../components/WebAppBadge.vue'
 import YoutubePlayer from '../../components/YoutubePlayer.vue'
 
 const tests = {
-
-  // FIXME: Not sure what's wrong with these
-  // ProductHuntLink: [ProductHuntLink, { postSlug: 'foobar' }],
 
   AppStoreBadge,
   AppStoreLink: [AppStoreLink, { appId: 'foobar' }],
@@ -88,6 +85,10 @@ const tests = {
   PlaceholderText,
   Plaintext,
   ProductHuntBadge: [ProductHuntBadge, { postId: 'foobar' }],
+
+  // FIXME: Not sure what's wrong with this
+  ProductHuntLink: [ProductHuntLink, { postId: 'foobar', postSlug: 'foobar' }],
+
   ProgressBar,
   Set,
   SlowFade,
