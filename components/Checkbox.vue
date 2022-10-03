@@ -42,7 +42,7 @@ defineProps({
 // :root {
 //   --c-checkbox-width: 1em;
 //   --c-checkbox-border-width: 2px;
-//   --c-checkbox-radius: var(--round);
+//   --c-checkbox-radius: var(--control-radius);
 
 //   --c-checkbox-enabled-on-color: var(--inverted-offset-background-color);
 //   --c-checkbox-enabled-off-color: var(--text-color);
@@ -67,8 +67,8 @@ defineProps({
   width: var(--c-checkbox-width, 1em);
   height: var(--c-checkbox-width, 1em);
 
-  border-width: var(--c-checkbox-border-width, 1.5px);
-  border-radius: var(--c-checkbox-radius, var(--round));
+  border-width: var(--c-checkbox-border-width, var(--control-border-width, 1px));
+  border-radius: var(--c-checkbox-radius, var(--control-radius));
 
   // Default for enabled, off state
   color: var(--c-checkbox-enabled-check-color, var(--inverted-text-color));

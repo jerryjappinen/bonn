@@ -33,7 +33,7 @@ defineProps({
 
 // CSS API
 // :root {
-//   --c-switch-border-width: 1.5px;
+//   --c-switch-border-width: var(--control-border-width, 1px);
 //   --c-switch-radius: var(--round);
 
 //   --c-switch-on-color: var(--inverted-background-color); // background when on
@@ -62,11 +62,11 @@ defineProps({
   @include relative;
   @include inline-block;
   border-radius: var(--c-switch-radius, var(--round));
-  border-width: var(--c-switch-border-width, 1.5px);
+  border-width: var(--c-switch-border-width, var(--control-border-width, 1px));
   vertical-align: middle;
 
   width: var(--c-switch-track-width, calc(var(--c-switch-knob-width, 1em) * 2.5));
-  height: calc((2 * var(--c-switch-knob-margin, var(--c-switch-border-width, 1.5px))) + var(--c-switch-knob-width, 1em));
+  height: calc((2 * var(--c-switch-knob-margin, var(--c-switch-border-width, var(--control-border-width, 1px)))) + var(--c-switch-knob-width, 1em));
 
   // Since knob will overflow
   // margin-left: calc(var(--switch-track-height) / 2);
@@ -81,8 +81,8 @@ defineProps({
   box-sizing: border-box;
   display: block;
 
-  top: var(--c-switch-knob-margin, var(--c-switch-border-width, 1.5px));
-  left: var(--c-switch-knob-margin, var(--c-switch-border-width, 1.5px));
+  top: var(--c-switch-knob-margin, var(--c-switch-border-width, var(--control-border-width, 1px)));
+  left: var(--c-switch-knob-margin, var(--c-switch-border-width, var(--control-border-width, 1px)));
 
   width: var(--c-switch-knob-width, 1em);
   height: var(--c-switch-knob-width, 1em);
@@ -106,7 +106,7 @@ defineProps({
     background-color: var(--c-switch-on-knob-color, var(--inverted-text-color));
     transform: translate3d(
       calc(
-        var(--c-switch-track-width, calc(var(--c-switch-knob-width, 1em) * 2.5)) - (var(--c-switch-knob-margin, var(--c-switch-border-width, 1.5px)) * 2) - var(--c-switch-knob-width, 1em)
+        var(--c-switch-track-width, calc(var(--c-switch-knob-width, 1em) * 2.5)) - (var(--c-switch-knob-margin, var(--c-switch-border-width, var(--control-border-width, 1px))) * 2) - var(--c-switch-knob-width, 1em)
       ), 0, 0);
   }
 

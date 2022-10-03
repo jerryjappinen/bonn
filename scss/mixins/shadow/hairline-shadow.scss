@@ -1,4 +1,4 @@
-@mixin hairline-shadow ($color: var(--shadow-color)) {
+@mixin hairline-shadow ($color: var(--border-color)) {
   box-shadow: 0 0 0 var(--hairline-border-width) $color;
 }
 
