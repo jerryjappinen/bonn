@@ -1,9 +1,10 @@
 <script setup>
-import { computed } from 'vue'
+import { computed, unref } from 'vue'
 
 import isAbsoluteUrl from '../util/isAbsoluteUrl'
 
 const props = defineProps({
+
   file: {
     type: String,
     required: true
@@ -13,21 +14,24 @@ const props = defineProps({
     type: [Number, String],
     required: false
   }
+
 })
 
 
 
 const src = computed(() => {
+  const file = unref(props.file)
+  const node = unref(props.node)
   let url = ''
 
-  if (isAbsoluteUrl(props.file)) {
-    url = props.file
+  if (isAbsoluteUrl(file)) {
+    url = file
   } else {
-    url = 'https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F' + props.file
+    url = 'https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F' + file
   }
 
-  if (props.node) {
-    url += '%2F%3Fnode-id%3D' + props.node
+  if (node) {
+    url += '%2F%3Fnode-id%3D' + node
   }
 
   return url

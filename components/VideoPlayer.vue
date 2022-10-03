@@ -1,11 +1,11 @@
 <script setup>
 // FIXME: change this so user can pass multiple formats
-import { computed } from 'vue'
+import { computed, unref } from 'vue'
 
 const props = defineProps({
   src: {
     type: [Array, String],
-    required: true
+    default: null
   },
 
   type: {
@@ -64,32 +64,34 @@ const props = defineProps({
 
 
 const mimeType = computed(() => {
-  return (props.type.indexOf('/' < 0) ? 'video/' : '') + props.type
+  const type = unref(props.type)
+  return (type.indexOf('/' < 0) ? 'video/' : '') + type
 })
 
 const sourceBinding = computed(() => {
   return {
-    [props.lazy ? 'data-src' : 'src']: props.src
+    [props.lazy ? 'data-src' : 'src']: unref(props.src) || ''
   }
 })
 
 const bindings = computed(() => {
   const bind = {}
+  const autoplay = unref(props.autoplay)
 
-  if (props.autoplay) {
+  if (autoplay) {
     bind.autoplay = true
     bind.playsinline = true
   }
 
-  if (props.autoplay || props.mute) {
+  if (autoplay || unref(props.mute)) {
     bind.muted = true
   }
 
-  if (props.loop) {
+  if (unref(props.loop)) {
     bind.loop = true
   }
 
-  if (props.controls) {
+  if (unref(props.controls)) {
     bind.controls = true
   }
 

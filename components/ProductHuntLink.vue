@@ -1,6 +1,4 @@
 <script setup>
-import { computed } from 'vue'
-
 import ExternalLink from './ExternalLink.vue'
 import ProductHuntBadge from './ProductHuntBadge.vue'
 
@@ -14,15 +12,11 @@ const props = defineProps({
     required: true
   }
 })
-
-const href = computed(() => {
-  return 'https://www.producthunt.com/posts/' + props.postSlug + '?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-' + props.postSlug
-})
 </script>
 
 <template>
   <ExternalLink
-    :href="href"
+    :href="'https://www.producthunt.com/posts/' + postSlug"
     class="c-product-hunt-link"
   >
     <slot>

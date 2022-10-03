@@ -7,6 +7,9 @@ import isString from 'lodash-es/isString'
 import Fade from './Fade.vue'
 import Icon from './Icon.vue'
 
+import IconCross from '../icons/Cross.svg'
+import IconUndo from '../icons/Undo.svg'
+
 export default {
   emits: [
     'blur',
@@ -17,7 +20,9 @@ export default {
 
   components: {
     Fade,
-    Icon
+    Icon,
+    IconCross,
+    IconUndo
   },
 
   props: {
@@ -63,7 +68,7 @@ export default {
 
     modelValue: {
       type: [String, Number],
-      required: true
+      default: ''
     },
 
     required: {

@@ -1,6 +1,4 @@
 <script setup>
-import { computed } from 'vue'
-
 const props = defineProps({
 
   postId: {
@@ -19,15 +17,11 @@ const props = defineProps({
   }
 
 })
-
-const src = computed(() => {
-  return 'https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=' + props.postId + '&theme=' + (props.light ? 'light' : 'dark')
-})
 </script>
 
 <template>
   <img
-    :src="src"
+    :src="'https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=' + postId + '&theme=' + (light ? 'light' : 'dark')"
     :alt="title"
     style="width: 250px; height: 54px;"
     width="250px"

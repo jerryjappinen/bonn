@@ -1,5 +1,5 @@
 <script setup>
-import { computed } from 'vue'
+import { computed, unref } from 'vue'
 
 const baseUrl = 'https://www.youtube.com/embed/'
 
@@ -34,17 +34,20 @@ const props = defineProps({
 
 
 const firstVideoId = computed(() => {
-  if (!props.video && props.playlist) {
-    return props.playlist[0]
+  const video = unref(props.video)
+  const playlist = unref(props.playlist)
+
+  if (!video && playlist) {
+    return playlist[0]
   }
 
-  return props.video
+  return video
 })
 
 const bindings = computed(() => {
   const bindings = {}
 
-  if (props.frame) {
+  if (unref(props.frame)) {
     bindings.allowfullscreen = true
   }
 
@@ -61,21 +64,20 @@ const queryParameters = computed(() => {
     'modestbranding=1'
   ]
 
-  if (props.mute) {
+  if (unref(props.mute)) {
     params.push('mute=1')
   }
 
-  if (props.autoplay) {
+  if (unref(props.autoplay)) {
     params.push('autoplay=1')
     params.push('loop=1')
   }
 
   if (props.playlist && props.playlist.length > 1) {
-    const playlist = props.video
-      ? props.playlist
-      : props.playlist.slice(1)
+    const playlist = unref(props.playlist)
+    const finalList = unref(props.video) ? playlist : playlist.slice(1)
 
-    params.push('playlist=' + playlist.join(','))
+    params.push('playlist=' + finalList.join(','))
   }
 
   if (props.frame) {
@@ -90,7 +92,7 @@ const queryParameters = computed(() => {
 })
 
 const src = computed(() => {
-  return baseUrl + firstVideoId + '?' + queryParameters.join('&')
+  return baseUrl + firstVideoId.value + '?' + queryParameters.value.join('&')
 })
 
 </script>
@@ -100,8 +102,8 @@ const src = computed(() => {
     v-bind="bindings"
     :src="src"
     :class="{
-      'c-youtube-player-dimensions': dimensions,
-      'c-youtube-player-frame': frame
+      'c-youtube-player-dimensions': !!dimensions,
+      'c-youtube-player-frame': !!frame
     }"
     type="text/html"
     class="c-youtube-player"

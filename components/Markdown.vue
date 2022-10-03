@@ -1,5 +1,5 @@
 <script setup>
-import { computed } from 'vue'
+import { computed, unref } from 'vue'
 
 import MarkdownIt from 'markdown-it'
 
@@ -13,7 +13,7 @@ const markdownParser = new MarkdownIt({
 const props = defineProps({
   markdown: {
     type: String,
-    required: true
+    default: null
   },
 
   inline: {
@@ -25,10 +25,12 @@ const props = defineProps({
 
 
 const bodyHtml = computed(() => {
-  body
+  const markdown = unref(props.markdown)
+
+  markdown
     ? props.inline
-      ? markdownParser.renderInline(props.body)
-      : markdownParser.render(props.body)
+      ? markdownParser.renderInline(markdown)
+      : markdownParser.render(markdown)
     : null
 })
 

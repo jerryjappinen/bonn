@@ -3,9 +3,9 @@ import toPlainText from '../util/toPlainText'
 
 defineProps({
 
-  body: {
+  text: {
     type: String,
-    required: true
+    default: null
   },
 
   block: {
@@ -19,7 +19,5 @@ defineProps({
   <component
     :is="block ? 'div' : 'span'"
     class="c-plaintext"
-  >
-    {{ body ? toPlainText(body) : '' }}
-  </component>
+  >{{ text ? toPlainText(text || '') : '' }}</component>
 </template>

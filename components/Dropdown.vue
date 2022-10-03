@@ -1,11 +1,14 @@
 <script setup>
 import { computed, unref } from 'vue'
 
-import IconChevronDown from '../icons/ChevronDown.svg'
-
 import includes from 'lodash-es/includes'
 import isArray from 'lodash-es/isArray'
 import isPlainObject from 'lodash-es/isPlainObject'
+
+import Icon from './Icon.vue'
+import IconChevronDown from '../icons/ChevronDown.svg'
+
+
 
 const optionIsGroup = (option) => {
   return isArray(option.value)
@@ -28,54 +31,52 @@ const mapToValues = (options) => {
 
 
 
-// Footprint
-
 const emit = defineEmits([
   'update:modelValue'
 ])
 
 const props = defineProps({
 
-    // [
-    //   {
-    //     label: 'Foo Bar'
-    //     value: 'foobar'
-    //   },
-    //   {
-    //     label: 'Group'
-    //     value: [
-    //       {
-    //         ...
-    //       }
-    //     ]
-    //   }
-    // ]
+  // [
+  //   {
+  //     label: 'Foo Bar'
+  //     value: 'foobar'
+  //   },
+  //   {
+  //     label: 'Group'
+  //     value: [
+  //       {
+  //         ...
+  //       }
+  //     ]
+  //   }
+  // ]
 
-    options: {
-      type: Array,
-      default () {
-        return []
-      }
-    },
-
-    modelValue: {
-      default: null
-    },
-
-    placeholder: {
-      type: [Number, String],
-      default: null
-    },
-
-    inline: {
-      type: Boolean,
-      default: false
-    },
-
-    disabled: {
-      type: Boolean,
-      default: false
+  options: {
+    type: Array,
+    default () {
+      return []
     }
+  },
+
+  modelValue: {
+    default: null
+  },
+
+  placeholder: {
+    type: [Number, String],
+    default: null
+  },
+
+  inline: {
+    type: Boolean,
+    default: false
+  },
+
+  disabled: {
+    type: Boolean,
+    default: false
+  }
 
 })
 
@@ -142,7 +143,6 @@ const hasSelected = computed(() => {
           :key="'group-' + i"
           :label="option.label"
         >
-
           <option
             v-for="(groupOption, j) in option.value"
             :key="j"
@@ -151,7 +151,6 @@ const hasSelected = computed(() => {
           >
             {{ groupOption.label }}
           </option>
-
         </optgroup>
 
         <!-- Value directly in the list -->

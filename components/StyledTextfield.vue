@@ -1,3 +1,7 @@
+<script setup>
+import Textfield from './Textfield.vue'
+</script>
+
 <template>
   <Textfield class="c-styled-textfield" />
 </template>
