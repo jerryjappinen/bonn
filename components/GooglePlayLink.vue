@@ -1,8 +1,8 @@
 <script setup>
 import { computed } from 'vue'
 
-import GooglePlayBadge from './GooglePlayBadge'
-import ExternalLink from './ExternalLink'
+import GooglePlayBadge from './GooglePlayBadge.vue'
+import ExternalLink from './ExternalLink.vue'
 
 const props = defineProps({
   light: {},

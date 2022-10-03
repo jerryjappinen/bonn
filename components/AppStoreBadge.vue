@@ -1,9 +1,11 @@
 <script setup>
 defineProps({
+
   light: {
     type: Boolean,
     default: false
   }
+
 })
 </script>
 

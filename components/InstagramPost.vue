@@ -1,9 +1,9 @@
 <script setup>
 import { ref, computed } from 'vue'
 
-import ExternalLink from './ExternalLink'
-import Bitmap from './Bitmap'
-import VideoPlayer from './VideoPlayer'
+import ExternalLink from './ExternalLink.vue'
+import Bitmap from './Bitmap.vue'
+import VideoPlayer from './VideoPlayer.vue'
 
 const props = defineProps({
 

@@ -1,9 +1,9 @@
 <script setup>
 import { computed, unref, resolveComponent } from 'vue'
 
-import Fade from './Fade'
-// import Icon from './Icon'
-import Spinner from './Spinner'
+import Fade from './Fade.vue'
+// import Icon from './Icon.vue'
+import Spinner from './Spinner.vue'
 
 const props = defineProps({
 

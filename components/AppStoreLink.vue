@@ -1,8 +1,8 @@
 <script setup>
 import { computed } from 'vue'
 
-import AppStoreBadge from './AppStoreBadge'
-import ExternalLink from './ExternalLink'
+import AppStoreBadge from './AppStoreBadge.vue'
+import ExternalLink from './ExternalLink.vue'
 
 const props = defineProps({
   refer: {},

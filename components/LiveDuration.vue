@@ -1,7 +1,7 @@
 <script setup>
 import useTime from '../composables/useTime'
 
-import Duration from './Duration'
+import Duration from './Duration.vue'
 
 const time = useTime()
 

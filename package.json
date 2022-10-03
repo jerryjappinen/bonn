@@ -31,9 +31,15 @@
     "lint:fix": "npm run lint -- --fix",
     "prepublishOnly": "npm run build",
     "dev": "vitest",
+    "dev:components": "vitest --dir spec/components",
+    "dev:nuxt": "vitest --dir spec/nuxt",
+    "dev:util": "vitest --dir spec/util",
     "dev:scss": "sass spec/scss/index.spec.scss dist/css/index.css --watch",
     "test": "npm run test:scss && npm run test:js",
     "test:js": "vitest run",
+    "test:components": "vitest run --dir spec/components",
+    "test:nuxt": "vitest run --dir spec/nuxt",
+    "test:util": "vitest run --dir spec/util",
     "test:scss": "sass spec/scss/index.spec.scss"
   },
   "author": {
@@ -92,7 +98,10 @@
     }
   },
   "devDependencies": {
+    "@vitejs/plugin-vue": "^3.1.2",
+    "@vue/test-utils": "^2.1.0",
     "date-fns": "^2.29.3",
+    "happy-dom": "^6.0.4",
     "lodash-es": "^4.17.21",
     "nuxt": "^3.0.0-rc.11",
     "pinia": "^2.0.22",

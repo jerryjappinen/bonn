@@ -22,9 +22,7 @@ defineProps({
       'c-buttons-fill': fill,
       'c-buttons-fill-center': fill && center
     }"
-  >
-    <slot />
-  </div>
+  ><slot /></div>
 </template>
 
 <style lang="scss">

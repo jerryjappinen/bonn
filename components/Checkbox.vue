@@ -1,13 +1,18 @@
 <script setup>
+import IconCheck from '../icons/Check.svg'
+
 defineProps({
+
   modelValue: {
     type: Boolean,
     default: false
   },
+
   disabled: {
     type: Boolean,
     default: false
   }
+
 })
 </script>
 

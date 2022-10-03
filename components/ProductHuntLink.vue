@@ -1,8 +1,8 @@
 <script setup>
 import { computed } from 'vue'
 
-import ExternalLink from './ExternalLink'
-import ProductHuntBadge from './ProductHuntBadge'
+import ExternalLink from './ExternalLink.vue'
+import ProductHuntBadge from './ProductHuntBadge.vue'
 
 const props = defineProps({
   postId,

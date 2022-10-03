@@ -1,6 +1,8 @@
 <script setup>
 import { computed, unref } from 'vue'
 
+import IconChevronDown from '../icons/ChevronDown.svg'
+
 import includes from 'lodash-es/includes'
 import isArray from 'lodash-es/isArray'
 import isPlainObject from 'lodash-es/isPlainObject'
@@ -51,11 +53,13 @@ const props = defineProps({
 
     options: {
       type: Array,
-      required: true
+      default () {
+        return []
+      }
     },
 
     modelValue: {
-      required: true
+      default: null
     },
 
     placeholder: {

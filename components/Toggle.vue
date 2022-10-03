@@ -2,7 +2,8 @@
 import { computed } from 'vue'
 
 // Wrapper component to be used as a hit area. Using this makes it easier to style and control a hit area separately from the control visualisation inside it, for example in table rows
-import Set from './Set'
+// FIXME: lose this extra layer
+import Set from './Set.vue'
 
 const props = defineProps({
   disabled: {},

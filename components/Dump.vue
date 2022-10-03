@@ -6,10 +6,16 @@ import isString from 'lodash-es/isString'
 import toJson from '../util/toJson'
 
 const props = defineProps({
+
   data: {
     default: null
   },
-  raw: Boolean
+
+  raw: {
+    type: Boolean,
+    default: false
+  }
+
 })
 
 const content = computed(() => {

@@ -1,5 +1,5 @@
 <script setup>
-import InstagramPost from './InstagramPost'
+import InstagramPost from './InstagramPost.vue'
 
 defineProps({
   hd: {},

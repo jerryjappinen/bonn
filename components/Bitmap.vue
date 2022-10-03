@@ -6,12 +6,12 @@ const props = defineProps({
   // Not required, in order to support lazy loading images
   src: {
     type: String,
-    required: false
+    default: null
   },
 
   title: {
     type: String,
-    required: false
+    default: null
   },
 
   naturalWidth: {

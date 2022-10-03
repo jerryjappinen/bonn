@@ -4,8 +4,8 @@ import isNaN from 'lodash-es/isNaN'
 import isNumber from 'lodash-es/isNumber'
 import isString from 'lodash-es/isString'
 
-import Fade from './Fade'
-import Icon from './Icon'
+import Fade from './Fade.vue'
+import Icon from './Icon.vue'
 
 export default {
   emits: [
