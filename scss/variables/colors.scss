@@ -19,10 +19,10 @@
   // Color usage in inverted elements (e.g. buttons and containers)
   // NOTE: this is NOT for dark mode
   // NOTE: for dark mode support, you should update flip these variables also
-  --inverted-text-color: var(--very-very-very-faint-neutral);
-  --inverted-border-color: var(--strong-neutral);
-  --inverted-background-color: var(--very-very-strong-neutral);
-  --inverted-offset-background-color: var(--very-strong-neutral);
+  --inverted-text-color: var(--very-very-very-faint-neutral, #fff);
+  --inverted-border-color: var(--strong-neutral, #444);
+  --inverted-background-color: var(--very-very-strong-neutral, #111);
+  --inverted-offset-background-color: var(--very-strong-neutral, #333);
 
   // --inverted-discreet-color: var(--discreet-color);
   // --inverted-faint-discreet-color: var(--faint-discreet-color);
