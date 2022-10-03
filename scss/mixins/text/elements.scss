@@ -15,7 +15,6 @@
 
 @mixin label {
   @include small-font;
-  // @include uppercase;
   @include bold;
 }
 

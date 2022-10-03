@@ -1,7 +1,7 @@
 @mixin gradient (
-  $direction: 0deg,
-  $color1: #000,
-  $color2: translucent($color1)
+  $direction: 180deg,
+  $color1: var(--very-strong-neutral),
+  $color2: hsla(var(--very-strong-neutral-hsl), 0)
 ) {
   background-image: linear-gradient(
     $direction,
@@ -10,26 +10,46 @@
   );
 }
 
-@mixin vertical-gradient ($color1: null, $color2: null) {
-  @include gradient(0deg, $color1, $color2);
-}
-
-@mixin reverse-vertical-gradient ($color1: null, $color2: null) {
+@mixin vertical-gradient (
+  $color1: var(--very-strong-neutral),
+  $color2: hsla(var(--very-strong-neutral-hsl), 0)
+) {
   @include gradient(180deg, $color1, $color2);
 }
 
-@mixin horizontal-gradient ($color1: null, $color2: null) {
+@mixin reverse-vertical-gradient (
+  $color1: var(--very-strong-neutral),
+  $color2: hsla(var(--very-strong-neutral-hsl), 0)
+) {
+  @include gradient(0deg, $color1, $color2);
+}
+
+@mixin horizontal-gradient (
+  $color1: var(--very-strong-neutral),
+  $color2: hsla(var(--very-strong-neutral-hsl), 0)
+) {
   @include gradient(90deg, $color1, $color2);
 }
 
-@mixin reverse-horizontal-gradient ($color1: null, $color2: null) {
+@mixin reverse-horizontal-gradient (
+  $color1: var(--very-strong-neutral),
+  $color2: hsla(var(--very-strong-neutral-hsl), 0)
+) {
   @include gradient(270deg, $color1, $color2);
 }
 
 @mixin gradient-dark ($direction: 0deg, $opacity1: 0, $opacity2: 1) {
-  @include gradient($direction, translucent(var(--dark), $opacity1), translucent(var(--dark), $opacity2));
+  @include gradient(
+    $direction,
+    hsla(var(--very-strong-neutral-hsl), $opacity1),
+    hsla(var(--very-strong-neutral-hsl), $opacity2)
+  );
 }
 
 @mixin gradient-white ($direction: 0deg, $opacity1: 0, $opacity2: 1) {
-  @include gradient($direction, translucent(var(--white), $opacity1), translucent(var(--white), $opacity2));
+  @include gradient(
+    $direction,
+    hsla(var(--very-very-very-faint-neutral-hsl), $opacity1),
+    hsla(var(--very-very-very-faint-neutral-hsl), $opacity2)
+  );
 }

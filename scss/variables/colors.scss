@@ -1,42 +1,34 @@
-// Color values
-// NOTE could use `-base` color variables that would just have the rgb codes as a list
-// They can be used with `rgba()` to produce tranclucent versions
+// FIXME: should maybe be moved to sub sections
 :root {
-  --white: #fff;
-  --very-very-light-grey: #f6f6f6;
-  --very-light-grey: #ececec;
-  --light-grey: #dddddd;
-  --grey: #a7a7a7;
-  --dark-grey: #6c6c6c;
-  --dark: #303030;
-  --very-dark: #101010;
-  --black: #000;
 
-  --light-red: #ff9891;
-  --red: #F44336;
-  --dark-red: #B71C1C;
+  // Color usage
+  // https://calcolor.co/palette/942409461
+  --text-color: var(--very-strong-neutral, #222);
+  --border-color: var(--faint-neutral, #ccc);
+  --background-color: var(--very-very-very-faint-neutral, #fff);
+  --offset-background-color: var(--very-very-faint-neutral, #eee);
 
-  --light-pink: #fc72a0;
-  --pink: #E91E63;
-  --dark-pink: #880E4F;
+  --discreet-color: var(--neutral, #999);
+  --faint-discreet-color: var(--faint-neutral, #ccc);
+  --very-faint-discreet-color: var(--very-faint-neutral, #ddd);
+  --discreet-text-color: var(--discreet-color);
 
-  --light-orange: #ffcd82;
-  --orange: #FF9800;
-  --dark-orange: #E65100;
+  --link-color: var(--blue, #1755ff);
+  --link-active-color: var(--strong-blue, #003ce0);
 
-  --light-yellow: #fff59f;
-  --yellow: #FFEB3B;
-  --dark-yellow: #F9A825;
+  // Color usage in inverted elements (e.g. buttons and containers)
+  // NOTE: this is NOT for dark mode
+  // NOTE: for dark mode support, you should update flip these variables also
+  --inverted-text-color: var(--very-very-very-faint-neutral);
+  --inverted-border-color: var(--strong-neutral);
+  --inverted-background-color: var(--very-very-strong-neutral);
+  --inverted-offset-background-color: var(--very-strong-neutral);
 
-  --light-green: #9ef1a1;
-  --green: #42bd46;
-  --dark-green: #1B5E20;
+  // --inverted-discreet-color: var(--discreet-color);
+  // --inverted-faint-discreet-color: var(--faint-discreet-color);
+  // --inverted-very-faint-discreet-color: var(--very-faint-discreet-color);
+  // --inverted-discreet-text-color: var(--inverted-discreet-color);
 
-  --light-purple: #ea97f9;
-  --purple: #9C27B0;
-  --dark-purple: #4A148C;
-
-  --light-blue: #8fccff;
-  --blue: #2196F3;
-  --dark-blue: #0D47A1;
+  // --inverted-link-color: var(--link-color);
+  // --inverted-link-active-color: var(--link-active-color);
 }

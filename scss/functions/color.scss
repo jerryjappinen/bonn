@@ -1,17 +1,21 @@
+@function into-hsl-string ($color) {
+  @return '#{hue($color)}, #{saturation($color)}, #{lightness($color)}';
+}
+
 // Make color translucent
 // NOTE: won't work for CSS variables
-@function translucent ($color, $strength: 0.15) {
+@function translucent ($color, $strength: 0.4) {
   @return rgba($color, $strength);
 }
 
 // FIXME: should adjust based on hue
-@function translucent-light ($color) {
-  @return translucent($color, 0.4);
+@function translucent-faint ($color) {
+  @return translucent($color, 0.2);
 }
 
 // FIXME: should adjust based on hue
-@function translucent-very-light ($color) {
-  @return translucent($color, 0.9);
+@function translucent-very-faint ($color) {
+  @return translucent($color, 0.075);
 }
 
 @function transparent ($color, $opacity: 0) {

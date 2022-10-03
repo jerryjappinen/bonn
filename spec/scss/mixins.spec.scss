@@ -195,11 +195,11 @@
   @include shadow-tight;
   @include shadow-very-tight;
 
-  @include shadow-very-loose(var(--blue));
-  @include shadow-loose(var(--blue));
-  @include shadow(var(--blue));
-  @include shadow-tight(var(--blue));
-  @include shadow-very-tight(var(--blue));
+  @include shadow-very-loose(red);
+  @include shadow-loose(red);
+  @include shadow(red);
+  @include shadow-tight(red);
+  @include shadow-very-tight(red);
 
   @include transparent-shadow-very-loose;
   @include transparent-shadow-loose;
@@ -350,6 +350,28 @@
   @include generate-css-vars((
     'iphone': $iphone,
     'iphone-height': $iphone-height
-  ))
+  ));
+
+  @include generate-simple-colors((
+    'blue': #0000ff
+  ));
+
+  @include generate-colors((
+    'blue': (
+      1: #0000aa,
+      5: #0000cc,
+      8: #0000ff
+    )
+  ));
+
+  @include dark {
+    @include generate-colors((
+      'blue': (
+        1: #0000aa,
+        5: #0000cc,
+        8: #0000ff
+      )
+    ));
+  }
 
 }

@@ -48,7 +48,7 @@ defineProps({
 //   --c-checkbox-enabled-off-color: var(--text-color);
 //   --c-checkbox-enabled-check-color: var(--inverted-text-color);
 
-//   --c-checkbox-disabled-on-color: var(--discreet-color-very-light);
+//   --c-checkbox-disabled-on-color: var(--very-faint-discreet-color);
 //   --c-checkbox-disabled-off-color: var(--discreet-text-color);
 //   --c-checkbox-disabled-check-color: var(--discreet-text-color);
 // }
@@ -109,7 +109,7 @@ defineProps({
 .c-checkbox-disabled {
   color: var(--c-checkbox-disabled-check-color, var(--discreet-text-color));
   border-color: var(--c-checkbox-disabled-off-color, var(--discreet-text-color));
-  background-color: var(--c-checkbox-disabled-on-color, var(--discreet-color-very-light));
+  background-color: var(--c-checkbox-disabled-on-color, var(--very-faint-discreet-color));
 }
 
 .control-enabled {

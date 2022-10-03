@@ -6,3 +6,125 @@
     }
   }
 }
+
+
+
+// When colors are flipped programmatically, this is how they are matched
+// FIXME: this should be removed and the color sheet should be traversed in reverse programmatically
+$color-code-pairs: (
+  1: 9,
+  2: 8,
+  3: 7,
+  4: 6,
+  5: 5,
+  6: 4,
+  7: 3,
+  8: 2,
+  9: 1,
+) !default;
+
+$color-variant-codes: (
+  very-very-very-faint: 1,
+  very-very-faint: 2,
+  very-faint: 3,
+  faint: 4,
+  default: 5,
+  strong: 6,
+  very-strong: 7,
+  very-very-strong: 8,
+  very-very-very-strong: 9,
+) !default;
+
+// Print CSS color variables
+@mixin generate-simple-colors ($colors) {
+
+  // e.g. (
+  //   black: #000
+  // )
+  // --black-hsl: 0, 0, 0;
+  // --black: hsl(var(--black-hsl));
+  @each $color-name, $color-value in $colors {
+    --#{$color-name}-hsl: #{into-hsl-string($color-value)};
+    --#{$color-name}: hsl(var(--#{$color-name}-hsl));
+  }
+
+}
+
+// Print CSS color variables
+@mixin generate-colors ($colors) {
+
+  // Regular colors
+  @each $color-name, $color-values in $colors {
+
+    // Color-code variables
+    @each $color-code, $color-value in $color-values {
+
+      // HSL-codes only (will never change)
+      // e.g. --grey-40-hsl-raw: 0, 0%, 63%;
+      --#{$color-name}-#{$color-code}-hsl-raw: #{into-hsl-string($color-value)};
+
+      // HSL-codes only: can be used for hsla() by users
+      // e.g. --grey-40-hsl: var(--grey-40-hsl-raw);
+      --#{$color-name}-#{$color-code}-hsl: var(--#{$color-name}-#{$color-code}-hsl-raw);
+
+      // Regular variables
+      // e.g. --grey-40: hsl(var(--grey-40-hsl));
+      --#{$color-name}-#{$color-code}: hsl(var(--#{$color-name}-#{$color-code}-hsl));
+
+      // Flipped color-code variables
+      // NOTE: these can be overridden by user
+      // e.g. --inverted-grey-80-hsl: var(--grey-20-hsl);
+      // e.g. --inverted-grey-80: var(--inverted-grey-80-hsl);
+      --inverted-#{$color-name}-#{$color-code}-hsl: var(--#{$color-name}-#{map-get($color-code-pairs, $color-code)}-hsl);
+      --inverted-#{$color-name}-#{$color-code}: hsl(var(--inverted-#{$color-name}-#{$color-code}-hsl));
+    }
+
+    // Named color variants
+    @each $color-variant, $color-variant-code in $color-variant-codes {
+
+      // Only print variable if pair exists
+      $color-variant-value: map-get($color-values, $color-variant-code);
+      @if ($color-variant-value) {
+
+        // Default
+        // e.g. --grey: var(--grey-50);
+        @if $color-variant == 'default' {
+          --#{$color-name}: var(--#{$color-name}-#{$color-variant-code});
+          --inverted-#{$color-name}: var(--#{$color-name}-#{map-get($color-code-pairs, $color-variant-code)});
+
+        // Other variants
+        // e.g. --very-faint-grey: var(--grey-10);
+        } @else {
+          --#{$color-variant}-#{$color-name}: var(--#{$color-name}-#{$color-variant-code});
+          --inverted-#{$color-variant}-#{$color-name}: var(--#{$color-name}-#{map-get($color-code-pairs, $color-variant-code)});
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+// Usage:
+// :root {
+//   @include dark {
+//     @include generate-dark-mode-colors;
+//   }
+// }
+@mixin generate-dark-mode-colors ($colors) {
+
+  @each $color-name, $color-values in $colors {
+    @each $color-code, $color-value in $color-values {
+
+      // Update color sheet for the dark mode
+      // e.g. --grey-80-hsl: var(--dark-mode-grey-80-hsl, var(--grey-20-hsl-raw));
+      --#{$color-name}-#{$color-code}-hsl: var(
+        --dark-mode-#{$color-name}-#{$color-code}-hsl
+        var(--#{$color-name}-#{map-get($color-code-pairs, $color-code)}-hsl-raw)
+      );
+    }
+  }
+
+}
