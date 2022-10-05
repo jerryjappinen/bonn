@@ -1,6 +1,7 @@
+import { describe, it, expect } from 'vitest'
+
 import isArray from 'lodash-es/isArray'
 import isPlainObject from 'lodash-es/isPlainObject'
-import { describe, it, expect } from 'vitest'
 
 import csvToJson from '../../util/csvToJson'
 
