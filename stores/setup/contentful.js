@@ -1,6 +1,6 @@
+// FIXME: lots of duplication with Hygraph
+// Sorting/filtering etc. could be separated into composables
 import { ref, computed } from 'vue'
-
-import unwrap from 'graphql-unwrap'
 
 import flatten from 'lodash-es/flatten'
 import groupBy from 'lodash-es/groupBy'
@@ -15,12 +15,17 @@ import merge from 'lodash-es/merge'
 import orderBy from 'lodash-es/orderBy'
 import pickBy from 'lodash-es/pickBy'
 
+import createClient from '../../util/contentful/createClient'
+import fetchContentfulData from '../../util/contentful/fetch'
+import getEntryType from '../../util/contentful/getEntryType'
+
 // Defaults
-const defaultEnvironment = 'master'
 const persistConfig = {
   paths: [
-    'projectId',
+    'spaceId',
     'environment',
+    'accessToken',
+    'previewAccessToken',
     'entriesById'
   ]
 }
@@ -42,41 +47,33 @@ const sortEntriesByType = (entriesByType, sorters) => {
 // Returns setup function
 export default (optionsInput) => {
   return () => {
-    // console.log('hygraph setup: optionsInput', optionsInput)
+    // console.log('contentful setup: optionsInput', optionsInput)
 
-    const options = isString(optionsInput) ? { apiUrl: optionsInput } : (optionsInput || {})
+    const options = isString(optionsInput) ? { spaceId: optionsInput } : (optionsInput || {})
 
     const persist = options.persist ? persistConfig : false
 
     // Customisation
-    const customApiUrl = ref()
-    const domain = ref()
-    const projectId = ref()
-    const environment = ref(defaultEnvironment)
+    const spaceId = ref()
+    const environment = ref()
+    const accessToken = ref()
+    const previewAccessToken = ref()
+
     const entriesOrderedBy = ref()
     const entriesKeyedBy = ref()
     const entriesGroupedBy = ref()
 
-    // Extended config
-
-    const apiUrl = computed({
-
-      get () {
-        return customApiUrl.value || `https://${domain.value}.hygraph.com/v2/${projectId.value}/${environment.value}`
-      },
-
-      set (value) {
-        customApiUrl.value = value
+    const client = computed(() => {
+      if (spaceId.value) {
+        return createClient({
+          space: spaceId.value,
+          environment: environment.value,
+          accessToken: accessToken.value,
+          previewAccessToken: previewAccessToken.value
+        })
       }
 
-    })
-
-    const assetUploadUrl = computed(() => {
-      return apiUrl.value + '/upload'
-    })
-
-    const managementApiUrl = computed(() => {
-      return 'https://management.hygraph.com/graphql'
+      return null
     })
 
     // Basic entry data
@@ -84,7 +81,7 @@ export default (optionsInput) => {
     const entriesById = ref({})
 
     const unsortedEntriesByType = computed(() => {
-      return groupBy(entriesById.value, '__typename')
+      return groupBy(entriesById.value, getEntryType)
     })
 
     const entriesByType = computed(() => {
@@ -224,54 +221,44 @@ export default (optionsInput) => {
 
     // Methods
 
-    const request = async (query, variables) => {
-      return options.request(apiUrl.value, query, variables)
+    const request = async (...queries) => {
+      if (options.request) {
+        return options.request(...queries)
+      }
+
+      if (client.value) {
+        return fetchContentfulData(client.value, ...queries)
+      }
+
+      throw new Error('Define space ID or a request method to fetch Contentful data')
     }
 
-    const fetch = async (query, variables) => {
-      const response = await request(query, variables)
+    const fetch = async (...queries) => {
+      const [newEntries, ...trimmedResponses] = await request(...queries)
 
-      // console.log('stores/setup/hygraph:response', response)
-
-      const [newEntries, ids] = unwrap(response)
+      // console.log('stores/setup/contentful:response', response)
 
       entriesById.value = merge({}, entriesById.value, newEntries)
 
-      return ids
-    }
-
-    // NOTE: when using this, these could always be combined into a single query
-    // A single query might be faster, but separate queries will resolve independently
-    // Separate queries might also be easier to maintain client-side
-    const fetchMultiple = async (...queriesAndVariables) => {
-      return Promise.all(queriesAndVariables.map((arg) => {
-        // Arg can be one query, or an array with a query and a variable
-        if (isArray(arg)) {
-          return fetch(arg[0], arg[1])
-        }
-
-        return fetch(arg)
-      }))
+      return trimmedResponses
     }
 
     // Set up options and customised behavior
     const init = (input) => {
-      if (!isUndefined(input.apiUrl)) {
-        customApiUrl.value = input.apiUrl
-      }
-
-      // required if apiUrl is not set, e.g. 'api-eu-west-2'
-      if (!isUndefined(input.domain)) {
-        domain.value = input.domain
-      }
-
-      // required if apiUrl is not set, e.g. 'cl7n4zm4t28ec01uh0oum04sc'
-      if (!isUndefined(input.projectId)) {
-        projectId.value = input.projectId
+      if (!isUndefined(input.spaceId) || !isUndefined(input.space)) {
+        spaceId.value = input.spaceId || input.space
       }
 
       if (!isUndefined(input.environment)) {
         environment.value = input.environment
+      }
+
+      if (!isUndefined(input.accessToken)) {
+        accessToken.value = input.accessToken
+      }
+
+      if (!isUndefined(input.previewAccessToken)) {
+        previewAccessToken.value = input.previewAccessToken
       }
 
       // Callback per type for orderBy
@@ -302,13 +289,10 @@ export default (optionsInput) => {
     const expose = {
       persist,
 
-      apiUrl,
-      assetUploadUrl,
-      managementApiUrl,
-
-      domain,
-      projectId,
+      spaceId,
       environment,
+      accessToken,
+      previewAccessToken,
 
       entriesOrderedBy,
       entriesKeyedBy,
@@ -326,11 +310,10 @@ export default (optionsInput) => {
       // Actions
       init,
       request,
-      fetch,
-      fetchMultiple
+      fetch
     }
 
-    // console.log('hygraph setup: expose', expose)
+    // console.log('contentful setup: expose', expose)
 
     // Store API
     return expose
