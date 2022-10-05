@@ -1,7 +1,8 @@
 import isArray from 'lodash-es/isArray'
 import omit from 'lodash-es/omit'
 
-import { extractNestedEntries, fetch } from 'fetch-deep-contentful-data'
+import extractNestedEntries from 'fetch-deep-contentful-data/src/extractNestedEntries'
+import fetch from 'fetch-deep-contentful-data/src/fetch'
 
 const normalizeQuery = (query) => {
   return omit({
