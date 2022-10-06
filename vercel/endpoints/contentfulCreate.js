@@ -1,7 +1,7 @@
-import endpoint from '../../endpoint'
+import endpoint from '../endpoint'
 
-import getEnvironmentToManage from '../../../util/contentful/getEnvironmentToManage'
-import createEntry from '../../../util/contentful/createEntry'
+import getEnvironmentToManage from '../../util/contentful/getEnvironmentToManage'
+import createEntry from '../../util/contentful/createEntry'
 
 // Wrapper endpoint for fetching contentful entries
 export default async (options) => {
