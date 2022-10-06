@@ -16,6 +16,7 @@
     "scss/*",
     "stores/*",
     "util/*",
+    "vercel/*",
     "README.md",
     ".editorconfig",
     ".nvmrc"
@@ -34,12 +35,14 @@
     "dev:components": "vitest --dir spec/components",
     "dev:nuxt": "vitest --dir spec/nuxt",
     "dev:util": "vitest --dir spec/util",
+    "dev:vercel": "vitest --dir spec/vercel",
     "dev:scss": "sass spec/scss/index.spec.scss dist/css/index.css --watch",
     "test": "npm run test:scss && npm run test:js",
     "test:js": "vitest run",
     "test:components": "vitest run --dir spec/components",
     "test:nuxt": "vitest run --dir spec/nuxt",
     "test:util": "vitest run --dir spec/util",
+    "test:vercel": "vitest run --dir spec/vercel",
     "test:scss": "sass spec/scss/index.spec.scss"
   },
   "author": {
@@ -56,6 +59,7 @@
     "@pinia/nuxt": "^0.4.2",
     "@rollup/plugin-graphql": "^1.1.0",
     "@vanillaes/csv": "^3.0.1",
+    "contentful-management": "^10.15.1",
     "eslint": "^8.24.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.26.0",
@@ -74,6 +78,7 @@
     "pinia-plugin-persistedstate": "^2.2.0",
     "platform-detect": "^3.0.1",
     "prettier": "^2.7.1",
+    "qs": "^6.11.0",
     "sass": "^1.55.0",
     "sass-loader": "^13.0.2",
     "seedrandom": "^3.0.5",
