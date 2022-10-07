@@ -55,6 +55,7 @@
   },
   "dependencies": {
     "@averjs/nuxt-compression": "^1.2.2",
+    "@nuxtjs/eslint-config-typescript": "^11.0.0",
     "@nuxtjs/sitemap": "^2.4.0",
     "@pinia/nuxt": "^0.4.2",
     "@rollup/plugin-graphql": "^1.1.0",
@@ -64,6 +65,7 @@
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-nuxt": "^4.0.0",
     "eslint-plugin-promise": "^6.0.1",
     "fetch-deep-contentful-data": "^5.0.0",
     "graphql-request": "^5.0.0",

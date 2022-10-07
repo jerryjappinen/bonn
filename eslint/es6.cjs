@@ -12,7 +12,12 @@ module.exports = {
     SharedArrayBuffer: 'readonly'
   },
   parserOptions: {
-    ecmaVersion: 11,
+
+    // // Set by env es2022 automatically
+    // https://eslint.org/docs/latest/user-guide/configuring/language-options
+    // ecmaVersion: 11,
+
+    // parser: '@typescript-eslint/parser',
     sourceType: 'module'
   },
   rules: {
