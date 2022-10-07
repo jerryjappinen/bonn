@@ -18,7 +18,7 @@ const debounceOptions = {
 export default (optionsInput) => {
   const options = optionsInput || {}
 
-  const breakpointValues = ref([
+  const breakpointValues = ref(options.breakpoints || [
     320,
     720,
     1280,
