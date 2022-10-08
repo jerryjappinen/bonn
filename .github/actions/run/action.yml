@@ -19,10 +19,20 @@ inputs:
 runs:
   using: "composite"
   steps:
+
+    # Setup
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
       with:
         node-version-file: '.nvmrc'
         cache: 'npm'
-    - run: npm install
-    - run: npm run ${{ inputs.script }}
+
+    # Install
+    - name: Install dependencies
+      shell: bash
+      run: npm install
+
+    # Run script
+    - name: Run script
+      shell: bash
+      run: npm run ${{ inputs.script }}
