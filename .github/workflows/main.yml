@@ -48,12 +48,25 @@ jobs:
     needs: [lint, test]
     if: github.ref == 'refs/heads/main'
     steps:
+
+      # Setup
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version-file: '.nvmrc'
           cache: 'npm'
+
+      # Install deps
       - run: npm install
-      - uses: JS-DevTools/npm-publish@v1
+
+      # Publish to npm
+      - id: publish
+        uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
+
+      # Create tag in repo
+      - uses: rickstaa/action-create-tag@v1
+        with:
+          tag: "v${{ steps.publish.outputs.version }}"
+          message: "Tag for ${{ steps.publish.outputs.version }}"
