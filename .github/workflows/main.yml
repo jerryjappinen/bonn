@@ -8,14 +8,14 @@ jobs:
     steps:
       - uses: ./.github/actions/run
         with:
-          script: 'lint'
+          script: lint
 
   test:
     runs-on: ubuntu-latest
     steps:
       - uses: ./.github/actions/run
         with:
-          script: 'test'
+          script: test
 
   publish:
     runs-on: ubuntu-latest
