@@ -6,14 +6,14 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: ./.github/actions/run
+      - uses: ../actions/run
         with:
           script: lint
 
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: ./.github/actions/run
+      - uses: ../actions/run
         with:
           script: test
 
@@ -22,6 +22,6 @@ jobs:
     needs: [lint, test]
     if: github.ref == 'refs/heads/main'
     steps:
-      - uses: ./.github/actions/publish
+      - uses: ../actions/publish
         with:
           token: ${{ secrets.NPM_TOKEN }}
