@@ -25,7 +25,7 @@ const href = computed(() => {
   return (sms ? 'sms' : 'tel') +
     ':' +
     tel +
-    (isString(sms) ? '?' + sms : '')
+    (isString(sms) ? '?body=' + sms : '')
 })
 </script>
 
