@@ -1,6 +1,10 @@
 # Documentation
 # https://docs.github.com/en/actions/creating-actions/creating-a-composite-action
 
+# Depends on:
+# - https://github.com/JS-DevTools/npm-publish
+# - https://github.com/rickstaa/action-create-tag
+
 # Usage in your workflow YML:
 # jobs:
 #   publish:
