@@ -18,16 +18,22 @@ inputs:
   token:
     description: 'NPM token that has access to the package. First set this up on npmjs.org, then add it as repository secret on GitHub.'
     required: true
+outputs:
+  publish:
+    description: "Publish artefacts"
+    value: ${{ steps.publish.outputs }}
 runs:
   using: "composite"
   steps:
 
     # Self-checkout
     - name: Initial checkout
+      id: checkout
       uses: actions/checkout@v3
 
     # Setup
     - name: Node setup
+      id: setup
       uses: actions/setup-node@v3
       with:
         node-version-file: '.nvmrc'
@@ -35,15 +41,16 @@ runs:
 
     # Install deps
     - name: Install dependencies
+      id: install
       shell: bash
       run: npm install
 
     # Publish to npm
-    - name: Checkout publish script
-      uses: actions/checkout@v3
-      with:
-        repository: JS-DevTools/npm-publish
-        ref: v1
+    # - name: Checkout publish script
+    #   uses: actions/checkout@v3
+    #   with:
+    #     repository: JS-DevTools/npm-publish
+    #     ref: v1
 
     - name: Publish to npm
       id: publish
@@ -52,11 +59,11 @@ runs:
         token: ${{ inputs.token }}
 
     # Create tag in repo
-    - name: Checkout tagging script
-      uses: actions/checkout@v3
-      with:
-        repository: rickstaa/action-create-tag
-        ref: v1
+    # - name: Checkout tagging script
+    #   uses: actions/checkout@v3
+    #   with:
+    #     repository: rickstaa/action-create-tag
+    #     ref: v1
 
     - name: Create version tag
       id: tag
