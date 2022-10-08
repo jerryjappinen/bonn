@@ -29,16 +29,16 @@ const imageHeight = computed(() => {
 })
 
 const viewBox = computed(() => {
-  return '0 0 ' + imageWidth + ' ' + (imageWidth || imageHeight)
+  return '0 0 ' + imageWidth.value + ' ' + (imageWidth.value || imageHeight)
 })
 
 const src = computed(() => {
   return 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="' +
-    imageWidth +
+    imageWidth.value +
     '" height="' +
-    imageHeight +
+    imageHeight.value +
     '" viewBox="' +
-    viewBox +
+    viewBox.value +
     '" preserveAspectRatio="none"></svg>'
 })
 </script>

@@ -11,22 +11,21 @@ const props = defineProps({
   },
 
   external: {
+    type: Boolean,
     default: false
   },
 
   subject: {
     type: String,
-    required: false
+    default: undefined
   },
 
   body: {
     type: String,
-    required: false
+    default: undefined
   }
 
 })
-
-
 
 const href = computed(() => {
   const params = []
@@ -41,8 +40,6 @@ const href = computed(() => {
 
   return 'mailto:' + props.to + (params.length ? '?' + params.join('&') : '')
 })
-
-
 
 const bindings = computed(() => {
   if (props.external) {

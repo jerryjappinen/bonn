@@ -18,7 +18,7 @@ export default (optionsInput) => {
   // Icons
   if (favicon) {
     const faviconPath = favicon === true ? 'favicon.svg' : favicon
-    const faviconType = faviconPath.indexOf('.svg') > -1
+    const faviconType = faviconPath.includes('.svg')
       ? 'svg+xml'
       : 'png'
 

@@ -1,10 +1,10 @@
 // https://github.com/taufik-nurrohman/generic-syntax-highlighter
 
 function highlightTag (string) {
-  return string.replace(/&lt;(\/?)(\S+)(\s.*)?&gt;/g, function (a, b, c, d) {
+  return string.replace(/&lt;(\/?)(\S+)(\s.*)?&gt;/g, function (_a, b, c, d) {
     c = '<span style="color:#800080;font-weight:bold;">' + c + '</span>'
     if (d) {
-      d = d.replace(/(\s+)([^\s=]+)(?:=("(?:\\.|[^"])*"|'(?:\\.|[^'])*'|[^\s"']+))?/g, function (a, b, c, d) {
+      d = d.replace(/(\s+)([^\s=]+)(?:=("(?:\\.|[^"])*"|'(?:\\.|[^'])*'|[^\s"']+))?/g, function (_a, b, c, d) {
         let o = b + '<span style="font-weight:bold;">' + c + '</span>'
         if (d) {
           o += '=<span style="color:#0000FF;">' + d + '</span>'
@@ -50,7 +50,7 @@ export default (string) => {
         a = '<span style="color:inherit;">' + highlightTag(a) + '</span>' // tags
       } else if ((a[0] === '/' || a[0] === '#') && /^(\/\/|#\s+|\/\*)/.test(a)) {
         a = '<span style="color:#808080;font-style:italic;">' + a + '</span>' // comments
-      } else if ('"\'`'.indexOf(a[0]) !== -1) {
+      } else if ('"\'`'.includes(a[0])) {
         a = '<span style="color:#008000;">' + a + '</span>' // strings
       } else if (a[0] === '/') {
         a = '<span style="color:#4682B4;">' + a + '</span>' // regular expressions

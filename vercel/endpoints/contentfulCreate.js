@@ -7,7 +7,7 @@ import createEntry from '../../util/contentful/createEntry'
 export default async (options) => {
   const environmentToManage = await getEnvironmentToManage(options)
 
-  return endpoint(async ({ query }) => {
+  return endpoint(({ query }) => {
     return createEntry(environmentToManage, query.contentType, query.fields, query.languageCode)
   })
 }

@@ -2,6 +2,7 @@
 import InstagramPost from './InstagramPost.vue'
 
 defineProps({
+  // eslint-disable-next-line vue/require-default-prop, vue/require-prop-types
   hd: {},
 
   posts: {

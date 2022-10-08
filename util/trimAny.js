@@ -11,11 +11,11 @@ export default (str, ...charactersInput) => {
     ? flatten(charactersInput)
     : whitespaceCharacters
 
-  while (start < end && characters.indexOf(str[start]) >= 0) {
+  while (start < end && characters.includes(str[start])) {
     ++start
   }
 
-  while (end > start && characters.indexOf(str[end - 1]) >= 0) {
+  while (end > start && characters.includes(str[end - 1])) {
     --end
   }
 

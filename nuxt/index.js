@@ -1,6 +1,6 @@
 // Nuxt module definition
-import { defineNuxtModule, addComponentsDir, addImportsDir } from '@nuxt/kit'
 import { fileURLToPath } from 'node:url'
+import { defineNuxtModule, addComponentsDir, addImportsDir } from '@nuxt/kit'
 
 // This file allows auto importing bonn components and composables in a Nuxt app
 export default defineNuxtModule({

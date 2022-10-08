@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+
 // {
 //   fps,
 //   frameTime,

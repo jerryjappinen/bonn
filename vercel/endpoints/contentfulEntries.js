@@ -7,7 +7,7 @@ import fetch from '../../util/contentful/fetch'
 export default (options) => {
   const client = createClient(options)
 
-  return endpoint(async ({ query }) => {
+  return endpoint(({ query }) => {
     return fetch(client, ...(query.queries || [query]))
   })
 }

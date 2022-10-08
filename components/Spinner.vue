@@ -35,11 +35,25 @@ const circlePosition = computed(() => {
 </script>
 
 <template>
-  <svg class="c-spinner" :viewBox="viewBox" :width="width + 'px'" :height="width + 'px'" role="img" title="Loading...">
-    <circle class="c-spinner-circle" :style="{
-      transformOrigin: (width / 2) + 'px ' + (width / 2) + 'px 0',
-      strokeDasharray: (3.14 * width) + 'px'
-    }" :cx="circlePosition" :cy="circlePosition" :r="radius" :stroke-width="strokeWidthValue" />
+  <svg
+    class="c-spinner"
+    :viewBox="viewBox"
+    :width="width + 'px'"
+    :height="width + 'px'"
+    role="img"
+    title="Loading..."
+  >
+    <circle
+      class="c-spinner-circle"
+      :style="{
+        transformOrigin: (width / 2) + 'px ' + (width / 2) + 'px 0',
+        strokeDasharray: (3.14 * width) + 'px'
+      }"
+      :cx="circlePosition"
+      :cy="circlePosition"
+      :r="radius"
+      :stroke-width="strokeWidthValue"
+    />
   </svg>
 </template>
 

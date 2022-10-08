@@ -92,6 +92,7 @@ const removeMarkdown = (md, options) => {
       // Replace strike through
       .replace(/~(.*?)~/g, '$1')
   } catch (e) {
+    // eslint-disable-next-line no-console
     console.error(e)
     return md
   }

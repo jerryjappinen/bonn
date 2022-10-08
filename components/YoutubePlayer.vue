@@ -15,23 +15,25 @@ const props = defineProps({
   },
 
   mute: {
+    type: Boolean,
     default: false
   },
 
   autoplay: {
+    type: Boolean,
     default: false
   },
 
-  dimensions: {
+  landscape: {
+    type: Boolean,
     default: false
   },
 
   frame: {
+    type: Boolean,
     default: true
   }
 })
-
-
 
 const firstVideoId = computed(() => {
   const video = unref(props.video)
@@ -102,7 +104,7 @@ const src = computed(() => {
     v-bind="bindings"
     :src="src"
     :class="{
-      'c-youtube-player-dimensions': !!dimensions,
+      'c-youtube-player-landscape': !!landscape,
       'c-youtube-player-frame': !!frame
     }"
     type="text/html"
@@ -121,7 +123,7 @@ const src = computed(() => {
   max-height: 100%;
 }
 
-.c-youtube-player-dimensions {
+.c-youtube-player-landscape {
   @include landscape(280px);
 
   @include screen-over(375px) {

@@ -38,7 +38,6 @@ export default {
   computed: {
 
     component () {
-
       if (this.href || this.mailto || this.tel) {
         return 'a'
       }
@@ -67,7 +66,6 @@ export default {
 
       // Link
       } else {
-
         if (this.to) {
           bindings.to = this.to
         }
@@ -75,7 +73,6 @@ export default {
         if (this.href) {
           bindings.href = this.href
         }
-
       }
 
       if (this.external || this.noIndex) {
@@ -103,5 +100,7 @@ export default {
       'c-conditional-link-not-clickable': !isClickable
     }"
     class="c-conditional-link"
-  ><slot /></component>
+  >
+    <slot />
+  </component>
 </template>

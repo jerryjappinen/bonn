@@ -12,8 +12,6 @@ export default (optionsInput) => {
   return () => {
     const options = optionsInput || {}
 
-    console.log('device store setup')
-
     const modules = {
       cursor: useCursor({ bind: false }),
       network: useNetwork({ bind: false }),
@@ -31,14 +29,10 @@ export default (optionsInput) => {
     }
 
     const init = (...args) => {
-      console.log('device store init')
-
       run('init', ...args)
     }
 
     const uninit = (...args) => {
-      console.log('device store uninit')
-
       run('uninit', ...args)
     }
 

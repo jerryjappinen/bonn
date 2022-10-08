@@ -12,9 +12,7 @@ export default {
   props: {
 
     date: {
-      // NOTE: removing type check due to an issue in Nuxt
-      // https://github.com/nuxt/nuxt.js/issues/5565
-      // type: [Number, String, Date],
+      type: [Number, String, Date],
       required: true
     },
 
@@ -24,7 +22,8 @@ export default {
     },
 
     absolutePrefix: {
-      default: null
+      type: String,
+      default: undefined
     },
 
     upperFirst: {
@@ -57,7 +56,6 @@ export default {
     },
 
     dateString () {
-
       if (this.isRelative) {
         return formatRelative(this.normalizedDate, new Date(), {
           weekStartsOn: 1,
@@ -73,7 +71,6 @@ export default {
     },
 
     prefix () {
-
       if (!this.isRelative && this.absolutePrefix) {
         return this.absolutePrefix
       }

@@ -1,5 +1,7 @@
 <template>
-  <div class="c-relative-block"><slot /></div>
+  <div class="c-relative-block">
+    <slot />
+  </div>
 </template>
 
 <style lang="scss">

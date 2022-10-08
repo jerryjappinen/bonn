@@ -1,8 +1,7 @@
 <script setup>
 // Poor man's app lifecycle handling
-import isClient from '../util/isClient'
-
 import { onMounted } from 'vue'
+import isClient from '../util/isClient'
 
 // NOTE: this should be available runtime
 // import { NuxtLayout, NuxtPage } from 'nuxt'

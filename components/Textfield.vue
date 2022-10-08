@@ -4,19 +4,13 @@ import isNaN from 'lodash-es/isNaN'
 import isNumber from 'lodash-es/isNumber'
 import isString from 'lodash-es/isString'
 
-import Fade from './Fade.vue'
-import Icon from './Icon.vue'
-
 import IconCross from '../icons/Cross.svg'
 import IconUndo from '../icons/Undo.svg'
 
+import Fade from './Fade.vue'
+import Icon from './Icon.vue'
+
 export default {
-  emits: [
-    'blur',
-    'cancel',
-    'focus',
-    'update:modelValue'
-  ],
 
   components: {
     Fade,
@@ -28,85 +22,104 @@ export default {
   props: {
 
     labelId: {
-      default: null
+      type: String,
+      default: undefined
     },
 
     icon: {
       type: String,
-      default: null
+      default: undefined
     },
 
     type: {
+      type: String,
       default: 'text'
     },
 
     clear: {
+      type: Boolean,
       default: false
     },
 
     undo: {
+      type: Boolean,
       default: false
     },
 
     name: {
       type: String,
-      default: null
+      default: undefined
     },
 
     // https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#inappropriate-for-the-control
     autocomplete: {
-      default: null
+      type: [Array, String],
+      default: undefined
     },
 
     multiline: {
+      type: Boolean,
       default: false
     },
 
     placeholder: {
-      type: String
+      type: String,
+      default: undefined
     },
 
     modelValue: {
-      type: [String, Number],
+      type: [Number, String],
       default: ''
     },
 
     required: {
+      type: Boolean,
       default: false
     },
 
     max: {
-      default: null
+      type: [Number, String],
+      default: undefined
     },
 
     min: {
-      default: null
+      type: [Number, String],
+      default: undefined
     },
 
     pattern: {
-      default: null
+      type: String,
+      default: undefined
     },
 
     hex: {
-      default: null
+      type: Boolean,
+      default: undefined
     },
 
     inline: {
+      type: Boolean,
       default: false
     },
 
     disabled: {
+      type: Boolean,
       default: false
     }
 
   },
+  emits: [
+    'blur',
+    'cancel',
+    'focus',
+    'update:modelValue'
+  ],
 
   data () {
     let originalValue = ''
 
     if (isString(this.modelValue)) {
       originalValue += this.modelValue
-
     } else if (isNumber(this.modelValue)) {
       originalValue = 0 + this.modelValue
     }
@@ -124,7 +137,6 @@ export default {
         return this.modelValue
       },
       set (value) {
-
         if (this.type === 'number') {
           const parsed = parseFloat(value)
 
@@ -450,8 +462,6 @@ export default {
     @include transition-fast;
   }
 }
-
-
 
 .c-textfield-input {
   @include relative;

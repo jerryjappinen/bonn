@@ -19,7 +19,7 @@ const props = defineProps({
 
   endDate: {
     type: [Date, String],
-    required: false
+    default: undefined
   },
 
   prefix: {
@@ -60,7 +60,6 @@ const detailsString = computed(() => {
 })
 
 const dateTimeString = computed(() => {
-
   const string = (diff.value ? diff.value : 1) + ' day' + (
     diff.value > 1
       ? 's'
@@ -71,9 +70,9 @@ const dateTimeString = computed(() => {
   const suffix = unref(props.suffix)
 
   return [
-    prefix ? prefix : '',
+    prefix || '',
     string,
-    suffix ? suffix : ''
+    suffix || ''
   ].join('')
 })
 

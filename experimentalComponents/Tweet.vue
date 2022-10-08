@@ -123,7 +123,6 @@ export default {
 
     loadScript () {
       if (windowExists()) {
-
         // Create a script element
         const script = window.document.createElement('script')
 
@@ -136,7 +135,6 @@ export default {
 
         // Append script
         this.$el.appendChild(script)
-
       }
     }
 

@@ -15,12 +15,14 @@ defineProps({
 </script>
 
 <template>
-  <div class="c-title-area" :class="{
+  <div
+    class="c-title-area"
+    :class="{
       'c-title-area-rhythm': rhythm,
       'c-title-area-push': push,
       'no-rhythm': !rhythm
-    }">
-
+    }"
+  >
     <!--
       Usage: https://vuejs.org/guide/components/slots.html
       <img v-slot:left />
@@ -45,7 +47,6 @@ defineProps({
     >
       <slot name="right" />
     </div>
-
   </div>
 </template>
 

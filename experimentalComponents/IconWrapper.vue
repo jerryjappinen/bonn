@@ -1,8 +1,9 @@
+<!-- eslint-disable no-console -->
 <script>
 import { h } from 'vue'
 
 export default {
-  setup (props, { slots }) {
+  setup (_props, { slots }) {
     const className = 'c-icon'
 
     console.log('slots.default', slots)

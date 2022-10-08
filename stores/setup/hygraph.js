@@ -1,6 +1,6 @@
 import { ref, computed } from 'vue'
 
-import unwrap from 'graphql-unwrap'
+import graphqlUnwrap from 'graphql-unwrap'
 
 import flatten from 'lodash-es/flatten'
 import groupBy from 'lodash-es/groupBy'
@@ -112,7 +112,7 @@ export default (optionsInput) => {
         })
 
         // Only return entries that we have callbacks for
-        const filteredEntriesByType = pickBy(entriesByType.value, (value, typeName) => {
+        const filteredEntriesByType = pickBy(entriesByType.value, (_value, typeName) => {
           return !!keyByCallbacksByType[typeName]
         })
 
@@ -171,7 +171,7 @@ export default (optionsInput) => {
         })
 
         // Only return entries that we have callbacks for
-        const filteredEntriesByType = pickBy(entriesByType.value, (value, typeName) => {
+        const filteredEntriesByType = pickBy(entriesByType.value, (_value, typeName) => {
           return !!groupByCallbacksByType[typeName]
         })
 
@@ -224,7 +224,8 @@ export default (optionsInput) => {
 
     // Methods
 
-    const request = async (query, variables) => {
+    // Expect this to be async
+    const request = (query, variables) => {
       return options.request(apiUrl.value, query, variables)
     }
 
@@ -233,7 +234,7 @@ export default (optionsInput) => {
 
       // console.log('stores/setup/hygraph:response', response)
 
-      const [newEntries, ids] = unwrap(response)
+      const [newEntries, ids] = graphqlUnwrap(response)
 
       entriesById.value = merge({}, entriesById.value, newEntries)
 
@@ -243,7 +244,9 @@ export default (optionsInput) => {
     // NOTE: when using this, these could always be combined into a single query
     // A single query might be faster, but separate queries will resolve independently
     // Separate queries might also be easier to maintain client-side
-    const fetchMultiple = async (...queriesAndVariables) => {
+
+    // Expect this to be async
+    const fetchMultiple = (...queriesAndVariables) => {
       return Promise.all(queriesAndVariables.map((arg) => {
         // Arg can be one query, or an array with a query and a variable
         if (isArray(arg)) {

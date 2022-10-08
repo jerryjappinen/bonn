@@ -10,6 +10,7 @@ const pairs = {
 
 const props = defineProps({
   mode: {
+    type: String,
     default: 'out-in'
   },
 
@@ -65,7 +66,9 @@ const transitionName = computed(() => {
   <transition
     :mode="mode === 'simultaneous' ? undefined : mode"
     :name="transitionName"
-  ><slot /></transition>
+  >
+    <slot />
+  </transition>
 </template>
 
 <style lang="scss">

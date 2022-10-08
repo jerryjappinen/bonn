@@ -17,8 +17,6 @@ defineProps({
 
 })
 
-
-
 // FIXME: replication
 // FIXME: should be in a utility
 const modifyExternalLink = (el) => {
@@ -37,7 +35,6 @@ const modifyExternalLink = (el) => {
 
   // Return previous attributes after a delay
   nextTick(() => {
-
     if (originalRel !== desiredRel) {
       if (originalRel) {
         el.setAttribute('rel', originalRel)
@@ -53,9 +50,7 @@ const modifyExternalLink = (el) => {
         el.removeAttribute('target')
       }
     }
-
   })
-
 }
 
 // Temporarily make link external if user didn't press meta key

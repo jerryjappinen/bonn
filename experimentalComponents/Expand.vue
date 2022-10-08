@@ -41,7 +41,6 @@ export default {
             // eslint-disable-next-line no-param-reassign
             element.style.height = height
           })
-
         },
 
         leave (element) {
@@ -54,7 +53,6 @@ export default {
             // eslint-disable-next-line no-param-reassign
             element.style.height = 0
           })
-
         }
 
       }

@@ -4,7 +4,10 @@ import { ref, computed } from 'vue'
 const emit = defineEmits(['click'])
 
 const props = defineProps({
-  disabled: {},
+  disabled: {
+    type: Boolean,
+    default: undefined
+  },
 
   block: {
     type: Boolean,
@@ -18,8 +21,6 @@ const props = defineProps({
 
 })
 
-const mouseDown = ref(false)
-
 const component = computed(() => {
   return props.button
     ? 'button'
@@ -28,7 +29,16 @@ const component = computed(() => {
       : 'span'
 })
 
+const onClick = (event) => {
+  if (!props.disabled) {
+    emit('click', event)
+  }
+}
 
+// Control mouse handling
+// FIXME: should be a composable
+
+const mouseDown = ref(false)
 
 const onMouseDown = () => {
   mouseDown.value = true
@@ -38,11 +48,6 @@ const onMouseUp = () => {
   mouseDown.value = false
 }
 
-const onClick = (event) => {
-  if (!props.disabled) {
-    emit('click', event)
-  }
-}
 </script>
 
 <template>
@@ -60,7 +65,9 @@ const onClick = (event) => {
     @click="onClick"
     @mousedown="onMouseDown"
     @mouseup="onMouseUp"
-  ><slot /></component>
+  >
+    <slot />
+  </component>
 </template>
 
 <style lang="scss">

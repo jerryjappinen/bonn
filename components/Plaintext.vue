@@ -9,6 +9,7 @@ defineProps({
   },
 
   block: {
+    type: Boolean,
     default: false
   }
 
@@ -19,5 +20,7 @@ defineProps({
   <component
     :is="block ? 'div' : 'span'"
     class="c-plaintext"
-  >{{ text ? toPlainText(text || '') : '' }}</component>
+  >
+    {{ text ? toPlainText(text || '') : '' }}
+  </component>
 </template>

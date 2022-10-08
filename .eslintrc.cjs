@@ -1,1 +1,1 @@
-module.exports = require('./eslint/index.cjs')
+module.exports = require('./eslint/nuxt.cjs')

@@ -20,9 +20,9 @@ export default {
       required: true
     },
 
-    mapStyle: {
+    theme: {
       type: String,
-      required: false
+      default: undefined
     },
 
     zoom: {
@@ -66,7 +66,7 @@ export default {
       // Initialize the map
       this.map = new mapboxgl.Map({
         container: this._uid + '-map',
-        style: this.mapStyle,
+        style: this.theme,
         center: this.coordinates,
         zoom: this.zoom,
         pitch: 65,
@@ -82,11 +82,9 @@ export default {
           .setLngLat(this.coordinates)
           .addTo(this.map)
       }
-
     },
 
     removeMap () {
-
       if (this.marker) {
         this.marker.remove()
       }
@@ -94,7 +92,6 @@ export default {
       if (this.map) {
         this.map.remove()
       }
-
     }
 
   }

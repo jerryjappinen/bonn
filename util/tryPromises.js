@@ -1,6 +1,6 @@
 // Handle multiple promises with Promise.all, but don't throw errors
 // - returns failing promises with `undefined` as return value
-export default async (...promises) => {
+export default (...promises) => {
   return Promise.all(
     promises.map(async (promise) => {
       // Try promise

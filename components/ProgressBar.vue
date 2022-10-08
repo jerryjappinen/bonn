@@ -34,7 +34,7 @@ const normalizedFloat = computed(() => {
 })
 
 const percentage = computed(() => {
-  return 100 * normalizedFloat
+  return 100 * normalizedFloat.value
 })
 </script>
 

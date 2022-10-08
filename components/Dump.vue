@@ -8,6 +8,7 @@ import toJson from '../util/toJson'
 const props = defineProps({
 
   data: {
+    type: undefined,
     default: null
   },
 

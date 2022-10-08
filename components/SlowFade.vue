@@ -1,6 +1,7 @@
 <script setup>
 defineProps({
   mode: {
+    type: String,
     default: 'out-in'
   }
 })
@@ -10,7 +11,9 @@ defineProps({
   <transition
     :mode="mode === 'simultaneous' ? undefined : mode"
     name="transition-slow-fade"
-  ><slot /></transition>
+  >
+    <slot />
+  </transition>
 </template>
 
 <style lang="scss">

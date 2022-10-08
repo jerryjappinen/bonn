@@ -90,8 +90,6 @@ defineProps({
   opacity: 0;
 }
 
-
-
 // On states
 
 .c-checkbox-on,
@@ -106,8 +104,6 @@ defineProps({
 .c-checkbox-icon-on {
   opacity: 1;
 }
-
-
 
 // Enabled/disabled states
 

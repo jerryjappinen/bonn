@@ -5,10 +5,9 @@ import includes from 'lodash-es/includes'
 import isArray from 'lodash-es/isArray'
 import isPlainObject from 'lodash-es/isPlainObject'
 
-import Icon from './Icon.vue'
 import IconChevronDown from '../icons/ChevronDown.svg'
 
-
+import Icon from './Icon.vue'
 
 const optionIsGroup = (option) => {
   return isArray(option.value)
@@ -28,8 +27,6 @@ const mapToValues = (options) => {
 
   return values
 }
-
-
 
 const emit = defineEmits([
   'update:modelValue'
@@ -60,6 +57,7 @@ const props = defineProps({
   },
 
   modelValue: {
+    type: String,
     default: null
   },
 
@@ -113,11 +111,6 @@ const values = computed(() => {
 const hasSelected = computed(() => {
   return !!(value.value && includes(values.value, value.value))
 })
-
-// FIXME: expose this method
-// const clear = () => {
-//   value.value = null
-// }
 </script>
 
 <template>

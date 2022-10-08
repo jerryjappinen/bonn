@@ -2,7 +2,7 @@
 import { ref, computed, unref } from 'vue'
 
 // https://www.npmjs.com/package/vue3-slider
-import Vue3Slider from "vue3-slider"
+import Vue3Slider from 'vue3-slider'
 
 const props = defineProps({
 
@@ -78,8 +78,6 @@ const emit = defineEmits([
   'update:modelValue'
 ])
 
-
-
 const mouseDown = ref(false)
 
 const value = computed({
@@ -128,13 +126,11 @@ const options = computed(() => {
     color: '#000',
     trackColor: '#ccc',
     tooltipColor: '#000',
-    tooltipTextColor: '#fff',
+    tooltipTextColor: '#fff'
   }
 
   return opts
 })
-
-
 
 // Event handlers
 
@@ -159,18 +155,18 @@ const onDragEnd = () => {
 
 <template>
   <Vue3Slider
+    v-model="value"
     :class="{
       'control-disabled': disabled,
       'control-enabled': !disabled,
       'control-mouse-down': mouseDown
     }"
     class="c-slider control"
+    v-bind="options"
     @change="onChange"
     @drag-start="onDragStart"
     @drag-end="onDragEnd"
     @dragging="onDrag"
-    v-model="value"
-    v-bind="options"
   />
 </template>
 

@@ -14,7 +14,10 @@ const emit = defineEmits([
 ])
 
 const props = defineProps({
-  modelValue: {},
+  modelValue: {
+    type: undefined,
+    required: true
+  },
 
   disabled: {
     type: Boolean,
@@ -23,6 +26,7 @@ const props = defineProps({
 
   // The target value that modelValue will be set to when clicked
   to: {
+    type: undefined,
     default: true
   },
 
@@ -37,10 +41,6 @@ const props = defineProps({
   }
 
 })
-
-
-
-const mouseDown = ref(false)
 
 const value = computed({
   get () {
@@ -64,9 +64,17 @@ const isOn = computed(() => {
   return unref(modelValue) === unref(props.to)
 })
 
+const onClick = () => {
+  if (!unref(props.disabled)) {
+    emit('click')
+    value.value = unref(props.to)
+  }
+}
 
+// Control mouse handling
+// FIXME: should be a composable
 
-// Methods
+const mouseDown = ref(false)
 
 const onMouseDown = () => {
   mouseDown.value = true
@@ -76,12 +84,6 @@ const onMouseUp = () => {
   mouseDown.value = false
 }
 
-const onClick = () => {
-  if (!unref(props.disabled)) {
-    emit('click')
-    value.value = unref(props.to)
-  }
-}
 </script>
 
 <template>
@@ -103,7 +105,9 @@ const onClick = () => {
     @click="onClick"
     @mousedown="onMouseDown"
     @mouseup="onMouseUp"
-  ><slot /></component>
+  >
+    <slot />
+  </component>
 </template>
 
 <style lang="scss">

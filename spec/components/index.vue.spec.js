@@ -36,6 +36,8 @@ import Plaintext from '../../components/Plaintext.vue'
 import ProductHuntBadge from '../../components/ProductHuntBadge.vue'
 import ProductHuntLink from '../../components/ProductHuntLink.vue'
 import ProgressBar from '../../components/ProgressBar.vue'
+import Relative from '../../components/Relative.vue'
+import RelativeBlock from '../../components/RelativeBlock.vue'
 import Set from '../../components/Set.vue'
 import SlowFade from '../../components/SlowFade.vue'
 import Spacer from '../../components/Spacer.vue'
@@ -80,6 +82,8 @@ const tests = {
   LiveDuration: [LiveDuration, { date: '2022-01-01' }],
   Markdown,
   MobileWebAppBadge,
+  Relative,
+  RelativeBlock,
   PhoneNumber,
   PlaceholderImage,
   PlaceholderText,

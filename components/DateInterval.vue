@@ -34,8 +34,6 @@ export default {
       return null
     },
 
-
-
     // Allow passing dates in either order
 
     datesAreFlipped () {
@@ -77,7 +75,6 @@ export default {
     },
 
     dateString () {
-
       if (this.isShownAsDuration) {
         return formatDateInterval(this.earlierDate, this.laterDate)
       }

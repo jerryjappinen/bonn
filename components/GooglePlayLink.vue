@@ -5,6 +5,7 @@ import GooglePlayBadge from './GooglePlayBadge.vue'
 import ExternalLink from './ExternalLink.vue'
 
 const props = defineProps({
+  // eslint-disable-next-line vue/require-default-prop, vue/require-prop-types
   light: {},
 
   package: {

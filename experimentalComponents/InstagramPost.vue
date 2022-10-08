@@ -19,8 +19,6 @@ const props = defineProps({
 
 })
 
-
-
 const videoElement = ref(null)
 
 const isPortrait = computed(() => {
@@ -38,7 +36,7 @@ const imageSrc = computed(() => {
 })
 
 const videoSrc = computed(() => {
-  return !isVideo
+  return !isVideo.value
     ? null
     : props.hd
       ? props.post.videos.low_bandwidth.url
@@ -52,8 +50,6 @@ const title = computed(() => {
       ? props.post.location.name
       : props.post.user.full_name
 })
-
-
 
 const onVideoClick = () => {
   if (videoElement.value && videoElement.value.video.paused) {
@@ -73,7 +69,6 @@ const onVideoClick = () => {
     }"
     class="c-instagram-post"
   >
-
     <!-- Video -->
     <VideoPlayer
       v-if="isVideo"
@@ -100,7 +95,6 @@ const onVideoClick = () => {
         :title="title"
       />
     </ExternalLink>
-
   </div>
 </template>
 

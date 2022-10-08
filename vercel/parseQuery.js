@@ -3,12 +3,14 @@ import isPlainObject from 'lodash-es/isPlainObject'
 import map from 'lodash-es/map'
 import mapValues from 'lodash-es/mapValues'
 
-import qs from 'qs'
+// import qs from 'qs'
+import qsParse from 'qs/parse'
+import qsStringify from 'qs/stringify'
 
 export default (queryObjectToParse) => {
   if (queryObjectToParse) {
     const query = {
-      ...qs.parse(qs.stringify(queryObjectToParse))
+      ...qsParse(qsStringify(queryObjectToParse))
     }
 
     for (const key in query) {
@@ -20,6 +22,7 @@ export default (queryObjectToParse) => {
           query[key] = mapValues(query[key], JSON.parse)
         }
       } catch (error) {
+        // eslint-disable-next-line no-console
         console.log('Error parsing JSON value', error)
       }
     }

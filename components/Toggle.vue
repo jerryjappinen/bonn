@@ -6,8 +6,13 @@ import { computed } from 'vue'
 import Set from './Set.vue'
 
 const props = defineProps({
+  // eslint-disable-next-line vue/require-default-prop, vue/require-prop-types
   disabled: {},
+
+  // eslint-disable-next-line vue/require-default-prop, vue/require-prop-types
   block: {},
+
+  // eslint-disable-next-line vue/require-default-prop, vue/require-prop-types
   button: {},
 
   // Have to define props here
@@ -37,6 +42,7 @@ const value = computed({
 
 <template>
   <Set
+    v-model="value"
     class="c-toggle control"
     :class="{
       'c-toggle-on': value,
@@ -49,8 +55,9 @@ const value = computed({
     :block="block"
     :button="button"
     :disabled="disabled"
-    v-model="value"
-  ><slot /></Set>
+  >
+    <slot />
+  </Set>
 </template>
 
 <style lang="scss">

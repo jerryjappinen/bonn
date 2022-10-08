@@ -1,6 +1,5 @@
-import frameLoop from '../util/frameLoop'
-
 import { ref } from 'vue'
+import frameLoop from '../util/frameLoop'
 
 // {
 //   fps,

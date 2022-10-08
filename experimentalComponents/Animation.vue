@@ -8,7 +8,7 @@ export default {
 
     name: {
       type: String,
-      required: false
+      default: undefined
     },
 
     duration: {
@@ -34,7 +34,10 @@ export default {
       default: 'normal'
     },
 
-    disabled: {}
+    disabled: {
+      type: Boolean,
+      default: undefined
+    }
 
   },
 
@@ -56,7 +59,6 @@ export default {
 
       // Add style binding dynamically
       if (this.isEnabled && vnode) {
-
         if (!vnode.data) {
           vnode.data = {}
         }

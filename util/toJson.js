@@ -26,7 +26,7 @@ function ensureProperties (obj) {
       return obj
     }
 
-    if (seen.indexOf(obj) !== -1) {
+    if (seen.includes(obj)) {
       return '[Circular]'
     }
     seen.push(obj)

@@ -61,8 +61,6 @@ const props = defineProps({
 
 })
 
-
-
 const mimeType = computed(() => {
   const type = unref(props.type)
   return (type.indexOf('/' < 0) ? 'video/' : '') + type

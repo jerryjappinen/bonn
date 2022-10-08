@@ -1,32 +1,35 @@
 <script setup>
-import { computed } from 'vue'
+import { computed, unref } from 'vue'
 
 const props = defineProps({
 
   tel: {
     type: String,
-    required: false
+    default: undefined
   },
 
   sms: {
-    type: String,
-    required: false
+    type: [Boolean, String],
+    default: undefined
   },
 
-  body: {
+  message: {
     type: String,
-    required: false
+    default: undefined
   }
 
 })
 
+// https://stackoverflow.com/questions/6480462/how-to-pre-populate-the-sms-body-text-via-an-html-link
 const href = computed(() => {
-  return (props.sms || props.body ? 'sms' : 'tel') +
+  const tel = unref(props.tel)
+  const sms = unref(props.sms)
+  const message = unref(props.message)
+
+  return (sms || message ? 'sms' : 'tel') +
     ':' +
-    props.tel +
-    (props.body
-      ? '?' + props.body
-      : '')
+    (tel || sms) +
+    (message ? '?' + message : '')
 })
 </script>
 

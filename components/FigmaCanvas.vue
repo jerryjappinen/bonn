@@ -12,12 +12,10 @@ const props = defineProps({
 
   node: {
     type: [Number, String],
-    required: false
+    default: undefined
   }
 
 })
-
-
 
 const src = computed(() => {
   const file = unref(props.file)

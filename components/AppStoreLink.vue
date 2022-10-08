@@ -5,8 +5,14 @@ import AppStoreBadge from './AppStoreBadge.vue'
 import ExternalLink from './ExternalLink.vue'
 
 const props = defineProps({
+  // Passthrough props
+  // eslint-disable-next-line vue/require-default-prop, vue/require-prop-types
   refer: {},
+
+  // eslint-disable-next-line vue/require-default-prop, vue/require-prop-types
   here: {},
+
+  // eslint-disable-next-line vue/require-default-prop, vue/require-prop-types
   light: {},
 
   appId: {

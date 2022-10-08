@@ -29,22 +29,24 @@ const props = defineProps({
   },
 
   external: {
+    type: Boolean,
     default: null
   },
 
   noIndex: {
+    type: Boolean,
     default: null
   },
 
   submit: {
+    type: Boolean,
     default: null
   },
 
   tab: {
+    type: Boolean,
     default: true
   },
-
-
 
   // State params
 
@@ -103,15 +105,12 @@ const is = computed(() => {
   // return this.$nuxt ? resolveComponent('NuxtLink') : resolveComponent('RouterLink')
   try {
     return resolveComponent('NuxtLink')
-
   } catch (error) {
     // Nuxt is not available
   }
 
   return resolveComponent('RouterLink')
 })
-
-
 
 const vBind = computed(() => {
   const bindings = {}
@@ -200,21 +199,20 @@ const onClick = (event) => {
   <component
     :is="is"
     v-bind="vBind"
-    :disabled="props.disabled"
+    :disabled="disabled"
     :class="classes"
     class="c-click-button"
     @click="onClick"
   >
-
     <Fade>
       <Spinner
-        v-if="props.loading"
+        v-if="loading"
         class="c-click-button-spinner"
       />
     </Fade>
 
     <!-- <Fade>
-      <Icon v-if="$slots['icon-left'] && !props.loading">
+      <Icon v-if="$slots['icon-left'] && !loading">
         <slot
           name="icon-left"
           class="c-click-button-icon c-click-button-icon-left"
@@ -223,7 +221,7 @@ const onClick = (event) => {
     </Fade>
 
     <Fade>
-      <Icon v-if="$slots['icon-right'] && !props.loading">
+      <Icon v-if="$slots['icon-right'] && !loading">
         <slot
           name="icon-right"
           class="c-click-button-icon c-click-button-icon-right"
@@ -233,14 +231,13 @@ const onClick = (event) => {
 
     <span
       :class="{
-        'c-click-button-content-block': props.block,
-        'c-click-button-content-center': props.center
+        'c-click-button-content-block': block,
+        'c-click-button-content-center': center
       }"
       class="c-click-button-content"
     >
       <slot />
     </span>
-
   </component>
 </template>
 
@@ -317,8 +314,6 @@ const onClick = (event) => {
 
 }
 
-
-
 // Loading states
 
 .c-click-button-not-loading {
@@ -352,8 +347,6 @@ const onClick = (event) => {
   }
 
 }
-
-
 
 // States
 

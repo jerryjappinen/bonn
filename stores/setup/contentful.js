@@ -109,7 +109,7 @@ export default (optionsInput) => {
         })
 
         // Only return entries that we have callbacks for
-        const filteredEntriesByType = pickBy(entriesByType.value, (value, typeName) => {
+        const filteredEntriesByType = pickBy(entriesByType.value, (_value, typeName) => {
           return !!keyByCallbacksByType[typeName]
         })
 
@@ -168,7 +168,7 @@ export default (optionsInput) => {
         })
 
         // Only return entries that we have callbacks for
-        const filteredEntriesByType = pickBy(entriesByType.value, (value, typeName) => {
+        const filteredEntriesByType = pickBy(entriesByType.value, (_value, typeName) => {
           return !!groupByCallbacksByType[typeName]
         })
 
@@ -221,7 +221,8 @@ export default (optionsInput) => {
 
     // Methods
 
-    const request = async (...queries) => {
+    // NOTE: expect this to be async
+    const request = (...queries) => {
       if (options.request) {
         return options.request(...queries)
       }
