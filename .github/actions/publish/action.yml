@@ -22,10 +22,17 @@ inputs:
   token:
     description: 'NPM token that has access to the package. First set this up on npmjs.org, then add it as repository secret on GitHub.'
     required: true
+
+# Pass through publish version info
+# https://github.com/JS-DevTools/npm-publish#output-variables
 outputs:
-  publish:
-    description: "Publish artefacts"
-    value: ${{ steps.publish.outputs }}
+  type: ${{ steps.publish.outputs.type }}
+  version: ${{ steps.publish.outputs.version }}
+  old-version: ${{ steps.publish.outputs.old-version }}
+  tag: ${{ steps.publish.outputs.tag }}
+  access: ${{ steps.publish.outputs.access }}
+  dry-run: ${{ steps.publish.outputs.dry-run }}
+
 runs:
   using: "composite"
   steps:
@@ -49,25 +56,11 @@ runs:
       shell: bash
       run: npm install
 
-    # Publish to npm
-    # - name: Checkout publish script
-    #   uses: actions/checkout@v3
-    #   with:
-    #     repository: JS-DevTools/npm-publish
-    #     ref: v1
-
     - name: Publish to npm
       id: publish
       uses: JS-DevTools/npm-publish@v1
       with:
         token: ${{ inputs.token }}
-
-    # Create tag in repo
-    # - name: Checkout tagging script
-    #   uses: actions/checkout@v3
-    #   with:
-    #     repository: rickstaa/action-create-tag
-    #     ref: v1
 
     - name: Create version tag
       id: tag
