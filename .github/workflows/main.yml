@@ -3,71 +3,25 @@ on: push
 
 jobs:
 
-  # FIXME:
-  # - I'd like to have a generic setup action that the others use
-  # - But build output is not easily reused by each job
-  # - Now I have to duplicate the setup code in each section, and reinstall for each job
-  # setup:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v3
-  #     - uses: actions/setup-node@v3
-  #       with:
-  #         node-version-file: '.nvmrc'
-  #         cache: 'npm'
-  #     - run: npm install
-
   lint:
     runs-on: ubuntu-latest
-    # needs: setup
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: ./.github/actions/run
         with:
-          node-version-file: '.nvmrc'
-          cache: 'npm'
-      - run: npm install
-      - run: npm run lint
+          script: 'lint'
 
   test:
     runs-on: ubuntu-latest
-    # needs: setup
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: ./.github/actions/run
         with:
-          node-version-file: '.nvmrc'
-          cache: 'npm'
-      - run: npm install
-      - run: npm run test
+          script: 'test'
 
-  # Add repository secret on GitHub
   publish:
     runs-on: ubuntu-latest
     needs: [lint, test]
     if: github.ref == 'refs/heads/main'
     steps:
-
-      # Setup
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version-file: '.nvmrc'
-          cache: 'npm'
-
-      # Install deps
-      - run: npm install
-
-      # Publish to npm
-      - id: publish
-        uses: JS-DevTools/npm-publish@v1
+      - uses: ./.github/actions/publish
         with:
           token: ${{ secrets.NPM_TOKEN }}
-
-      # Create tag in repo
-      - id: tag
-        if: steps.publish.outputs.type != 'none'
-        uses: rickstaa/action-create-tag@v1
-        with:
-          tag: "v${{ steps.publish.outputs.version }}"
-          message: "Tag for ${{ steps.publish.outputs.version }}"
