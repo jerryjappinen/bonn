@@ -1,23 +1,12 @@
-<script setup>
-const props = defineProps({
-  inline: {
-    type: Boolean,
-    default: false
-  }
-})
-</script>
-
 <template>
-  <component
-    :is="inline ? 'span' : 'div'"
-    class="c-relative"
-  ><slot /></component>
+  <span class="c-relative"><slot /></span>
 </template>
 
 <style lang="scss">
 
 .c-relative {
   @include relative;
+  @include inline-block;
 }
 
 </style>
