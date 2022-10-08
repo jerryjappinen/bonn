@@ -26,12 +26,18 @@ inputs:
 # Pass through publish version info
 # https://github.com/JS-DevTools/npm-publish#output-variables
 outputs:
-  type: ${{ steps.publish.outputs.type }}
-  version: ${{ steps.publish.outputs.version }}
-  old-version: ${{ steps.publish.outputs.old-version }}
-  tag: ${{ steps.publish.outputs.tag }}
-  access: ${{ steps.publish.outputs.access }}
-  dry-run: ${{ steps.publish.outputs.dry-run }}
+  type:
+    value: ${{ steps.publish.outputs.type }}
+  version:
+    value: ${{ steps.publish.outputs.version }}
+  old-version:
+    value: ${{ steps.publish.outputs.old-version }}
+  tag:
+    value: ${{ steps.publish.outputs.tag }}
+  access:
+    value: ${{ steps.publish.outputs.access }}
+  dry-run:
+    value: ${{ steps.publish.outputs.dry-run }}
 
 runs:
   using: "composite"
