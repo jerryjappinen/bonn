@@ -4,7 +4,7 @@ import { computed, unref } from 'vue'
 const props = defineProps({
 
   tel: {
-    type: String,
+    type: [Number, String],
     default: undefined
   },
 
