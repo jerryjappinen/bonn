@@ -20,9 +20,13 @@ runs:
   using: "composite"
   steps:
 
+    # Self-checkout
+    - name: Initial checkout
+      uses: actions/checkout@v3
+
     # Setup
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
+    - name: Node setup
+      uses: actions/setup-node@v3
       with:
         node-version-file: '.nvmrc'
         cache: 'npm'

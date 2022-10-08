@@ -22,9 +22,13 @@ runs:
   using: "composite"
   steps:
 
+    # Self-checkout
+    - name: Initial checkout
+      uses: actions/checkout@v3
+
     # Setup
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
+    - name: Node setup
+      uses: actions/setup-node@v3
       with:
         node-version-file: '.nvmrc'
         cache: 'npm'
@@ -35,9 +39,12 @@ runs:
       run: npm install
 
     # Publish to npm
-    - uses: actions/checkout@v3
+    - name: Checkout publish script
+      uses: actions/checkout@v3
       with:
         repository: JS-DevTools/npm-publish
+        ref: v1
+
     - name: Publish to npm
       id: publish
       uses: JS-DevTools/publish@v1
@@ -45,9 +52,12 @@ runs:
         token: ${{ inputs.token }}
 
     # Create tag in repo
-    - uses: actions/checkout@v3
+    - name: Checkout tagging script
+      uses: actions/checkout@v3
       with:
         repository: rickstaa/action-create-tag
+        ref: v1
+
     - name: Create version tag
       id: tag
       if: steps.publish.outputs.type != 'none'
