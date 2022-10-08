@@ -1,6 +1,8 @@
 <script setup>
 import { computed, unref } from 'vue'
 
+import isString from 'lodash-es/isString'
+
 const props = defineProps({
 
   tel: {
@@ -11,11 +13,6 @@ const props = defineProps({
   sms: {
     type: [Boolean, String],
     default: undefined
-  },
-
-  message: {
-    type: String,
-    default: undefined
   }
 
 })
@@ -24,12 +21,11 @@ const props = defineProps({
 const href = computed(() => {
   const tel = unref(props.tel)
   const sms = unref(props.sms)
-  const message = unref(props.message)
 
-  return (sms || message ? 'sms' : 'tel') +
+  return (sms ? 'sms' : 'tel') +
     ':' +
-    (tel || sms) +
-    (message ? '?' + message : '')
+    tel +
+    (isString(sms) ? '?' + sms : '')
 })
 </script>
 
