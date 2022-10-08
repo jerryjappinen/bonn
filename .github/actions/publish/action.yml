@@ -58,7 +58,8 @@ runs:
 
     - name: Publish to npm
       id: publish
-      uses: JS-DevTools/publish@v1
+      # uses: JS-DevTools/publish@v1
+      uses: actions/npm-publish@v1
       with:
         token: ${{ inputs.token }}
 
@@ -72,7 +73,8 @@ runs:
     - name: Create version tag
       id: tag
       if: steps.publish.outputs.type != 'none'
-      uses: rickstaa/action-create-tag@v1
+      # uses: rickstaa/action-create-tag@v1
+      uses: actions/create-update-tag@v1
       with:
         tag: "v${{ steps.publish.outputs.version }}"
         message: "Tag for ${{ steps.publish.outputs.version }}"
