@@ -35,6 +35,9 @@ runs:
       run: npm install
 
     # Publish to npm
+    - uses: actions/checkout@v3
+      with:
+        repository: JS-DevTools/npm-publish
     - name: Publish to npm
       id: publish
       uses: JS-DevTools/publish@v1
@@ -42,6 +45,9 @@ runs:
         token: ${{ inputs.token }}
 
     # Create tag in repo
+    - uses: actions/checkout@v3
+      with:
+        repository: rickstaa/action-create-tag
     - name: Create version tag
       id: tag
       if: steps.publish.outputs.type != 'none'
