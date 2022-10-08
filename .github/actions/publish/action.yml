@@ -30,16 +30,20 @@ runs:
         cache: 'npm'
 
     # Install deps
-    - run: npm install
+    - name: Install dependencies
+      shell: bash
+      run: npm install
 
     # Publish to npm
-    - id: publish
+    - name: Publish to npm
+      id: publish
       uses: JS-DevTools/publish@v1
       with:
         token: ${{ inputs.token }}
 
     # Create tag in repo
-    - id: tag
+    - name: Create version tag
+      id: tag
       if: steps.publish.outputs.type != 'none'
       uses: rickstaa/action-create-tag@v1
       with:
