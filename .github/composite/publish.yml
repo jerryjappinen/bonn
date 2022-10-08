@@ -1,0 +1,44 @@
+# Documentation
+# https://docs.github.com/en/actions/creating-actions/creating-a-composite-action
+
+# Usage in your workflow YML:
+# jobs:
+#   lint:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: jerryjappinen/bonn/.github/composite/npm-publish
+#         with:
+#           npm_token: ${{ secrets.NPM_TOKEN }}
+
+name: 'Bonn: npm-publish'
+description: 'Publishes your repo as package on npm.'
+inputs:
+  npm_token:
+    description: 'NPM token that has access to the package. First set this up on npmjs.org, then add it as repository secret on GitHub.'
+    required: true
+runs:
+  using: "composite"
+  steps:
+
+    # Setup
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version-file: '.nvmrc'
+        cache: 'npm'
+
+    # Install deps
+    - run: npm install
+
+    # Publish to npm
+    - id: publish
+      uses: JS-DevTools/npm-publish@v1
+      with:
+        token: ${{ inputs.npm_token }}
+
+    # Create tag in repo
+    - id: tag
+      uses: rickstaa/action-create-tag@v1
+      with:
+        tag: "v${{ steps.publish.outputs.version }}"
+        message: "Tag for ${{ steps.publish.outputs.version }}"
