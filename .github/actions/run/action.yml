@@ -6,11 +6,11 @@
 #   lint:
 #     runs-on: ubuntu-latest
 #     steps:
-#       - uses: jerryjappinen/bonn/.github/composite/npm-run
+#       - uses: jerryjappinen/bonn/.github/actions/run
 #         with:
 #           script: 'lint'
 
-name: 'Bonn: npm-run'
+name: 'Bonn: run'
 description: 'Installs dependencies and runs an npm script in your repo'
 inputs:
   script:

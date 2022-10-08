@@ -8,14 +8,14 @@
 #     needs: [lint, test]
 #     if: github.ref == 'refs/heads/main'
 #     steps:
-#       - uses: jerryjappinen/bonn/.github/composite/npm-publish
+#       - uses: jerryjappinen/bonn/.github/actions/publish
 #         with:
-#           npm_token: ${{ secrets.NPM_TOKEN }}
+#           token: ${{ secrets.NPM_TOKEN }}
 
-name: 'Bonn: npm-publish'
+name: 'Bonn: publish'
 description: 'Publishes your repo as package on npm. Uses the version number in package.json on npm and creates a version tag in the repo.'
 inputs:
-  npm_token:
+  token:
     description: 'NPM token that has access to the package. First set this up on npmjs.org, then add it as repository secret on GitHub.'
     required: true
 runs:
@@ -34,9 +34,9 @@ runs:
 
     # Publish to npm
     - id: publish
-      uses: JS-DevTools/npm-publish@v1
+      uses: JS-DevTools/publish@v1
       with:
-        token: ${{ inputs.npm_token }}
+        token: ${{ inputs.token }}
 
     # Create tag in repo
     - id: tag
