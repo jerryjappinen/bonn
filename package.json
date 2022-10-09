@@ -1,6 +1,6 @@
 {
   "name": "bonn",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "Utility, style and component library for web development.",
   "private": false,
   "files": [
@@ -57,17 +57,17 @@
     "@averjs/nuxt-compression": "^1.2.2",
     "@nuxtjs/eslint-config-typescript": "^11.0.0",
     "@nuxtjs/sitemap": "^2.4.0",
-    "@pinia/nuxt": "^0.4.2",
-    "@rollup/plugin-graphql": "^1.1.0",
+    "@pinia/nuxt": "^0.4.3",
+    "@rollup/plugin-graphql": "^2.0.0",
     "@vanillaes/csv": "^3.0.1",
     "contentful-management": "^10.15.1",
-    "eslint": "^8.24.0",
+    "eslint": "^8.25.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-nuxt": "^4.0.0",
     "eslint-plugin-promise": "^6.0.1",
-    "fetch-deep-contentful-data": "^5.0.0",
+    "fetch-deep-contentful-data": "^5.0.1",
     "graphql-request": "^5.0.0",
     "graphql-unwrap": "^1.0.1",
     "gravatar-url": "^4.0.1",
@@ -83,7 +83,7 @@
     "prism-es6": "^1.2.0",
     "qs": "^6.11.0",
     "sass": "^1.55.0",
-    "sass-loader": "^13.0.2",
+    "sass-loader": "^13.1.0",
     "seedrandom": "^3.0.5",
     "vite-plugin-markdown": "^2.1.0",
     "vite-svg-loader": "^3.6.0",
@@ -93,7 +93,7 @@
     "date-fns": "^2.29.3",
     "lodash-es": "^4.17.21",
     "nuxt": "^3.0.0-rc.11",
-    "vue": "^3.2.39"
+    "vue": "^3.2.40"
   },
   "peerDependenciesMeta": {
     "date-fns": {
@@ -110,11 +110,11 @@
     "@vitejs/plugin-vue": "^3.1.2",
     "@vue/test-utils": "^2.1.0",
     "date-fns": "^2.29.3",
-    "happy-dom": "^6.0.4",
+    "happy-dom": "^7.4.0",
     "lodash-es": "^4.17.21",
     "nuxt": "^3.0.0-rc.11",
-    "pinia": "^2.0.22",
-    "vitest": "^0.23.4",
-    "vue": "^3.2.39"
+    "pinia": "^2.0.23",
+    "vitest": "^0.24.0",
+    "vue": "^3.2.40"
   }
 }
