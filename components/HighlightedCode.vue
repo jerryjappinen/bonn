@@ -10,7 +10,7 @@ import toJson from '../util/toJson'
 const props = defineProps({
 
   code: {
-    type: String,
+    type: undefined,
     required: true
   },
 
@@ -73,7 +73,7 @@ onBeforeUpdate(highlight)
       'prism-dark': dark
     }"
     class="c-highlighted-code prism"
-  >{{ stringify(code.replace(/^[\r\n\s]*|[\r\n\s]*$/g, '')) }}</code>
+  >{{ ('' + stringify(code)).replace(/^[\r\n\s]*|[\r\n\s]*$/g, '') }}</code>
 </template>
 
 <style lang="scss">
