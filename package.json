@@ -1,6 +1,6 @@
 {
   "name": "bonn",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "Utility, style and component library for web development.",
   "private": false,
   "files": [
@@ -80,6 +80,7 @@
     "pinia-plugin-persistedstate": "^2.2.0",
     "platform-detect": "^3.0.1",
     "prettier": "^2.7.1",
+    "prism-es6": "^1.2.0",
     "qs": "^6.11.0",
     "sass": "^1.55.0",
     "sass-loader": "^13.0.2",
