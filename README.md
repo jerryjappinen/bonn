@@ -31,7 +31,7 @@ You might need additional peer dependencies depending on the type of project and
 
 Use the `nuxt.config` helpers to load Bonn's Nuxt module and other relevant configurations:
 
-```javascript
+```js
 import bonn from 'bonn/nuxt/config/bonn'
 import svg from 'bonn/nuxt/config/svg'
 
@@ -60,7 +60,7 @@ This will output the desired config for you. See the relevant docs for more deta
 
 #### `.js` utilities
 
-```javascript
+```js
 import formatFileSize from 'bonn/util/formatFileSize'
 
 formatFileSize(19238028)
@@ -70,7 +70,7 @@ formatFileSize(19238028)
 
 #### `.scss` mixins and styles
 
-```javascript
+```js
 import formatFileSize from 'bonn/util/formatFileSize'
 
 formatFileSize(19238028)
@@ -104,7 +104,7 @@ Note that when using `<script setup>`, you don't have to export the components. 
 
 #### Vue composables
 
-```javascript
+```js
 import useIsMounted from 'bonn/composables/useIsMounted'
 
 const isMounted = useIsMounted()
@@ -122,7 +122,7 @@ export default {
 
 #### Pinia `stores/`
 
-```javascript
+```js
 import useDevice from 'bonn/stores/device'
 
 const device = useDevice()
@@ -132,7 +132,7 @@ const device = useDevice()
 
 #### `nuxt.config` helpers
 
-```javascript
+```js
 import { mergeConfigs, dev, assets, scss, svg } from 'bonn/nuxt/config'
 
 export default defineNuxtConfig(mergeConfigs(

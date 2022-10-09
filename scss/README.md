@@ -51,7 +51,7 @@ You can optimise your build even further by including only some defaults and uti
 
 ### Import from a JavaScript file
 
-```javascript
+```js
 import 'bonn/scss/shared';
 import 'bonn/scss/global';
 import 'bonn/scss/util';
