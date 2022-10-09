@@ -42,7 +42,7 @@ export default {
     },
 
     undo: {
-      type: Boolean,
+      type: [Boolean, Number, String],
       default: false
     },
 
