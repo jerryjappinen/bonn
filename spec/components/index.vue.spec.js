@@ -25,6 +25,8 @@ import FlexFluid from '../../components/FlexFluid.vue'
 import FormattedDate from '../../components/FormattedDate.vue'
 import GooglePlayBadge from '../../components/GooglePlayBadge.vue'
 import GooglePlayLink from '../../components/GooglePlayLink.vue'
+import HighlightedCode from '../../components/HighlightedCode.vue'
+import HighlightedPre from '../../components/HighlightedPre.vue'
 import Icon from '../../components/Icon.vue'
 import LiveDuration from '../../components/LiveDuration.vue'
 import Markdown from '../../components/Markdown.vue'
@@ -78,6 +80,8 @@ const tests = {
   FormattedDate: [FormattedDate, { date: '2022-01-01' }],
   GooglePlayBadge: [GooglePlayBadge, { package: 'org.foo.bar' }],
   GooglePlayLink: [GooglePlayLink, { package: 'org.foo.bar' }],
+  HighlightedCode: [HighlightedCode, { code: 'import foo from \'bar.foo\';' }],
+  HighlightedPre: [HighlightedPre, { code: 'import foo from \'bar.foo\';' }],
   Icon,
   LiveDuration: [LiveDuration, { date: '2022-01-01' }],
   Markdown,

@@ -24,7 +24,7 @@ pre.prism-dark,
   .language-css .token.string,
   .style .token.string {
     color: #9a6e3a;
-    background: hsla(0, 0%, 100%, .5);
+    background: rgba(255, 255, 255, 0.5);
   }
 
   .token {
@@ -44,17 +44,6 @@ pre.prism-dark,
     }
 
     // Colors
-
-    &.comment,
-    &.prolog,
-    &.doctype,
-    &.cdata {
-      color: slategray;
-    }
-
-    &.punctuation {
-      color: #999;
-    }
 
     &.property,
     &.tag,
@@ -78,7 +67,7 @@ pre.prism-dark,
     &.atrule,
     &.attr-value,
     &.keyword {
-      color: #07a;
+      color: #2198cb;
     }
 
     &.function,
@@ -92,6 +81,36 @@ pre.prism-dark,
       color: #e90;
     }
 
+  }
+
+}
+
+.prism {
+
+  &.comment,
+  &.prolog,
+  &.doctype,
+  &.cdata {
+    color: #8192a3;
+  }
+
+  &.punctuation {
+    color: #8192a3;
+  }
+
+}
+
+.prism-dark {
+
+  &.comment,
+  &.prolog,
+  &.doctype,
+  &.cdata {
+    color: #8192a3;
+  }
+
+  &.punctuation {
+    color: #8192a3;
   }
 
 }

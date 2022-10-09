@@ -1,11 +1,11 @@
 <script setup>
-import { ref, computed, onMounted, onBeforeUpdate } from 'vue'
+import { ref, computed, unref, onMounted, onBeforeUpdate } from 'vue'
 
 import trim from 'lodash-es/trim'
 
-import toJson from 'bonn/util/toJson'
+import Prism from 'prism-es6/prism.js'
 
-import Prism from 'prism-es6'
+import toJson from '../util/toJson'
 
 const props = defineProps({
 
