@@ -14,7 +14,8 @@ export default (options) => {
   const modules = []
   const transpile = [
     'bonn',
-    'lodash-es'
+    'lodash-es',
+    ...(opts.transpile || [])
   ]
 
   // Auto load bonn (will auto-import components)
