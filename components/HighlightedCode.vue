@@ -5,6 +5,13 @@ import trim from 'lodash-es/trim'
 
 import Prism from 'prism-es6/prism.js'
 
+// Load additional components
+// https://github.com/elisiondesign/vue-code-highlight
+// https://github.com/elisiondesign/prism-es6/tree/master/components
+// import 'prism-es6/components/prism-markup-templating'
+// import 'prism-es6/components/prism-python'
+// import 'prism-es6/components/prism-yaml'
+
 import toJson from '../util/toJson'
 
 const props = defineProps({
