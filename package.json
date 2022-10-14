@@ -60,6 +60,7 @@
     "@pinia/nuxt": "^0.4.3",
     "@rollup/plugin-graphql": "^2.0.0",
     "@vanillaes/csv": "^3.0.1",
+    "chrome-aws-lambda": "^10.1.0",
     "eslint": "^8.25.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.26.0",
@@ -69,6 +70,8 @@
     "graphql-request": "^5.0.0",
     "graphql-unwrap": "^1.0.1",
     "gravatar-url": "^4.0.1",
+    "ky": "^0.31.4",
+    "ky-universal": "^0.11.0",
     "markdown-it": "^13.0.1",
     "markdown-it-attrs": "^4.1.4",
     "markdown-it-deflist": "^2.1.0",
@@ -100,6 +103,9 @@
     "@graphcms/rich-text-html-renderer": {
       "optional": true
     },
+    "chrome-aws-lambda": {
+      "optional": true
+    },
     "contentful-util": {
       "optional": true
     },
@@ -109,7 +115,13 @@
     "fuse.js": {
       "optional": true
     },
+    "nodemailer": {
+      "optional": true
+    },
     "nuxt": {
+      "optional": true
+    },
+    "puppeteer-core": {
       "optional": true
     },
     "vue": {
@@ -120,13 +132,16 @@
     "@graphcms/rich-text-html-renderer": "^0.2.0",
     "@vitejs/plugin-vue": "^3.1.2",
     "@vue/test-utils": "^2.1.0",
+    "chrome-aws-lambda": "^10.1.0",
     "contentful-util": "^1.1.0",
     "date-fns": "^2.29.3",
     "fuse.js": "^6.6.2",
     "happy-dom": "^7.5.10",
     "lodash-es": "^4.17.21",
+    "nodemailer": "^6.8.0",
     "nuxt": "^3.0.0-rc.11",
     "pinia": "^2.0.23",
+    "puppeteer-core": "^10.4.0",
     "vitest": "^0.24.3",
     "vue": "^3.2.41"
   }
