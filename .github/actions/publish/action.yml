@@ -16,7 +16,7 @@
 #         with:
 #           token: ${{ secrets.NPM_TOKEN }}
 
-name: 'Bonn: publish'
+name: 'bonn-npm-publish'
 description: 'Publishes your repo as package on npm. Uses the version number in package.json on npm and creates a version tag in the repo.'
 inputs:
   token:

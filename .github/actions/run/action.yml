@@ -10,7 +10,7 @@
 #         with:
 #           script: 'lint'
 
-name: 'Bonn: run'
+name: 'bonn-npm-run'
 description: 'Installs dependencies and runs an npm script in your repo'
 inputs:
   script:

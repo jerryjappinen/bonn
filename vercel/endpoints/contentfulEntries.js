@@ -1,13 +1,13 @@
-import endpoint from '../endpoint'
+import createClient from 'contentful-util/createClient'
+import fetchFlat from 'contentful-util/fetchFlat'
 
-import createClient from '../../util/contentful/createClient'
-import fetch from '../../util/contentful/fetch'
+import endpoint from '../endpoint'
 
 // Wrapper endpoint for fetching contentful entries
 export default (options) => {
   const client = createClient(options)
 
   return endpoint(({ query }) => {
-    return fetch(client, ...(query.queries || [query]))
+    return fetchFlat(client, ...(query.queries || [query]))
   })
 }

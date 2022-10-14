@@ -15,9 +15,9 @@ import merge from 'lodash-es/merge'
 import orderBy from 'lodash-es/orderBy'
 import pickBy from 'lodash-es/pickBy'
 
-import createClient from '../../util/contentful/createClient'
-import fetchContentfulData from '../../util/contentful/fetch'
-import getEntryType from '../../util/contentful/getEntryType'
+import createClient from 'contentful-util/createClient'
+import fetchContentfulData from 'contentful-util/fetchFlat'
+import getEntryType from 'contentful-util/getEntryType'
 
 // Defaults
 const persistConfig = {

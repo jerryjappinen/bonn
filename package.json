@@ -66,7 +66,7 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-nuxt": "^4.0.0",
-    "eslint-plugin-promise": "^6.0.1",
+    "eslint-plugin-promise": "^6.1.0",
     "graphql-request": "^5.0.0",
     "graphql-unwrap": "^1.0.1",
     "gravatar-url": "^4.0.1",
@@ -89,22 +89,18 @@
     "vue3-slider": "^1.8.0"
   },
   "peerDependencies": {
-    "contentful-management": "^10.15.1",
     "date-fns": "^2.29.3",
-    "fetch-deep-contentful-data": "^5.0.1",
+    "contentful-util": "^1.1.0",
     "fuse.js": "^6.6.2",
     "lodash-es": "^4.17.21",
     "nuxt": "^3.0.0-rc.11",
-    "vue": "^3.2.40"
+    "vue": "^3.2.41"
   },
   "peerDependenciesMeta": {
-    "contentful-management": {
+    "contentful-util": {
       "optional": true
     },
     "date-fns": {
-      "optional": true
-    },
-    "fetch-deep-contentful-data": {
       "optional": true
     },
     "fuse.js": {
@@ -120,12 +116,14 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^3.1.2",
     "@vue/test-utils": "^2.1.0",
+    "contentful-util": "^1.1.0",
     "date-fns": "^2.29.3",
-    "happy-dom": "^7.4.0",
+    "fuse.js": "^6.6.2",
+    "happy-dom": "^7.5.10",
     "lodash-es": "^4.17.21",
     "nuxt": "^3.0.0-rc.11",
     "pinia": "^2.0.23",
-    "vitest": "^0.24.0",
-    "vue": "^3.2.40"
+    "vitest": "^0.24.3",
+    "vue": "^3.2.41"
   }
 }
