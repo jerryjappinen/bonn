@@ -1,6 +1,6 @@
 {
   "name": "bonn",
-  "version": "0.2.12",
+  "version": "0.2.13",
   "description": "Utility, style and component library for web development.",
   "private": false,
   "files": [
@@ -55,7 +55,6 @@
   },
   "dependencies": {
     "@averjs/nuxt-compression": "^1.2.2",
-    "@graphcms/rich-text-html-renderer": "^0.2.0",
     "@nuxtjs/eslint-config-typescript": "^11.0.0",
     "@nuxtjs/sitemap": "^2.4.0",
     "@pinia/nuxt": "^0.4.3",
@@ -89,14 +88,18 @@
     "vue3-slider": "^1.8.0"
   },
   "peerDependencies": {
-    "date-fns": "^2.29.3",
+    "@graphcms/rich-text-html-renderer": "^0.2.0",
     "contentful-util": "^1.1.0",
+    "date-fns": "^2.29.3",
     "fuse.js": "^6.6.2",
     "lodash-es": "^4.17.21",
     "nuxt": "^3.0.0-rc.11",
     "vue": "^3.2.41"
   },
   "peerDependenciesMeta": {
+    "@graphcms/rich-text-html-renderer": {
+      "optional": true
+    },
     "contentful-util": {
       "optional": true
     },
@@ -114,6 +117,7 @@
     }
   },
   "devDependencies": {
+    "@graphcms/rich-text-html-renderer": "^0.2.0",
     "@vitejs/plugin-vue": "^3.1.2",
     "@vue/test-utils": "^2.1.0",
     "contentful-util": "^1.1.0",
