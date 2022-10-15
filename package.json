@@ -31,7 +31,7 @@
     "build:composables": "babel composables --out-dir dist/composables",
     "build:util": "babel util --out-dir dist/util",
     "build:vercel": "babel vercel --out-dir dist/vercel",
-    "lint": "eslint --ignore-path .gitignore \"**/*.{js,ts,vue}\"",
+    "lint": "eslint --ignore-path .gitignore \"**/*.{js,cjs,mjs,ts,vue}\"",
     "lint:fix": "npm run lint -- --fix",
     "prepublishOnly": "npm run build",
     "dev": "vitest",
