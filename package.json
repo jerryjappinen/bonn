@@ -26,8 +26,11 @@
   },
   "license": "MIT",
   "scripts": {
-    "build": "npm run build:scss",
+    "build": "npm run build:scss && npm run build:composables && npm run build:util && npm run build:vercel",
     "build:scss": "sass spec/scss/index.spec.scss dist/css/index.css && sass spec/scss/index.spec.scss dist/css/index.min.css --style=compressed",
+    "build:composables": "babel composables --out-dir dist/composables",
+    "build:util": "babel util --out-dir dist/util",
+    "build:vercel": "babel vercel --out-dir dist/vercel",
     "lint": "eslint --ignore-path .gitignore \"**/*.{js,ts,vue}\"",
     "lint:fix": "npm run lint -- --fix",
     "prepublishOnly": "npm run build",
@@ -129,6 +132,10 @@
     }
   },
   "devDependencies": {
+    "@babel/cli": "^7.19.3",
+    "@babel/core": "^7.19.3",
+    "@babel/node": "^7.19.1",
+    "@babel/preset-env": "^7.19.4",
     "@graphcms/rich-text-html-renderer": "^0.2.0",
     "@vitejs/plugin-vue": "^3.1.2",
     "@vue/test-utils": "^2.1.0",
