@@ -1,5 +1,5 @@
-import createClient from 'contentful-util/createClient'
-import fetchFlat from 'contentful-util/fetchFlat'
+import createClient from 'contentful-util/src/createClient'
+import fetchFlat from 'contentful-util/src/fetchFlat'
 
 import endpoint from '../endpoint'
 

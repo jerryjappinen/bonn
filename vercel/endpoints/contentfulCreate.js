@@ -1,5 +1,5 @@
-import getEnvironmentToManage from 'contentful-util/getEnvironmentToManage'
-import createEntry from 'contentful-util/createEntry'
+import getEnvironmentToManage from 'contentful-util/src/getEnvironmentToManage'
+import createEntry from 'contentful-util/src/createEntry'
 
 import endpoint from '../endpoint'
 
