@@ -13,7 +13,7 @@ export default (options) => {
   // Include library components in the compilation
   const modules = []
   const transpile = [
-    'bonn',
+    // 'bonn',
     'lodash-es',
     ...(opts.transpile || [])
   ]
