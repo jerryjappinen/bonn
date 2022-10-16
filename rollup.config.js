@@ -1,9 +1,12 @@
 import commonjs from '@rollup/plugin-commonjs'
+import copy from 'rollup-plugin-copy'
 import json from '@rollup/plugin-json'
 // import multi from '@rollup/plugin-multi-entry'
 // import { nodeResolve } from '@rollup/plugin-node-resolve'
 
 import files from './files'
+
+const external = []
 
 const plugins = [
   // nodeResolve({
@@ -14,15 +17,11 @@ const plugins = [
   json()
 ]
 
-const external = [
-  // 'window'
-]
-
-const getConfigObject = (fileName) => {
+const getCjsConfig = (fileName) => {
   return {
-    input: `${fileName}`,
-    plugins,
     external,
+    plugins,
+    input: `${fileName}.js`,
     output: {
       // sourcemap: true,
       // dir: 'dist',
@@ -33,9 +32,48 @@ const getConfigObject = (fileName) => {
       exports: 'auto', // auto, default, named
       // preserveModules: true
 
-      file: `dist/${fileName}.js`
+      file: `dist/${fileName}.cjs`
     }
   }
 }
 
-export default files.map(getConfigObject)
+// https://www.npmjs.com/package/rollup-plugin-copy
+const getCopyDirConfig = (dir) => {
+  return {
+    src: `${dir}/**/*`,
+    dest: `dist/${dir}`,
+    flatten: false
+  }
+}
+
+const getCopyFileConfig = (fileName) => {
+  return {
+    src: `${fileName}`,
+    dest: 'dist/',
+    flatten: false
+  }
+}
+
+export default [
+  ...files.cjs.map(getCjsConfig),
+
+  {
+    // Have to output something for plugin to be run
+    input: './files.js',
+    output: {
+      format: 'cjs',
+      exports: 'auto',
+      file: 'dist/files.cjs'
+    },
+
+    // Copying happens here
+    plugins: [
+      copy({
+        targets: [
+          ...files.copyDirs.map(getCopyDirConfig),
+          ...files.copyFiles.map(getCopyFileConfig)
+        ]
+      })
+    ]
+  }
+]

@@ -4,10 +4,8 @@
   "description": "Utility, style and component library for web development.",
   "private": false,
   "files": [
-    "dist/*",
     "components/*",
     "experimentalComponents/*",
-    "styledComponents/*",
     "composables/*",
     "icons/*",
     "eslint/*",
@@ -17,16 +15,21 @@
     "stores/*",
     "util/*",
     "vercel/*",
+    "dist/*",
     "README.md",
     ".editorconfig",
     ".nvmrc"
   ],
+  "exports": {
+    "./composables/*": "./dist/composables/*.cjs",
+    "./composables/*.js": "./dist/composables/*.cjs"
+  },
   "engines": {
     "node": "16.x"
   },
   "license": "MIT",
   "scripts": {
-    "r": "rollup -c",
+    "clean": "rm -rf dist",
     "build": "npm run build:scss && npm run build:js",
     "build:js": "rollup -c",
     "build:scss": "sass spec/scss/index.spec.scss dist/css/index.css && sass spec/scss/index.spec.scss dist/css/index.min.css --style=compressed",
@@ -149,6 +152,7 @@
     "pinia": "^2.0.23",
     "puppeteer-core": "^10.4.0",
     "rollup": "^2.79.1",
+    "rollup-plugin-copy": "^3.4.0",
     "vitest": "^0.24.3",
     "vue": "^3.2.41"
   }
