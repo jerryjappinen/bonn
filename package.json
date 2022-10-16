@@ -1,49 +1,14 @@
 {
   "name": "bonn",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "description": "Utility, style and component library for web development.",
   "private": false,
   "files": [
-    "dist/*"
+    "dist/*",
+    "README.md"
   ],
   "exports": {
-    "./src/*": "./*",
-    "./.github/*": "./dist/.github/*.yml",
-    "./.github/*.yml": "./dist/composables/*.yml",
-    "./components/*": "./dist/components/*.vue",
-    "./components/*.vue": "./dist/components/*.vue",
-    "./composables/*": "./dist/composables/*.cjs",
-    "./composables/*.js": "./dist/composables/*.cjs",
-    "./css/*": "./dist/css/*.css",
-    "./css/*.css": "./dist/css/*.css",
-    "./eslint": "./dist/eslint/index.cjs",
-    "./eslint.js": "./dist/eslint/index.cjs",
-    "./eslint/*": "./dist/eslint/*.cjs",
-    "./eslint/*.js": "./dist/eslint/*.cjs",
-    "./experimentalComponents/*": "./dist/experimentalComponents/*.vue",
-    "./experimentalComponents/*.vue": "./dist/experimentalComponents/*.vue",
-    "./icons/*": "./dist/icons/*.svg",
-    "./icons/*.svg": "./dist/icons/*.svg",
-    "./nuxt": "./dist/nuxt/index.cjs",
-    "./nuxt.js": "./dist/nuxt/index.cjs",
-    "./nuxt/*": "./dist/nuxt/*.cjs",
-    "./nuxt/*.js": "./dist/nuxt/*.cjs",
-    "./prettier": "./dist/prettier/index.cjs",
-    "./prettier.js": "./dist/prettier/index.cjs",
-    "./prettier/*": "./dist/prettier/*.cjs",
-    "./prettier/*.js": "./dist/prettier/*.cjs",
-    "./scss/*": "./dist/scss/*.scss",
-    "./scss/*.scss": "./dist/scss/*.scss",
-    "./stores/*": "./dist/stores/*.cjs",
-    "./stores/*.js": "./dist/stores/*.cjs",
-    "./util/*": "./dist/util/*.cjs",
-    "./util/*.js": "./dist/util/*.cjs",
-    "./vercel/*": "./dist/vercel/*.cjs",
-    "./vercel/*.js": "./dist/vercel/*.cjs",
-    "./.editorconfig": "./dist/.editorconfig",
-    "./.nvmrc": "./dist/.nvmrc",
-    "./README": "./dist/README.md",
-    "./README.md": "./dist/README.md"
+    "./*": "./dist/*"
   },
   "engines": {
     "node": "16.x"

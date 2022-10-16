@@ -29,7 +29,7 @@ const getCjsConfig = (fileName) => {
       // name: 'app',
 
       // Keep directory structure and files
-      exports: 'auto', // auto, default, named
+      exports: 'named', // auto, default, named
       // preserveModules: true
 
       file: `dist/${fileName}.cjs`
@@ -62,7 +62,7 @@ export default [
     input: './files.js',
     output: {
       format: 'cjs',
-      exports: 'auto',
+      exports: 'named',
       file: 'dist/files.cjs'
     },
 
