@@ -6,10 +6,12 @@ export default {
   ],
 
   copyDirs: [
+    '.github',
     'components',
     'experimentalComponents',
     'eslint',
     'icons',
+    'scss',
     'prettier'
   ],
 
