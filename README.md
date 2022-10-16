@@ -27,7 +27,7 @@ You might need additional peer dependencies depending on the type of project and
 
 
 
-#### Nuxt
+### Nuxt
 
 Use the `nuxt.config` helpers to load Bonn's Nuxt module and other relevant configurations:
 
@@ -58,7 +58,7 @@ This will output the desired config for you. See the relevant docs for more deta
 
 ## Usage
 
-#### `.js` utilities
+### `.js` utilities
 
 ```js
 import formatFileSize from 'bonn/util/formatFileSize'
@@ -68,17 +68,7 @@ formatFileSize(19238028)
 
 
 
-#### `.scss` mixins and styles
-
-```js
-import formatFileSize from 'bonn/util/formatFileSize'
-
-formatFileSize(19238028)
-```
-
-
-
-#### `.vue` components
+### `.vue` components
 
 `components/` are NOT built during install. You must transpile them yourself in your project.
 
@@ -102,7 +92,7 @@ Note that when using `<script setup>`, you don't have to export the components. 
 
 
 
-#### Vue composables
+### Vue composables
 
 ```js
 import useIsMounted from 'bonn/composables/useIsMounted'
@@ -120,7 +110,7 @@ export default {
 
 
 
-#### Pinia `stores/`
+### Pinia `stores/`
 
 ```js
 import useDevice from 'bonn/stores/device'
@@ -130,7 +120,7 @@ const device = useDevice()
 
 
 
-#### `nuxt.config` helpers
+### `nuxt.config` helpers
 
 ```js
 import { mergeConfigs, dev, assets, scss, svg } from 'bonn/nuxt/config'
@@ -151,7 +141,7 @@ export default defineNuxtConfig(mergeConfigs(
 ```
 
 
-#### `.svg` icons
+### `.svg` icons
 
 Auto imported in a Nuxt project:
 
@@ -172,4 +162,69 @@ To completely replace the default icon set, provide the following icons:
 ```
 Check.svg
 ChevronDown.svg
+```
+
+
+
+### `.scss` mixins and styles
+
+`scss/` contains useful, generic mixins and functions for developing web sites and apps. It is designed to be compatible with `components/`, but can be used independently.
+
+```js
+import formatFileSize from 'bonn/util/formatFileSize'
+
+formatFileSize(19238028)
+```
+
+In your SCSS code, import everything:
+
+```scss
+@import 'bonn/scss';
+```
+
+Basic customisation:
+
+```scss
+@import 'bonn/scss/shared';
+
+@import './my-variables';   // Override default SCSS variables here
+
+@import 'bonn/scss/global'; // CSS variables, normalisation and defaults
+@import 'bonn/scss/util';   // Optional
+```
+
+Advanced customisation:
+
+```scss
+// shared.scss
+@import 'bonn/scss/variables-scss';
+@import 'bonn/scss/functions';
+@import 'bonn/scss/mixins';
+
+// Custom SCSS variables
+@import './my-variables';
+
+// Normalizations and defaults (these output CSS)
+@import 'bonn/scss/variables';
+@import 'bonn/scss/normalize';
+@import 'bonn/scss/defaults';
+@import 'bonn/scss/util';
+```
+
+You can optimise your build even further by including only some defaults and utilities:
+
+```scss
+@import 'bonn/scss/defaults/body';
+@import 'bonn/scss/defaults/forms';
+@import 'bonn/scss/defaults/tables';
+
+@import 'bonn/scss/util/bodytext';
+```
+
+Import from a JavaScript file:
+
+```js
+import 'bonn/scss/shared';
+import 'bonn/scss/global';
+import 'bonn/scss/util';
 ```
