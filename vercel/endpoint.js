@@ -1,6 +1,6 @@
 import isFunction from 'lodash-es/isFunction'
 
-import parseQuery from '../parseQuery'
+import parseQuery from './parseQuery'
 
 export default (optionsInput) => {
   // Parse endpoint options

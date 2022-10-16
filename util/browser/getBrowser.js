@@ -1,7 +1,8 @@
 import chrome from 'chrome-aws-lambda'
 
-import { launch } from 'puppeteer-core'
-// import puppeteer from 'puppeteer-core'
+// eslint-disable-next-line import/default
+import puppeteer from 'puppeteer-core'
+// import { launch } from 'puppeteer-core'
 
 import isDev from '../isDev'
 
@@ -16,8 +17,10 @@ const devOptions = {
 }
 
 export default async () => {
-  // const browser = await puppeteer.launch(
-  const browser = await launch(
+  // const browser = await launch(
+
+  // eslint-disable-next-line import/no-named-as-default-member
+  const browser = await puppeteer.launch(
     isDev
       ? devOptions
       : {

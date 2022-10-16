@@ -1,6 +1,7 @@
 <script setup>
 import { computed, unref } from 'vue'
 
+// https://github.com/hygraph/rich-text
 import { astToHtmlString } from '@graphcms/rich-text-html-renderer'
 
 const props = defineProps({

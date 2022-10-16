@@ -1,10 +1,10 @@
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 
-import gamepadIsSupported from '../..//gamepadIsSupported'
-import getGamepads from '../..//getGamepads'
+import gamepadIsSupported from '../util/gamepadIsSupported'
+import getGamepads from '../util/getGamepads'
 
-import getInputData from './getInputData'
-import getInputDataPlaceholder from './getInputDataPlaceholder'
+import getInputData from './useGamepad/getInputData'
+import getInputDataPlaceholder from './useGamepad/getInputDataPlaceholder'
 
 const defaultDeadZone = 0.15
 
