@@ -9,6 +9,7 @@ export default {
     'components',
     'experimentalComponents',
     'eslint',
+    'icons',
     'prettier'
   ],
 
@@ -24,6 +25,34 @@ export default {
     'composables/useSearch',
     'composables/useTime',
     'composables/useViewport',
+
+    'nuxt/config/bonn/getDevAliases',
+    'nuxt/config/bonn/index',
+
+    'nuxt/config/assets',
+    'nuxt/config/compression',
+    'nuxt/config/css',
+    'nuxt/config/dev',
+    'nuxt/config/googleFonts',
+    'nuxt/config/graphql',
+    'nuxt/config/markdown',
+    'nuxt/config/mergeConfigs',
+    'nuxt/config/meta',
+    'nuxt/config/noComponentPrefixing',
+    'nuxt/config/pinia',
+    'nuxt/config/prod',
+    'nuxt/config/pwa',
+    'nuxt/config/scripts',
+    'nuxt/config/scss',
+    'nuxt/config/sitemap',
+    'nuxt/config/svg',
+    'nuxt/config/transpile',
+    'nuxt/config/viewport',
+    'nuxt/config/webfonts',
+
+    'nuxt/plugins/piniaPersist',
+
+    'nuxt/index',
 
     'stores/setup/contentful',
     'stores/setup/device',

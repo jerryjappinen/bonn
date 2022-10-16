@@ -12,7 +12,7 @@ import dev from '../../nuxt/config/dev'
 import googleFonts from '../../nuxt/config/googleFonts'
 import markdown from '../../nuxt/config/markdown'
 import meta from '../../nuxt/config/meta'
-import noComponentDirectoryPrefixes from '../../nuxt/config/noComponentDirectoryPrefixes'
+import noComponentPrefixing from '../../nuxt/config/noComponentPrefixing'
 import pinia from '../../nuxt/config/pinia'
 import prod from '../../nuxt/config/prod'
 import scripts from '../../nuxt/config/scripts'
@@ -34,7 +34,7 @@ const helpers = {
   googleFonts,
   markdown,
   meta,
-  noComponentDirectoryPrefixes,
+  noComponentPrefixing,
   pinia,
   scripts,
   scss,
