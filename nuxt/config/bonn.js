@@ -1,6 +1,6 @@
-import isDev from '../../../util/isDev'
+import isDev from '../../util/isDev'
 
-import getDevAliases from './getDevAliases'
+import getDevAliases from './bonn/getDevAliases'
 
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default (options) => {

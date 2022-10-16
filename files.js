@@ -29,9 +29,10 @@ export default {
     'composables/useViewport',
 
     'nuxt/config/bonn/getDevAliases',
-    'nuxt/config/bonn/index',
+    'nuxt/config/svg/svgoConfig',
 
     'nuxt/config/assets',
+    'nuxt/config/bonn',
     'nuxt/config/compression',
     'nuxt/config/css',
     'nuxt/config/dev',
