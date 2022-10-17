@@ -6,6 +6,7 @@ coverage
 sw.*
 
 # npm publish will create these folders in the package
+/css
 /components
 /composables
 /eslint
@@ -16,4 +17,5 @@ sw.*
 /scss
 /stores
 /util
+/vercel
 /__files.cjs
