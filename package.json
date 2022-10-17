@@ -27,7 +27,7 @@
   "scripts": {
     "clean": "rm -rf css dist",
     "build": "npm run build:scss",
-    "build:scss": "sass spec/scss/index.spec.scss css/index.css && sass spec/scss/index.spec.scss css/index.min.css --style=compressed",
+    "build:scss": "sass scss/index.scss css/index.css && sass scss/index.scss css/index.min.css --style=compressed",
     "lint": "eslint --ignore-path .gitignore \"**/*.{js,cjs,mjs,ts,vue}\"",
     "lint:fix": "npm run lint -- --fix",
     "prepublishOnly": "npm run build",
