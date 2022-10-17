@@ -1,5 +1,5 @@
 <script setup>
-import toPlainText from '../src/util/toPlainText'
+import toPlainText from '../util/toPlainText'
 
 defineProps({
 

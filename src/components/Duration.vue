@@ -2,8 +2,8 @@
 import { differenceInCalendarDays } from 'date-fns'
 import { computed, unref } from 'vue'
 
-import formatDate from '../src/util/formatDate'
-import normalizeDate from '../src/util/normalizeDate'
+import formatDate from '../util/formatDate'
+import normalizeDate from '../util/normalizeDate'
 
 // NOTE: this element might print an empty <span />
 // This is intentional:

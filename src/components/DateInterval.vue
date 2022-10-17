@@ -1,9 +1,9 @@
 <script>
 import { isDate } from 'date-fns'
 
-import formatDate from '../src/util/formatDate'
-import formatDateInterval from '../src/util/formatDateInterval'
-import formatMachineReadableDate from '../src/util/formatMachineReadableDate'
+import formatDate from '../util/formatDate'
+import formatDateInterval from '../util/formatDateInterval'
+import formatMachineReadableDate from '../util/formatMachineReadableDate'
 
 export default {
 

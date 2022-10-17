@@ -1,7 +1,7 @@
 <script setup>
 import { computed, unref } from 'vue'
 
-import isAbsoluteUrl from '../src/util/isAbsoluteUrl'
+import isAbsoluteUrl from '../util/isAbsoluteUrl'
 
 const props = defineProps({
 

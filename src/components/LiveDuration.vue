@@ -1,5 +1,5 @@
 <script setup>
-import useTime from '../src/composables/useTime'
+import useTime from '../composables/useTime'
 
 import Duration from './Duration.vue'
 
