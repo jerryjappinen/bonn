@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 
-import toPlainText from '../../src/util/toPlainText'
+import toPlainText from '../../util/toPlainText'
 
 describe.concurrent('toPlainText', () => {
   it('Removes inline HTML', () => {

@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 
-import getRandomNumberGenerator from '../../src/util/getRandomNumberGenerator'
+import getRandomNumberGenerator from '../../util/getRandomNumberGenerator'
 
 describe.concurrent('getRandomNumberGenerator', () => {
   it('should give random output on undefined', () => {

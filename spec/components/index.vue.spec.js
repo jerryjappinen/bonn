@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest'
+import { ref } from 'vue'
 import { mount } from '@vue/test-utils'
 
 import AppStoreBadge from '../../components/AppStoreBadge.vue'
@@ -98,7 +99,7 @@ const tests = {
   ProductHuntLink: [ProductHuntLink, { postId: 'foobar', postSlug: 'foobar' }],
 
   ProgressBar,
-  Set,
+  Set: [Set, { modelValue: ref('foo'), to: 'bar' }],
   SlowFade,
   Spacer,
   Spinner,

@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest'
 
-import forEachAsync from '../../src/util/forEachAsync'
-import wait from '../../src/util/wait'
+import forEachAsync from '../../util/forEachAsync'
+import wait from '../../util/wait'
 
 describe.concurrent('forEachAsync', () => {
   it('should wait all asynchronously', async () => {

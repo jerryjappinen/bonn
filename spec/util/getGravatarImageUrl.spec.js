@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 
-import getGravatarImageUrl from '../../src/util/getGravatarImageUrl'
+import getGravatarImageUrl from '../../util/getGravatarImageUrl'
 
 describe.concurrent('getGravatarImageUrl', () => {
   const email = 'sindresorhus@gmail.com'

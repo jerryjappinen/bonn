@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest'
 
-import isDev from '../../src/util/isDev'
-import isTest from '../../src/util/isTest'
+import isDev from '../../util/isDev'
+import isTest from '../../util/isTest'
 
 describe.concurrent('isDev', () => {
   it('should be true in test env', () => {

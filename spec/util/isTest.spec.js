@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 
-import isTest from '../../src/util/isTest'
+import isTest from '../../util/isTest'
 
 describe.concurrent('isTest', () => {
   it('should work', () => {

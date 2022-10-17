@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 
-import removePrefix from '../../src/util/removePrefix'
+import removePrefix from '../../util/removePrefix'
 
 describe.concurrent('removePrefix', () => {
   it('should remove', () => {

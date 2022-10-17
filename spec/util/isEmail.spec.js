@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 
-import isEmail from '../../src/util/isEmail'
+import isEmail from '../../util/isEmail'
 
 describe.concurrent('isEmail', () => {
   it('Fails with short TLD', () => {

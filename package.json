@@ -5,7 +5,19 @@
   "private": false,
   "files": [
     ".github/*",
-    "src/*",
+    "css/",
+    "components/",
+    "composables/",
+    "eslint/",
+    "experimentalComponents/",
+    "icons/",
+    "nuxt/",
+    "prettier/",
+    "scss/",
+    "stores/",
+    "util/",
+    "vercel/",
+    "dist/",
     "README.md"
   ],
   "engines": {
@@ -13,7 +25,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "clean": "rm -rf css components composables eslint experimentalComponents icons nuxt prettier scss stores util vercel",
+    "clean": "rm -rf dist",
     "build": "npm run build:scss && npm run build:js",
     "build:js": "rollup -c",
     "build:scss": "sass spec/scss/index.spec.scss css/index.css && sass spec/scss/index.spec.scss css/index.min.css --style=compressed",
@@ -119,10 +131,6 @@
   },
   "devDependencies": {
     "@graphcms/rich-text-html-renderer": "^0.2.0",
-    "@rollup/plugin-commonjs": "^23.0.0",
-    "@rollup/plugin-json": "^5.0.0",
-    "@rollup/plugin-multi-entry": "^5.0.0",
-    "@rollup/plugin-node-resolve": "^15.0.0",
     "@vitejs/plugin-vue": "^3.1.2",
     "@vue/test-utils": "^2.1.0",
     "chrome-aws-lambda": "^10.1.0",
@@ -135,9 +143,8 @@
     "nuxt": "^3.0.0-rc.11",
     "pinia": "^2.0.23",
     "puppeteer-core": "^10.4.0",
-    "rollup": "^2.79.1",
-    "rollup-plugin-copy": "^3.4.0",
-    "rollup-plugin-vue": "^6.0.0",
+    "vite": "^3.1.8",
+    "vite-plugin-static-copy": "^0.9.0",
     "vitest": "^0.24.3",
     "vue": "^3.2.41"
   }

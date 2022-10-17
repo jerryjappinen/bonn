@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 
-import trimNewLines from '../../src/util/trimNewLines'
+import trimNewLines from '../../util/trimNewLines'
 
 // Test cases
 // These will be tested at the start, end and in the middle of the string

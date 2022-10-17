@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 
-import getCurrentTimestamp from '../../src/util/getCurrentTimestamp'
+import getCurrentTimestamp from '../../util/getCurrentTimestamp'
 
 // Returns something like 2019-04-23T13:54:28.715Z
 describe.concurrent('getCurrentTimestamp', () => {

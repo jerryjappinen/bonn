@@ -4,18 +4,3 @@ dist
 .npm
 coverage
 sw.*
-
-# npm publish will create these folders in the package
-/css
-/components
-/composables
-/eslint
-/experimentalComponents
-/icons
-/nuxt
-/prettier
-/scss
-/stores
-/util
-/vercel
-/__files.cjs

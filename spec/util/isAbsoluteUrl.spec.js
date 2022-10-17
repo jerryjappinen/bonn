@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 
-import isAbsoluteUrl from '../../src/util/isAbsoluteUrl'
+import isAbsoluteUrl from '../../util/isAbsoluteUrl'
 
 // Test cases
 // These will be tested at the start, end and in the middle of the string

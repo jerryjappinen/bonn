@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 
-import nowIso from '../../src/util/nowIso'
+import nowIso from '../../util/nowIso'
 
 describe.concurrent('nowIso', () => {
   it('should be date', () => {

@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest'
 
-import tryPromises from '../../src/util/tryPromises'
-import wait from '../../src/util/wait'
+import tryPromises from '../../util/tryPromises'
+import wait from '../../util/wait'
 
 const failingCallback = async () => {
   await wait(1)

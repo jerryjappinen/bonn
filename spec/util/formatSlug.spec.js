@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 
-import formatSlug from '../../src/util/formatSlug'
+import formatSlug from '../../util/formatSlug'
 
 describe.concurrent('formatSlug', () => {
   it('should slice to 64 chars', () => {

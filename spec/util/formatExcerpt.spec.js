@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 
-import formatExcerpt from '../../src/util/formatExcerpt'
+import formatExcerpt from '../../util/formatExcerpt'
 
 describe.concurrent('formatExcerpt', () => {
   it('Leaves short string untouched', () => {

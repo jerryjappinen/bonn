@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 
-import isValidDate from '../../src/util/isValidDate'
+import isValidDate from '../../util/isValidDate'
 
 describe.concurrent('isValidDate', () => {
   it('Fails with invalid date', () => {

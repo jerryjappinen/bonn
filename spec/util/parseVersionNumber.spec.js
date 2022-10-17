@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest'
 
 import isArray from 'lodash-es/isArray'
 
-import parseVersionNumber from '../../src/util/parseVersionNumber'
+import parseVersionNumber from '../../util/parseVersionNumber'
 
 describe.concurrent('parseVersionNumber', () => {
   it('should return array', () => {

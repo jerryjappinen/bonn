@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 
-import formatInitials from '../../src/util/formatInitials'
+import formatInitials from '../../util/formatInitials'
 
 // Returns something like 2019-04-23T13:54:28.715Z
 describe.concurrent('formatInitials', () => {

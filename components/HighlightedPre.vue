@@ -1,4 +1,6 @@
 <script setup>
+import HighlightedCode from './HighlightedCode.vue'
+
 defineProps({
   // eslint-disable-next-line vue/require-default-prop, vue/require-prop-types
   code: {},
