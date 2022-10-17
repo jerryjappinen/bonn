@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 
-import getUserAgentValue from '../../util/getUserAgentValue'
+import getUserAgentValue from '../../src/util/getUserAgentValue'
 
 describe.concurrent('getUserAgentValue', () => {
   const ua = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.456.789 Safari/537.36'

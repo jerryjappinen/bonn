@@ -3,7 +3,7 @@ import { describe, it, expect } from 'vitest'
 import isDate from 'lodash-es/isDate'
 import isNaN from 'lodash-es/isNaN'
 
-import normalizeDate from '../../util/normalizeDate'
+import normalizeDate from '../../src/util/normalizeDate'
 
 const isValidDate = (value) => {
   return !!(isDate(value) && value.getTime && !isNaN(value.getTime()))

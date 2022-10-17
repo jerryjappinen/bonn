@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 
-import transpile from '../../../nuxt/config/transpile'
+import transpile from '../../../src/nuxt/config/transpile'
 
 describe.concurrent('transpile config helper', () => {
   it('should add one arg', () => {

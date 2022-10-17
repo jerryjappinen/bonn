@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 
-import isSuffixed from '../../util/isSuffixed'
+import isSuffixed from '../../src/util/isSuffixed'
 
 describe.concurrent('isSuffixed', () => {
   it('should detect', () => {

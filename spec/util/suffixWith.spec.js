@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 
-import suffixWith from '../../util/suffixWith'
+import suffixWith from '../../src/util/suffixWith'
 
 describe.concurrent('suffixWith', () => {
   it('should add suffix', () => {

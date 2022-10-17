@@ -1,7 +1,7 @@
 <script setup>
-import eventHasAnyMetaKey from '../util/eventHasAnyMetaKey'
-import linkIsInternal from '../util/linkIsInternal'
-import nextTick from '../util/nextTick'
+import eventHasAnyMetaKey from '../src/util/eventHasAnyMetaKey'
+import linkIsInternal from '../src/util/linkIsInternal'
+import nextTick from '../src/util/nextTick'
 
 defineProps({
 

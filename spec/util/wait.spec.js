@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 
-import wait from '../../util/wait'
+import wait from '../../src/util/wait'
 
 describe.concurrent('Util wait', () => {
   it('should wait for seconds', async () => {

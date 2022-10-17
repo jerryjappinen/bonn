@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 
-import toDecimal from '../../util/toDecimal'
+import toDecimal from '../../src/util/toDecimal'
 
 describe.concurrent('toDecimal', () => {
   it('works with integers', () => {

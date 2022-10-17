@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 
-import getDomain from '../../util/getDomain'
+import getDomain from '../../src/util/getDomain'
 
 describe.concurrent('getDomain', () => {
   const params = '?foo=bar&bar=foo'

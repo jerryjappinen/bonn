@@ -1,9 +1,5 @@
 export default {
-  copyFiles: [
-    'README.md',
-    '.editorconfig',
-    '.nvmrc'
-  ],
+  copyFiles: [],
 
   copyDirs: [
     '.github',

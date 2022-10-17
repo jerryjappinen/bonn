@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 
-import trimAny from '../../util/trimAny'
+import trimAny from '../../src/util/trimAny'
 
 describe.concurrent('trimAny', () => {
   it('should trim whitespace by default', () => {

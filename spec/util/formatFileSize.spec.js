@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 
-import formatFileSize from '../../util/formatFileSize'
+import formatFileSize from '../../src/util/formatFileSize'
 
 describe.concurrent('formatFileSize', () => {
   it('should be 0 kB in empty', () => {

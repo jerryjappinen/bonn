@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 
-import isPrefixed from '../../util/isPrefixed'
+import isPrefixed from '../../src/util/isPrefixed'
 
 describe.concurrent('isPrefixed', () => {
   it('should detect', () => {

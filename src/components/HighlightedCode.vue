@@ -12,7 +12,7 @@ import Prism from 'prism-es6/prism.js'
 // import 'prism-es6/components/prism-python'
 // import 'prism-es6/components/prism-yaml'
 
-import toJson from '../util/toJson'
+import toJson from '../src/util/toJson'
 
 const props = defineProps({
 

@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 
-import mergeConfigs from '../../../nuxt/config/mergeConfigs'
+import mergeConfigs from '../../../src/nuxt/config/mergeConfigs'
 
 describe.concurrent('mergeConfigs', () => {
   it('should return object with no args', () => {

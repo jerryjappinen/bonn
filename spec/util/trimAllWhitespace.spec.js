@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 
-import trimAllWhitespace from '../../util/trimAllWhitespace'
+import trimAllWhitespace from '../../src/util/trimAllWhitespace'
 
 // Test cases
 // These will be tested at the start, end and in the middle of the string

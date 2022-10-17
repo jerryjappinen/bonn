@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 
-import removeSuffix from '../../util/removeSuffix'
+import removeSuffix from '../../src/util/removeSuffix'
 
 describe.concurrent('removeSuffix', () => {
   it('should remove', () => {

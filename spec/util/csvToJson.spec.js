@@ -3,7 +3,7 @@ import { describe, it, expect } from 'vitest'
 import isArray from 'lodash-es/isArray'
 import isPlainObject from 'lodash-es/isPlainObject'
 
-import csvToJson from '../../util/csvToJson'
+import csvToJson from '../../src/util/csvToJson'
 
 const testString = `foo,bar,blah
 row2,row2,row2`

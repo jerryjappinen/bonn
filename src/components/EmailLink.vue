@@ -1,7 +1,7 @@
 <script setup>
 import { computed } from 'vue'
 
-import replaceAll from '../util/replaceAll'
+import replaceAll from '../src/util/replaceAll'
 
 const props = defineProps({
 
