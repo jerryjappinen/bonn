@@ -9,7 +9,6 @@ export default (optionsInput) => {
   } = (optionsInput || {})
 
   const linkTags = []
-  const metaTags = []
 
   // Icons
   if (favicon) {
@@ -60,8 +59,7 @@ export default (optionsInput) => {
   // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config#meta
   return {
     meta: {
-      link: linkTags,
-      meta: metaTags
+      link: linkTags
     }
   }
 }
