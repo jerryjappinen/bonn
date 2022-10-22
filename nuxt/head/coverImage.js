@@ -6,51 +6,48 @@ export default (optionsInput) => {
     path
   } = (optionsInput || {})
 
-  if (coverImage) {
-    const coverImagePath = (baseUrl || '') + '/' + (path || 'cover-image.png')
+  const head = {
+    meta: []
+  }
 
-    // Twitter cards
-    metaTags.push({
-      hid: 'twitter:card',
-      name: 'twitter:card',
-      content: 'summary_large_image'
+  const coverImagePath = (baseUrl || '') + '/' + (path || 'cover-image.png')
+
+  // Twitter cards
+  head.meta.push({
+    hid: 'twitter:card',
+    name: 'twitter:card',
+    content: 'summary_large_image'
+  })
+
+  head.meta.push({
+    hid: 'twitter:image',
+    name: 'twitter:image',
+    content: coverImagePath
+  })
+
+  // Facebook (OpenGraph)
+  head.meta.push({
+    hid: 'og:image',
+    property: 'og:image',
+    content: coverImagePath
+  })
+
+  // Title is done with separate tags
+  if (title) {
+    head.meta.push({
+      hid: 'twitter:image:alt',
+      property: 'twitter:image:alt',
+      content: title
     })
 
-    metaTags.push({
-      hid: 'twitter:image',
-      name: 'twitter:image',
-      content: coverImagePath
+    head.meta.push({
+      hid: 'og:image:alt',
+      property: 'og:image:alt',
+      content: title
     })
-
-    // Facebook (OpenGraph)
-    metaTags.push({
-      hid: 'og:image',
-      property: 'og:image',
-      content: coverImagePath
-    })
-
-    // Title is done with separate tags
-    if (title) {
-      metaTags.push({
-        hid: 'twitter:image:alt',
-        property: 'twitter:image:alt',
-        content: title
-      })
-
-      metaTags.push({
-        hid: 'og:image:alt',
-        property: 'og:image:alt',
-        content: title
-      })
-    }
   }
 
   // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config#meta
   // https://v3.nuxtjs.org/api/composables/use-head/
-  return {
-    meta: {
-      link: linkTags,
-      meta: metaTags
-    }
-  }
+  return head
 }
