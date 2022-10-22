@@ -6,7 +6,7 @@ export default (optionsInput) => {
       link: [
         {
           rel: 'manifest',
-          href: '/' + path || 'manifest.json'
+          href: '/' + (path || 'manifest.json')
         }
       ]
     }
