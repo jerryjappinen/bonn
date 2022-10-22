@@ -5,11 +5,11 @@ import values from 'lodash-es/values'
 
 // import mergeConfigs from '../../../nuxt/config/mergeConfigs'
 
-import assets from '../../nuxt/config/assets'
 import bonn from '../../nuxt/config/bonn'
 import compression from '../../nuxt/config/compression'
 import dev from '../../nuxt/config/dev'
 import googleFonts from '../../nuxt/config/googleFonts'
+import icon from '../../nuxt/config/icon'
 import markdown from '../../nuxt/config/markdown'
 import meta from '../../nuxt/config/meta'
 import noComponentPrefixing from '../../nuxt/config/noComponentPrefixing'
@@ -28,7 +28,7 @@ const conditions = {
 }
 
 const helpers = {
-  assets,
+  icon,
   bonn,
   compression,
   googleFonts,

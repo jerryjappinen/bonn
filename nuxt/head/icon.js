@@ -4,11 +4,13 @@ export default (optionsInput) => {
     faviconIco,
     appleTouchIcon,
     maskIcon,
-    maskIconColor,
-    manifest
+    maskIconColor
   } = (optionsInput || {})
 
-  const linkTags = []
+  // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config#meta
+  const head = {
+    link: []
+  }
 
   // Icons
   if (favicon) {
@@ -17,7 +19,7 @@ export default (optionsInput) => {
       ? 'svg+xml'
       : 'png'
 
-    linkTags.push({
+    head.link.push({
       rel: 'icon',
       type: 'image/' + faviconType,
       href: '/' + faviconPath
@@ -25,14 +27,14 @@ export default (optionsInput) => {
   }
 
   if (faviconIco) {
-    linkTags.push({
+    head.link.push({
       rel: 'alternate icon',
       href: '/' + (faviconIco === true ? 'favicon.ico' : faviconIco)
     })
   }
 
   if (maskIcon) {
-    linkTags.push({
+    head.link.push({
       rel: 'mask-icon',
       type: 'image/svg+xml',
       href: '/' + (maskIcon === true ? 'mask-icon.svg' : maskIcon),
@@ -41,25 +43,11 @@ export default (optionsInput) => {
   }
 
   if (appleTouchIcon) {
-    linkTags.push({
+    head.link.push({
       rel: 'apple-touch-icon',
       href: '/' + (appleTouchIcon === true ? 'apple-touch-icon.png' : appleTouchIcon)
     })
   }
 
-  // Web app manifest
-  // FIXME: we should really generate the JSON file instead of manually configuring it
-  if (manifest) {
-    linkTags.push({
-      rel: 'manifest',
-      href: '/' + (manifest === true ? 'manifest.json' : manifest)
-    })
-  }
-
-  // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config#meta
-  return {
-    meta: {
-      link: linkTags
-    }
-  }
+  return head
 }
