@@ -13,3 +13,7 @@
 @mixin fixed {
   position: fixed;
 }
+
+@mixin z ($z-index) {
+  z-index: $z-index;
+}

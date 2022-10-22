@@ -93,6 +93,9 @@
   @include relative;
   @include absolute;
   @include fixed;
+  @include z(1);
+  @include z(0);
+  @include z(-1);
 
   /*
   *
