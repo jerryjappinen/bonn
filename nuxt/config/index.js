@@ -1,6 +1,7 @@
 export { default as assets } from './assets'
 export { default as bonn } from './bonn'
 export { default as compression } from './compression'
+export { default as coverImage } from './coverImage'
 export { default as css } from './css'
 export { default as dev } from './dev'
 export { default as googleFonts } from './googleFonts'

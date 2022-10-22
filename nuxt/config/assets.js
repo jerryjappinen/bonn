@@ -1,9 +1,5 @@
 export default (optionsInput) => {
   const {
-    longSiteTitle,
-    baseUrl,
-
-    coverImage,
     favicon,
     faviconIco,
     appleTouchIcon,
@@ -50,45 +46,6 @@ export default (optionsInput) => {
       rel: 'apple-touch-icon',
       href: '/' + (appleTouchIcon === true ? 'apple-touch-icon.png' : appleTouchIcon)
     })
-  }
-
-  // Cover image for sharing
-  if (coverImage) {
-    const coverImagePath = coverImage === true ? 'cover-image.png' : coverImage
-
-    // Twitter cards
-    metaTags.push({
-      hid: 'twitter:card',
-      name: 'twitter:card',
-      content: 'summary_large_image'
-    })
-
-    metaTags.push({
-      hid: 'twitter:image',
-      name: 'twitter:image',
-      content: (baseUrl || '') + '/' + coverImagePath
-    })
-
-    // Facebook (OpenGraph)
-    metaTags.push({
-      hid: 'og:image',
-      property: 'og:image',
-      content: (baseUrl || '') + '/' + coverImagePath
-    })
-
-    if (longSiteTitle) {
-      metaTags.push({
-        hid: 'twitter:image:alt',
-        property: 'twitter:image:alt',
-        content: longSiteTitle
-      })
-
-      metaTags.push({
-        hid: 'og:image:alt',
-        property: 'og:image:alt',
-        content: longSiteTitle
-      })
-    }
   }
 
   // Web app manifest
