@@ -9,6 +9,7 @@ import qs from 'qs'
 export default (queryObjectToParse) => {
   if (queryObjectToParse) {
     const query = {
+      // eslint-disable-next-line import/no-named-as-default-member
       ...qs.parse(qs.stringify(queryObjectToParse))
     }
 
