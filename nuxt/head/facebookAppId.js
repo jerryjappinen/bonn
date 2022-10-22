@@ -9,7 +9,7 @@ export default (optionsInput) => {
     head.meta.push({
       hid: 'fb:app_id',
       property: 'fb:app_id',
-      content: facebookAppId
+      content: appId
     })
   }
 
