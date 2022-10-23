@@ -16,7 +16,8 @@ export default (optionsInput) => {
   const {
     baseUrl,
     exclude,
-    routes
+    routes,
+    routeRules
   } = (optionsInput || {})
 
   const app = {}
@@ -28,6 +29,7 @@ export default (optionsInput) => {
 
   return {
     app,
+    routeRules: routeRules || {},
 
     modules: [
       ['@nuxtjs/sitemap', {
