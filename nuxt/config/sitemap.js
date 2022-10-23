@@ -29,6 +29,8 @@ export default (optionsInput) => {
 
   return {
     app,
+
+    // https://v3.nuxtjs.org/guide/concepts/rendering/#route-rules
     routeRules: routeRules || {},
 
     modules: [
