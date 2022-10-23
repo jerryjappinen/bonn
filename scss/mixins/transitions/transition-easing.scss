@@ -2,8 +2,32 @@
   transition-timing-function: $easing;
 }
 
+@mixin linear-transition {
+  @include transition-easing(var(--easing-linear, linear));
+}
+
 @mixin transition-ease {
-  @include transition-easing(var(--easing-ease));
+  @include transition-easing(var(--easing-ease, ease));
+}
+
+@mixin transition-ease-in {
+  @include transition-easing(var(--easing-ease-in, ease-in));
+}
+
+@mixin transition-ease-out {
+  @include transition-easing(var(--easing-ease-out, ease-out));
+}
+
+@mixin transition-ease-in-out {
+  @include transition-easing(var(--easing-ease-in-out, ease-in-out));
+}
+
+@mixin transition-step-start {
+  @include transition-easing(var(--easing-step-start, step-start));
+}
+
+@mixin transition-step-end {
+  @include transition-easing(var(--easing-step-end, step-end));
 }
 
 @mixin transition-bounce {
@@ -19,5 +43,5 @@
 }
 
 @mixin no-transition-easing {
-  @include transition-easing(var(--easing-none));
+  @include transition-easing(var(--easing-none, linear));
 }

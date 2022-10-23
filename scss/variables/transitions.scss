@@ -8,7 +8,7 @@
   --transition-slowish: 600ms;
   --transition-very-slow: 900ms;
   --transition-very-very-slow: 1200ms;
-  
+
   // Interaction transitions
   --transition-interaction-enter: var(--transition-fast);
   --transition-interaction-leave: var(--transition-slow);
@@ -20,8 +20,15 @@
   --transition-properties-position: transform, top, bottom, left, right;
 
   // Easing functions
-  --easing-none: linear;
-  --easing-ease: ease;
+  // https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timing-function
+  // --easing-none: linear;
+  // --easing-linear: linear;
+  // --easing-ease: ease;
+  // --easing-ease-in: ease-in;
+  // --easing-ease-out: ease-out;
+  // --easing-ease-in-out: ease-in-out;
+  // --easing-step-start: step-start;
+  // --easing-step-end: step-end;
   --easing-snap: cubic-bezier(0, 0.5, 0.5, 1);
   --easing-bounce: cubic-bezier(0, 0.5, 0.5, 1.05);
   --easing-smooth: cubic-bezier(0.19, 1, 0.22, 1);

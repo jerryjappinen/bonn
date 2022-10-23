@@ -19,6 +19,18 @@
   @include no-animation-delay;
   @include no-animation;
 
+  @include animation-easing(ease);
+  @include animation-ease;
+  @include animation-ease-in;
+  @include animation-ease-out;
+  @include animation-ease-in-out;
+  @include animation-step-start;
+  @include animation-step-end;
+  @include animation-bounce;
+  @include animation-smooth;
+  @include animation-snap;
+  @include no-animation-easing;
+
   /*
   *
   * Backgrounds
@@ -322,6 +334,11 @@
 
   @include transition-easing(ease);
   @include transition-ease;
+  @include transition-ease-in;
+  @include transition-ease-out;
+  @include transition-ease-in-out;
+  @include transition-step-start;
+  @include transition-step-end;
   @include transition-bounce;
   @include transition-smooth;
   @include transition-snap;

@@ -1,0 +1,47 @@
+@mixin animation-easing ($easing) {
+  animation-timing-function: $easing;
+}
+
+@mixin linear-animation {
+  @include animation-easing(var(--easing-linear, linear));
+}
+
+@mixin animation-ease {
+  @include animation-easing(var(--easing-ease, ease));
+}
+
+@mixin animation-ease-in {
+  @include animation-easing(var(--easing-ease-in, ease-in));
+}
+
+@mixin animation-ease-out {
+  @include animation-easing(var(--easing-ease-out, ease-out));
+}
+
+@mixin animation-ease-in-out {
+  @include animation-easing(var(--easing-ease-in-out, ease-in-out));
+}
+
+@mixin animation-step-start {
+  @include animation-easing(var(--easing-step-start, step-start));
+}
+
+@mixin animation-step-end {
+  @include animation-easing(var(--easing-step-end, step-end));
+}
+
+@mixin animation-bounce {
+  @include animation-easing(var(--easing-bounce));
+}
+
+@mixin animation-smooth {
+  @include animation-easing(var(--easing-smooth));
+}
+
+@mixin animation-snap {
+  @include animation-easing(var(--easing-snap));
+}
+
+@mixin no-animation-easing {
+  @include animation-easing(var(--easing-none, linear));
+}
