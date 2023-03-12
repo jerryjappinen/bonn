@@ -51,7 +51,7 @@ export default {
     this.mountMap()
   },
 
-  beforeDestroy () {
+  destroy () {
     this.removeMap()
   },
 
@@ -59,6 +59,7 @@ export default {
 
     // NOTE: don't call this server-side
     mountMap () {
+      // eslint-disable-next-line @typescript-eslint/no-var-requires
       const mapboxgl = require('mapbox-gl/dist/mapbox-gl.js')
 
       mapboxgl.accessToken = this.accessToken

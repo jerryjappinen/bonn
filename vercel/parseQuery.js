@@ -3,13 +3,11 @@ import isPlainObject from 'lodash-es/isPlainObject'
 import map from 'lodash-es/map'
 import mapValues from 'lodash-es/mapValues'
 
-// eslint-disable-next-line import/default
 import qs from 'qs'
 
 export default (queryObjectToParse) => {
   if (queryObjectToParse) {
     const query = {
-      // eslint-disable-next-line import/no-named-as-default-member
       ...qs.parse(qs.stringify(queryObjectToParse))
     }
 

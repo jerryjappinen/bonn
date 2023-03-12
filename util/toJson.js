@@ -54,7 +54,7 @@ function ensureProperties (obj) {
     }, {})
     seen.pop()
     return result
-  };
+  }
 
   return visit(obj)
 }

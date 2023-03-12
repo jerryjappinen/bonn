@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const es6 = require('./es6.cjs')
 
 const eslintConfig = {

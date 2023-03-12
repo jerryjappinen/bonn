@@ -14,31 +14,25 @@ export default {
       on: {
 
         afterEnter (element) {
-          // eslint-disable-next-line no-param-reassign
           element.style.height = 'auto'
         },
 
         enter (element) {
           const { width } = getComputedStyle(element)
 
-          /* eslint-disable no-param-reassign */
           element.style.width = width
           element.style.position = 'absolute'
           element.style.visibility = 'hidden'
           element.style.height = 'auto'
-          /* eslint-enable */
 
           const { height } = getComputedStyle(element)
 
-          /* eslint-disable no-param-reassign */
           element.style.width = null
           element.style.position = null
           element.style.visibility = null
           element.style.height = 0
-          /* eslint-enable */
 
           setTimeout(() => {
-            // eslint-disable-next-line no-param-reassign
             element.style.height = height
           })
         },
@@ -46,11 +40,9 @@ export default {
         leave (element) {
           const { height } = getComputedStyle(element)
 
-          // eslint-disable-next-line no-param-reassign
           element.style.height = height
 
           setTimeout(() => {
-            // eslint-disable-next-line no-param-reassign
             element.style.height = 0
           })
         }

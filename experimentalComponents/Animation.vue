@@ -55,7 +55,7 @@ export default {
 
   render () {
     try {
-      const vnode = this.$slots.default[0]
+      const vnode = this.$slots.default()[0]
 
       // Add style binding dynamically
       if (this.isEnabled && vnode) {
