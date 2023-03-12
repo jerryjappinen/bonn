@@ -17,6 +17,7 @@ export default (optionsInput) => {
     baseUrl,
     exclude,
     routes,
+    sitemapRoutes,
     routeRules
   } = (optionsInput || {})
 
@@ -33,11 +34,14 @@ export default (optionsInput) => {
     // https://v3.nuxtjs.org/guide/concepts/rendering/#route-rules
     routeRules: routeRules || {},
 
-    modules: [
-      ['@nuxtjs/sitemap', {
+    // https://sitemap.nuxtjs.org/guide/configuration
+    modules: ['@nuxtjs/sitemap'],
+    sitemap: [
+      {
         hostname: baseUrl,
-        exclude: compact(flatten([exclude]))
-      }]
+        exclude: compact(flatten([exclude])),
+        routes: sitemapRoutes || routes || []
+      }
     ],
 
     nitro: {
