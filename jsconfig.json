@@ -6,7 +6,6 @@
   "include": [
     "composables/**/*",
     "util/**/*",
-    "spec/**/*",
-    "moduleNames.js"
+    "spec/**/*"
   ]
 }

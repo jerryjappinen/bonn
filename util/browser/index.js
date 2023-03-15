@@ -1,6 +1,0 @@
-export { default as getBrowser } from './getBrowser'
-export { default as getPage } from './getPage'
-export { default as getPagePdf } from './getPagePdf'
-export { default as getPageScreenshot } from './getPageScreenshot'
-export { default as getUrlAsPdf } from './getUrlAsPdf'
-export { default as getUrlAsScreenshot } from './getUrlAsScreenshot'
