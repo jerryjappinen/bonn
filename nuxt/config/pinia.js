@@ -8,23 +8,14 @@ export default (optionsInput) => {
     persist
   } = (optionsInput || {})
 
-  // https://github.com/prazdevs/pinia-plugin-persistedstate/blob/main/docs/frameworks/nuxt-3.md
+  // Pinia module options
   const modules = [
-    // async (inlineOptions, nuxt) => {
-    //   console.log('inline module definition', nuxt.options.plugins)
-    //   addPlugin({
-    //     src: fileURLToPath(new URL('../plugins/pinia-persist', import.meta.url)),
-    //     // filename: 'pinia-plugin-persistedstate.client.js' // [optional]
-    //   })
-    // },
-
     ['@pinia/nuxt', {
-
-      // Pinia module options
       autoImports: ['defineStore']
     }]
   ]
 
+  // https://github.com/prazdevs/pinia-plugin-persistedstate/blob/main/docs/frameworks/nuxt-3.md
   if (persist) {
     modules.push('@pinia-plugin-persistedstate/nuxt')
   }
