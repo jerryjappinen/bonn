@@ -15,7 +15,6 @@ import flatten from 'lodash-es/flatten'
 export default (optionsInput) => {
   const {
     baseUrl,
-    exclude,
     routes,
     sitemapRoutes,
     routeRules
@@ -31,18 +30,21 @@ export default (optionsInput) => {
   return {
     app,
 
-    // https://v3.nuxtjs.org/guide/concepts/rendering/#route-rules
+    // https://nitro.unjs.io/config/#routerules
     routeRules: routeRules || {},
 
-    // https://sitemap.nuxtjs.org/guide/configuration
-    modules: ['@nuxtjs/sitemap'],
-    sitemap: [
-      {
-        hostname: baseUrl,
-        exclude: compact(flatten([exclude])),
-        routes: sitemapRoutes || routes || []
+    // https://www.npmjs.com/package/@funken-studio/sitemap-nuxt-3
+    // NOTE: imports break this
+    modules: ['@funken-studio/sitemap-nuxt-3', {
+      generateOnBuild: true,
+      hostname: baseUrl,
+      routes: sitemapRoutes || routes || [],
+      defaults: {
+        changefreq: 'daily',
+        priority: 1,
+        lastmod: new Date().toISOString()
       }
-    ],
+    }],
 
     nitro: {
       prerender: {
