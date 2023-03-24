@@ -3,9 +3,11 @@
 
 // State management with pinia
 // https://pinia.vuejs.org/
-export default ({
-  persist
-}) => {
+export default (optionsInput) => {
+  const {
+    persist
+  } = (optionsInput || {})
+
   // https://github.com/prazdevs/pinia-plugin-persistedstate/blob/main/docs/frameworks/nuxt-3.md
   const modules = [
     // async (inlineOptions, nuxt) => {
