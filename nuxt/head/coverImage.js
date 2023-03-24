@@ -1,3 +1,6 @@
+import isAbsoluteUrl from '../../util/isAbsoluteUrl'
+import suffixWith from '../../util/suffixWith'
+
 // Cover image for sharing
 export default (optionsInput) => {
   const {
@@ -10,7 +13,9 @@ export default (optionsInput) => {
     meta: []
   }
 
-  const coverImagePath = (baseUrl || '') + '/' + (path || 'cover-image.png')
+  const b = suffixWith((baseUrl || '').trim(), '/')
+  const p = path || 'cover-image.png'
+  const coverImagePath = isAbsoluteUrl(p) ? p : b + p
 
   // Twitter cards
   head.meta.push({
