@@ -1,15 +1,17 @@
 # Bonn
 
-Bonn is a convenient utility, style and components library for web projects. Bonn includes the following elements:
+Convenient utility, style and components library for web projects:
 
 - JavaScript utilities
 - SCSS mixins, variables and default styles
 - SVG icon set
+- Vercel endpoint helpers
+- GitHub actions code
 - Vue and Nuxt apps
   - Vue components
   - Vue composables
   - Pinia stores
-  - Nuxt config helpers and module
+  - Nuxt head and config helpers
 
 Utilities can be used in any JS project, including server-side. Similarly, SCSS and SVGs can be used in any project, not only Vue or Nuxt projects.
 
