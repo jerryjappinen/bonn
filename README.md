@@ -27,40 +27,43 @@ npm i bonn lodash-es date-fns
 
 You might need additional peer dependencies depending on the type of project and the components you use. See the relevant docs for more details.
 
-
-
-### Nuxt
+#### Setup on Nuxt
 
 Use the `nuxt.config` helpers to load Bonn's Nuxt module and other relevant configurations:
 
 ```js
-import bonn from 'bonn/nuxt/config/bonn'
-import svg from 'bonn/nuxt/config/svg'
-
-import mergeConfigs from 'bonn/nuxt/config/mergeConfigs'
+import {
+  mergeConfigs,
+  bonn,
+  scss,
+  svg
+} from 'bonn/nuxt/config/bonn'
 
 export default defineNuxtConfig(mergeConfigs(
+  // You'll probably want to enable SCSS and SVG in your Nuxt app
+  scss(),
+  svg(),
+
+  // Enable Bonn
   bonn({
     // components: false,
     // composables: false,
     // icons: false,
     // prefix: 'Bonn'
   }),
-  svg(),
+
+  // Add your own Nuxt config here...
   {
-    // Your Nuxt configs here...
+    // ...
   }
 ))
 ```
-
-This will output the desired config for you. See the relevant docs for more details.
-
 
 
 
 ## Usage
 
-### `.js` utilities
+#### `.js` utilities
 
 ```js
 import formatFileSize from 'bonn/util/formatFileSize'
@@ -70,7 +73,7 @@ formatFileSize(19238028)
 
 
 
-### `.vue` components
+#### `.vue` components
 
 `components/` are NOT built during install. You must transpile them yourself in your project.
 
@@ -94,7 +97,7 @@ Note that when using `<script setup>`, you don't have to export the components. 
 
 
 
-### Vue composables
+#### Vue composables
 
 ```js
 import useIsMounted from 'bonn/composables/useIsMounted'
@@ -112,7 +115,7 @@ export default {
 
 
 
-### Pinia `stores/`
+#### Pinia `stores/`
 
 ```js
 import useDevice from 'bonn/stores/device'
@@ -122,7 +125,7 @@ const device = useDevice()
 
 
 
-### `nuxt.config` helpers
+#### `nuxt.config` helpers
 
 ```js
 import { mergeConfigs, dev, assets, scss, svg } from 'bonn/nuxt/config'
@@ -143,7 +146,7 @@ export default defineNuxtConfig(mergeConfigs(
 ```
 
 
-### `.svg` icons
+#### `.svg` icons
 
 Auto imported in a Nuxt project:
 
@@ -154,17 +157,6 @@ Auto imported in a Nuxt project:
 ```
 
 The `Icon` component renders the SVG assets in a standard size, but is not required.
-
-Some Vue components rely on SVG icon assets. Since these are user-configurable, you must choose where to get them (or manually use the defaults from `bonn/icons`).
-
-Bonn assumes you import SVG icons as Vue components (using `vite-svg-loader`, for example). This can be easily done using a Nuxt config helper in your Nuxt project.
-
-To completely replace the default icon set, provide the following icons:
-
-```
-Check.svg
-ChevronDown.svg
-```
 
 
 
