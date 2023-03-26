@@ -1,4 +1,6 @@
-import { ref, isRef, watch } from 'vue'
+import { ref, isRef, unref, computed, watch, onMounted, onUnmounted } from 'vue'
+
+import mapValues from 'lodash-es/mapValues'
 
 // https://fusejs.io/
 import Fuse from 'fuse.js'
@@ -17,8 +19,26 @@ const defaultOptions = {
   // ignoreLocation: false,
   // ignoreFieldNorm: false,
   // fieldNormWeight: 1,
-  keys: []
+  // keys: []
 }
+
+// https://fusejs.io/api/options.html
+const configKeys = [
+  'keys',
+  'isCaseSensitive',
+  'includeScore',
+  'shouldSort',
+  'includeMatches',
+  'findAllMatches',
+  'minMatchCharLength',
+  'location',
+  'threshold',
+  'distance',
+  'useExtendedSearch',
+  'ignoreLocation',
+  'ignoreFieldNorm',
+  'fieldNormWeight'
+]
 
 export default (optionsInput) => {
   const options = {
@@ -29,57 +49,44 @@ export default (optionsInput) => {
   const fuse = ref(null)
   const data = isRef(options.data) ? options.data : ref(options.data || [])
 
-  // Options
-  // https://fusejs.io/api/options.html
-  const isCaseSensitive = isRef(options.isCaseSensitive) ? options.isCaseSensitive : ref(options.isCaseSensitive)
-  const includeScore = isRef(options.includeScore) ? options.includeScore : ref(options.includeScore)
-  const shouldSort = isRef(options.shouldSort) ? options.shouldSort : ref(options.shouldSort)
-  const includeMatches = isRef(options.includeMatches) ? options.includeMatches : ref(options.includeMatches)
-  const findAllMatches = isRef(options.findAllMatches) ? options.findAllMatches : ref(options.findAllMatches)
-  const minMatchCharLength = isRef(options.minMatchCharLength) ? options.minMatchCharLength : ref(options.minMatchCharLength)
-  const location = isRef(options.location) ? options.location : ref(options.location)
-  const threshold = isRef(options.threshold) ? options.threshold : ref(options.threshold)
-  const distance = isRef(options.distance) ? options.distance : ref(options.distance)
-  const useExtendedSearch = isRef(options.useExtendedSearch) ? options.useExtendedSearch : ref(options.useExtendedSearch)
-  const ignoreLocation = isRef(options.ignoreLocation) ? options.ignoreLocation : ref(options.ignoreLocation)
-  const ignoreFieldNorm = isRef(options.ignoreFieldNorm) ? options.ignoreFieldNorm : ref(options.ignoreFieldNorm)
-  const fieldNormWeight = isRef(options.fieldNormWeight) ? options.fieldNormWeight : ref(options.fieldNormWeight)
-  const keys = isRef(options.keys) ? options.keys : ref(options.keys)
+  const config = computed(() => {
+    const c = {}
+
+    configKeys.forEach((key) => {
+      if (options[key]) {
+        c[key] = isRef(options[key]) ? options[key] : ref(options[key])
+      }
+    })
+
+    return c
+  })
 
   const init = () => {
-    fuse.value = new Fuse(data.value, {
-      isCaseSensitive,
-      includeScore,
-      shouldSort,
-      includeMatches,
-      findAllMatches,
-      minMatchCharLength,
-      location,
-      threshold,
-      distance,
-      useExtendedSearch,
-      ignoreLocation,
-      ignoreFieldNorm,
-      fieldNormWeight,
-      keys
-    })
+    fuse.value = new Fuse(data.value, mapValues(config.value, unref))
   }
 
   const uninit = () => {
     fuse.value = null
   }
 
-  watch(keys, init)
+  // Loading behavior
+
+  if (!options.loadManually) {
+    onMounted(init)
+    onUnmounted(uninit)
+  }
+
+  // Watchers
+
+  watch(config, init, {
+    deep: true
+  })
 
   watch(data, (newData) => {
     if (fuse.value) {
       fuse.value.setCollection(newData)
     }
   })
-
-  if (options.bind || options.bind === undefined) {
-    init()
-  }
 
   return {
     init,
@@ -98,20 +105,6 @@ export default (optionsInput) => {
 
     fuse,
     data,
-
-    isCaseSensitive,
-    includeScore,
-    shouldSort,
-    includeMatches,
-    findAllMatches,
-    minMatchCharLength,
-    location,
-    threshold,
-    distance,
-    useExtendedSearch,
-    ignoreLocation,
-    ignoreFieldNorm,
-    fieldNormWeight,
-    keys
+    config
   }
 }
