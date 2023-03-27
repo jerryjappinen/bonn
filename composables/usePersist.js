@@ -143,6 +143,6 @@ export default (persistData, persistKeyInput, loadManually) => {
     data: persistData,
     isLoaded: persistLoaded,
     key: persistKey,
-    clearData: clearPersistData
+    clear: clearPersistData
   }
 }
