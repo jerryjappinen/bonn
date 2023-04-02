@@ -15,9 +15,9 @@ import meta from '../../nuxt/config/meta'
 import noComponentPrefixing from '../../nuxt/config/noComponentPrefixing'
 import pinia from '../../nuxt/config/pinia'
 import prod from '../../nuxt/config/prod'
+import routing from '../../nuxt/config/routing'
 import scripts from '../../nuxt/config/scripts'
 import scss from '../../nuxt/config/scss'
-import sitemap from '../../nuxt/config/sitemap'
 import svg from '../../nuxt/config/svg'
 import transpile from '../../nuxt/config/transpile'
 import viewport from '../../nuxt/config/viewport'
@@ -36,9 +36,9 @@ const helpers = {
   meta,
   noComponentPrefixing,
   pinia,
+  routing,
   scripts,
   scss,
-  sitemap,
   svg,
   transpile,
   viewport
