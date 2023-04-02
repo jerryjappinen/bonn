@@ -4,8 +4,8 @@ import suffixWith from '../../util/suffixWith'
 // Cover image for sharing
 export default (optionsInput) => {
   const {
+    host,
     title,
-    baseUrl,
     path
   } = (optionsInput || {})
 
@@ -13,9 +13,9 @@ export default (optionsInput) => {
     meta: []
   }
 
-  const b = suffixWith((baseUrl || '').trim(), '/')
+  const h = suffixWith((host || '').trim(), '/')
   const p = path || 'cover-image.png'
-  const coverImagePath = isAbsoluteUrl(p) ? p : b + p
+  const coverImagePath = isAbsoluteUrl(p) ? p : h + p
 
   // Twitter cards
   head.meta.push({
