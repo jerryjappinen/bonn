@@ -6,7 +6,7 @@ import { h } from 'vue'
 import RichTextRenderer from 'contentful-rich-text-vue-renderer'
 
 import getEntryType from 'contentful-util/src/getEntryType'
-import { blocks, inlines } from 'contentful-util/src/richTextTypes'
+import { BLOCKS, INLINES } from 'contentful-util/src/richTextTypes'
 
 // How to render custom components: https://jsfiddle.net/2rbxg1q9/
 const props = defineProps({
@@ -71,8 +71,8 @@ const nodeRenderers = {
   // INLINES.ASSET_HYPERLINK
 
   // Embedded entries get rendered using components
-  [blocks.EMBEDDED_ENTRY]: getEntryRenderer(props.entryBlockComponents, props.defaultEntryBlockComponent),
-  [inlines.EMBEDDED_ENTRY]: getEntryRenderer(props.entryInlineComponents, props.defaultEntryInlineComponent)
+  [BLOCKS.EMBEDDED_ENTRY]: getEntryRenderer(props.entryBlockComponents, props.defaultEntryBlockComponent),
+  [INLINES.EMBEDDED_ENTRY]: getEntryRenderer(props.entryInlineComponents, props.defaultEntryInlineComponent)
 }
 
 const markRenderers = {
