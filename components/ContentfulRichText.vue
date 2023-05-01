@@ -3,10 +3,10 @@ import { h } from 'vue'
 
 // https://www.npmjs.com/package/contentful-rich-text-vue-renderer
 // MARKS
-import { BLOCKS, INLINES } from '@contentful/rich-text-types'
 import RichTextRenderer from 'contentful-rich-text-vue-renderer'
 
 import getEntryType from 'contentful-util/src/getEntryType'
+import { blocks, inlines } from 'contentful-util/src/richTextTypes'
 
 // How to render custom components: https://jsfiddle.net/2rbxg1q9/
 const props = defineProps({
@@ -71,8 +71,8 @@ const nodeRenderers = {
   // INLINES.ASSET_HYPERLINK
 
   // Embedded entries get rendered using components
-  [BLOCKS.EMBEDDED_ENTRY]: getEntryRenderer(props.entryBlockComponents, props.defaultEntryBlockComponent),
-  [INLINES.EMBEDDED_ENTRY]: getEntryRenderer(props.entryInlineComponents, props.defaultEntryInlineComponent)
+  [blocks.EMBEDDED_ENTRY]: getEntryRenderer(props.entryBlockComponents, props.defaultEntryBlockComponent),
+  [inlines.EMBEDDED_ENTRY]: getEntryRenderer(props.entryInlineComponents, props.defaultEntryInlineComponent)
 }
 
 const markRenderers = {
