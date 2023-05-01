@@ -1,6 +1,6 @@
 {
   "name": "bonn",
-  "version": "0.5.17",
+  "version": "0.5.18",
   "description": "Utility, style and component library for web development.",
   "private": false,
   "files": [
@@ -55,6 +55,7 @@
   },
   "dependencies": {
     "@averjs/nuxt-compression": "^1.2.2",
+    "@contentful/rich-text-types": "^15.15.1",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@nuxtjs/robots": "^3.0.0",
     "@pinia-plugin-persistedstate/nuxt": "^1.1.1",
