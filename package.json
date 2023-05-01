@@ -1,6 +1,6 @@
 {
   "name": "bonn",
-  "version": "0.5.14",
+  "version": "0.5.15",
   "description": "Utility, style and component library for web development.",
   "private": false,
   "files": [
@@ -55,21 +55,21 @@
   },
   "dependencies": {
     "@averjs/nuxt-compression": "^1.2.2",
-    "@contentful/rich-text-types": "^16.0.3",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@nuxtjs/robots": "^3.0.0",
     "@pinia-plugin-persistedstate/nuxt": "^1.1.1",
-    "@pinia/nuxt": "^0.4.7",
+    "@pinia/nuxt": "^0.4.9",
     "@rollup/plugin-graphql": "^2.0.3",
     "@vanillaes/csv": "^3.0.1",
     "contentful-rich-text-vue-renderer": "^3.1.0",
-    "eslint": "^8.36.0",
+    "contentful-util": "^1.2.1",
+    "eslint": "^8.39.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-nuxt": "^4.0.0",
     "eslint-plugin-promise": "^6.1.1",
-    "graphql-request": "^5.2.0",
+    "graphql-request": "^6.0.0",
     "graphql-unwrap": "^1.0.1",
     "gravatar-url": "^4.0.1",
     "ky": "^0.33.3",
@@ -81,11 +81,11 @@
     "markdown-it-task-lists": "^2.1.1",
     "pinia-plugin-persistedstate": "^3.1.0",
     "platform-detect": "^3.0.1",
-    "prettier": "^2.8.7",
+    "prettier": "^2.8.8",
     "prism-es6": "^1.2.0",
     "qs": "^6.11.1",
-    "sass": "^1.60.0",
-    "sass-loader": "^13.2.1",
+    "sass": "^1.62.1",
+    "sass-loader": "^13.2.2",
     "seedrandom": "^3.0.5",
     "vite-plugin-markdown": "^2.2.0-2",
     "vite-svg-loader": "^4.0.0",
@@ -93,19 +93,15 @@
   },
   "peerDependencies": {
     "@graphcms/rich-text-html-renderer": "^0.2.0",
-    "contentful-util": "^1.1.0",
-    "date-fns": "^2.29.3",
+    "date-fns": "^2.30.0",
     "fuse.js": "^6.6.2",
     "lodash-es": "^4.17.21",
     "nodemailer": "^6.9.1",
-    "nuxt": "^3.3.1",
+    "nuxt": "^3.4.3",
     "vue": "^3.2.47"
   },
   "peerDependenciesMeta": {
     "@graphcms/rich-text-html-renderer": {
-      "optional": true
-    },
-    "contentful-util": {
       "optional": true
     },
     "date-fns": {
@@ -126,19 +122,17 @@
   },
   "devDependencies": {
     "@graphcms/rich-text-html-renderer": "^0.2.0",
-    "@vitejs/plugin-vue": "^4.0.0",
-    "@vue/test-utils": "^2.3.1",
-    "contentful-util": "^1.1.0",
-    "date-fns": "^2.29.3",
+    "@vitejs/plugin-vue": "^4.2.1",
+    "@vue/test-utils": "^2.3.2",
+    "date-fns": "^2.30.0",
     "fuse.js": "^6.6.2",
-    "happy-dom": "^8.9.0",
+    "happy-dom": "^9.10.1",
     "lodash-es": "^4.17.21",
     "nodemailer": "^6.9.1",
-    "nuxt": "^3.2.3",
-    "pinia": "^2.0.33",
-    "vite": "^4.1.4",
-    "vite-plugin-static-copy": "^0.13.1",
-    "vitest": "^0.29.2",
+    "nuxt": "^3.4.3",
+    "pinia": "^2.0.35",
+    "vite": "^4.3.3",
+    "vitest": "^0.30.1",
     "vue": "^3.2.47"
   }
 }
