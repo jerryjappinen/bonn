@@ -5,10 +5,10 @@ import endpoint from '../endpoint'
 
 import sendGithubApiRequest from '../../util/sendGithubApiRequest'
 
-const initialRepoPages = 5
-
 export default (token) => {
   return endpoint(async ({ query }) => {
+    const initialRepoPages = 5
+
     const params = omit(query, ['user', 'token'])
 
     // Fetch org
