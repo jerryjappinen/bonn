@@ -1,6 +1,6 @@
 import ky from 'ky'
 
-const baseUrl = 'https://api/github.com/'
+const baseUrl = 'https://api.github.com/'
 const method = 'get'
 
 export default async (endpoint, params, body, token) => {

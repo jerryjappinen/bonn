@@ -1,2 +1,5 @@
 export { default as contentfulCreate } from './contentfulCreate'
 export { default as contentfulEntries } from './contentfulEntries'
+export { default as githubOrg } from './githubOrg'
+export { default as githubUser } from './githubUser'
+export { default as proxy } from './proxy'
