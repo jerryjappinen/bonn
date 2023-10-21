@@ -59,8 +59,6 @@ export default (targetDomain, optionsInput) => {
   })
 
   return (req, res) => {
-    console.log(req)
-
     return apiProxy(req, res)
   }
 }

@@ -1,7 +1,8 @@
 <script setup>
 import { ref, computed, unref, onMounted, onBeforeUpdate } from 'vue'
 
-import trim from 'lodash-es/trim'
+// NOTE: must rename to _trim to not clash with prop name in Vue 3
+import _trim from 'lodash-es/trim'
 
 import Prism from 'prism-es6/prism.js'
 
@@ -58,7 +59,7 @@ const stringify = (input) => {
   }
 
   if (shouldTrim.value) {
-    return trim(value)
+    return _trim(value)
   }
 
   return value
