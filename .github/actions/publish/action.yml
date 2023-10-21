@@ -60,7 +60,7 @@ runs:
     - name: Install dependencies
       id: install
       shell: bash
-      run: npm install
+      run: npm install -f
 
     - name: Publish to npm
       id: publish

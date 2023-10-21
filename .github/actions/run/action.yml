@@ -34,7 +34,7 @@ runs:
     # Install
     - name: Install dependencies
       shell: bash
-      run: npm install
+      run: npm install -f
 
     # Run script
     - name: Run script
