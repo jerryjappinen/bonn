@@ -1,0 +1,35 @@
+// https://developer.mozilla.org/en-US/docs/Web/CSS/@media/display-mode
+
+@mixin browser {
+  @media (display-mode: browser) {
+    @content;
+  }
+}
+
+// Fallbacks to browser
+// Use this as default non-browser
+@mixin minimal-ui {
+  @media (display-mode: minimal-ui) {
+    @content;
+  }
+}
+
+// Fallbacks to minimal-ui
+@mixin standalone {
+  @media (display-mode: standalone) {
+    @content;
+  }
+}
+
+// Fallbacks to standalone
+@mixin fullscreen {
+  @media (display-mode: fullscreen) {
+    @content;
+  }
+}
+
+@mixin window-controls-overlay {
+  @media (display-mode: window-controls-overlay) {
+    @content;
+  }
+}
