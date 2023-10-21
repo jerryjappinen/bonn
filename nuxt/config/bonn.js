@@ -14,6 +14,7 @@ export default (options) => {
   const modules = []
   const transpile = [
     // 'bonn',
+    // 'contentful-util',
     'lodash-es',
     ...(opts.transpile || [])
   ]
