@@ -5,14 +5,18 @@
 // https://pinia.vuejs.org/
 export default (optionsInput) => {
   const {
-    persist
+    persist,
+    storesDirs
   } = (optionsInput || {})
 
   // Pinia module options
+  const moduleOptions = {}
+  if (storesDirs) {
+    moduleOptions.storesDirs = storesDirs
+  }
+
   const modules = [
-    ['@pinia/nuxt', {
-      autoImports: ['defineStore']
-    }]
+    ['@pinia/nuxt', moduleOptions]
   ]
 
   // https://github.com/prazdevs/pinia-plugin-persistedstate/blob/main/docs/frameworks/nuxt-3.md
