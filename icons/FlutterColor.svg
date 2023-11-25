@@ -1,16 +1,16 @@
 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M14.4746 7.38904H9.58769L5.31201 11.6656L7.75484 14.1086L14.4746 7.38904Z" fill="#54C5F8"/>
-<path d="M4.0899 10.4438L1.646 7.99994L9.58753 0.0584106H14.4744L4.0899 10.4438Z" fill="#54C5F8"/>
+<path d="M4.0899 10.4438L1.646 7.99988L9.58753 0.0583496H14.4744L4.0899 10.4438Z" fill="#54C5F8"/>
 <path d="M7.75488 14.1087L9.58774 15.9415H14.4746L10.1988 11.6656L7.75488 14.1087Z" fill="#01579B"/>
 <path d="M7.75488 14.1086L11.3791 12.8541L10.1988 11.6656L7.75488 14.1086Z" fill="url(#paint0_linear_1447_3071)"/>
-<path d="M7.75489 9.22188L5.31152 11.6652L7.75489 14.1086L10.1983 11.6652L7.75489 9.22188Z" fill="#29B6F6"/>
-<path d="M14.4744 7.38905L10.1986 11.6647L14.4744 15.9415H9.58753L7.75468 14.1086L5.31093 11.6647L9.58768 7.38889H14.4744V7.38905ZM9.58753 0.0584106L1.646 7.99994L4.0899 10.4438L14.4744 0.0584106H9.58753Z" fill="url(#paint1_radial_1447_3071)"/>
+<path d="M7.75489 9.22194L5.31152 11.6653L7.75489 14.1086L10.1983 11.6653L7.75489 9.22194Z" fill="#29B6F6"/>
+<path d="M14.4744 7.38898L10.1986 11.6647L14.4744 15.9414H9.58753L7.75468 14.1086L5.31093 11.6647L9.58768 7.38883H14.4744V7.38898ZM9.58753 0.0583496L1.646 7.99988L4.0899 10.4438L14.4744 0.0583496H9.58753Z" fill="url(#paint1_radial_1447_3071)"/>
 <defs>
 <linearGradient id="paint0_linear_1447_3071" x1="8.46771" y1="14.5807" x2="10.2877" y2="12.7608" gradientUnits="userSpaceOnUse">
 <stop stop-color="#1A237E" stop-opacity="0.4"/>
 <stop offset="1" stop-color="#1A237E" stop-opacity="0"/>
 </linearGradient>
-<radialGradient id="paint1_radial_1447_3071" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(2.00704 1.14135) scale(19.432)">
+<radialGradient id="paint1_radial_1447_3071" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(2.00704 1.14129) scale(19.432)">
 <stop stop-color="white" stop-opacity="0.1"/>
 <stop offset="1" stop-color="white" stop-opacity="0"/>
 </radialGradient>
