@@ -1,5 +1,5 @@
 <script>
-import windowExists from '../util/windowExists'
+import windowExists from '../utils/windowExists'
 
 // // https://developer.twitter.com/en/docs/twitter-for-websites/javascript-api/guides/scripting-loading-and-initialization
 // const initTwitterLibrary = () => {

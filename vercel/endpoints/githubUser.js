@@ -3,7 +3,7 @@ import omit from 'lodash-es/omit'
 
 import endpoint from '../endpoint'
 
-import sendGithubApiRequest from '../../util/sendGithubApiRequest'
+import sendGithubApiRequest from '../../utils/sendGithubApiRequest'
 
 export default (token) => {
   return endpoint(async ({ query }) => {

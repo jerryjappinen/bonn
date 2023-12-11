@@ -1,7 +1,7 @@
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 
-import gamepadIsSupported from '../util/gamepadIsSupported'
-import getGamepads from '../util/getGamepads'
+import gamepadIsSupported from '../utils/gamepadIsSupported'
+import getGamepads from '../utils/getGamepads'
 
 import getInputData from './useGamepad/getInputData'
 import getInputDataPlaceholder from './useGamepad/getInputDataPlaceholder'

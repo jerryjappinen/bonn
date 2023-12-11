@@ -5,7 +5,7 @@
 // Examples:
 // GET /api/hello → GET https://example.org/hello
 // POST /api/test?color=red → POST https://example.org/test?color=red
-import isAbsoluteUrl from 'bonn/util/isAbsoluteUrl'
+import isAbsoluteUrl from '../../utils/isAbsoluteUrl'
 
 import isFunction from 'lodash-es/isFunction'
 

@@ -1,5 +1,5 @@
-import isAbsoluteUrl from '../../util/isAbsoluteUrl'
-import suffixWith from '../../util/suffixWith'
+import isAbsoluteUrl from '../../utils/isAbsoluteUrl'
+import suffixWith from '../../utils/suffixWith'
 
 // Cover image for sharing
 export default (optionsInput) => {

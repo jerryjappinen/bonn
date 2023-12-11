@@ -1,7 +1,7 @@
 // import path from 'path'
 import isPlainObject from 'lodash-es/isPlainObject'
 
-import suffixWith from '../../../util/suffixWith'
+import suffixWith from '../../../utils/suffixWith'
 
 // import { fileURLToPath } from 'node:url'
 

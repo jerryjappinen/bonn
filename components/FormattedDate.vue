@@ -4,8 +4,8 @@ import { differenceInDays, formatRelative, isDate } from 'date-fns'
 import isNumber from 'lodash-es/isNumber'
 import upperFirst from 'lodash-es/upperFirst'
 
-import formatDate from '../util/formatDate'
-import formatMachineReadableDate from '../util/formatMachineReadableDate'
+import formatDate from '../utils/formatDate'
+import formatMachineReadableDate from '../utils/formatMachineReadableDate'
 
 export default {
 

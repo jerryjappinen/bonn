@@ -13,7 +13,7 @@ import { differenceInCalendarDays } from 'date-fns'
 import debounce from 'lodash-es/debounce'
 import isDate from 'lodash-es/isDate'
 
-import windowExists from '../util/windowExists'
+import windowExists from '../utils/windowExists'
 
 // Helpers
 const prefix = 'vue-persist-'

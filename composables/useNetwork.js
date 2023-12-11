@@ -1,6 +1,6 @@
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 
-import windowExists from '../util/windowExists'
+import windowExists from '../utils/windowExists'
 
 export default (optionsInput) => {
   const options = optionsInput || {}

@@ -5,9 +5,9 @@ import debounce from 'lodash-es/debounce'
 import flattenDeep from 'lodash-es/flattenDeep'
 import orderBy from 'lodash-es/orderBy'
 
-import detectObtrusiveScrollbars from '../util/detectObtrusiveScrollbars'
-import userPrefersDarkMode from '../util/userPrefersDarkMode'
-import windowExists from '../util/windowExists'
+import detectObtrusiveScrollbars from '../utils/detectObtrusiveScrollbars'
+import userPrefersDarkMode from '../utils/userPrefersDarkMode'
+import windowExists from '../utils/windowExists'
 
 // Scroll position or dimensions are updated at most once per this amount of ms
 const debounceDelay = 10

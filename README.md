@@ -66,7 +66,7 @@ export default defineNuxtConfig(mergeConfigs(
 #### `.js` utilities
 
 ```js
-import formatFileSize from 'bonn/util/formatFileSize'
+import formatFileSize from 'bonn/utils/formatFileSize'
 
 formatFileSize(19238028)
 ```
@@ -165,7 +165,7 @@ The `Icon` component renders the SVG assets in a standard size, but is not requi
 `scss/` contains useful, generic mixins and functions for developing web sites and apps. It is designed to be compatible with `components/`, but can be used independently.
 
 ```js
-import formatFileSize from 'bonn/util/formatFileSize'
+import formatFileSize from 'bonn/utils/formatFileSize'
 
 formatFileSize(19238028)
 ```
@@ -184,7 +184,7 @@ Basic customisation:
 @import './my-variables';   // Override default SCSS variables here
 
 @import 'bonn/scss/global'; // CSS variables, normalisation and defaults
-@import 'bonn/scss/util';   // Optional
+@import 'bonn/scss/utils';   // Optional
 ```
 
 Advanced customisation:
@@ -202,7 +202,7 @@ Advanced customisation:
 @import 'bonn/scss/variables';
 @import 'bonn/scss/normalize';
 @import 'bonn/scss/defaults';
-@import 'bonn/scss/util';
+@import 'bonn/scss/utils';
 ```
 
 You can optimise your build even further by including only some defaults and utilities:
@@ -212,7 +212,7 @@ You can optimise your build even further by including only some defaults and uti
 @import 'bonn/scss/defaults/forms';
 @import 'bonn/scss/defaults/tables';
 
-@import 'bonn/scss/util/bodytext';
+@import 'bonn/scss/utils/bodytext';
 ```
 
 Import from a JavaScript file:
@@ -220,5 +220,5 @@ Import from a JavaScript file:
 ```js
 import 'bonn/scss/shared';
 import 'bonn/scss/global';
-import 'bonn/scss/util';
+import 'bonn/scss/utils';
 ```

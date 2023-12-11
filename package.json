@@ -15,7 +15,7 @@
     "prettier/",
     "scss/",
     "stores/",
-    "util/",
+    "utils/",
     "vercel/",
     "dist/",
     "README.md"

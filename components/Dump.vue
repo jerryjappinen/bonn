@@ -3,7 +3,7 @@ import { computed, unref } from 'vue'
 import isNumber from 'lodash-es/isNumber'
 import isString from 'lodash-es/isString'
 
-import toJson from '../util/toJson'
+import toJson from '../utils/toJson'
 
 const props = defineProps({
 

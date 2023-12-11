@@ -1,4 +1,4 @@
-import isDev from '../../util/isDev'
+import isDev from '../../utils/isDev'
 
 import getDevAliases from './bonn/getDevAliases'
 

@@ -1,4 +1,4 @@
-// FIXME: duplicate of /util/mergeConfigs
+// FIXME: duplicate of ../utils/mergeConfigs
 // Kept for now for backwards compatibility and ESM/CJS compatibility issues
 import compact from 'lodash-es/compact'
 import flatten from 'lodash-es/flatten'

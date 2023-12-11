@@ -13,7 +13,7 @@ import Prism from 'prism-es6/prism.js'
 // import 'prism-es6/components/prism-python'
 // import 'prism-es6/components/prism-yaml'
 
-import toJson from '../util/toJson'
+import toJson from '../utils/toJson'
 
 const props = defineProps({
 
@@ -88,6 +88,6 @@ onBeforeUpdate(highlight)
 
 // NOTE: CSS is set in scss/utils/prism.scss
 // Load this file globally or in your component:
-// @import 'bonn/scss/util/prism.scss';
+// @import 'bonn/scss/utils/prism.scss';
 
 </style>

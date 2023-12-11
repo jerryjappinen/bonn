@@ -1,5 +1,5 @@
 import viteMarkdownPlugin from 'vite-plugin-markdown'
-import getMarkdownIt from '../../util/getMarkdownIt'
+import getMarkdownIt from '../../utils/getMarkdownIt'
 
 // Import markdown files
 // https://www.npmjs.com/package/vite-plugin-markdown

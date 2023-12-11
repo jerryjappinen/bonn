@@ -1,4 +1,4 @@
-import getDirection from '../../util/getDirection'
+import getDirection from '../../utils/getDirection'
 
 import getCompassDirection from './getCompassDirection'
 import getDiagonalDirection from './getDiagonalDirection'
