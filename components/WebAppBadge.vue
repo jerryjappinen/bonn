@@ -8,8 +8,15 @@ defineProps({
 </script>
 
 <template>
-  <svg width="240" height="80" xmlns="http://www.w3.org/2000/svg">
-    <g fill="none" fill-rule="evenodd">
+  <svg
+    width="240"
+    height="80"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g
+      fill="none"
+      fill-rule="evenodd"
+    >
       <path
         :fill="light ? '#000': '#A6A6A6'"
         fill-rule="nonzero"

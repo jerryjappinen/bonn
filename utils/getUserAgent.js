@@ -5,5 +5,5 @@ export default () => {
     return window.navigator.userAgent
   }
 
-  return value || null
+  return null
 }

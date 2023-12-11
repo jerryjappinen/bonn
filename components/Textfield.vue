@@ -278,7 +278,10 @@ export default {
     }"
   >
 
-    <span v-if="hasLabel" class="c-textfield-label">
+    <span
+      v-if="hasLabel"
+      class="c-textfield-label"
+    >
       <slot />
     </span>
 

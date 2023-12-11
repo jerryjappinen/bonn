@@ -201,7 +201,6 @@ export default (options) => {
 
   // Loop while
   const onEachFrame = (timeElapsedAbsolute) => {
-
     // Register next frame
     // NOTE: requestAnimationFrame will always pass a timestamp to callback
     frameLoopId = window.requestAnimationFrame(onEachFrame)
