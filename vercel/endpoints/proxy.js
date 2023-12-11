@@ -5,9 +5,9 @@
 // Examples:
 // GET /api/hello → GET https://example.org/hello
 // POST /api/test?color=red → POST https://example.org/test?color=red
-import isAbsoluteUrl from '../../utils/isAbsoluteUrl'
-
 import isFunction from 'lodash-es/isFunction'
+
+import isAbsoluteUrl from '../../utils/isAbsoluteUrl'
 
 import { createProxyMiddleware } from 'http-proxy-middleware'
 
