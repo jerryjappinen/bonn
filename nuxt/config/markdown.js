@@ -1,21 +1,16 @@
-import Vue from '@vitejs/plugin-vue'
-import Markdown from 'vite-plugin-md'
+import mdPlugin, { Mode } from 'vite-plugin-markdown'
+import getMarkdownIt from '../../utils/getMarkdownIt'
 
-import getMarkdownItOptions from '../../utils/getMarkdownItOptions'
+export default (...args) => {
+  const markdownIt = getMarkdownIt(...args)
 
-export default (optionsInput) => {
-  const { options, setup } = getMarkdownItOptions(optionsInput)
-
+  // https://github.com/hmsk/vite-plugin-markdown
   return {
     vite: {
       plugins: [
-        Vue({
-          // include: [/\.vue$/, /\.md$/] // Don't touch this
-          include: [/\.md$/] // Don't touch this
-        }),
-        Markdown({
-          markdownItOptions: options,
-          markdownItSetup: setup
+        mdPlugin({
+          mode: [Mode.HTML, Mode.MARKDOWN, Mode.TOC, Mode.VUE],
+          markdownIt
         })
       ]
     }
