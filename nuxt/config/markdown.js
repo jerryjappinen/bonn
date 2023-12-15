@@ -7,14 +7,17 @@ export default (optionsInput) => {
   const { options, setup } = getMarkdownItOptions(optionsInput)
 
   return {
-    plugins: [
-      Vue({
-        include: [/\.vue$/, /\.md$/] // Don't touch this
-      }),
-      Markdown({
-        markdownItOptions: options,
-        markdownItSetup: setup
-      })
-    ]
+    vite: {
+      plugins: [
+        Vue({
+          // include: [/\.vue$/, /\.md$/] // Don't touch this
+          include: [/\.md$/] // Don't touch this
+        }),
+        Markdown({
+          markdownItOptions: options,
+          markdownItSetup: setup
+        })
+      ]
+    }
   }
 }
