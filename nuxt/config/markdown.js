@@ -1,19 +1,20 @@
-import viteMarkdownPlugin from 'vite-plugin-markdown'
-import getMarkdownIt from '../../utils/getMarkdownIt'
+import Vue from '@vitejs/plugin-vue'
+import Markdown from 'vite-plugin-md'
 
-// Import markdown files
-// https://www.npmjs.com/package/vite-plugin-markdown
-export default (...args) => {
-  const markdownIt = getMarkdownIt(...args)
+import getMarkdownItOptions from '../../utils/getMarkdownItOptions'
+
+export default (...optionsInput) => {
+  const { options, setup } = getMarkdownItOptions(...optionsInput)
 
   return {
-    vite: {
-      plugins: [
-        viteMarkdownPlugin({
-          mode: 'vue',
-          markdownIt
-        })
-      ]
-    }
+    plugins: [
+      Vue({
+        include: [/\.vue$/, /\.md$/] // <--
+      }),
+      Markdown({
+        markdownItOptions: options,
+        markdownItSetup: setup
+      })
+    ]
   }
 }
