@@ -11,7 +11,6 @@ import merge from 'lodash-es/merge'
 //   'Mouse Memoirs': [200, 300, 800]
 // })
 export default (...args) => {
-
   // First pass on normalizing input into objects
   const familyInputs = merge({}, ...flattenDeep(args).map((arg) => {
     // Allow passing family name as a string
