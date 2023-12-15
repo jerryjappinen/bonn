@@ -2,6 +2,8 @@ import headThemeColor from '../head/themeColor'
 
 export default (...optionsInput) => {
   return {
-    meta: headThemeColor(...optionsInput)
+    app: {
+      head: headThemeColor(...optionsInput)
+    }
   }
 }
