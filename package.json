@@ -1,6 +1,6 @@
 {
   "name": "bonn",
-  "version": "0.8.2",
+  "version": "0.8.3",
   "description": "Utility, style and component library for web development.",
   "private": false,
   "files": [
@@ -89,6 +89,7 @@
     "sass": "^1.69.5",
     "sass-loader": "^13.3.2",
     "seedrandom": "^3.0.5",
+    "vite-plugin-md": "^0.21.5",
     "vite-svg-loader": "^5.1.0",
     "vue3-slider": "^1.9.0"
   },
@@ -133,7 +134,6 @@
     "nodemailer": "^6.9.7",
     "nuxt": "^3.8.2",
     "vite": "^4.5.1",
-    "vite-plugin-md": "^0.21.5",
     "vitest": "^1.0.4",
     "vue": "^3.3.11"
   },
