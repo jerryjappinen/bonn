@@ -1,7 +1,7 @@
-import flatten from 'lodash-es/flatten'
 import flattenDeep from 'lodash-es/flattenDeep'
 import isNumber from 'lodash-es/isNumber'
 import isString from 'lodash-es/isString'
+import merge from 'lodash-es/merge'
 
 // https://developers.google.com/fonts/docs/css2
 // googleFonts('Font Name', {
@@ -11,21 +11,20 @@ import isString from 'lodash-es/isString'
 //   'Mouse Memoirs': [200, 300, 800]
 // })
 export default (...args) => {
+
   // First pass on normalizing input into objects
-  const familyInputs = {
-    ...flatten(args).map((arg) => {
-      // Allow passing family name as a string
-      if (isString(arg)) {
-        return {
-          [arg]: true
-        }
+  const familyInputs = merge({}, ...flattenDeep(args).map((arg) => {
+    // Allow passing family name as a string
+    if (isString(arg)) {
+      return {
+        [arg]: true
       }
+    }
 
-      return arg
-    })
-  }
+    return arg
+  }))
 
-  // Each arg will
+  // Normalize weights
   const families = {}
   for (const familyName in familyInputs) {
     const weightsInput = familyInputs[familyName]
@@ -52,7 +51,7 @@ export default (...args) => {
     let href = 'family=' + name
 
     // Construct proper URL format
-    if (families[name] !== true) {
+    if (families[name][0] !== true) {
       href += ':wght@' + families[name].join(';')
     }
 
