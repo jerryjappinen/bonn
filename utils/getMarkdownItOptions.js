@@ -8,7 +8,6 @@ import mdFootnote from 'markdown-it-footnote'
 import mdTaskLists from 'markdown-it-task-lists'
 
 // Import markdown files
-// https://www.npmjs.com/package/vite-plugin-markdown
 export default (optionsInput) => {
   const options = {
     html: true,

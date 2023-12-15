@@ -1,6 +1,6 @@
 {
   "name": "bonn",
-  "version": "0.8.4",
+  "version": "0.8.5",
   "description": "Utility, style and component library for web development.",
   "private": false,
   "files": [
@@ -63,6 +63,7 @@
     "@pinia/nuxt": "^0.5.1",
     "@rollup/plugin-graphql": "^2.0.4",
     "@vanillaes/csv": "^3.0.1",
+    "@vitejs/plugin-vue": "^4.5.2",
     "contentful-rich-text-vue-renderer": "^3.1.0",
     "contentful-util": "^2.0.1",
     "date-fns": "^2.30.0",
@@ -101,7 +102,6 @@
     "vue": "^3.3.11"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^4.5.2",
     "@vue/test-utils": "^2.4.3",
     "happy-dom": "^12.10.3",
     "vite": "^4.5.1",

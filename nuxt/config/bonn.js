@@ -15,6 +15,7 @@ export default (options) => {
   const transpile = [
     // 'bonn',
     // 'contentful-util',
+    'prism-es6',
     'lodash-es',
     ...(opts.transpile || [])
   ]
