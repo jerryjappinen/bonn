@@ -9,10 +9,12 @@ export default defineConfig({
     environment: 'happy-dom',
     testTimeout: 30 * 1000,
 
-    deps: {
-      inline: [
-        'prism-es6'
-      ]
+    server: {
+      deps: {
+        inline: [
+          'prism-es6'
+        ]
+      }
     }
   }
 })
