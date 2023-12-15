@@ -15,6 +15,8 @@ export default defineNuxtModule({
   defaults: {
     components: true,
     composables: true,
+    icons: false,
+    utils: false,
     prefix: ''
   },
 
@@ -22,6 +24,7 @@ export default defineNuxtModule({
     components,
     composables,
     icons,
+    utils,
     prefix
   }) {
     if (components) {
@@ -48,6 +51,12 @@ export default defineNuxtModule({
       //     from: composablesDir
       //   }
       // }))
+    }
+
+    // FIXME: no prefixing for utils
+    if (utils) {
+      const utilsDir = fileURLToPath(new URL('../utils', import.meta.url))
+      addImportsDir(utilsDir)
     }
 
     if (icons) {
