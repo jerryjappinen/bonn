@@ -1,6 +1,6 @@
 {
   "name": "bonn",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "Utility, style and component library for web development.",
   "private": false,
   "files": [
@@ -99,6 +99,7 @@
     "vite-plugin-markdown": "^2.1.0",
     "vite-svg-loader": "^5.1.0",
     "vue": "^3.3.11",
+    "vue-router": "^4.2.5",
     "vue3-slider": "^1.9.0"
   },
   "devDependencies": {
