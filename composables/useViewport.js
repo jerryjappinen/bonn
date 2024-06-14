@@ -5,9 +5,12 @@ import debounce from 'lodash-es/debounce'
 import flattenDeep from 'lodash-es/flattenDeep'
 import orderBy from 'lodash-es/orderBy'
 
+import cssDisplayModes from '../utils/cssDisplayModes'
 import detectObtrusiveScrollbars from '../utils/detectObtrusiveScrollbars'
+import getDisplayMode from '../utils/getDisplayMode'
 import userPrefersDarkMode from '../utils/userPrefersDarkMode'
 import windowExists from '../utils/windowExists'
+import windowIsPrinting from '../utils/windowIsPrinting'
 
 // Scroll position or dimensions are updated at most once per this amount of ms
 const debounceDelay = 10
@@ -26,7 +29,10 @@ export default (optionsInput) => {
   ])
 
   const hasObtrusiveScrollbars = ref(false)
+
   const darkMode = ref(null)
+  const displayMode = ref(null)
+  const isPrinting = ref(null)
 
   const width = ref(0)
   const height = ref(0)
@@ -38,7 +44,10 @@ export default (optionsInput) => {
 
   let debouncedOnResize = null
   let debouncedOnScroll = null
+
   let darkModeMatchMediaObject = null
+  let displayModeMatchMediaObjects = []
+  let printMatchMediaObject = null
 
   // Computed
 
@@ -73,6 +82,18 @@ export default (optionsInput) => {
 
   const isPortrait = computed(() => {
     return !isLandscape.value
+  })
+
+  const isFullscreen = computed(() => {
+    return displayMode.value === 'fullscreen'
+  })
+
+  const isPiP = computed(() => {
+    return displayMode.value === 'picture-in-picture'
+  })
+
+  const notPrinting = computed(() => {
+    return !isPrinting.value
   })
 
   // Breakpoint indices
@@ -153,6 +174,14 @@ export default (optionsInput) => {
     darkMode.value = userPrefersDarkMode()
   }
 
+  const updateIsPrinting = () => {
+    isPrinting.value = windowIsPrinting()
+  }
+
+  const updateDisplayMode = () => {
+    displayMode.value = getDisplayMode()
+  }
+
   const updateDimensions = () => {
     width.value = getWidth()
     height.value = getHeight()
@@ -182,6 +211,8 @@ export default (optionsInput) => {
     if (windowExists()) {
       updateDarkMode()
       updateDimensions()
+      updateDisplayMode()
+      updateIsPrinting()
       updateScrollValues()
 
       if (detectObtrusiveScrollbars()) {
@@ -197,6 +228,15 @@ export default (optionsInput) => {
       if (window.matchMedia) {
         darkModeMatchMediaObject = window.matchMedia('(prefers-color-scheme: dark)')
         darkModeMatchMediaObject.addEventListener('change', updateDarkMode)
+
+        cssDisplayModes.forEach((displayModeName) => {
+          const displayModeMatchMediaObject = window.matchMedia(`(display-mode: ${displayModeName})`)
+          displayModeMatchMediaObject.addEventListener('change', updateDisplayMode)
+          displayModeMatchMediaObjects.push(displayModeMatchMediaObject)
+        })
+
+        printMatchMediaObject = window.matchMedia('print')
+        printMatchMediaObject.addEventListener('change', updateIsPrinting)
       }
     }
   }
@@ -214,6 +254,18 @@ export default (optionsInput) => {
       if (darkModeMatchMediaObject) {
         darkModeMatchMediaObject.removeEventListener('change', updateDarkMode)
       }
+
+      if (displayModeMatchMediaObjects && displayModeMatchMediaObjects.length) {
+        displayModeMatchMediaObjects.forEach((displayModeMatchMediaObject) => {
+          displayModeMatchMediaObject.removeEventListener('change', updateDisplayMode)
+        })
+
+        displayModeMatchMediaObjects = []
+      }
+
+      if (printMatchMediaObject) {
+        printMatchMediaObject.removeEventListener('change', updateIsPrinting)
+      }
     }
   }
 
@@ -229,7 +281,14 @@ export default (optionsInput) => {
 
     breakpoints,
     hasObtrusiveScrollbars,
+
     darkMode,
+    displayMode,
+    isFullscreen,
+    isPiP,
+    isPrinting,
+    notPrinting,
+
     width,
     height,
     scroll,
