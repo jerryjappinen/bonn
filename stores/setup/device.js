@@ -1,4 +1,5 @@
 import useCursor from '../../composables/useCursor'
+import useLocale from '../../composables/useLocale'
 import useNetwork from '../../composables/useNetwork'
 import usePlatform from '../../composables/usePlatform'
 import useTime from '../../composables/useTime'
@@ -14,6 +15,7 @@ export default (optionsInput) => {
 
     const modules = {
       cursor: useCursor({ bind: false }),
+      locale: useLocale({ bind: false }),
       network: useNetwork({ bind: false }),
       platform: usePlatform(),
       time: useTime({ bind: false }),
