@@ -11,7 +11,7 @@ export default (string, prefix, keepDuplicates) => {
       return string
     }
 
-    return string + prefix
+    return prefix + string
   }
 
   return string

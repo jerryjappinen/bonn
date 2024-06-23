@@ -4,7 +4,7 @@ import prefixWith from '../../utils/prefixWith'
 
 describe.concurrent('prefixWith', () => {
   it('should add suffix', () => {
-    expect(prefixWith('foo', '/')).toEqual('foo/')
+    expect(prefixWith('foo', '/')).toEqual('/foo')
     expect(prefixWith('', '/')).toEqual('/')
   })
 
