@@ -53,7 +53,7 @@ export default defineNuxtModule({
       // }))
     }
 
-    // FIXME: no prefixing for utils
+    // FIXME: missing prefixing for utils
     if (utils) {
       const utilsDir = fileURLToPath(new URL('../utils', import.meta.url))
       addImportsDir(utilsDir)
