@@ -30,7 +30,7 @@ export default (optionsInput) => {
     }
   }
 
-  // Automatically unit and uninit in components
+  // Automatically init and uninit in components
   if (options.bind || options.bind === undefined) {
     onMounted(init)
     onUnmounted(uninit)
