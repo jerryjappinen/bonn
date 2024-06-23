@@ -9,6 +9,7 @@ export default (options) => {
   const components = !!opts.components || (opts.components !== false)
   const composables = !!opts.composables || (opts.composables !== false)
   const icons = !!opts.icons || (opts.icons !== false)
+  const utils = !!opts.utils || (opts.utils !== false)
 
   // Include library components in the compilation
   const modules = []
@@ -26,6 +27,7 @@ export default (options) => {
       components,
       composables,
       icons,
+      utils,
       prefix: opts.prefix
     }])
   }
