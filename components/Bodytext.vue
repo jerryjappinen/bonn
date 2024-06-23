@@ -1,7 +1,7 @@
 <script setup>
 import eventHasAnyMetaKey from '../utils/eventHasAnyMetaKey'
 import linkIsInternal from '../utils/linkIsInternal'
-import nextTick from '../utils/nextTick'
+import queueFrame from '../utils/queueFrame'
 
 defineProps({
 
@@ -17,7 +17,7 @@ defineProps({
 
 })
 
-// FIXME: replication
+// FIXME: duplication
 // FIXME: should be in a utility
 const modifyExternalLink = (el) => {
   const originalRel = el.getAttribute('rel')
@@ -34,7 +34,7 @@ const modifyExternalLink = (el) => {
   }
 
   // Return previous attributes after a delay
-  nextTick(() => {
+  queueFrame(() => {
     if (originalRel !== desiredRel) {
       if (originalRel) {
         el.setAttribute('rel', originalRel)
