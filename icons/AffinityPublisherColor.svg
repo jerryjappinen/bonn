@@ -1,15 +1,1 @@
-<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_1447_3103)">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M16 1.5625C16 0.700124 15.2999 0 14.4375 0H1.5625C0.700126 0 0 0.700124 0 1.5625V14.4375C0 15.2998 0.700126 16 1.5625 16H14.4375C15.2999 16 16 15.2998 16 14.4375V1.5625Z" fill="#891B26"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M7.28344 14.8281L3.25532 7.85393L1.17188 11.461V14.2031C1.17188 14.5481 1.45188 14.8281 1.79688 14.8281H7.28344ZM10.2208 14.8281H7.89829C7.89829 14.8281 4.88969 9.61738 3.88172 7.8741C3.68406 7.53225 3.68406 7.11094 3.88156 6.76904C4.24609 6.13829 4.72407 5.31107 4.72407 5.31107L10.2208 14.8281ZM13.1581 14.8281H10.8356L5.06547 4.71987L6.19266 2.76847L13.1581 14.8281ZM14.8281 12.634V14.2031C14.8281 14.5481 14.5481 14.8281 14.2031 14.8281H13.773L6.5 2.23626L7.11485 1.17188H8.20781L14.8281 12.634ZM14.2031 1.17188H8.82251L14.8281 11.5696V1.79687C14.8281 1.45192 14.5481 1.17188 14.2031 1.17188Z" fill="url(#paint0_radial_1447_3103)"/>
-</g>
-<defs>
-<radialGradient id="paint0_radial_1447_3103" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(11.6086 -1.39469) scale(16.2228 16.2228)">
-<stop stop-color="#FFAE71"/>
-<stop offset="1" stop-color="#FF9350"/>
-</radialGradient>
-<clipPath id="clip0_1447_3103">
-<rect width="16" height="16" fill="white"/>
-</clipPath>
-</defs>
-</svg>
+<svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#a)" fill-rule="evenodd" clip-rule="evenodd"><path d="M16 1.563C16 .7 15.3 0 14.437 0H1.563C.7 0 0 .7 0 1.563v12.874C0 15.3.7 16 1.563 16h12.874C15.3 16 16 15.3 16 14.437V1.563z" fill="#891B26"/><path d="M7.283 14.828 3.255 7.854 1.172 11.46v2.742c0 .345.28.625.625.625h5.486zm2.938 0H7.898L3.882 7.874a1.104 1.104 0 0 1 0-1.105l.842-1.458 5.497 9.517zm2.937 0h-2.322L5.066 4.72l1.127-1.952 6.965 12.06zm1.67-2.194v1.57c0 .344-.28.624-.625.624h-.43L6.5 2.236l.615-1.064h1.093l6.62 11.462zm-.625-11.462h-5.38l6.005 10.398V1.797a.625.625 0 0 0-.625-.625z" fill="url(#b)"/></g><defs><radialGradient id="b" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(11.609 -1.395) scale(16.2228)"><stop stop-color="#FFAE71"/><stop offset="1" stop-color="#FF9350"/></radialGradient><clipPath id="a"><path fill="#fff" d="M0 0h16v16H0z"/></clipPath></defs></svg>
