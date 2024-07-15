@@ -1,6 +1,7 @@
 export { default as useCursor } from './composables/useCursor'
 export { default as useGamepad } from './composables/useGamepad'
 export { default as useIsMounted } from './composables/useIsMounted'
+export { default as useLocale } from './composables/useLocale'
 export { default as useLoop } from './composables/useLoop'
 export { default as useModelValue } from './composables/useModelValue'
 export { default as useNetwork } from './composables/useNetwork'
