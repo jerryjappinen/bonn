@@ -6,3 +6,5 @@ coverage
 sw.*
 
 /css
+/icons.js
+/iconIds.js
