@@ -62,7 +62,7 @@ function composeIconIds (iconIds) {
 }
 
 function composeIndex (iconIds) {
-  return iconIds.map(id => `export { default as ${id} } from '${iconsDirFromBuildDir}${id}.js'`).join('\n') + '\n'
+  return iconIds.map(id => `export { default as ${id} } from '${iconsDirFromBuildDir}${id}.svg'`).join('\n') + '\n'
 }
 
 // Build process
