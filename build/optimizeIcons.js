@@ -1,6 +1,6 @@
 // https://github.com/svg/svgo?tab=readme-ov-file#api-usage
 const {
-  // loadConfig,
+  loadConfig,
   optimize
 } = require('svgo')
 
@@ -10,14 +10,18 @@ const getFileList = require('./utils/getFileList')
 const readFile = require('./utils/readFile')
 const writeTextFile = require('./utils/writeTextFile')
 
-// const config = await loadConfig()
-
 const sourceDir = path.resolve(__dirname, '../icons/') + '/'
 const filePaths = getFileList(sourceDir, 'svg')
 
-filePaths.forEach((filePath) => {
-  const svgString = readFile(filePath)
-  const optimized = optimize(svgString)
+async function build () {
+  const config = await loadConfig()
 
-  writeTextFile(filePath, optimized.data)
-})
+  filePaths.forEach((filePath) => {
+    const svgString = readFile(filePath)
+    const optimized = optimize(svgString, config)
+
+    writeTextFile(filePath, optimized.data)
+  })
+}
+
+build()
