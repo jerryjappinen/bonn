@@ -6,5 +6,7 @@ coverage
 sw.*
 
 /css
+/composables.js
 /icons.js
 /iconIds.js
+/utils.js
