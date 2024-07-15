@@ -1,6 +1,6 @@
 {
   "name": "bonn",
-  "version": "0.10.6",
+  "version": "0.10.7",
   "description": "Utility, style and component library for web development.",
   "private": false,
   "files": [
@@ -26,7 +26,8 @@
   "license": "MIT",
   "scripts": {
     "clean": "rm -rf css dist",
-    "build": "npm run build:scss",
+    "build": "npm run build:icons && npm run build:scss",
+    "build:icons": "node ./build/icons.js",
     "build:scss": "sass scss/index.scss css/index.css && sass scss/index.scss css/index.min.css --style=compressed",
     "lint": "eslint --ignore-path .gitignore \"**/*.{js,cjs,mjs,ts,vue}\"",
     "lint:fix": "npm run lint -- --fix",
@@ -105,6 +106,7 @@
   "devDependencies": {
     "@vue/test-utils": "^2.4.3",
     "eslint-plugin-n": "^16.5.0",
+    "glob": "^11.0.0",
     "happy-dom": "^12.10.3",
     "vite": "^5.0.10",
     "vitest": "^1.0.4"
