@@ -1,1 +1,15 @@
-<svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#a)" fill-rule="evenodd" clip-rule="evenodd"><path d="M16 1.563C16 .7 15.3 0 14.437 0H1.563C.7 0 0 .7 0 1.563v12.874C0 15.3.7 16 1.563 16h12.874C15.3 16 16 15.3 16 14.437V1.563z" fill="#134881"/><path d="M14.828 14.208a.625.625 0 0 1-.625.62H7.895L5.2 10.158h9.63v4.05zm-13.656-.005v-2.742l5.94-10.29h2.322L4.415 9.866l2.866 4.963H1.797a.625.625 0 0 1-.625-.625zm7.612-4.577H6.437a.731.731 0 0 1-.635-1.098l1.174-2.034 1.808 3.132zm5.42-8.454c.342 0 .621.277.624.62v7.834h-5.43L7.284 5.962l2.765-4.79h4.155z" fill="url(#b)"/></g><defs><radialGradient id="b" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(11.61 -1.395) scale(16.2228)"><stop stop-color="#6BE1FB"/><stop offset="1" stop-color="#38BDFA"/></radialGradient><clipPath id="a"><path fill="#fff" d="M0 0h16v16H0z"/></clipPath></defs></svg>
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_2179_3813)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M16 1.5625C16 0.700124 15.2999 0 14.4375 0H1.5625C0.700126 0 0 0.700124 0 1.5625V14.4375C0 15.2998 0.700126 16 1.5625 16H14.4375C15.2999 16 16 15.2998 16 14.4375V1.5625Z" fill="#134881"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M14.8281 14.208C14.8255 14.5507 14.5464 14.8281 14.2031 14.8281H7.89547L5.19938 10.1582H14.8281V14.208ZM1.17188 14.2031V11.4611L7.11235 1.17188H9.43391L4.41531 9.86452L7.28094 14.8281H1.79688C1.45188 14.8281 1.17188 14.5481 1.17188 14.2031ZM8.78391 9.62567H6.43672C6.17469 9.62567 5.9325 9.48817 5.80157 9.26119C5.67047 9.03435 5.67047 8.75467 5.80157 8.52783C6.32297 7.62471 6.97578 6.49393 6.97578 6.49393L8.78391 9.62567ZM14.2031 1.17188C14.5464 1.17188 14.8255 1.4493 14.8281 1.79201V9.62567H9.39876L7.28297 5.9617L10.0484 1.17188H14.2031Z" fill="url(#paint0_radial_2179_3813)"/>
+</g>
+<defs>
+<radialGradient id="paint0_radial_2179_3813" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(11.6099 -1.39467) scale(16.2228 16.2228)">
+<stop stop-color="#6BE1FB"/>
+<stop offset="1" stop-color="#38BDFA"/>
+</radialGradient>
+<clipPath id="clip0_2179_3813">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
+</svg>
