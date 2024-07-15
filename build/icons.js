@@ -11,8 +11,6 @@ const sourceDir = path.resolve(__dirname, '../icons/') + '/'
 const buildDir = path.resolve(__dirname, '../') + '/'
 
 const iconIdsFilePath = 'iconIds.js'
-const indexFilePath = 'icons.js'
-const sourceDirFromBuildDir = './icons/'
 
 // Build logic
 function getIds () {
@@ -25,31 +23,13 @@ function getIds () {
   return sortByName(ids)
 }
 
-function clearBuildDir () {
-  removeFile(buildDir + iconIdsFilePath)
-  removeFile(buildDir + indexFilePath)
-}
-
-function composeIconIds (iconIds) {
-  return `export default [
-  ${iconIds.map(id => `'${id}'`).join(',\n  ')}
-]` + '\n'
-}
-
-function composeIndex (iconIds) {
-  return iconIds.map((id) => {
-    return `export { default as ${id} } from '${sourceDirFromBuildDir}${id}.svg'`
-  }).join('\n') + '\n'
-}
-
 // Build process
-function build () {
-  const ids = getIds()
+const ids = getIds()
 
-  clearBuildDir()
-  writeTextFile(buildDir + iconIdsFilePath, composeIconIds(ids))
-  writeTextFile(buildDir + indexFilePath, composeIndex(ids))
-}
+removeFile(buildDir + iconIdsFilePath)
 
-// Actually run the build
-build()
+const fileContent = `export default [
+${ids.map(id => `'${id}'`).join(',\n  ')}
+]` + '\n'
+
+writeTextFile(buildDir + iconIdsFilePath, fileContent)

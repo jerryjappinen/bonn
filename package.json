@@ -30,10 +30,9 @@
   "license": "MIT",
   "scripts": {
     "clean": "rm -rf css dist",
-    "build": "npm run build:composables && npm run build:icons  && npm run build:utils && npm run build:scss",
-    "build:composables": "node ./build/composables.js",
-    "build:icons": "node ./build/icons.js",
-    "build:utils": "node ./build/utils.js",
+    "build": "npm run build:indexFiles && npm run build:icons && npm run build:scss",
+    "build:indexFiles": "node ./build/indexFiles.js",
+    "build:icons": "node ./build/optimizeIcons.js && node ./build/icons.js",
     "build:scss": "sass scss/index.scss css/index.css && sass scss/index.scss css/index.min.css --style=compressed",
     "lint": "eslint --ignore-path .gitignore \"**/*.{js,cjs,mjs,ts,vue}\"",
     "lint:fix": "npm run lint -- --fix",
@@ -114,6 +113,7 @@
     "eslint-plugin-n": "^16.5.0",
     "glob": "^11.0.0",
     "happy-dom": "^12.10.3",
+    "svgo": "^3.3.2",
     "vite": "^5.0.10",
     "vitest": "^1.0.4"
   },
