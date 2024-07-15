@@ -2,7 +2,6 @@ const path = require('node:path')
 
 // const log = require('./log')
 const getFileList = require('./utils/getFileList')
-const removeFile = require('./utils/removeFile')
 const sortByName = require('./utils/sortByName')
 const writeTextFile = require('./utils/writeTextFile')
 
@@ -40,7 +39,6 @@ function build () {
 
     const filenames = getFilenames(sourceDir)
 
-    removeFile(buildDir + indexFilePath)
     writeTextFile(buildDir + indexFilePath, composeIndex(sourceDirFromBuildDir, filenames))
   })
 }

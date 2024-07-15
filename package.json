@@ -30,9 +30,10 @@
   "license": "MIT",
   "scripts": {
     "clean": "rm -rf css dist",
-    "build": "npm run build:indexFiles && npm run build:icons && npm run build:scss",
+    "build": "npm run build:scss && npm run build:optimizeIcons && npm run build:icons && npm run build:indexFiles",
     "build:indexFiles": "node ./build/indexFiles.js",
-    "build:icons": "node ./build/optimizeIcons.js && node ./build/icons.js",
+    "build:icons": "node ./build/icons.js",
+    "build:optimizeIcons": "node ./build/optimizeIcons.js",
     "build:scss": "sass scss/index.scss css/index.css && sass scss/index.scss css/index.min.css --style=compressed",
     "lint": "eslint --ignore-path .gitignore \"**/*.{js,cjs,mjs,ts,vue}\"",
     "lint:fix": "npm run lint -- --fix",

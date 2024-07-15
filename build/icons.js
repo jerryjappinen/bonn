@@ -2,7 +2,7 @@ const path = require('node:path')
 
 // const log = require('./log')
 const getFileList = require('./utils/getFileList')
-const removeFile = require('./utils/removeFile')
+const readFile = require('./utils/readFile')
 const sortByName = require('./utils/sortByName')
 const writeTextFile = require('./utils/writeTextFile')
 
@@ -11,6 +11,7 @@ const sourceDir = path.resolve(__dirname, '../icons/') + '/'
 const buildDir = path.resolve(__dirname, '../') + '/'
 
 const iconIdsFilePath = 'iconIds.js'
+const iconSheetFilePath = 'iconSheet.js'
 
 // Build logic
 function getIds () {
@@ -26,10 +27,13 @@ function getIds () {
 // Build process
 const ids = getIds()
 
-removeFile(buildDir + iconIdsFilePath)
-
-const fileContent = `export default [
-${ids.map(id => `'${id}'`).join(',\n  ')}
+const iconIds = `export default [
+  ${ids.map(id => `'${id}'`).join(',\n  ')}
 ]` + '\n'
 
-writeTextFile(buildDir + iconIdsFilePath, fileContent)
+const iconSheet = `export default {
+  ${ids.map(id => `${id}: \`${readFile(sourceDir + id + '.svg').trim()}\``).join(',\n  ')}
+}` + '\n'
+
+writeTextFile(buildDir + iconIdsFilePath, iconIds)
+writeTextFile(buildDir + iconSheetFilePath, iconSheet)

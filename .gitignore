@@ -9,4 +9,5 @@ sw.*
 /composables.js
 /icons.js
 /iconIds.js
+/iconSheet.js
 /utils.js
