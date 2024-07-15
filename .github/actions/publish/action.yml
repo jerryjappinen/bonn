@@ -62,6 +62,11 @@ runs:
       shell: bash
       run: npm install -f
 
+    - name: Build
+      id: build
+      shell: bash
+      run: npm run build
+
     - name: Publish to npm
       id: publish
       uses: JS-DevTools/npm-publish@v3
