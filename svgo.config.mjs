@@ -1,3 +1,5 @@
+let prefixCounter = 0
+
 // https://github.com/svg/svgo
 export default {
   multipass: false, // boolean
@@ -24,7 +26,7 @@ export default {
       name: 'prefixIds',
       params: {
         delim: '-',
-        prefix: 'bonn'
+        prefix: () => prefixCounter++
       }
     },
 
