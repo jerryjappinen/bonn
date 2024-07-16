@@ -33,7 +33,7 @@ export default {
         // Convert this color code in fills/strokes to currentColor (used to generate mono-capable assets)
         // NOTE: must be exact, case-sensitive match before any other conversions
         // Assets must be authored with this in mind
-        currentColor: '#FF00FF'
+        currentColor: '#F0F'
       }
     }
   ]
