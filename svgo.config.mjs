@@ -20,6 +20,13 @@ export default {
     //     transformPrecision: 0
     //   }
     // },
+    {
+      name: 'prefixIds',
+      params: {
+        delim: '-',
+        prefix: 'bonn'
+      }
+    },
 
     // https://svgo.dev/docs/plugins/convertColors/
     {
