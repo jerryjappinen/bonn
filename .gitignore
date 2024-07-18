@@ -12,3 +12,9 @@ sw.*
 /iconSheet.js
 /node.js
 /utils.js
+
+# icons/ is a build dir
+# Ignore build files, but not the source files:
+# !/icons/
+# /icons/**
+# !/icons/src/
