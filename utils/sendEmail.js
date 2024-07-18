@@ -1,6 +1,3 @@
-// import nodemailer from 'nodemailer'
-
-// emailService
 // https://nodemailer.com/message/
 export default async (nodemailerEmailService, {
   from,
