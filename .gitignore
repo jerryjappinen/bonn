@@ -15,6 +15,6 @@ sw.*
 
 # icons/ is a build dir
 # Ignore build files, but not the source files:
-# !/icons/
-# /icons/**
-# !/icons/src/
+!/icons/
+/icons/**
+!/icons/src/
