@@ -8,6 +8,7 @@ const writeTextFile = require('./utils/writeTextFile')
 const dirs = [
   'composables',
   'icons',
+  'node',
   'utils'
 ]
 

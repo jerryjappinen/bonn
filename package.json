@@ -11,6 +11,7 @@
     "eslint/",
     "experimentalComponents/",
     "icons/",
+    "node/",
     "nuxt/",
     "prettier/",
     "scss/",
@@ -22,6 +23,7 @@
     "icons.js",
     "iconIds.js",
     "iconSheet.js",
+    "node.js",
     "utils.js",
     "README.md"
   ],

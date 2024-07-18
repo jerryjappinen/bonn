@@ -10,4 +10,5 @@ sw.*
 /icons.js
 /iconIds.js
 /iconSheet.js
+/node.js
 /utils.js
