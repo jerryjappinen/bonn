@@ -1,6 +1,6 @@
 {
   "name": "bonn",
-  "version": "0.10.23",
+  "version": "0.10.24",
   "description": "Utility, style and component library for web development.",
   "private": false,
   "files": [
@@ -42,14 +42,14 @@
     "dev": "vitest",
     "dev:components": "vitest --dir spec/components",
     "dev:nuxt": "vitest --dir spec/nuxt",
-    "dev:util": "vitest --dir spec/util",
+    "dev:utils": "vitest --dir spec/utils",
     "dev:vercel": "vitest --dir spec/vercel",
     "dev:scss": "sass spec/scss/index.spec.scss css/index.css --watch",
     "test": "npm run test:scss && npm run test:js",
     "test:js": "vitest run",
     "test:components": "vitest run --dir spec/components",
     "test:nuxt": "vitest run --dir spec/nuxt",
-    "test:util": "vitest run --dir spec/util",
+    "test:utils": "vitest run --dir spec/utils",
     "test:vercel": "vitest run --dir spec/vercel",
     "test:scss": "sass spec/scss/index.spec.scss"
   },
