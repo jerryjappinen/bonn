@@ -18,3 +18,4 @@ sw.*
 !/icons/
 /icons/**
 !/icons/src/
+!/icons/src/**
