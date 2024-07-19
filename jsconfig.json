@@ -4,8 +4,11 @@
     "checkJs": true
   },
   "include": [
+    "build/**/*",
     "composables/**/*",
-    "utils/**/*",
-    "spec/**/*"
+    "node/**/*",
+    "spec/**/*",
+    "stores/**/*",
+    "utils/**/*"
   ]
 }

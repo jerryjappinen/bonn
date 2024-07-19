@@ -1,8 +1,5 @@
 // https://github.com/svg/svgo?tab=readme-ov-file#api-usage
-const {
-  loadConfig,
-  optimize
-} = require('svgo')
+const { loadConfig, optimize } = require('svgo')
 
 const path = require('node:path')
 
