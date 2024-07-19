@@ -47,7 +47,7 @@
     "dev:utils": "vitest --dir spec/utils",
     "dev:vercel": "vitest --dir spec/vercel",
     "dev:scss": "sass spec/scss/index.spec.scss css/index.css --watch",
-    "test": "npm run build && npm run test",
+    "test": "npm run build && npm run test:bare",
     "test:bare": "npm run test:scss && npm run test:js",
     "test:js": "vitest run",
     "test:components": "vitest run --dir spec/components",
